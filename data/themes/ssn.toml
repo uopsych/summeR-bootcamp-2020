@@ -1,0 +1,21 @@
+# Theme metadata
+name = "sharing-short-notice"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#003366"
+
+# Menu
+menu_primary = "#E7EBEC"
+menu_text = "#003366"
+menu_text_active = "#E7553C"
+menu_title = "#003366"
+
+# Backgrounds
+background = "#fff"
+home_section_odd = "#fff"
+home_section_even = "#E7EBEC"
+
+font = "ssn"

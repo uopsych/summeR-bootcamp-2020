@@ -1,0 +1,11 @@
+# Font style metadata
+name = "sharing-short-notice"
+
+# Optional Google font URL
+google_fonts = "Noto+Serif+JP|Sen|Roboto+Mono"
+
+# Font families
+heading_font = "Noto Serif JP"
+body_font = "Sen"
+nav_font = "Sen"
+mono_font = "Roboto Mono"

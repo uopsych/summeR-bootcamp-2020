@@ -1,0 +1,236 @@
+---
+title: "Lab 04: CS631"
+subtitle: "Working with Tidy Data"
+author: "Alison Hill"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/ohsu.css", "css/ohsu-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: atelier-lakeside-light
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, 
+  comment = NA, dpi = 300,
+  fig.align = "center", out.width = "80%", cache = FALSE)
+library(tidyverse)
+library(here)
+```
+
+
+class: middle, center, inverse
+
+# ⌛️
+
+## Let's review 
+
+---
+
+## Data wrangling to date! 
+
+
+.pull-left[
+
+From `dplyr`:
+- `filter`
+- `arrange`
+- `mutate`
+- `group_by`
+- `summarize`
+- `glimpse`
+- `distinct`
+- `count`
+- `tally`
+- `pull`
+- `top_n`
+
+]
+
+--
+
+.pull-right[
+Let's add from `dplyr`:
+
+- `select`
+- `rename`
+- `recode`
+- `case_when`
+
+From `tidyr`:
+
+- `gather`
+- `separate`
+- `spread`
+- `unite`
+
+Plus 1 other package:
+
+- `skimr::skim`
+
+]
+
+---
+
+# Un-tidy cakes
+
+```{r echo = FALSE}
+cakes_untidy <- read_csv(here::here("static/labs/data", "tidy-gbbo-cakes.csv"), col_types = cols(series = col_factor(levels = NULL))) %>% 
+  count(series, challenge, cake) %>% 
+  drop_na(cake) %>% 
+  rename(bakes = n) %>% 
+  spread(cake, bakes, fill = 0) 
+
+cakes_split <- cakes_untidy %>% 
+  split(.$series) 
+```
+
+
+.pull-left[
+```{r echo = FALSE}
+cakes_split[[1]]
+cakes_split[[2]]
+```
+]
+
+--
+
+
+.pull-right[
+```{r echo = FALSE}
+cakes_split[[3]]
+cakes_split[[4]]
+```
+]
+
+---
+
+# Still un-tidy cakes
+
+
+```{r}
+cakes_untidy %>% 
+  bind_rows()
+```
+
+
+---
+
+# Finally tidy cakes
+
+```{r}
+cakes_tidy <- cakes_untidy %>% 
+  gather(bake_type, num_bakes, cake:pie_tart, 
+         factor_key = TRUE) %>% 
+  arrange(series)
+cakes_tidy
+```
+
+---
+class: middle, inverse, center
+
+## Know Your Tidy Data
+
+---
+
+```{r}
+glimpse(cakes_tidy)
+```
+
+
+---
+
+```{r}
+library(skimr)
+skim(cakes_tidy)
+```
+
+---
+
+```{r}
+skim(cakes_tidy) %>% 
+  summary() 
+```
+
+
+---
+class: middle, inverse, center
+
+## Benefits of Tidy Data
+
+
+---
+
+
+```{r}
+cakes_tidy %>% 
+  count(challenge, bake_type, wt = num_bakes, sort = TRUE)
+```
+
+---
+
+
+```{r}
+cakes_tidy %>% 
+  count(series, bake_type, wt = num_bakes)
+```
+
+---
+
+```{r}
+library(skimr)
+cakes_tidy %>% 
+  group_by(bake_type) %>% 
+  select_if(is.numeric) %>% 
+  skim()
+```
+
+See: https://suzanbaert.netlify.com/2018/01/dplyr-tutorial-1/
+
+---
+
+
+```{r}
+cakes_by_series <- cakes_tidy %>% 
+  count(series, bake_type, wt = num_bakes) 
+cakes_by_series
+```
+
+---
+
+
+```{r fig.height = 3, fig.width = 4}
+ggplot(cakes_by_series, aes(x = series, y = n, 
+                            color = bake_type,
+                            group = bake_type)) +
+  geom_point() +
+  geom_line() +
+  expand_limits(y = 0)
+```
+
+---
+class: middle, inverse, center
+
+
+## You have 2 challenges today!
+
+Described [here](04-challenge.html)
+Reference lab [here](04-distributions.html)
+
+
+---
+class: middle, inverse, center
+
+# 🍱
+
+## Tidy Data:
+
+http://r4ds.had.co.nz/tidy-data.html
+
+http://moderndive.com/4-tidy.html
+
+http://vita.had.co.nz/papers/tidy-data.html
+
+https://github.com/jennybc/lotr-tidy#readme
