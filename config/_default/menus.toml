@@ -4,18 +4,18 @@
 #   The weight parameter defines the order that the links will appear in.
 
 [[main]]
-  name = "Logistics"
-  url = "#logistics"
+  name = "Schedule"
+  url = "#schedule"
   weight = 10
 
 [[main]]
-  name = "Schedule"
-  url = "#schedule"
+  name = "Materials"
+  url = "#materials"
   weight = 20
 
 [[main]]
-  name = "Syllabus"
-  url = "#syllabus"
+  name = "Code of Conduct"
+  url = "#code_of_conduct"
   weight = 30
 
 [[main]]
