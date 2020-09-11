@@ -5,8 +5,8 @@ date: '2020-09-11'
 slug: []
 categories: []
 tags: []
-subtitle: 'Introduction and Orientation'
-summary: ''
+subtitle: ''
+summary: 'Introduction and Orientation'
 authors: []
 lastmod: '2020-09-11T00:32:50-07:00'
 featured: no
@@ -15,11 +15,6 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-links:
-- icon: flask
-  icon_pack: fas
-  name: lab
-  url: /labs/00-install_name_plot.html
 ---
 
-Blah here is some content
+Welcome, everyone! 
