@@ -4,8 +4,8 @@
 #   The weight parameter defines the order that the links will appear in.
 
 [[main]]
-  name = "Schedule"
-  url = "#schedule"
+  name = "Logistics"
+  url = "#logistics"
   weight = 10
 
 [[main]]
