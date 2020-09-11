@@ -19,7 +19,7 @@ social:
   icon_pack: fab
   link: https://github.com/ciannabp
 - icon: twitter
-  icon_pack: fa
+  icon_pack: fab
   link: https://twitter.com/ciannabp
 superuser: true
 user_groups:
