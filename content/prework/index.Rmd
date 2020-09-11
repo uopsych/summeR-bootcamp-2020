@@ -34,9 +34,11 @@ Hello! Welcome to the 3rd annual UO Psych R Bootcamp. As we are forced to run th
 
 2) Join the [slack channel](https://uodatascience.slack.com/). This is the best place to ask questions outside of bootcamp hours. We'll be using the channel `#bootcamp2020`.
 
-2) Create an [RStudio Cloud](https://rstudio.cloud/) account (choose the [Cloud Free](https://rstudio.cloud/plans/free) option).
+3) Create an [RStudio Cloud](https://rstudio.cloud/) account (choose the [Cloud Free](https://rstudio.cloud/plans/free) option).
 
-Looking forward to seeing you all soon. We'll have you loving R in no time!
+4) Review the [Code of Conduct](/#code_of_conduct).
+
+Looking forward to seeing you all soon. Hopefully we'll have you loving R in no time!
 
 -Brendan
 
