@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Column-wise operations with</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Brendan Cullen" />
+    <link href="01-slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="01-slides_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="01-slides_files/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="01-slides_files/panelset-0.2.1/panelset.css" rel="stylesheet" />
+    <script src="01-slides_files/panelset-0.2.1/panelset.js"></script>
+    <meta name="description" content="An overview of column-wise operations with dplyr using scoped verbs and the new across() function from dplyr 1.0.0"/>
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="brendanhcullen/rstudio-instructor-certification"/>
+    <meta name="twitter:title" content="Column-wise Operations with dplyr: Old and New"/>
+    <meta name="twitter:description" content="An overview of column-wise operations with dplyr using scoped verbs and the new across() function from dplyr 1.0.0"/>
+    <meta name="twitter:url" content="https://columnwise-operations-dplyr.netlify.app/"/>
+    <meta name="twitter:image:src" content="https://columnwise-operations-dplyr.netlify.app/share-card.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@_bcullen"/>
+    <meta name="twitter:site" content="@_bcullen"/>
+    <meta property="og:title" content="Column-wise Operations with dplyr: Old and New"/>
+    <meta property="og:description" content="An overview of column-wise operations with dplyr using scoped verbs and the new across() function from dplyr 1.0.0"/>
+    <meta property="og:url" content="https://columnwise-operations-dplyr.netlify.app/"/>
+    <meta property="og:image" content="https://columnwise-operations-dplyr.netlify.app/share-card.png"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Brendan Cullen"/>
+    <script src="01-slides_files/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="01-slides_files/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="01-slides_files/shareon-1.4.1/shareon.min.js"></script>
+    <link href="01-slides_files/xaringanExtra-shareagain-0.2.1/shareagain.css" rel="stylesheet" />
+    <script src="01-slides_files/xaringanExtra-shareagain-0.2.1/shareagain.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, inverse
+
+background-image: url(img/dplyr_old_new.png)
+background-position: 50% 40%
+background-size: 70%
+
+# Column-wise operations with `dplyr`:
+# Old and New
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+## Brendan Cullen
+### [RStudio Certified Trainer](https://education.rstudio.com/trainers/people/cullen+brendan/)
+### [<i class="fas  fa-globe "></i>](https://bcullen.rbind.io/) [bcullen.rbind.io](https://bcullen.rbind.io/) | [<i class="fab  fa-twitter "></i>](https://twitter.com/_bcullen)  [_bcullen](https://twitter.com/_bcullen) | [<i class="fab  fa-github "></i>](https://github.com/brendanhcullen) [brendanhcullen](https://github.com/brendanhcullen)
+
+### Slides: [<i class="fas  fa-link "></i>](https://columnwise-operations-dplyr.netlify.app/) [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/)
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+pre {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.inverse {
+  background-color: #272822;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+&lt;/style&gt;
+
+
+
+
+
+---
+# Concept map
+
+![](img/columnwise_concept_map.png)
+
+---
+class: inverse
+
+# Learning objectives
+
+--
+
+- ***Review*** how to apply `dplyr` functions, e.g. `mutate()`, `summarize()`, to single columns
+
+&lt;br&gt;
+--
+
+- ***Learn*** how to perform column-wise operations two ways: 
+
+  - scoped verbs, e.g. `summarize_at()`, `summarize_if()`, etc...
+
+  - `across()` from `dplyr` 1.0.0
+
+--
+
+&lt;br&gt;
+
+- ***Apply*** `across()` to summarize multiple columns of data
+
+&lt;br&gt;
+
+---
+background-image: url(img/dplyr_hex_old.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Column-wise operations
+
+**Column-wise operations** refers to applying the same `dplyr` verbs (or other data transformation functions) to multiple columns simultaneously. 
+
+--
+
+e.g. Create multiple new columns with `mutate()`
+
+&lt;img src="img/mutate.png" width="40%" /&gt;
+
+--
+
+e.g. Summarize multiple columns with `summarize()`
+
+&lt;img src="img/summarize_multiple.png" width="40%" /&gt;
+
+---
+background-image: url(img/penguins_hex.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Palmer Penguins
+
+
+```r
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
+```r
+glimpse(penguins)
+```
+
+```
+## Rows: 344
+## Columns: 8
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18…
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…
+```
+
+---
+background-image: url(img/dplyr_hex_old.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Column-wise operations
+
+***Let's review...***
+
+Apply `summarize()` to a **single** column.
+
+&lt;img src="img/summarize_single.png" width="20%" /&gt;
+
+--
+
+.panelset[
+
+
+.panel[.panel-name[Example]
+.pull-left[
+🤔 Use `summarize()` to calculate the mean **bill length** for each species in `penguins`
+
+❓ What function do you need to include before `summarize()` in order to calculate means for each species?
+]
+
+.pull-right[
+&lt;img src="img/penguins.png" width="75%" /&gt;
+
+Artwork by @allison_horst
+
+]
+]
+
+
+.panel[.panel-name[Code]
+
+
+```r
+penguins %&gt;% 
+  group_by(species) %&gt;% 
+  summarize(bill_length_mm = mean(bill_length_mm, na.rm = TRUE))
+```
+]
+
+
+.panel[.panel-name[Output]
+
+
+```
+## # A tibble: 3 x 2
+##   species   bill_length_mm
+##   &lt;fct&gt;              &lt;dbl&gt;
+## 1 Adelie              38.8
+## 2 Chinstrap           48.8
+## 3 Gentoo              47.5
+```
+
+]
+]
+---
+name: multiple columns
+background-image: url(img/dplyr_hex_old.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Column-wise operations
+
+Apply `summarize()` to **multiple columns** at once
+
+&lt;img src="img/summarize_multiple.png" width="20%" /&gt;
+
+--
+
+.panelset[
+
+.panel[.panel-name[Example #1]
+.pull-left[
+🤔 Calculate the mean **bill length** and **bill depth** for each species
+
+🚫 Avoid copying and pasting or repeating `mean()` more than once in your solution
+]
+
+.pull-right[
+&lt;img src="img/culmen_depth.png" width="100%" /&gt;
+]
+
+.pull-right[Artwork by @allison_horst]
+
+]
+
+.panel[.panel-name[Code]
+
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;group_by(species) %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;summarize_at&lt;/span&gt;(vars(c(bill_length_mm, bill_depth_mm)), &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mean, na.rm = TRUE)&lt;/code&gt;
+
+🔍 `summarize_at()` is an example of a **scoped verb**. It is a special variant of `summarize()` that applies a summary function to a specific set of columns.
+
+⚠️ When using scoped verbs ending in `_at()` you must use `vars()` to select columns. 
+
+❓ How many columns will be in our output? 
+]
+
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 3 x 3
+##   species   bill_length_mm bill_depth_mm
+##   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Adelie              38.8          18.3
+## 2 Chinstrap           48.8          18.4
+## 3 Gentoo              47.5          15.0
+```
+]
+]
+
+---
+template: multiple columns
+
+.panelset[
+
+.panel[.panel-name[Example #2]
+🤔 Calculate the mean of **all numeric** variables for each species.
+
+🚫 Again, no copying and pasting or repeating `mean()` more than once!
+]
+
+.panel[.panel-name[Code]
+
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;group_by(species) %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;summarize_if&lt;/span&gt;(is.numeric, mean, na.rm = TRUE)&lt;/code&gt;
+
+🔍 `summarize_if()` is another example of a **scoped verb**. It is a special variant of `summarize()` that applies a summary function to a set of columns that all satisfy some logical criteria.
+
+🔍 That logical criteria is specified using a **predicate function**, e.g. `is.numeric()`, which will return `TRUE` or `FALSE`.
+
+]
+
+.panel[.panel-name[Output]
+
+```
+## # A tibble: 3 x 6
+##   species   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
+##   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;
+## 1 Adelie              38.8          18.3              190.       3701. 2008.
+## 2 Chinstrap           48.8          18.4              196.       3733. 2008.
+## 3 Gentoo              47.5          15.0              217.       5076. 2008.
+```
+]
+]
+---
+class:inverse, center, middle
+
+# Your Turn #1
+
+### Click [here](https://brendancullen.shinyapps.io/columnwise_operations_formative_assessment/#section-your-turn-1).
+
+---
+name: better way
+
+# A better way?
+
+.pull-left[
+.center[
+## `dplyr` &lt; 1.0.0
+&lt;img src="img/dplyr_hex_old.png" width="50%" /&gt;
+
+`summarize_at()`, `summarize_if()`, `summarize_all()`, `mutate_if()`, `mutate_at()`, `mutate_all()`, ...
+##😓
+]
+]
+
+--
+
+.pull-right[
+.center[
+## `dplyr` &gt;= 1.0.0
+&lt;img src="img/dplyr_hex_new.png" width="50%" /&gt;
+
+`across()`
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+##😎
+]
+]
+
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+![](img/dplyr_across_blank.png)
+.pull-right[Artwork by @allison_horst]
+
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+![](img/dplyr_across.png)
+.pull-right[Artwork by @allison_horst]
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+
+&lt;code class ='r hljs remark-code'&gt;across(&lt;span style='color:cornflowerblue'&gt;.cols&lt;/span&gt;, &lt;span style='color:red'&gt;.fns&lt;/span&gt;, &lt;span style='color:orange'&gt;...&lt;/span&gt;, &lt;span style='color:darkorchid'&gt;.names&lt;/span&gt;)&lt;/code&gt;
+
+--
+
+&lt;span style="color: cornflowerblue"&gt; `.cols` &lt;/span&gt; = the columns you want to transform 
+
+&lt;br&gt;
+--
+
+&lt;span style="color: red"&gt;`.fns` &lt;/span&gt; = the function(s) you want to apply to each of the selected columns
+
+&lt;br&gt;
+--
+
+&lt;span style="color: orange"&gt; `...` &lt;/span&gt; = additional arguments for the function(s) specified in `.fns` (e.g. `na.rm = TRUE`)
+
+&lt;br&gt;
+--
+
+&lt;span style="color: darkorchid"&gt; `.names` &lt;/span&gt; = how you want to name the output columns. Here, `"{col}"` is a special placeholder for the input column name, and you can add any suffix you want to it 
+
+--
+
+- e.g. When calculating the mean of the `year` column, specifying &lt;span style="color: darkorchid"&gt; `.names = "{col}_mean"` &lt;/span&gt; would result in an output column named `"year_mean"`
+
+&lt;br&gt;
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+
+&lt;code class ='r hljs remark-code'&gt;across(&lt;span style='color:cornflowerblue'&gt;.cols&lt;/span&gt;, &lt;span style='color:red'&gt;.fns&lt;/span&gt;, &lt;span style='color:orange'&gt;...&lt;/span&gt;, &lt;span style='color:darkorchid'&gt;.names&lt;/span&gt;)&lt;/code&gt;
+
+.panelset[
+
+.panel[.panel-name[Example]
+🤔 Use `across()` to calculate the mean of **all numeric** columns for each species in `penguins`
+
+
+📣 Remember, `across()` goes *inside* of the `dplyr` function that you want to apply to multiple columns.
+]
+
+.panel[.panel-name[Code 1.0]
+
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;group_by(species) %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(&lt;span style='background-color:#ffff7f'&gt;across&lt;/span&gt;(&lt;span style='color:cornflowerblue'&gt;where(is.numeric)&lt;/span&gt;, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='color:red'&gt;mean&lt;/span&gt;, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='color:orange'&gt;na.rm = TRUE&lt;/span&gt;, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='color:darkorchid'&gt;.names = '{col}_mean'&lt;/span&gt;))&lt;/code&gt;
+
+***
+
+🔍 &lt;span style="color: cornflowerblue"&gt; `where()` &lt;/span&gt; is an example of a `tidyselect` helper function, like `starts_with()` or `contains()`. 
+
+It selects the variables for which some **predicate function** , such as &lt;span style="color: cornflowerblue"&gt; `is.numeric()` &lt;/span&gt;, returns `TRUE`. 
+]
+
+.panel[.panel-name[Output 1.0]
+
+```
+## # A tibble: 3 x 6
+##   species bill_length_mm_… bill_depth_mm_m… flipper_length_… body_mass_g_mean
+##   &lt;fct&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1 Adelie              38.8             18.3             190.            3701.
+## 2 Chinst…             48.8             18.4             196.            3733.
+## 3 Gentoo              47.5             15.0             217.            5076.
+## # … with 1 more variable: year_mean &lt;dbl&gt;
+```
+
+👀 Notice that all of the output variables have the suffix `"_mean"`.
+
+]
+
+.panel[.panel-name[Code 2.0]
+
+
+
+&lt;code class ='r hljs remark-code'&gt;penguins %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;group_by(species) %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;summarize(across(&lt;span style='color:cornflowerblue'&gt;where(is.numeric)&lt;/span&gt;, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;&lt;span style='color:red'&gt;list(mean = mean)&lt;/span&gt;&lt;/span&gt;, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='color:orange'&gt;na.rm = TRUE&lt;/span&gt;))&lt;/code&gt;
+
+***
+
+🔍 If you specify &lt;span style="color: red"&gt; `.funs` &lt;/span&gt; as a named list, e.g. `list(mean = mean)`, then `across()` will automatically append the name of the applied function(s) to the names of the output columns.  
+
+This way you don't have to manually specify a &lt;span style="color: darkorchid"&gt; `.names` &lt;/span&gt; argument at all! 
+]
+
+
+.panel[.panel-name[Output 2.0]
+
+```
+## # A tibble: 3 x 6
+##   species bill_length_mm_… bill_depth_mm_m… flipper_length_… body_mass_g_mean
+##   &lt;fct&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1 Adelie              38.8             18.3             190.            3701.
+## 2 Chinst…             48.8             18.4             196.            3733.
+## 3 Gentoo              47.5             15.0             217.            5076.
+## # … with 1 more variable: year_mean &lt;dbl&gt;
+```
+
+👀 Same exact output as before! 
+
+]
+]
+
+---
+class:inverse, center, middle
+
+# Your Turn #2
+
+### Click [here](https://brendancullen.shinyapps.io/columnwise_operations_formative_assessment/#section-your-turn-2).
+
+---
+# Concept map
+
+![](img/columnwise_concept_map.png)
+
+---
+class:inverse
+# More resources
+
+- [Blog post](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-colwise/) by Hadley Wickham highlighting `across()` as a key component of the `dplyr` 1.0.0 update.
+
+&lt;br&gt;
+- [This vignette](https://dplyr.tidyverse.org/articles/colwise.html) on tidyverse.org about column-wise operations.
+
+&lt;br&gt;
+- Two blog posts by Rebecca Barter on [scoped verbs](http://www.rebeccabarter.com/blog/2019-01-23_scoped-verbs/) and [`across()`](http://www.rebeccabarter.com/blog/2020-07-09-across/).
+
+&lt;br&gt;
+- [Interactive tutorial](https://tladeras.shinyapps.io/learning_tidyselect/) by Ted Laderas on `tidyselect` and a [full list](https://dplyr.tidyverse.org/reference/select.html) of selection helpers.
+
+&lt;br&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

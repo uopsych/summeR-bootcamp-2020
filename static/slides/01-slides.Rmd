@@ -1,0 +1,510 @@
+---
+title: "Column-wise operations with"
+subtitle: "`dplyr`"
+author: "Brendan Cullen"
+instution: "Test"
+output:
+  xaringan::moon_reader:
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: center, inverse
+
+background-image: url(img/dplyr_old_new.png)
+background-position: 50% 40%
+background-size: 70%
+
+# Column-wise operations with `dplyr`:
+# Old and New
+
+<br><br><br><br>
+## Brendan Cullen
+### [RStudio Certified Trainer](https://education.rstudio.com/trainers/people/cullen+brendan/)
+### [`r icon::fa("globe")`](https://bcullen.rbind.io/) [bcullen.rbind.io](https://bcullen.rbind.io/) | [`r icon::fa("twitter")`](https://twitter.com/_bcullen)  [_bcullen](https://twitter.com/_bcullen) | [`r icon::fa("github")`](https://github.com/brendanhcullen) [brendanhcullen](https://github.com/brendanhcullen)
+
+### Slides: [`r icon::fa("link")`](https://columnwise-operations-dplyr.netlify.app/) [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/)
+
+
+```{r setup, echo=FALSE}
+library(xaringanExtra)
+library(flair)
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+```{css, echo=FALSE}
+pre {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.inverse {
+  background-color: #272822;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+```
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "An overview of column-wise operations with dplyr using scoped verbs and the new across() function from dplyr 1.0.0",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "brendanhcullen/rstudio-instructor-certification") %>% 
+  meta_social(
+    title = "Column-wise Operations with dplyr: Old and New",
+    url = "https://columnwise-operations-dplyr.netlify.app/",
+    image = "https://columnwise-operations-dplyr.netlify.app/share-card.png",
+    og_type = "website",
+    og_author = "Brendan Cullen",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@_bcullen"
+  )
+```
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+---
+# Concept map
+
+![](img/columnwise_concept_map.png)
+
+---
+class: inverse
+
+# Learning objectives
+
+--
+
+- ***Review*** how to apply `dplyr` functions, e.g. `mutate()`, `summarize()`, to single columns
+
+<br>
+--
+
+- ***Learn*** how to perform column-wise operations two ways: 
+
+  - scoped verbs, e.g. `summarize_at()`, `summarize_if()`, etc...
+
+  - `across()` from `dplyr` 1.0.0
+
+--
+
+<br>
+
+- ***Apply*** `across()` to summarize multiple columns of data
+
+<br>
+
+---
+background-image: url(img/dplyr_hex_old.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Column-wise operations
+
+**Column-wise operations** refers to applying the same `dplyr` verbs (or other data transformation functions) to multiple columns simultaneously. 
+
+--
+
+e.g. Create multiple new columns with `mutate()`
+
+```{r echo = FALSE, out.width = "40%"}
+knitr::include_graphics("img/mutate.png")
+```
+
+--
+
+e.g. Summarize multiple columns with `summarize()`
+
+```{r echo = FALSE, out.width = "40%"}
+knitr::include_graphics("img/summarize_multiple.png")
+```
+
+---
+background-image: url(img/penguins_hex.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Palmer Penguins
+
+```{r warning=FALSE, message=FALSE}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+```{r}
+glimpse(penguins)
+```
+
+---
+background-image: url(img/dplyr_hex_old.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Column-wise operations
+
+***Let's review...***
+
+Apply `summarize()` to a **single** column.
+
+```{r echo = FALSE, out.width = "20%"}
+knitr::include_graphics("img/summarize_single.png")
+```
+
+--
+
+.panelset[
+
+
+.panel[.panel-name[Example]
+.pull-left[
+`r emo::ji("thinking")` Use `summarize()` to calculate the mean **bill length** for each species in `penguins`
+
+`r emo::ji("question")` What function do you need to include before `summarize()` in order to calculate means for each species?
+]
+
+.pull-right[
+```{r echo = FALSE, out.width = "75%"}
+knitr::include_graphics("img/penguins.png")
+```
+
+Artwork by @allison_horst
+
+]
+]
+
+
+.panel[.panel-name[Code]
+
+```{r summarize-one-col, eval=FALSE}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(bill_length_mm = mean(bill_length_mm, na.rm = TRUE))
+```
+]
+
+
+.panel[.panel-name[Output]
+
+```{r ref.label="summarize-one-col", echo=FALSE, message=FALSE}
+```
+
+]
+]
+---
+name: multiple columns
+background-image: url(img/dplyr_hex_old.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Column-wise operations
+
+Apply `summarize()` to **multiple columns** at once
+
+```{r echo = FALSE, out.width = "20%"}
+knitr::include_graphics("img/summarize_multiple.png")
+```
+
+--
+
+.panelset[
+
+.panel[.panel-name[Example #1]
+.pull-left[
+`r emo::ji("thinking")` Calculate the mean **bill length** and **bill depth** for each species
+
+`r emo::ji("no_entry_sign")` Avoid copying and pasting or repeating `mean()` more than once in your solution
+]
+
+.pull-right[
+```{r echo = FALSE, out.width = "100%"}
+knitr::include_graphics("img/culmen_depth.png")
+```
+]
+
+.pull-right[Artwork by @allison_horst]
+
+]
+
+.panel[.panel-name[Code]
+```{r summarize-mult-1, eval=FALSE, echo = FALSE}
+penguins %>% 
+  group_by(species) %>% 
+  summarize_at(vars(c(bill_length_mm, bill_depth_mm)), 
+               mean, na.rm = TRUE)
+```
+
+```{r echo=FALSE}
+decorate("summarize-mult-1", eval = FALSE) %>% 
+  flair("summarize_at")
+```
+
+`r emo::ji("mag")` `summarize_at()` is an example of a **scoped verb**. It is a special variant of `summarize()` that applies a summary function to a specific set of columns.
+
+`r emo::ji("warning")` When using scoped verbs ending in `_at()` you must use `vars()` to select columns. 
+
+`r emo::ji("question")` How many columns will be in our output? 
+]
+
+
+.panel[.panel-name[Output]
+```{r ref.label = "summarize-mult-1", echo=FALSE, message=FALSE}
+```
+]
+]
+
+---
+template: multiple columns
+
+.panelset[
+
+.panel[.panel-name[Example #2]
+`r emo::ji("thinking")` Calculate the mean of **all numeric** variables for each species.
+
+`r emo::ji("no_entry_sign")` Again, no copying and pasting or repeating `mean()` more than once!
+]
+
+.panel[.panel-name[Code]
+```{r summarize-mult-2, eval=FALSE, echo=FALSE}
+penguins %>% 
+  group_by(species) %>% 
+  summarize_if(is.numeric, mean, na.rm = TRUE)
+```
+
+```{r echo=FALSE}
+decorate("summarize-mult-2", eval = FALSE) %>% 
+  flair("summarize_if")
+```
+
+`r emo::ji("mag")` `summarize_if()` is another example of a **scoped verb**. It is a special variant of `summarize()` that applies a summary function to a set of columns that all satisfy some logical criteria.
+
+`r emo::ji("mag")` That logical criteria is specified using a **predicate function**, e.g. `is.numeric()`, which will return `TRUE` or `FALSE`.
+
+]
+
+.panel[.panel-name[Output]
+```{r ref.label="summarize-mult-2", echo=FALSE, message=FALSE}
+```
+]
+]
+---
+class:inverse, center, middle
+
+# Your Turn #1
+
+### Click [here](https://brendancullen.shinyapps.io/columnwise_operations_formative_assessment/#section-your-turn-1).
+
+---
+name: better way
+
+# A better way?
+
+.pull-left[
+.center[
+## `dplyr` < 1.0.0
+```{r echo = FALSE, out.width = "50%"}
+knitr::include_graphics("img/dplyr_hex_old.png")
+```
+
+`summarize_at()`, `summarize_if()`, `summarize_all()`, `mutate_if()`, `mutate_at()`, `mutate_all()`, ...
+##`r emo::ji("sweat")`
+]
+]
+
+--
+
+.pull-right[
+.center[
+## `dplyr` >= 1.0.0
+```{r echo = FALSE, out.width = "50%"}
+knitr::include_graphics("img/dplyr_hex_new.png")
+```
+
+`across()`
+<br><br><br>
+##`r emo::ji("sunglasses")`
+]
+]
+
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+![](img/dplyr_across_blank.png)
+.pull-right[Artwork by @allison_horst]
+
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+![](img/dplyr_across.png)
+.pull-right[Artwork by @allison_horst]
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+```{r across-spec-color-coded, echo = FALSE}
+decorate('across(.cols, .fns, ..., .names)', error = TRUE, eval=FALSE) %>% 
+  flair(".cols", color = "cornflowerblue") %>% 
+  flair(".fns", color = "red") %>% 
+  flair("...", color = "orange") %>% 
+  flair(".names", color = "darkorchid")
+```
+
+--
+
+<span style="color: cornflowerblue"> `.cols` </span> = the columns you want to transform 
+
+<br>
+--
+
+<span style="color: red">`.fns` </span> = the function(s) you want to apply to each of the selected columns
+
+<br>
+--
+
+<span style="color: orange"> `...` </span> = additional arguments for the function(s) specified in `.fns` (e.g. `na.rm = TRUE`)
+
+<br>
+--
+
+<span style="color: darkorchid"> `.names` </span> = how you want to name the output columns. Here, `"{col}"` is a special placeholder for the input column name, and you can add any suffix you want to it 
+
+--
+
+- e.g. When calculating the mean of the `year` column, specifying <span style="color: darkorchid"> `.names = "{col}_mean"` </span> would result in an output column named `"year_mean"`
+
+<br>
+---
+background-image: url(img/dplyr_hex_new.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `dplyr::across()`
+
+```{r ref.label="across-spec-color-coded", echo = FALSE}
+```
+
+.panelset[
+
+.panel[.panel-name[Example]
+`r emo::ji("thinking")` Use `across()` to calculate the mean of **all numeric** columns for each species in `penguins`
+
+
+`r emo::ji("megaphone")` Remember, `across()` goes *inside* of the `dplyr` function that you want to apply to multiple columns.
+]
+
+.panel[.panel-name[Code 1.0]
+```{r across-example-v1, include = FALSE, message=FALSE}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(across(where(is.numeric), 
+                   mean, 
+                   na.rm = TRUE, 
+                   .names = '{col}_mean'))
+```
+
+```{r echo=FALSE, message=FALSE}
+decorate_chunk("across-example-v1", eval = FALSE) %>% 
+  flair("across") %>% 
+  flair("where(is.numeric)", color = "cornflowerblue") %>% 
+  flair_rx(pattern = "mean(?=,)", color = "red") %>% 
+  flair("na.rm = TRUE", color = "orange") %>% 
+  flair(".names = '{col}_mean'", color = "darkorchid")
+```
+
+***
+
+`r emo::ji("mag")` <span style="color: cornflowerblue"> `where()` </span> is an example of a `tidyselect` helper function, like `starts_with()` or `contains()`. 
+
+It selects the variables for which some **predicate function** , such as <span style="color: cornflowerblue"> `is.numeric()` </span>, returns `TRUE`. 
+]
+
+.panel[.panel-name[Output 1.0]
+```{r ref.label="across-example-v1", echo=FALSE, message=FALSE}
+```
+
+`r emo::ji("eyes")` Notice that all of the output variables have the suffix `"_mean"`.
+
+]
+
+.panel[.panel-name[Code 2.0]
+```{r across-example-v2, include = FALSE, message=FALSE}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(across(where(is.numeric), 
+                   list(mean = mean), 
+                   na.rm = TRUE))
+```
+
+```{r echo=FALSE, message=FALSE}
+decorate_chunk("across-example-v2", eval = FALSE) %>% 
+  flair("where(is.numeric)", color = "cornflowerblue") %>% 
+  flair("list(mean = mean)") %>% 
+  flair("list(mean = mean)", color = "red") %>% 
+  flair("na.rm = TRUE", color = "orange")
+```
+
+***
+
+`r emo::ji("mag")` If you specify <span style="color: red"> `.funs` </span> as a named list, e.g. `list(mean = mean)`, then `across()` will automatically append the name of the applied function(s) to the names of the output columns.  
+
+This way you don't have to manually specify a <span style="color: darkorchid"> `.names` </span> argument at all! 
+]
+
+
+.panel[.panel-name[Output 2.0]
+```{r ref.label="across-example-v2", echo=FALSE, message=FALSE}
+```
+
+`r emo::ji("eyes")` Same exact output as before! 
+
+]
+]
+
+---
+class:inverse, center, middle
+
+# Your Turn #2
+
+### Click [here](https://brendancullen.shinyapps.io/columnwise_operations_formative_assessment/#section-your-turn-2).
+
+---
+# Concept map
+
+![](img/columnwise_concept_map.png)
+
+---
+class:inverse
+# More resources
+
+- [Blog post](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-colwise/) by Hadley Wickham highlighting `across()` as a key component of the `dplyr` 1.0.0 update.
+
+<br>
+- [This vignette](https://dplyr.tidyverse.org/articles/colwise.html) on tidyverse.org about column-wise operations.
+
+<br>
+- Two blog posts by Rebecca Barter on [scoped verbs](http://www.rebeccabarter.com/blog/2019-01-23_scoped-verbs/) and [`across()`](http://www.rebeccabarter.com/blog/2020-07-09-across/).
+
+<br>
+- [Interactive tutorial](https://tladeras.shinyapps.io/learning_tidyselect/) by Ted Laderas on `tidyselect` and a [full list](https://dplyr.tidyverse.org/reference/select.html) of selection helpers.
+
+<br>
