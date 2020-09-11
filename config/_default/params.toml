@@ -12,7 +12,7 @@
 theme = "ssn"
 
 # Enable users to switch between day and night mode?
-day_night = true
+day_night = false
 
 # Override the theme's font set (optional).
 #   Latest font sets (may require updating): https://sourcethemes.com/academic/themes/
@@ -71,7 +71,7 @@ privacy_pack = false
 
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
-edit_page = {repo_url = "https://github.com/uopsych/summeR-bootcamp-2020", content_dir = "", repo_branch = "master", editable = {docs = true, page = false, post = true}}
+#edit_page = {repo_url = "https://github.com/uopsych/summeR-bootcamp-2020", content_dir = "", repo_branch = "master", editable = {docs = true, page = false, post = true}}
 
 ############################
 ## Contact details
@@ -117,10 +117,11 @@ contact_links = [
 ############################
 
 # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
-sharing_image = "blue-balloon.jpg"
+sharing_image = "ducks.jpg"
+twitter_image = "ducks.jpg"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter = ""
+twitter = "_bcullen"
 
 ############################
 ## Regional Settings
@@ -140,7 +141,7 @@ address_format = "en-us"
 ############################
 
 # Main menu alignment (l = left, c = center, r = right) and logo options.
-main_menu = {align = "l", show_logo = true}
+main_menu = {align = "r", show_logo = true}
 
 # Show estimated reading time for posts? (true/false)
 reading_time = false

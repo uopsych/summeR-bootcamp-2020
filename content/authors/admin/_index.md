@@ -1,32 +1,42 @@
 ---
 authors:
 - admin
-bio: This course will give students a foundation in the principles and practice of
-  data visualization, particularly as applied to scientific and technical data.
+bio: This bootcamp gives a gentle introduction to R and RStudio, transforming and visualizing data with the tidyverse, and the basics of R Markdown.
 email: ""
 name: null
 organizations:
-- name: Oregon Health & Science University
-  url: https://www.ohsu.edu/
+- name: "Department of Psychology, University of Oregon"
+  url: https://psychology.uoregon.edu/
 role: null
 social:
 - icon: r-project
   icon_pack: fab
   link: https://rstudio.cloud
-- icon: piazza
-  icon_pack: ai
-  link: https://piazza.com/
+- icon: slack
+  icon_pack: fab
+  link: https://uodatascience.slack.com/
 - icon: github
   icon_pack: fab
-  link: https://github.com/apreshill/dataviz-intro
+  link: https://github.com/uopsych/summeR-bootcamp-2020
 superuser: true
 user_groups:
 - Researchers
 - Visitors
 ---
-
 <br>
 
-This course will give students a foundation in the principles and practice of data visualization, particularly as applied to scientific and technical data. 
+Welcome to the 3rd Annual UO Psychology R Bootcamp! This website contains all of the details and materials for the bootcamp, along with links to resources for further learning and practice. See below for the planned schedule:
 
-We will have weekly lectures, covering a wide variety of topics including human perception, color theory, principles of visual design, etc. We will also have weekly hands-on laboratory sessions in which students will have the opportunity to put the lecture material into practice. This year, we will be adding additional emphasis on larger issues of scientific communication— after all, that's one of the main reasons we make visualizations! 
+
+#### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
+##### Introduction to R & RStudio
+
+***
+
+#### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
+##### Data visualization with the tidyverse
+
+***
+
+#### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
+##### Data transformation with the tidyverse // Introduction to R Markdown

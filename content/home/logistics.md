@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Logistics"
-subtitle = "We meet twice a week, alternating lectures on Mondays and labs on Wednesdays. Lab sessions will largely use the open-source R and ggplot2 tools."
+subtitle = "All workshop sessions will take place live via Zoom."
 
 # Showcase personal skills or business features.
 # 
@@ -15,21 +15,21 @@ subtitle = "We meet twice a week, alternating lectures on Mondays and labs on We
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "cloud"
-  icon_pack = "fas"
-  name = "Location"
-  description = "Online, all the time"
+  icon = "r-project"
+  icon_pack = "fab"
+  name = "RStudio Cloud"
+  description = "Where you will be working hands-on with R through interactive exercises"
   
 [[feature]]
-  icon = "play-circle"
-  icon_pack = "far"
-  name = "Lecture"
-  description = "Mondays, 12:00 – 13:30"  
+  icon = "slack"
+  icon_pack = "fab"
+  name = "Slack"
+  description = "For communicating outside of the workshop (use channel #bootcamp2020)"  
   
 [[feature]]
-  icon = "code"
-  icon_pack = "fas"
-  name = "Labs"
-  description = "Wednesdays, 12:00 – 13:30"
+  icon = "github"
+  icon_pack = "fab"
+  name = "Github repo"
+  description = "For accessing source code of all workshop materials"
 
 +++
