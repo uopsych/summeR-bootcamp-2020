@@ -29,13 +29,9 @@ user_groups:
 #### Introduction to R & RStudio
 
 
-
-<br> 
-
 ### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
 #### Data visualization with the tidyverse
 
-<br> 
 
 ### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
 #### Data transformation with the tidyverse // Introduction to R Markdown
