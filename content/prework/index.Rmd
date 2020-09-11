@@ -30,7 +30,7 @@ projects: []
 
 Hello! Welcome to the 3rd annual UO Psych R Bootcamp. As we are forced to run the bootcamp online this year due to COVID-19, there are a few things we'd like you to do before we get started to make things run as smoothly as possible. If possible, please try to complete this checklist *before* the first session.
 
-1) Make sure you have a Zoom account set up through University of Oregon. 
+1) Make sure you have a [Zoom account](https://zoom.us/) set up through University of Oregon. 
 
 2) Join the [slack channel](https://uodatascience.slack.com/). This is the best place to ask questions outside of bootcamp hours. We'll be using the channel `#bootcamp2020`.
 
