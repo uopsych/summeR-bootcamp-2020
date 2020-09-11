@@ -1,0 +1,26 @@
+---
+title: Welcome
+author: ''
+date: '2020-09-11'
+slug: []
+categories: []
+tags: []
+subtitle: 'Introduction and Orientation'
+summary: ''
+authors: []
+lastmod: '2020-09-11T00:32:50-07:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+  placement: 3
+projects: []
+links:
+- icon: flask
+  icon_pack: fas
+  name: lab
+  url: /labs/00-install_name_plot.html
+---
+
+Blah here is some content
