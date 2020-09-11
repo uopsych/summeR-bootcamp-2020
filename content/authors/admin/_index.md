@@ -1,8 +1,7 @@
 ---
 authors:
 - admin
-bio: This course will give students a foundation in the principles and practice of
-  data visualization, particularly as applied to scientific and technical data.
+bio: This bootcamp gives a gentle introduction to R and RStudio, transforming and visualizing data with the tidyverse, and the basics of R Markdown.
 email: ""
 name: null
 organizations:
@@ -24,14 +23,20 @@ user_groups:
 - Researchers
 - Visitors
 ---
+<br>
 
-### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
-#### Introduction to R & RStudio
-
-
-### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
-#### Data visualization with the tidyverse
+Welcome to the 3rd Annual UO Psychology R Bootcamp! This website contains all of the details and materials for the bootcamp, along with links to resources for further learning and practice. See below for the planned schedule:
 
 
-### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
-#### Data transformation with the tidyverse // Introduction to R Markdown
+#### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
+##### Introduction to R & RStudio
+
+***
+
+#### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
+##### Data visualization with the tidyverse
+
+***
+
+#### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
+##### Data transformation with the tidyverse // Introduction to R Markdown
