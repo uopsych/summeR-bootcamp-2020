@@ -14,7 +14,6 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-  placement: 3
 projects: []
 links:
 - icon: flask
