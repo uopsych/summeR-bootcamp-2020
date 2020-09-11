@@ -26,4 +26,4 @@ user_groups:
 - Teaching Assistants
 ---
 
-Cam's bio here
+Cameron is a doctoral candidate studying personality and social psychology at the University of Oregon. He is interested in incorporating new technologies and methodologies into the study of psychology. He is the creator and maintainer of the R packages [panoply](https://github.com/camkay/panoply) and [iccImpact](https://github.com/camkay/iccImpact) as well as the [outRun](https://github.com/camkay/outRun) RStudio Editor Theme.
