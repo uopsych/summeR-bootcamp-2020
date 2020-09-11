@@ -1,0 +1,46 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Prework"
+subtitle: ""
+summary: ""
+authors: []
+tags: []
+categories: []
+date: 
+lastmod: 2020-09-11T11:17:19-07:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: <span>Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jon Tyson</a> on <a href="https://unsplash.com/s/photos/welcome?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+Hello! Welcome to the 3rd annual UO Psych R Bootcamp. As we are forced to run the bootcamp online this year due to COVID-19, there are a few things we'd like you to do before we get started to make things run as smoothly as possible. If possible, please try to complete this checklist *before* the first session.
+
+1) Make sure you have a Zoom account set up through University of Oregon. 
+
+2) Join the [slack channel](https://uodatascience.slack.com/). This is the best place to ask questions outside of bootcamp hours. We'll be using the channel `#bootcamp2020`.
+
+2) Create an [RStudio Cloud](https://rstudio.cloud/) account (choose the [Cloud Free](https://rstudio.cloud/plans/free) option).
+
+Looking forward to seeing you all soon. We'll have you loving R in no time!
+
+-Brendan
+
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("heartyr.gif")
+```
+
