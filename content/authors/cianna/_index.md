@@ -26,4 +26,4 @@ user_groups:
 - Teaching Assistants
 ---
 
-Cianna's bio here
+Cianna is a fourth-year doctoral student studying personality and social psychology at the University of Oregon. Her research uses data-driven predictive modelling to explore personality and mental health in the context of online social networks. She is interested in data visualization, machine learning, and reproducible research.  
