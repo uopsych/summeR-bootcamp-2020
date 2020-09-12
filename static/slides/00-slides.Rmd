@@ -1,0 +1,192 @@
+---
+title: "Welcome!"
+subtitle: "Introduction & Orientation"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+  lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(base_color = "#23395b",
+                text_font_google   = google_font("Montserrat", "300", "300i"),
+                code_font_google   = google_font("Source Code Pro")
+                )
+```
+
+# Installing R and R Studio 
+
++ First, you will need to download R if you haven't already. You can do that at this link: <https://www.r-project.org/>
+
++ Second, you'll want to download R studio. You can use R without R studio, but you probably don't want to. R studio is an integrated development environment (IDE; <https://en.wikipedia.org/wiki/Integrated_development_environment>). R studio can be downloaded at the following link: <https://www.rstudio.com/>
+
++ Okay, that is all you need to start your gloRious adventuRe.
+
+---
+# Why Use R?
+## It's Open Source
+
+
+--
+
+
++ It's free!
+
+
+--
+
+
++ It's Easier to share your data & code
+
+
+--
+
+
++ Innovations spread quickly
+
+
+--
+
+
++ *you* can contribute!
+
+
+---
+# Why Use R?
+
+
+--
+## It's powerful & flexible
+
+
+--
+
+
++ You can use R for more than data analysis, including:
+
+  + creating websites
+  
+  + creating documents that reproduce your analyses
+  
+  + slideshows (including *this one*)
+  
+  + books
+
+
+--
+
+
++ In R, it is never *if* but *how*...
+
+
+---
+# Why Use R?
+
+
+--
+## It's a useful, transferable skill
+
+
++ R is used across many industries, esp. in UX & data science.
+
+
+---
+# Why Use R?
+
+
+--
+## Reduce Errors, Enhance Reproducibility & Transparency
+
+
++ Generate Publication Quality Figures & Tables within R, reducing copypasta errors
+
++ Create detailed and fully documented scripts showing every step between raw data & a statistic
+
++ You can use R to report your analyses (for HW or publication), reducing all too common errors in reported statistics see [see Nuijten et al.](https://link.springer.com/article/10.3758/s13428-015-0664-2).
+
+
+---
+# Why Use R?
+
+
+--
+## It's Efficient
++ Once you get used to it and start using R, it saves you time in the long run.
+
++ Scripts make re-using past work or using others' work as a starting point much easier.
+
++ Typing scripts is much faster than clicking through menus, *especially* after you get the hang of keyboard shortcuts
+
++ It runs faster and is less bloated than GUI stat software (e.g., SPSS)
+
+
+--
+
+## It's Fun!
+
+
+--
+
+
+No, seriously!
+
+
+---
+## Monday, Sept. 23rd, 1:00pm - 5:00pm
++ STB 251
++ Installing R & R Studio, basics of R, and Intro to the tidyverse (time permitting)
+  
+## Monday, Sept. 23rd, 1:00pm - 5:00pm
++ STB 245
++ Transforming & Visualizing Data in the tidyverse
+
+## Friday, Sept. 27th, 1:00pm - 5:00pm
++ STB 245
++ More tidyverse, basics of R markdown.
+---
+# Getting Comfortable with R studio
+
+
+--
+
+
+Let's start by looking at how R Studio is Organized and making any adjustments we might find helpful.
+
+.center[*~open R Studio now~*]
+---
+# Helpful Keyboard Shortcuts & Commands
+
+
+--
+
+Function |PC Keys | Mac Keys
+---------- | -------- | ---------
+Run highlighted code | `Ctrl+Enter` | `Cmd+Enter`
+Run Current Chunk | `Ctrl+Enter` | `Cmd+Enter`
+Insert <- | `Alt+-`| `option+-`
+Insert %>% | `Ctrl+Shift+M`| `Cmd+Shift+M+`
+Knit document | `Ctrl+Shift+K` | `Cmd+Shift+K`
+Keyboard shortcut quick reference | `Alt+Shift+K` | `Option+Shift+K`
+
+
+--
+
++ Highlight multiple lines with `alt + mouse` or `option + mouse`
++ `Ctrl+F` for *very useful* find/replace functions
++ Up arrow in Console to cycle through history
+
+---
+# Let's get started!
+
+Download Materials here: https://github.com/coryc3133/uoregon_r_bootcamp
