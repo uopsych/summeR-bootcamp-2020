@@ -25,6 +25,13 @@ style_mono_light(base_color = "#23395b",
                 )
 ```
 
+# Hello `r emo::ji("wave")`
+
+Welcome to the 3rd annual UO Psych SummeR Bootcamp!
+
+
+---
+
 # Installing R and R Studio 
 
 + First, you will need to download R if you haven't already. You can do that at this link: <https://www.r-project.org/>

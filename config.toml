@@ -9,7 +9,7 @@ title = "SummeR Bootcamp 2020"
 
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "https://uopsych-summer-bootcamp-2020.netlify.app/"
+baseurl = "https://uopsych-r-bootcamp-2020.netlify.app/"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
