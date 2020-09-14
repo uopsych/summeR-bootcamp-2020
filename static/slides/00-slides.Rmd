@@ -1,12 +1,13 @@
 ---
-title: "Welcome!"
+title: "Welcome"
 subtitle: "Introduction & Orientation"
 author: 
 date: 
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
-  lib_dir: libs
+    css: [xaringan-themer.css, "assets/css/custom.css"]
+    seal: false
+    lib_dir: libs
   nature:
     highlightStyle: github
     highlightLines: true
@@ -25,10 +26,49 @@ style_mono_light(base_color = "#23395b",
                 )
 ```
 
+class: title-slide, center, middle
+
+# Welcome
+
+## Introduction and Orientation
+
+---
+class: split-three
+
 # Hello `r emo::ji("wave")`
 
 Welcome to the 3rd annual UO Psych SummeR Bootcamp!
 
+--
+
+## <center>The team</center>
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+```{r echo = FALSE, out.width="75%"}
+knitr::include_graphics("images/brendan.png")
+```
+
+### Brendan
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+```{r echo = FALSE, out.width="75%"}
+knitr::include_graphics("images/cianna.png")
+```
+
+### Cianna
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+```{r echo = FALSE, out.width="75%"}
+knitr::include_graphics("images/cam.png")
+```
+
+### Cam
+]]]
 
 ---
 

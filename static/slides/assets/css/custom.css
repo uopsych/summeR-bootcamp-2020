@@ -1,0 +1,49 @@
+/************* splits ****************/
+
+.nosplit>.column:first-of-type {width: 100%; height:100%; position: absolute; top: 0; left: 0; }
+.split-33>.column:first-of-type {width: 33.33333333333%; height:100%; position: absolute; top: 0; left: 0; }
+.split-33>.column:nth-of-type(2) {width: 66.66666666667%;height:100%;position: absolute;top: 0;right: 0;}
+.split-66>.column:first-of-type {width: 66.66666666667%; height:100%; position: absolute; top: 0; left: 0; }
+.split-66>.column:nth-of-type(2) {width: 33.33333333333%;height:100%;position: absolute;top: 0;right: 0;}
+.split-25>.column:first-of-type {width: 25%; height:100%; position: absolute; top: 0; left: 0; }
+.split-25>.column:nth-of-type(2) {width: 75%;height:100%;position: absolute;top: 0;right: 0;}
+.split-75>.column:first-of-type {width: 75%; height:100%; position: absolute; top: 0; left: 0; }
+.split-75>.column:nth-of-type(2) {width: 25%;height:100%;position: absolute;top: 0;right: 0;}
+.split-10>.column:first-of-type {width: 10%; height:100%; position: absolute; top: 0; left: 0; }
+.split-10>.column:nth-of-type(2) {width: 90%;height:100%;position: absolute;top: 0;right: 0;}
+.split-20>.column:first-of-type {width: 20%; height:100%; position: absolute; top: 0; left: 0; }
+.split-20>.column:nth-of-type(2) {width: 80%;height:100%;position: absolute;top: 0;right: 0;}
+.split-30>.column:first-of-type {width: 30%; height:100%; position: absolute; top: 0; left: 0; }
+.split-30>.column:nth-of-type(2) {width: 70%;height:100%;position: absolute;top: 0;right: 0;}
+.split-40>.column:first-of-type {width: 40%; height:100%; position: absolute; top: 0; left: 0; }
+.split-40>.column:nth-of-type(2) {width: 60%; height:100%; position: absolute; top: 0; right: 0;}
+.split-50>.column:first-of-type {width: 50%; height:100%; position: absolute; top: 0; left: 0; }
+.split-50>.column:nth-of-type(2) {width: 50%; height:100%; position: absolute; top: 0; right: 0;}
+.split-60>.column:first-of-type {width: 60%; height:100%; position: absolute; top: 0; left: 0;}
+.split-60>.column:nth-of-type(2) {width: 40%; height:100%; position: absolute; top: 0; right: 0;}
+.split-70>.column:first-of-type {width: 70%; height:100%; position: absolute; top: 0; left: 0; }
+.split-70>.column:nth-of-type(2) {width: 30%; height:100%; position: absolute; top: 0; right: 0;}
+.split-two>.column:first-of-type {width: 50%; height:100%; position: absolute; top: 0; left: 0; }
+.split-two>.column:nth-of-type(2) {width: 50%; height:100%; position: absolute; top: 0; right: 0;}
+.split-three>.column:first-of-type {width: 33.33333333333%; height:100%; position: absolute; top: 0; left: 0; }
+.split-three>.column:nth-of-type(2) {width: 33.33333333333%; height:100%; position: absolute; top: 0; left: 33.33333333333%;}
+.split-three>.column:nth-of-type(3) {width: 33.33333333333%; height:100%; position: absolute; top: 0; right: 0;}
+.split-four>.column:first-of-type {width: 25%; height:100%; position: absolute; top: 0; left: 0; }
+.split-four>.column:nth-of-type(2) {width: 25%; height:100%; position: absolute; top: 0; left: 25%;}
+.split-four>.column:nth-of-type(3) {width: 25%; height:100%; position: absolute; top: 0; right: 25%;}
+.split-four>.column:nth-of-type(4) {width: 25%; height:100%; position: absolute; top: 0; right: 0;}
+.split-five>.column:first-of-type {width: 20%; height:100%; position: absolute; top: 0; left: 0; }
+.split-five>.column:nth-of-type(2) {width: 20%; height:100%; position: absolute; top: 0; left: 20%;}
+.split-five>.column:nth-of-type(3) {width: 20%; height:100%; position: absolute; top: 0; left: 40%;}
+.split-five>.column:nth-of-type(4) {width: 20%; height:100%; position: absolute; top: 0; right: 20%;}
+.split-five>.column:nth-of-type(5) {width: 20%; height:100%; position: absolute; top: 0; right: 0;}
+
+.split-2-1-1>.column:first-of-type {width: 50%; height:100%; position: absolute; top: 0; left: 0; }
+.split-2-1-1>.column:nth-of-type(2) {width: 25%; height:100%; position: absolute; top: 0; right: 25%;}
+.split-2-1-1>.column:nth-of-type(3) {width: 25%; height:100%; position: absolute; top: 0; right: 0;}
+.split-1-1-2>.column:first-of-type {width: 25%; height:100%; position: absolute; top: 0; left: 0; }
+.split-1-1-2>.column:nth-of-type(2) {width: 25%; height:100%; position: absolute; top: 0; left: 25%;}
+.split-1-1-2>.column:nth-of-type(3) {width: 50%; height:100%; position: absolute; top: 0; right: 0;}
+.split-1-2-1>.column:first-of-type {width: 25%; height:100%; position: absolute; top: 0; left: 0; }
+.split-1-2-1>.column:nth-of-type(2) {width: 50%; height:100%; position: absolute; top: 0; left: 25%;}
+.split-1-2-1>.column:nth-of-type(3) {width: 25%; height:100%; position: absolute; top: 0; right: 0;}
