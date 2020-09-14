@@ -37,7 +37,7 @@ class: split-three
 
 # Hello `r emo::ji("wave")`
 
-Welcome to the 3rd annual UO Psych SummeR Bootcamp!
+Welcome to the 3rd annual UO Psych R Bootcamp!
 
 --
 
@@ -71,54 +71,82 @@ knitr::include_graphics("images/cam.png")
 ]]]
 
 ---
+class: split-three
+# Logistics
 
-# Installing R and R Studio 
+.column[.content[.center[
+<br><br><br><br><br>
+# `r fontawesome::fa("r-project", height = "120px")`
 
-+ First, you will need to download R if you haven't already. You can do that at this link: <https://www.r-project.org/>
+### RStudio Cloud
 
-+ Second, you'll want to download R studio. You can use R without R studio, but you probably don't want to. R studio is an integrated development environment (IDE; <https://en.wikipedia.org/wiki/Integrated_development_environment>). R studio can be downloaded at the following link: <https://www.rstudio.com/>
+**RStudio cloud link here**
+]]]
 
-+ Okay, that is all you need to start your gloRious adventuRe.
+.column[.content[.center[
+<br><br><br><br><br>
+# `r fontawesome::fa("slack", height = "120px")`
+
+### Slack
+
+[**uodatascience.slack.com**](https://uodatascience.slack.com/)
+<br>
+**channel: #bootcamp2020**
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br>
+# `r fontawesome::fa("github", height = "120px")`
+
+### Github
+
+[**github.com/uopsych/<br>summeR-bootcamp-2020**](https://github.com/uopsych/summeR-bootcamp-2020)
+]]]
+
+---
+
+## Monday, Sept. 21st, 9 AM - 1 PM
++ Intro to R & R Studio 
++ Types of data 
++ Functions
+  
+## Monday, Sept. 23rd, 9 AM - 12 PM
++ Intro to the Tidyverse
++ Workflow & Importing data
++ Data transformation with `dplyr`
+
+## Friday, Sept. 25th, 9 AM - 1 PM
++ Reshaping data with `tidyr`
++ Data visualization with `ggplot2`
++ Intro to R Markdown
 
 ---
 # Why Use R?
 ## It's Open Source
 
-
 --
-
 
 + It's free!
 
-
 --
 
-
-+ It's Easier to share your data & code
-
++ It's easier to share your data & code
 
 --
-
 
 + Innovations spread quickly
 
-
 --
-
 
 + *you* can contribute!
 
-
 ---
+
 # Why Use R?
 
-
---
 ## It's powerful & flexible
 
-
 --
-
 
 + You can use R for more than data analysis, including:
 
@@ -126,114 +154,83 @@ knitr::include_graphics("images/cam.png")
   
   + creating documents that reproduce your analyses
   
-  + slideshows (including *this one*)
+  + slideshows (including this one!)
   
   + books
-
-
+  
+  + web applications
+  
 --
-
 
 + In R, it is never *if* but *how*...
 
-
 ---
 # Why Use R?
 
-
---
 ## It's a useful, transferable skill
 
+--
 
 + R is used across many industries, esp. in UX & data science.
 
-
 ---
 # Why Use R?
 
-
---
 ## Reduce Errors, Enhance Reproducibility & Transparency
 
+--
 
 + Generate Publication Quality Figures & Tables within R, reducing copypasta errors
 
+--
+
 + Create detailed and fully documented scripts showing every step between raw data & a statistic
 
-+ You can use R to report your analyses (for HW or publication), reducing all too common errors in reported statistics see [see Nuijten et al.](https://link.springer.com/article/10.3758/s13428-015-0664-2).
+--
 
++ You can use R to report your analyses (for HW or publication), reducing all too common errors in reported statistics see [see Nuijten et al.](https://link.springer.com/article/10.3758/s13428-015-0664-2).
 
 ---
 # Why Use R?
 
+## It's Efficient
 
 --
-## It's Efficient
+
 + Once you get used to it and start using R, it saves you time in the long run.
+
+--
 
 + Scripts make re-using past work or using others' work as a starting point much easier.
 
+--
+
 + Typing scripts is much faster than clicking through menus, *especially* after you get the hang of keyboard shortcuts
+
+--
 
 + It runs faster and is less bloated than GUI stat software (e.g., SPSS)
 
-
 --
 
-## It's Fun!
-
-
---
-
+## It's Fun `r emo::ji("partying_face")`
 
 No, seriously!
 
-
 ---
-## Monday, Sept. 23rd, 1:00pm - 5:00pm
-+ STB 251
-+ Installing R & R Studio, basics of R, and Intro to the tidyverse (time permitting)
-  
-## Monday, Sept. 23rd, 1:00pm - 5:00pm
-+ STB 245
-+ Transforming & Visualizing Data in the tidyverse
-
-## Friday, Sept. 27th, 1:00pm - 5:00pm
-+ STB 245
-+ More tidyverse, basics of R markdown.
----
-# Getting Comfortable with R studio
-
+# Getting Comfortable with RStudio
 
 --
 
-
-Let's start by looking at how R Studio is Organized and making any adjustments we might find helpful.
-
-.center[*~open R Studio now~*]
----
-# Helpful Keyboard Shortcuts & Commands
-
+Let's start by looking at how RStudio is organized
 
 --
 
-Function |PC Keys | Mac Keys
----------- | -------- | ---------
-Run highlighted code | `Ctrl+Enter` | `Cmd+Enter`
-Run Current Chunk | `Ctrl+Enter` | `Cmd+Enter`
-Insert <- | `Alt+-`| `option+-`
-Insert %>% | `Ctrl+Shift+M`| `Cmd+Shift+M+`
-Knit document | `Ctrl+Shift+K` | `Cmd+Shift+K`
-Keyboard shortcut quick reference | `Alt+Shift+K` | `Option+Shift+K`
-
-
---
-
-+ Highlight multiple lines with `alt + mouse` or `option + mouse`
-+ `Ctrl+F` for *very useful* find/replace functions
-+ Up arrow in Console to cycle through history
+.center[*~open R Studio Cloud now~*]
 
 ---
 # Let's get started!
 
-Download Materials here: https://github.com/coryc3133/uoregon_r_bootcamp
+### You can follow along at: 
+
+### `r emo::ji("link")` [uopsych-r-bootcamp-2020.netlify.app](https://uopsych-r-bootcamp-2020.netlify.app/)
