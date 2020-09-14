@@ -1,0 +1,299 @@
+---
+title: "Welcome"
+subtitle: "Introduction & Orientation"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "assets/css/custom.css"]
+    seal: false
+    lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(base_color = "#23395b",
+                text_font_google   = google_font("Montserrat", "300", "300i"),
+                code_font_google   = google_font("Source Code Pro")
+                )
+```
+
+class: title-slide, center, middle
+
+# Welcome
+
+## Introduction and Orientation
+
+---
+class: split-three
+
+# Hello `r emo::ji("wave")`
+
+Welcome to the 3rd annual UO Psych R Bootcamp!
+
+--
+
+## <center>The team</center>
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+```{r echo = FALSE, out.width="75%"}
+knitr::include_graphics("images/brendan.png")
+```
+
+### Brendan
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+```{r echo = FALSE, out.width="75%"}
+knitr::include_graphics("images/cianna.png")
+```
+
+### Cianna
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+```{r echo = FALSE, out.width="75%"}
+knitr::include_graphics("images/cam.png")
+```
+
+### Cam
+]]]
+
+---
+class: split-three
+# Logistics
+
+.column[.content[.center[
+<br><br><br><br><br>
+# `r fontawesome::fa("r-project", height = "120px")`
+
+### RStudio Cloud
+
+**RStudio cloud link here**
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br>
+# `r fontawesome::fa("slack", height = "120px")`
+
+### Slack
+
+[**uodatascience.slack.com**](https://uodatascience.slack.com/)
+<br>
+**channel: #bootcamp2020**
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br>
+# `r fontawesome::fa("github", height = "120px")`
+
+### Github
+
+[**github.com/uopsych/<br>summeR-bootcamp-2020**](https://github.com/uopsych/summeR-bootcamp-2020)
+]]]
+
+---
+
+## Monday, Sept. 21st, 9 AM - 1 PM
++ Intro to R & R Studio 
++ Types of data 
++ Functions
+  
+## Monday, Sept. 23rd, 9 AM - 12 PM
++ Intro to the Tidyverse
++ Workflow & Importing data
++ Data transformation with `dplyr`
+
+## Friday, Sept. 25th, 9 AM - 1 PM
++ Reshaping data with `tidyr`
++ Data visualization with `ggplot2`
++ Intro to R Markdown
+
+---
+# A word of encouragement
+
++ R has a substantial learning curve, but...
+
+--
+
+  + 1) It's absolutely worth it! (I promise)
+  
+--
+
+  + 2) *Everyone* goes through this
+  
+--
+
+> “There is no way of going from knowing nothing about a subject to knowing something about a subject without going through a period of great frustration and much suckiness.”
+
+--
+
+.right[-Hadley Wickham, <br>Chief Scientist at RStudio]
+
+.right[
+```{r echo=FALSE, out.width="25%"}
+knitr::include_graphics("images/hadley.jpg")
+```
+]
+
+---
+
+.pull-left[.center[
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/breakr.gif")
+```
+]]
+
+.pull-right[.center[
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/stormyr.gif")
+```
+]]
+
+--
+
+.center[
+# `r emo::ji("clock3")` `r emo::ji("clock5")` `r emo::ji("clock8")` ...
+]
+
+--
+
+.pull-left[.center[
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/heartyr.gif")
+```
+]]
+
+
+.pull-right[.center[
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/rainbowr.gif")
+```
+]]
+
+---
+
+# Why Use R?
+## It's Open Source
+
+--
+
++ It's free!
+
+--
+
++ It's easier to share your data & code
+
+--
+
++ Innovations spread quickly
+
+--
+
++ *you* can contribute!
+
+---
+
+# Why Use R?
+
+## It's powerful & flexible
+
+--
+
++ You can use R for more than data analysis, including:
+
+  + creating websites
+  
+  + creating documents that reproduce your analyses
+  
+  + slideshows (including this one!)
+  
+  + books
+  
+  + web applications
+  
+--
+
++ In R, it is never *if* but *how*...
+
+---
+# Why Use R?
+
+## It's a useful, transferable skill
+
+--
+
++ R is used across many industries, esp. in UX & data science.
+
+---
+# Why Use R?
+
+## Reduce Errors, Enhance Reproducibility & Transparency
+
+--
+
++ Generate Publication Quality Figures & Tables within R, reducing copypasta errors
+
+--
+
++ Create detailed and fully documented scripts showing every step between raw data & a statistic
+
+--
+
++ You can use R to report your analyses (for HW or publication), reducing all too common errors in reported statistics see [see Nuijten et al.](https://link.springer.com/article/10.3758/s13428-015-0664-2).
+
+---
+# Why Use R?
+
+## It's Efficient
+
+--
+
++ Once you get used to it and start using R, it saves you time in the long run.
+
+--
+
++ Scripts make re-using past work or using others' work as a starting point much easier.
+
+--
+
++ Typing scripts is much faster than clicking through menus, *especially* after you get the hang of keyboard shortcuts
+
+--
+
++ It runs faster and is less bloated than GUI stat software (e.g., SPSS)
+
+--
+
+## It's Fun `r emo::ji("partying_face")`
+
+No, seriously!
+
+---
+# Getting Comfortable with RStudio
+
+--
+
+Let's start by looking at how RStudio is organized
+
+--
+
+.center[*~open R Studio Cloud now~*]
+
+---
+# Let's get started!
+
+### You can follow along at: 
+
+### `r emo::ji("link")` [uopsych-r-bootcamp-2020.netlify.app](https://uopsych-r-bootcamp-2020.netlify.app/)
