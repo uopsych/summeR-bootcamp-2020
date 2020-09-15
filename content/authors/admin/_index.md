@@ -11,7 +11,7 @@ role: null
 social:
 - icon: r-project
   icon_pack: fab
-  link: https://rstudio.cloud
+  link: https://bit.ly/3caJRCN
 - icon: slack
   icon_pack: fab
   link: https://uodatascience.slack.com/
@@ -29,14 +29,20 @@ Welcome to the 3rd Annual UO Psychology R Bootcamp! This website contains all of
 
 
 #### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
-##### Introduction to R & RStudio
++ Introduction to R & RStudio
++ Types of Data
++ Functions
 
 ***
 
 #### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
-##### Data visualization with the tidyverse
++ Introduction to the tidyverse
++ Importing data & Workflow
++ Data wrangling with `dplyr` and `tidyr`
 
 ***
 
 #### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
-##### Data transformation with the tidyverse // Introduction to R Markdown
++ Data wrangling (cont.)
++ Data visualization with `ggplot2`
++ Introduction to R Markdown

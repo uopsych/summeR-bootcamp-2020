@@ -76,49 +76,45 @@ class: split-three
 
 .column[.content[.center[
 <br><br><br><br><br>
-# `r fontawesome::fa("r-project", height = "120px")`
+# [`r fontawesome::fa("r-project", height = "120px")`](https://bit.ly/3caJRCN)
 
 ### RStudio Cloud
-
-**RStudio cloud link here**
 ]]]
 
 .column[.content[.center[
 <br><br><br><br><br>
-# `r fontawesome::fa("slack", height = "120px")`
+# [`r fontawesome::fa("slack", height = "120px")`](https://uodatascience.slack.com/)
 
-### Slack
-
-[**uodatascience.slack.com**](https://uodatascience.slack.com/)
-<br>
-**channel: #bootcamp2020**
+### Slack <br> **#bootcamp2020**
 ]]]
 
 .column[.content[.center[
 <br><br><br><br><br>
-# `r fontawesome::fa("github", height = "120px")`
+# [`r fontawesome::fa("github", height = "120px")`](https://github.com/uopsych/summeR-bootcamp-2020)
 
 ### Github
-
-[**github.com/uopsych/<br>summeR-bootcamp-2020**](https://github.com/uopsych/summeR-bootcamp-2020)
 ]]]
 
 ---
 
-## Monday, Sept. 21st, 9 AM - 1 PM
-+ Intro to R & R Studio 
-+ Types of data 
+### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
++ Introduction to R & RStudio
++ Types of Data
 + Functions
-  
-## Monday, Sept. 23rd, 9 AM - 12 PM
-+ Intro to the Tidyverse
-+ Workflow & Importing data
-+ Data transformation with `dplyr`
 
-## Friday, Sept. 25th, 9 AM - 1 PM
-+ Reshaping data with `tidyr`
+***
+
+### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
++ Introduction to the tidyverse
++ Importing data & Workflow
++ Data wrangling with `dplyr` and `tidyr`
+
+***
+
+### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
++ Data wrangling (cont.)
 + Data visualization with `ggplot2`
-+ Intro to R Markdown
++ Introduction to R Markdown
 
 ---
 # A word of encouragement
@@ -164,7 +160,7 @@ knitr::include_graphics("images/stormyr.gif")
 --
 
 .center[
-# `r emo::ji("clock3")` `r emo::ji("clock5")` `r emo::ji("clock8")` ...
+# `r emo::ji("clock3")` + `r emo::ji("flex")` ...
 ]
 
 --
@@ -234,7 +230,7 @@ knitr::include_graphics("images/rainbowr.gif")
 
 --
 
-+ R is used across many industries, esp. in UX & data science.
++ R is used across many industries, esp. in UX & data science
 
 ---
 # Why Use R?
@@ -243,15 +239,15 @@ knitr::include_graphics("images/rainbowr.gif")
 
 --
 
-+ Generate Publication Quality Figures & Tables within R, reducing copypasta errors
++ Generate publication-quality figures & tables within R, reducing copypasta errors
 
 --
 
-+ Create detailed and fully documented scripts showing every step between raw data & a statistic
++ Create detailed and fully documented scripts showing every step between raw data & stats
 
 --
 
-+ You can use R to report your analyses (for HW or publication), reducing all too common errors in reported statistics see [see Nuijten et al.](https://link.springer.com/article/10.3758/s13428-015-0664-2).
++ You can use R to automate reporting of your analyses (for HW or publication), reducing all too common errors in reported statistics see [see Nuijten et al.](https://link.springer.com/article/10.3758/s13428-015-0664-2).
 
 ---
 # Why Use R?
@@ -260,11 +256,11 @@ knitr::include_graphics("images/rainbowr.gif")
 
 --
 
-+ Once you get used to it and start using R, it saves you time in the long run.
++ Once you get used to it and start using R, it saves you time in the long run
 
 --
 
-+ Scripts make re-using past work or using others' work as a starting point much easier.
++ Scripts make re-using past work or using others' work as a starting point much easier
 
 --
 
@@ -272,7 +268,7 @@ knitr::include_graphics("images/rainbowr.gif")
 
 --
 
-+ It runs faster and is less bloated than GUI stat software (e.g., SPSS)
++ It runs faster and is less bloated than GUI-based statistical software (e.g., SPSS)
 
 --
 
@@ -281,19 +277,10 @@ knitr::include_graphics("images/rainbowr.gif")
 No, seriously!
 
 ---
-# Getting Comfortable with RStudio
+class: center, middle
 
---
-
-Let's start by looking at how RStudio is organized
-
---
-
-.center[*~open R Studio Cloud now~*]
-
----
 # Let's get started!
 
-### You can follow along at: 
+### You can follow along:
 
 ### `r emo::ji("link")` [uopsych-r-bootcamp-2020.netlify.app](https://uopsych-r-bootcamp-2020.netlify.app/)

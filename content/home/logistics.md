@@ -17,19 +17,19 @@ subtitle = "All workshop sessions will take place live via Zoom."
 [[feature]]
   icon = "r-project"
   icon_pack = "fab"
-  name = "RStudio Cloud"
+  name = "<a href='https://bit.ly/3caJRCN'>RStudio Cloud</a>"
   description = "Where you will be working hands-on with R through interactive exercises"
   
 [[feature]]
   icon = "slack"
   icon_pack = "fab"
-  name = "Slack"
-  description = "For communicating outside of the workshop (use channel #bootcamp2020)"  
+  name = "<a href='https://uodatascience.slack.com/'>Slack</a>"
+  description = "For communicating outside of the workshop (use channel #bootcamp2020)"
   
 [[feature]]
   icon = "github"
   icon_pack = "fab"
-  name = "Github repo"
+  name = "<a href='https://github.com/uopsych/summeR-bootcamp-2020'>Github repo</a>"
   description = "For accessing source code of all workshop materials"
 
 +++
