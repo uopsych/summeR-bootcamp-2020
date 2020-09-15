@@ -1,0 +1,31 @@
+---
+title: "Reproducible Reporting with R Markdown"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "assets/css/custom.css"]
+    seal: false
+    lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(base_color = "#23395b",
+                text_font_google   = google_font("Montserrat", "300", "300i"),
+                code_font_google   = google_font("Source Code Pro")
+                )
+```
+
+class: title-slide, center, middle
+
+# Reproducible Reporting with R Markdown
+
