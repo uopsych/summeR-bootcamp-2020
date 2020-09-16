@@ -45,9 +45,23 @@ links:
   url: https://rstudio.cloud/learn/primers/1.2
 ---
 
+Data comes in many different shapes and sizes, which means we need a way to represent different kinds of data in R in order to distinguish them. Today we're going to cover the different fundamental types of data in R and give you a feel for different ways that data can be structured and indexed. 
+
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/02-slides.html",
   ratio = "16:9"
 )
 ```
+
+<br>
+
+### Further Reading
+
+:::book
+<br>
+:::
