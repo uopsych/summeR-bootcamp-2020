@@ -59,8 +59,6 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
-<br>
-
 1. Overview of tidyverse [core packages](https://www.tidyverse.org/packages/#core-tidyverse)
 
 2. [Learning resources](https://www.tidyverse.org/learn/) from tidyverse.org

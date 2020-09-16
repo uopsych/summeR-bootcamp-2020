@@ -53,9 +53,7 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
-<br>
-
-1. [*Getting Started with Data in R*](https://moderndive.netlify.app/1-getting-started.html) (chapter from ModernDive)
+1. [*Getting Started with Data in R*](https://moderndive.netlify.app/1-getting-started.html) (chapter from [ModernDive](https://moderndive.netlify.app/))
 
 2. A [GIF-based introduction](https://www.pipinghotdata.com/posts/2020-09-07-introducing-the-rstudio-ide-and-r-markdown/) to RStudio
 

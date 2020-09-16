@@ -4,18 +4,42 @@ name = "sharing-short-notice"
 # Is theme light or dark?
 light = true
 
+
 # Primary
-primary = "#003366"
+primary = "#3D4856"
+
+# Links
+link = "#A36C00"
+link_hover = "#243445"
 
 # Menu
-menu_primary = "#E7EBEC"
-menu_text = "#003366"
-menu_text_active = "#E7553C"
-menu_title = "#003366"
+menu_primary = "#E6F4F1"
+menu_text = "#243445"
+menu_text_active = "#AA9880"
+menu_title = "#243445"
 
 # Backgrounds
 background = "#fff"
 home_section_odd = "#fff"
-home_section_even = "#E7EBEC"
+home_section_even = "#E6F4F1"
+
+##### Default colors from template #####
+
+# Primary
+# primary = "#003366"
+
+# Links
+# link = "#E7553C"
+
+# Menu
+# menu_primary = "#E7EBEC"
+# menu_text = "#003366"
+# menu_text_active = "#E7553C"
+# menu_title = "#003366"
+
+# Backgrounds
+# background = "#fff"
+# home_section_odd = "#fff"
+# home_section_even = "#E7EBEC"
 
 font = "ssn"
