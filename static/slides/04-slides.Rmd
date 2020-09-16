@@ -13,6 +13,12 @@ output:
     countIncrementalSlides: false
 ---
 
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(countdown)
+library(tidyverse)
+```
+
 ```{r xaringanExtra-share-again, echo=FALSE}
 xaringanExtra::use_share_again()
 ```

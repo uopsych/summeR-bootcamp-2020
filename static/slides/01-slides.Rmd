@@ -13,6 +13,11 @@ output:
     countIncrementalSlides: false
 ---
 
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(countdown)
+```
+
 ```{r xaringanExtra-share-again, echo=FALSE}
 xaringanExtra::use_share_again()
 ```
@@ -21,11 +26,138 @@ xaringanExtra::use_share_again()
 library(xaringanthemer)
 style_mono_light(base_color = "#23395b",
                 text_font_google   = google_font("Montserrat", "300", "300i"),
-                code_font_google   = google_font("Source Code Pro")
-                )
+                code_font_google   = google_font("Source Code Pro"),
+                link_color = "#5e8c61")
 ```
 
 class: title-slide, center, middle
 
 # Basics of R & RStudio
 
+---
+# Learning objectives 
+
+---
+# Getting comfortable with RStudio
+
+Let's start by looking at how RStudio is organized
+
+--
+<br><br><br>
+
+.center[
+### ~Launch RStudio Cloud~
+# [`r fontawesome::fa("r-project", height = "150px")`](https://bit.ly/3caJRCN)
+]
+
+---
+# Basic computing
+
+```{r}
+# Addition
+2 + 3
+
+# Subtraction
+2 - 3
+
+# Multiplication
+2 * 3
+
+# Division
+10/2
+```
+
+
+---
+# Basic computing
+
+```{r}
+# Exponents
+4^2
+
+# Roots
+4^(1/2)
+```
+
+--
+
++ Thankfully, R follows the order of operations (PEMDAS).
+
+```{r}
+2^3 + 4 * 1/2
+```
+
+--
+
++ These values aren’t stored anywhere though...
+
+---
+# Storing values in objects
+
++ To keep a value in memory, we need to assign it to an **object**. 
+
+--
+
++ To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
+
+.center[
+#`<-`
+]
+
+--
+
++ Let's use `<-` to create an object called x, that is assigned the number 8. 
+
+```{r}
+x <- 8 
+```
+
+--
+
++ Now we can call `x` by name; if we do this, it will print the value.
+
+```{r}
+x
+```
+
+---
+# Style
+
++ Technically, both `<-` and `=` both work as assignment operators. But we'll strictly use `<-` from here on out. This brings up a general coding principle of the day...
+
+--
+
++ *Style is important!* You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
+
+  + I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
+
+--
+
++ Hint: You will type `<-` a LOT. The keyboard shortcut `Alt+-` or `Option+-` can be used to insert a `<-`.
+
+---
+# Storing values in objects
+
++ Now, let's take a look at the variable `y`
+
+--
+
+```{r error=TRUE}
+# call y
+y 
+```
+
++ Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
+
++ You'll see a LOT of error messages when using R. This is *100% normal*. Don't worry when this happens. 
+
+--
+
+```{r}
+# Need to assign something to y!
+y <- 2
+
+y
+```
+
+---
