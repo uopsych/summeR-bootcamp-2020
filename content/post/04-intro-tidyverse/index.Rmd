@@ -29,8 +29,12 @@ projects: []
 links:
 - icon: film
   icon_pack: fas
-  name: slides
+  name: Slides
   url: /slides/04-slides.html
+- icon: dumbbell
+  icon_pack: fas
+  name: Exercises
+  url: https://bit.ly/3caJRCN
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet

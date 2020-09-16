@@ -31,10 +31,18 @@ links:
   icon_pack: fas
   name: Slides
   url: /slides/02-slides.html
+- icon: dumbbell
+  icon_pack: fas
+  name: Exercises
+  url: https://bit.ly/3caJRCN
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
   url: http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf
+- icon: laptop-code
+  icon_pack: fas
+  name: Primer
+  url: https://rstudio.cloud/learn/primers/1.2
 ---
 
 ```{r echo=FALSE}
