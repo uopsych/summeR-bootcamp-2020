@@ -41,9 +41,29 @@ links:
   url: https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Tidyverse+Cheat+Sheet.pdf
 ---
 
+So far we have covered the basics of using R and RStudio 
+
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/04-slides.html",
   ratio = "16:9"
 )
 ```
+
+<br>
+
+### Further Reading
+
+:::book
+<br>
+
+1. Overview of tidyverse [core packages](https://www.tidyverse.org/packages/#core-tidyverse)
+
+2. [Learning resources](https://www.tidyverse.org/learn/) from tidyverse.org
+
+3. [Welcome to the tidyverse](https://joss.theoj.org/papers/10.21105/joss.01686) (a short article)
+:::

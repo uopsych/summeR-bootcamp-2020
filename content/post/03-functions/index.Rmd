@@ -41,9 +41,23 @@ links:
   url: https://rstudio.cloud/learn/primers/6.1
 ---
 
+
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/03-slides.html",
   ratio = "16:9"
 )
 ```
+
+<br>
+
+### Further Reading
+
+:::book
+<br>
+1. [How to read an R help page](https://socviz.co/appendix.html#a-little-more-about-r)
+:::
