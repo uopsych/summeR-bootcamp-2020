@@ -1,5 +1,5 @@
 ---
-title: "Types of Data"
+title: "Data Types & Structures"
 author: 
 date: 
 output:
@@ -27,5 +27,5 @@ style_mono_light(base_color = "#23395b",
 
 class: title-slide, center, middle
 
-# Types of Data
+# Data Types & Structures
 

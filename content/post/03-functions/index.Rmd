@@ -29,7 +29,7 @@ projects: []
 links:
 - icon: film
   icon_pack: fas
-  name: slides
+  name: Slides
   url: /slides/03-slides.html
 ---
 
