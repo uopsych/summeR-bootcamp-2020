@@ -30,19 +30,19 @@ Welcome to the 3rd Annual UO Psychology R Bootcamp! This website contains all of
 
 #### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
 + Introduction to R & RStudio
-+ Types of Data
++ Data Types & Structures
 + Functions
 
 ***
 
 #### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
 + Introduction to the tidyverse
-+ Importing data & Workflow
-+ Data wrangling with `dplyr` and `tidyr`
++ Importing data & Project workflows
++ Data visualization with `ggplot2`
 
 ***
 
 #### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
-+ Data wrangling (cont.)
-+ Data visualization with `ggplot2`
-+ Introduction to R Markdown
++ Data wrangling with `dplyr`
++ Data tidying with `tidyr`
++ Reproducible reporting with R Markdown
