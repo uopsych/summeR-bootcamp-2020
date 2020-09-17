@@ -97,4 +97,25 @@ class: inverse, center, middle
 # Data structures 
 
 ---
-# 
+# Vectors 
+
++ Often, we’re not working with individual values, but with multiple related values or a **vector** of values.
+
+--
+
++ We can create a vector of ordered numbers using `starting_number`:`ending_number`. For example, we could make `x` a vector with the numbers between 1 and 5.
+
+```{r}
+x <- 1:5
+x
+```
+
+--
++ Let's look at the Environment pane in RStudio. Since `x` is a vector, it tells us what type of vector it is and it's length in addition to its contents (which can be abbreviated if the object is larger).
+
+```{r echo=FALSE}
+knitr::include_graphics("images/vector_example.png")
+```
+
+---
+
