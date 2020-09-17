@@ -275,6 +275,13 @@ var_2
 ```
 
 ---
+# R Markdown
+
+```{r echo=FALSE}
+knitr::include_graphics("images/rmarkdown_wizards.png")
+```
+
+---
 class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
 
@@ -309,3 +316,16 @@ knitr::include_graphics("images/rmarkdown_example_title_yaml.png")
 knitr::include_graphics("images/rmarkdown_example_title.png")
 ```
 
+---
+class: inverse, center, middle
+# Next up...
+
+## Data Types & Structures
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```
