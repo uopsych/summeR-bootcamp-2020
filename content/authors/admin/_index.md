@@ -23,13 +23,14 @@ user_groups:
 - Researchers
 - Visitors
 ---
-<br>
 
-Welcome to the 3rd Annual UO Psychology R Bootcamp! This website contains all of the details and materials for the bootcamp, along with links to resources for further learning and practice. Below is the planned schedule:
+# UO Psych R Bootcamp 2020
+
+Welcome! This website contains all of the details and materials for the bootcamp, along with resources for further learning and practice.
 
 
 #### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
-+ Introduction to R & RStudio
++ Basics of R & RStudio
 + Data Types & Structures
 + Functions & Debugging
 

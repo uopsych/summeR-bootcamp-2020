@@ -107,7 +107,7 @@ class: split-three
 ---
 
 ### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
-+ Introduction to R & RStudio
++ Basics of R & RStudio
 + Data Types & Structures
 + Functions & Debugging
 
