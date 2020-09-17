@@ -226,6 +226,7 @@ countdown(minutes = 1, seconds = 30)
 ```
 
 ---
+class: solution
 # Solution
 
 ```{r}
@@ -237,3 +238,6 @@ var_2 <- var_1^6
 var_1
 var_2
 ```
+
+---
+# Another slide

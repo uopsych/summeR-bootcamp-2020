@@ -59,3 +59,9 @@ https://github.com/emitanaka/ninja-theme ***/
   padding-left: 1em;
   font-size: 80%;
 }
+
+/************* solutions ****************/
+
+.solution { 
+  background-color: #1AB385;
+}
