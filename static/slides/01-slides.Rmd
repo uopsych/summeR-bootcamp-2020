@@ -19,6 +19,9 @@ library(tidyverse)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+
+# your turn counter
+yt_counter <- 0
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -26,7 +29,8 @@ library(xaringanthemer)
 style_mono_light(base_color = "#23395b",
                 text_font_google = google_font("Montserrat", "300", "300i"),
                 code_font_google = google_font("Source Code Pro"),
-                link_color = "#5e8c61")
+                link_color = "#A36C00",
+                code_highlight_color = "#A36C00")
 ```
 
 class: title-slide, center, middle
@@ -160,3 +164,76 @@ y
 ```
 
 ---
+# Storing values in objects
+
+Now, we can use these variables in calculations
+```{r}
+# multiply them
+x * y
+```
+
+--
+
+But remember, if we want to save the output of that calculation, we need to assign them to an object! 
+
+```{r}
+# define the product as z
+z <- x * y
+
+# view z
+z
+```
+
+---
+# Naming variables 
+
+You may be wondering how to name variables in R. Well, there are just a few rules:
+
+1. object names must start with a letter
+
+2. can contain alphanumeric characters, "_", and "."
+
+3. R is case sensitive, so `A` and `a` would be different variables
+
+---
+# Naming variables 
+
+This is another element of *style*. Using a consistent style when naming variables makes your life easier. 
+
+.pull-left[
+
++ this_is_snake_case
++ thisIsCamelCase
++ avoid.using.periods
+
+I'll be using snake_case from here on, but you can change to another option if you'd like.
+]
+
+.pull-right[
+```{r echo=FALSE}
+knitr::include_graphics("images/coding_cases.png")
+```
+]
+  
+---
+class: inverse
+# Your turn `r (yt_counter <- yt_counter + 1)` `r icon::fa("cloud")`
+
+Create a variable called `var_1` that is equal to 4. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
+
+```{r echo=FALSE}
+countdown(minutes = 1, seconds = 30)
+```
+
+---
+# Solution
+
+```{r}
+var_1 <- 4
+var_2 <- var_1^6
+```
+
+```{r}
+var_1
+var_2
+```
