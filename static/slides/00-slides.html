@@ -4,11 +4,15 @@
     <title>Welcome</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
-    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
-    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
-    <link href="libs/xaringanExtra-shareagain-0.2.1/shareagain.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-shareagain-0.2.1/shareagain.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
   </head>
@@ -86,23 +90,23 @@ class: split-three
 ---
 
 ### &lt;i class="fa fa-calendar"&gt;&lt;/i&gt; Day 1: Monday, 9/21, 9 AM - 1 PM PST
-+ Introduction to R &amp; RStudio
-+ Types of Data
-+ Functions
++ Basics of R &amp; RStudio
++ Data Types &amp; Structures
++ Functions &amp; Debugging
 
 ***
 
 ### &lt;i class="fa fa-calendar"&gt;&lt;/i&gt; Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
 + Introduction to the tidyverse
-+ Importing data &amp; Workflow
-+ Data wrangling with `dplyr` and `tidyr`
++ Importing data &amp; Project workflows
++ Data visualization with `ggplot2`
 
 ***
 
 ### &lt;i class="fa fa-calendar"&gt;&lt;/i&gt; Day 3: Friday, 9/25, 9 AM - 1 PM PST
-+ Data wrangling (cont.)
-+ Data visualization with `ggplot2`
-+ Introduction to R Markdown
++ Data wrangling with `dplyr`
++ Data tidying with `tidyr`
++ Reproducible reporting with R Markdown
 
 ---
 # A word of encouragement
@@ -156,6 +160,36 @@ class: split-three
 &lt;img src="images/rainbowr.gif" width="70%" /&gt;
 ]]
 
+---
+# What are R &amp; RStudio?
+
+.pull-left[
+&lt;br&gt;
+.center[
+&lt;img src="images/r_logo.png" width="40%" /&gt;
+]
+&lt;br&gt;&lt;br&gt;
+R is a programming language designed for statistics and data science
+]
+
+
+--
+
+.pull-right[
+.center[
+&lt;img src="images/rstudio_logo.png" width="1365" /&gt;
+]
+
+RStudio is an integrated development environment (IDE) that provides an interface to R.
+
+RStudio also refers to the [company](https://rstudio.com/about/) that develops this software.
+]
+---
+# What are R &amp; RStudio?
+
+&lt;img src="images/engine_dashboard.png" width="2021" /&gt;
+
+.footnote[Image from [*Modern Dive*](https://moderndive.netlify.app/1-1-r-rstudio.html)]
 ---
 
 # Why Use R?
@@ -255,7 +289,7 @@ class: split-three
 No, seriously!
 
 ---
-class: center, middle
+class: inverse, center, middle
 
 # Let's get started!
 

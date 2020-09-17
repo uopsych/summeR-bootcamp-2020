@@ -1,0 +1,339 @@
+---
+title: "Basics of R & RStudio"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "assets/css/custom.css"]
+    seal: false
+    lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(countdown)
+library(tidyverse)
+
+xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+
+# your turn counter
+yt_counter <- 0
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(base_color = "#23395b",
+                text_font_google = google_font("Montserrat", "300", "300i"),
+                code_font_google = google_font("Source Code Pro"),
+                link_color = "#BA8800",
+                code_inline_color = "#BA8800")
+```
+
+class: title-slide, center, middle
+
+# Basics of R & RStudio
+
+---
+background-image: url(images/rstudio_blank.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+background-image: url(images/rstudio_editor.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+background-image: url(images/rstudio_console.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+background-image: url(images/rstudio_environment.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+background-image: url(images/rstudio_plots.png)
+background-size: 900px
+
+# RStudio IDE
+---
+background-image: url(images/rstudio_labelled.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+class: inverse
+# RStudio IDE
+
+<br><br><br>
+.center[
+### ~Launch RStudio Cloud~
+# [`r fontawesome::fa("r-project", height = "150px")`](https://bit.ly/3caJRCN)
+]
+
+---
+# Basic computing
+
+```{r}
+# Addition
+2 + 3
+
+# Subtraction
+2 - 3
+
+# Multiplication
+2 * 3
+
+# Division
+10/2
+```
+
+
+---
+# Basic computing
+
+```{r}
+# Exponents
+4^2
+
+# Roots
+4^(1/2)
+```
+
+--
+
++ Thankfully, R follows the order of operations (PEMDAS).
+
+```{r}
+2^3 + 4 * 1/2
+```
+
+--
+
++ These values aren’t stored anywhere though...
+
+---
+# Storing values in objects
+
++ To keep a value in memory, we need to assign it to an **object**. 
+
+--
+
++ To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
+
+.center[
+```{r eval=FALSE}
+<-
+```
+]
+
+--
+
++ Let's use `<-` to create an object called x, that is assigned the number 8. 
+
+```{r}
+x <- 8 
+```
+
+--
+
++ Now we can call `x` by name; if we do this, it will print the value.
+
+```{r}
+x
+```
+
+---
+# Style
+
++ Technically, both `<-` and `=` both work as assignment operators. But we'll strictly use `<-` from here on out. This brings up a general coding principle of the day...
+
+--
+
++ *Style is important!* You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
+
+  + I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
+
+--
+
++ Hint: You will type `<-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`-` can be used to insert a `<-`.
+
+---
+# Storing values in objects
+
++ Now, let's take a look at the variable `y`
+
+--
+
+```{r error=TRUE}
+# call y
+y 
+```
+
++ Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
+
++ You'll see a LOT of error messages when using R. This is *100% normal*. Don't worry when this happens. 
+
+--
+
+```{r}
+# Need to assign something to y!
+y <- 2
+
+y
+```
+
+---
+# Storing values in objects
+
+Now, we can use these variables in calculations
+```{r}
+# multiply them
+x * y
+```
+
+--
+
+But remember, if we want to save the output of that calculation, we need to assign them to an object! 
+
+```{r}
+# define the product as z
+z <- x * y
+
+# view z
+z
+```
+
+---
+# Naming variables 
+
+You may be wondering how to name variables in R. Well, there are just a few rules:
+
+1. object names must start with a letter
+
+2. can contain alphanumeric characters, "_", and "."
+
+3. R is case sensitive, so `A` and `a` would be different variables
+
+---
+# Naming variables 
+
+This is another element of *style*. Using a consistent style when naming variables makes your life easier. 
+
+.pull-left[
+
++ this_is_snake_case
++ thisIsCamelCase
++ avoid.using.periods
+
+I'll be using snake_case from here on, but you can change to another option if you'd like.
+]
+
+.pull-right[
+```{r echo=FALSE}
+knitr::include_graphics("images/coding_cases.png")
+```
+]
+  
+---
+class: inverse
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 1, seconds = 30)
+```
+
+Open the file `your_turn.Rmd` inside the project `01_rstudio_basics`.
+
+Inside the code chunk provided under `"Your Turn 1"`, create a variable called `var_1` that is equal to 4. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
+
+
+---
+class: solution
+# Solution
+
+```{r}
+var_1 <- 4
+var_2 <- var_1^6
+```
+
+```{r}
+var_1
+var_2
+```
+
+---
+# R Markdown
+
+```{r echo=FALSE}
+knitr::include_graphics("images/rmarkdown_wizards.png")
+```
+
+---
+class: inverse
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 2)
+```
+
+1. Open the file `rmarkdown_example.Rmd` and click `knit`. Take a look at the resulting file called `rmarkdown_example.html`. 
+
+2. Go back to `rmarkdown_example.Rmd`. Change the title to `"[Your name]'s example R Markdown Document"`
+
+---
+class: solution
+
+# Solution
+
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("images/rmarkdown_example.png")
+```
+
+---
+class: solution
+
+# Solution
+
+
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("images/rmarkdown_example_title_yaml.png")
+```
+
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("images/rmarkdown_example_title.png")
+```
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 7)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Data Types & Structures
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```

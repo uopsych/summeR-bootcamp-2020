@@ -6,9 +6,8 @@ slug: []
 categories: []
 tags: []
 subtitle: ''
-summary: 'Introduction and Orientation'
+summary: ' '
 authors: []
-lastmod: '2020-09-11T00:32:50-07:00'
 featured: no
 image:
   caption: ''
@@ -18,11 +17,13 @@ projects: []
 links:
 - icon: film
   icon_pack: fas
-  name: slides
+  name: Slides
   url: /slides/00-slides.html
 ---
 
-Welcome, everyone! 
+Welcome, everyone! I hope you find this R bootcamp useful for your learning. There's a LOT going on in the world right now, and if learning R (let alone learning *anything* new) feels next to impossible at the moment -- I totally get it. But rest assured that there is an abundance of resources at your disposal and a community (of humans and monsters) that are here to support your learning! 
+
+***
 
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(

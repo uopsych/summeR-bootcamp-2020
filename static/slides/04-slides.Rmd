@@ -1,0 +1,498 @@
+---
+title: "Introduction to the Tidyverse"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "assets/css/custom.css"]
+    seal: false
+    lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(countdown)
+library(tidyverse)
+
+xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+```
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(base_color = "#23395b",
+                text_font_google = google_font("Montserrat", "300", "300i"),
+                code_font_google = google_font("Source Code Pro"),
+                link_color = "#5e8c61")
+```
+
+class: title-slide, center, middle
+
+# Introduction to the Tidyverse
+
+---
+
+# Core tidyverse packages
+
+.center[
+```{r echo = FALSE}
+knitr::include_graphics("images/tidyverse_packages.png")
+```
+]
+
+.footnote[Image from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+---
+# Core tidyverse packages
+
+.center[
+```{r echo = FALSE, out.width="90%"}
+knitr::include_graphics("images/tidyverse_packages_purpose.png")
+```
+]
+
+.footnote[Image from [Mine Çetinkaya-Rundel](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-1-getting-started/)]
+---
+background-image: url(images/hex/readr.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+  
+# `readr`
+
+.panelset[
+
+.panel[.panel-name[Overview]
+
+.pull-left[
+Importing data is the very first step! <br/> You can use `readr` to import rectangular data.
+]
+.pull-right[
+Functions for different file types
++ comma separated (CSV) files with `read_csv()`
++ tab separated files with `read_tsv()`
++ general delimited files with `read_delim()`
++ fixed width files with `read_fwf()`
++ tabular files where columns are separated by white-space with `read_table()`
++ web log files with `read_log()` 
+
+]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+
+![](https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-import-cheatsheet-thumbs.png)
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf)
+]
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 11: Data import](https://r4ds.had.co.nz/data-import.html)
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://readr.tidyverse.org/")
+```
+]
+]
+
+---
+background-image: url(images/hex/tibble.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
+# `tibble`
+
+.panelset[
+
+.panel[.panel-name[Overview]
+
+.pull-left[
+A `tibble` is much like the `data.frame` in base R, but optimized for use in the tidyverse.  
+]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+
+![](https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-import-cheatsheet-thumbs.png)
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf)
+]
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 10: Tibbles](https://r4ds.had.co.nz/tibbles.html)
+
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://tibble.tidyverse.org/")
+```
+]
+]
+
+---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
+# `ggplot2`
+
+.panelset[
+.panel[.panel-name[Overview]
+.pull-left[
+`ggplot2` uses the "Grammar of Graphics" and layers graphical components together to create a plot.]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+![](https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-visualization-cheatsheet-thumbs.png)
+
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+]
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 3: Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
+
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://ggplot2.tidyverse.org/")
+```
+]
+]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
+# `dplyr`
+
+.panelset[
+.panel[.panel-name[Overview]
+
+.pull-left[
+`dplyr` includes a host of functions that perform specific and incremental data transformation steps to help you to wrangle your data into exactly the right form you need. 
+]
+
+.pull-right[
++ Pick observations by their values with `filter()`.
+
++ Reorder the rows with `arrange()`.
+
++ Pick variables by their names `select()`.
+
++ Create new variables with functions of existing variables `mutate()`.
+
++ Collapse many values down to a single summary `summarize()`.
+
+]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+![](https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-transformation-cheatsheet-thumbs.png)
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)
+]
+
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 11: Data transformation](https://r4ds.had.co.nz/transform.html)
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://dplyr.tidyverse.org/")
+```
+]
+]
+
+---
+background-image: url(images/hex/forcats.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
+# `forcats`
+
+.panelset[
+
+.panel[.panel-name[Overview]
+.pull-left[
+`forcats` is great for working with **categorical variables** or factors. 
+]
+
+.pull-right[
+A few key functions:
++ `fct_reorder()`: Reordering a factor by another variable
+
++ `fct_infreq()`: Reordering a factor by the frequency of values
+
++ `fct_relevel()`: Changing the order of a factor by hand
+
++ `fct_lump()`: Collapsing the least/most frequent values of a factor into “other”
+]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+.center[
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/forcats-cheatsheet-thumbs.png")
+```
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/factors.pdf)
+]
+]
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 15: Factors](https://r4ds.had.co.nz/factors.html)
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://forcats.tidyverse.org/")
+```
+]
+]
+
+---
+background-image: url(images/hex/stringr.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
+# `stringr`
+
+.panelset[
+
+.panel[.panel-name[Overview]
+.pull-left[
+`stringr` helps us manipulate strings! The package includes many functions to help us with **regular expressions**, which are a concise language for describing patterns in strings.
+]
+
+.pull-right[
+`stringr` allows you to
+
+-  detect matches
+-  subset strings
+-  manage string lengths
+-  mutate strings
+-  join and split strings
+-  order strings
+-  ...and more!
+]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+
+```{r echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/strings-cheatsheet-thumbs.png")
+```
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/strings.pdf)
+]
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 14: Strings](https://r4ds.had.co.nz/strings.html)
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://stringr.tidyverse.org/")
+```
+]
+]
+
+---
+background-image: url(images/hex/tidyr.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
+# `tidyr`
+
+.panelset[
+
+.panel[.panel-name[Overview]
+
+.pull-left[
+`tidyr` allows you to reshape raw "untidy" data into a "tidy" format.
+
+Here is an example of what a tidy dataframe looks like:
+
+![](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
+]
+
+.pull-right[
+There are three interrelated rules which make a dataset tidy:
+
+- Each variable must have its own column.
+- Each observation must have its own row.
+- Each value must have its own cell.
+]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+
+```{r echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-import-cheatsheet-thumbs.png")
+```
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf)
+]
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 12: Tidy data](https://r4ds.had.co.nz/tidy-data.html)
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://tidyr.tidyverse.org/")
+```
+]
+]
+
+---
+background-image: url(images/hex/purrr.png)
+background-position: 90% 5%
+background-size: 15%
+
+.footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
+# `purrr`
+
+.panelset[
+
+.panel[.panel-name[Overview]
+.pull-left[
+`purrr` provides tools for working with functions and vectors -- in particular, repeating the same operations many times concisely and efficiently
+
+The `map()` family of functions helps us replace for loops, <br/> making our code easier to read and more succint.
+]
+]
+
+.panel[.panel-name[Cheatsheet]
+
+.center[
+```{r echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/purrr-cheatsheet-thumbs.png")
+```
+
+`r icon::fa("file-pdf")` [Download PDF](https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf)
+]
+]
+
+.panel[.panel-name[Reading]
+
+.left-column[
+```{r echo=FALSE}
+knitr::include_graphics("images/r4ds-cover.png")
+```
+]
+
+.right-column[
+## [Ch 21: Iteration](https://r4ds.had.co.nz/iteration.html)
+]
+]
+
+.panel[.panel-name[Reference]
+
+```{r echo=FALSE}
+knitr::include_url("https://purrr.tidyverse.org/")
+```
+]
+]

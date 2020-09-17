@@ -27,17 +27,12 @@
   name = "People"
   url = "#people"
   weight = 50
-
-[[main]]
-  name = "Resources"
-  url = "courses/resources/"
-  weight = 60
   
 [[main]]
   pre = "<i class=\"fab fa-github fa-lg\"></i>"
   name = ""
   url = "https://github.com/uopsych/summeR-bootcamp-2020"
-  weight = 70
+  weight = 60
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.

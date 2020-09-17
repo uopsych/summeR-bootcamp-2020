@@ -1,4 +1,6 @@
 /************* splits ****************/
+/*** Source from Emi Tanaka: 
+https://github.com/emitanaka/ninja-theme ***/
 
 .nosplit>.column:first-of-type {width: 100%; height:100%; position: absolute; top: 0; left: 0; }
 .split-33>.column:first-of-type {width: 33.33333333333%; height:100%; position: absolute; top: 0; left: 0; }
@@ -47,3 +49,19 @@
 .split-1-2-1>.column:first-of-type {width: 25%; height:100%; position: absolute; top: 0; left: 0; }
 .split-1-2-1>.column:nth-of-type(2) {width: 50%; height:100%; position: absolute; top: 0; left: 25%;}
 .split-1-2-1>.column:nth-of-type(3) {width: 25%; height:100%; position: absolute; top: 0; right: 0;}
+
+/************* footers ****************/
+
+.footnote {
+  position: absolute;
+  bottom: 1em;
+  left: 5px;
+  padding-left: 1em;
+  font-size: 80%;
+}
+
+/************* solutions ****************/
+
+.solution { 
+  background-color: #1AB385;
+}

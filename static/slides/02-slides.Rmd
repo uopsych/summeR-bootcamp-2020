@@ -1,0 +1,121 @@
+---
+title: "Data Types & Structures"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "assets/css/custom.css"]
+    seal: false
+    lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(countdown)
+library(tidyverse)
+
+xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+
+# your turn counter
+yt_counter <- 0
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(base_color = "#23395b",
+                text_font_google = google_font("Montserrat", "300", "300i"),
+                code_font_google = google_font("Source Code Pro"),
+                link_color = "#BA8800",
+                code_inline_color = "#BA8800")
+```
+
+class: title-slide, center, middle
+
+# Data Types & Structures
+
+---
+# Types of data
+
++ R has different types of data, and an object’s type affects how it interacts with functions and other objects. 
+
+--
+
++ So far, we’ve just been working with integers. R has several other types of data
+
+--
+
+Type | Definition | Example
+-----|------------|--------
+Integer | whole numbers from -Inf to +Inf | 1, 2, -1, -10928
+Numeric / Double | fractions & decimals from -Inf to +Inf | 1.3, .293764, -.1239217, `Inf`, `-Inf`
+Character / String | quoted strings of letters, numbers, and allowed symbols| "1", "one", "o_n_e", "o-n-e", "o.n.e"
+Logical / Boolean | logical constants of True or False | `TRUE`, `FALSE`, `T`, `F`
+factor | ordered, labelled variable | variable for year in college labelled "Freshman", "Sophomore", etc.
+
+---
+# Types of data 
+
++ There are a few special types worth knowing about too:
+
+Type | Definition |Example
+-----|------------|-------
+NA   | Missing value; technically represented as different types but displayed as `NA` | `NA`, `NA_character_`, `NA_integer_`
+NaN  | Not a Number | 0/0
++Inf | Positive infinity | `Inf`
+-Inf | Negative infinity | `-Inf`
+NULL | The `NULL` object; an object that exists but is completely empty | `NULL`
+
+---
+# Types of data 
+
++ You can use `typeof()` to find out the type of a value or object:
+
+```{r}
+typeof(1)
+typeof(TRUE)
+typeof(1L)
+typeof("one")
+```
+
+---
+# Types of data 
+
+```{r}
+typeof(NA)
+typeof(NA_character_)
+typeof(NULL)
+typeof(Inf)
+```
+
+---
+class: inverse, center, middle
+# Data structures 
+
+---
+# Vectors 
+
++ Often, we’re not working with individual values, but with multiple related values or a **vector** of values.
+
+--
+
++ We can create a vector of ordered numbers using `starting_number`:`ending_number`. For example, we could make `x` a vector with the numbers between 1 and 5.
+
+```{r}
+x <- 1:5
+x
+```
+
+--
++ Let's look at the Environment pane in RStudio. Since `x` is a vector, it tells us what type of vector it is and it's length in addition to its contents (which can be abbreviated if the object is larger).
+
+```{r echo=FALSE}
+knitr::include_graphics("images/vector_example.png")
+```
+
+---
+

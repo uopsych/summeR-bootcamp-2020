@@ -1,0 +1,37 @@
+---
+title: "Data visualization with {ggplot2}"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "assets/css/custom.css"]
+    seal: false
+    lib_dir: libs
+  nature:
+    highlightStyle: github
+    highlightLines: true
+    countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(countdown)
+library(tidyverse)
+```
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(base_color = "#23395b",
+                text_font_google   = google_font("Montserrat", "300", "300i"),
+                code_font_google   = google_font("Source Code Pro")
+                )
+```
+
+class: title-slide, center, middle
+
+# Data visualization with {ggplot2}
+
