@@ -286,7 +286,7 @@ class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
 
 ```{r echo=FALSE}
-countdown(minutes = 1, seconds = 30)
+countdown(minutes = 2)
 ```
 
 1. Open the file `rmarkdown_example.Rmd` and click `knit`. Take a look at the resulting file called `rmarkdown_example.html`. 
@@ -314,6 +314,14 @@ knitr::include_graphics("images/rmarkdown_example_title_yaml.png")
 
 ```{r echo=FALSE, out.width="50%"}
 knitr::include_graphics("images/rmarkdown_example_title.png")
+```
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 7)
 ```
 
 ---
