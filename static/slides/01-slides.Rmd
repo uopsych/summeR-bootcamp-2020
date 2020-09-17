@@ -26,11 +26,11 @@ yt_counter <- 0
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
-style_mono_light(base_color = "#23395b",
+style_mono_accent(base_color = "#23395b",
                 text_font_google = google_font("Montserrat", "300", "300i"),
                 code_font_google = google_font("Source Code Pro"),
-                link_color = "#A36C00",
-                code_highlight_color = "#A36C00")
+                link_color = "#BA8800",
+                code_inline_color = "#BA8800")
 ```
 
 class: title-slide, center, middle
