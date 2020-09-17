@@ -13,7 +13,6 @@
     <script src="libs/shareon/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
-    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
     <link href="libs/countdown/countdown.css" rel="stylesheet" />
     <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -223,7 +222,7 @@ y
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'y' not found
+## [1] 2
 ```
 
 + Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
@@ -306,13 +305,16 @@ I'll be using snake_case from here on, but you can change to another option if y
   
 ---
 class: inverse
-# Your turn 1 <i class="fas  fa-cloud "></i>
+# Your turn 1
 
-Create a variable called `var_1` that is equal to 4. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
-
-<div class="countdown" id="timer_5f630d78" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f639ef0" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
+
+Open the file `your_turn.Rmd` inside the project `01_rstudio_basics`.
+
+Inside the code chunk provided under `"Your Turn 1"`, create a variable called `var_1` that is equal to 4. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
+
 
 ---
 class: solution
@@ -340,6 +342,35 @@ var_2
 ```
 ## [1] 4096
 ```
+
+---
+class: inverse
+# Your turn 2
+
+<div class="countdown" id="timer_5f639d5d" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+
+1. Open the file `rmarkdown_example.Rmd` and click `knit`. Take a look at the resulting file called `rmarkdown_example.html`. 
+
+2. Go back to `rmarkdown_example.Rmd`. Change the title to `"[Your name]'s example R Markdown Document"`
+
+---
+class: solution
+
+# Solution
+
+&lt;img src="images/rmarkdown_example.png" width="50%" /&gt;
+
+---
+class: solution
+
+# Solution
+
+
+&lt;img src="images/rmarkdown_example_title_yaml.png" width="50%" /&gt;
+
+&lt;img src="images/rmarkdown_example_title.png" width="50%" /&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
