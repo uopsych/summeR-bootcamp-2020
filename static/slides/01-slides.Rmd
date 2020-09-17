@@ -12,6 +12,7 @@ output:
     highlightLines: true
     countIncrementalSlides: false
 ---
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(countdown)
@@ -38,16 +39,45 @@ class: title-slide, center, middle
 # Basics of R & RStudio
 
 ---
-# Learning objectives 
+background-image: url(images/rstudio_blank.png)
+background-size: 900px
+
+# RStudio IDE
 
 ---
-# Getting comfortable with RStudio
+background-image: url(images/rstudio_editor.png)
+background-size: 900px
 
-Let's start by looking at how RStudio is organized
+# RStudio IDE
 
---
+---
+background-image: url(images/rstudio_console.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+background-image: url(images/rstudio_environment.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+background-image: url(images/rstudio_plots.png)
+background-size: 900px
+
+# RStudio IDE
+---
+background-image: url(images/rstudio_labelled.png)
+background-size: 900px
+
+# RStudio IDE
+
+---
+class: inverse
+# RStudio IDE
+
 <br><br><br>
-
 .center[
 ### ~Launch RStudio Cloud~
 # [`r fontawesome::fa("r-project", height = "150px")`](https://bit.ly/3caJRCN)
@@ -104,7 +134,9 @@ Let's start by looking at how RStudio is organized
 + To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
 
 .center[
-#`<-`
+```{r eval=FALSE}
+<-
+```
 ]
 
 --
@@ -136,7 +168,7 @@ x
 
 --
 
-+ Hint: You will type `<-` a LOT. The keyboard shortcut `Alt+-` or `Option+-` can be used to insert a `<-`.
++ Hint: You will type `<-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`-` can be used to insert a `<-`.
 
 ---
 # Storing values in objects
@@ -239,5 +271,3 @@ var_1
 var_2
 ```
 
----
-# Another slide
