@@ -257,11 +257,11 @@ class: inverse
 countdown(minutes = 1, seconds = 30)
 ```
 
-### 1. Create an object called `x` that is assigned the number 8. 
+1. Create an object called `x` that is assigned the number 8. 
 
-### 2. Create an object called `y` that is a sequence of numbers from 2 to 16, by 2. 
+1. Create an object called `y` that is a sequence of numbers from 2 to 16, by 2. 
 
-### 3. Add `x` and `y`. What happens? 
+1. Add `x` and `y`. What happens? 
 
 ---
 class: solution
@@ -299,11 +299,11 @@ class: inverse
 countdown(minutes = 3)
 ```
 
-### 1. Create an object called `a` that is just the letter "a" and an object `x` that is assigned the number 8. Add `a` to `x`. What happens?
+1. Create an object called `a` that is just the letter "a" and an object `x` that is assigned the number 8. Add `a` to `x`. What happens?
 
-### 2. Create a vector called `b` that is just the number 8 in quotes. Add `b` to `x` (from above). What happens?
+1. Create a vector called `b` that is just the number 8 in quotes. Add `b` to `x` (from above). What happens?
 
-### 3. Find some way to add `b` to `x`. (*Hint*: Don't forget about coercion.)
+1. Find some way to add `b` to `x`. (*Hint*: Don't forget about coercion.)
 
 ---
 class: solution 
@@ -508,10 +508,10 @@ class: inverse
 countdown(minutes = 2)
 ```
 
-### 1. Create a vector called `named` that includes the numbers 1 to 5. Name the values "a", "b", "c", "d", and "e" (in order). Print the first element using numerical indexing and the last element using name indexing.
+1. Create a vector called `named` that includes the numbers 1 to 5. Name the values "a", "b", "c", "d", and "e" (in order). Print the first element using numerical indexing and the last element using name indexing.
 
 
-### 2. Change the  third element of `named` to the value 21 and then show your results.
+1. Change the  third element of `named` to the value 21 and then show your results.
 
 ---
 class: solution
@@ -733,9 +733,9 @@ class: inverse
 countdown(minutes = 3)
 ```
 
-### 1. Create a list like mine that is made up of `year`, `name`, `enrollment`, `fave_data`, but corresponds to you (year in ungrad, year in grad school, years since PhD, etc.). Make sure you enter two types of favorite data (bc who could choose?!). 
+1. Create a list like mine that is made up of `year`, `name`, `enrollment`, `fave_data`, but corresponds to you (year in ungrad, year in grad school, years since PhD, etc.). Make sure you enter two types of favorite data (bc who could choose?!). 
 
-### 2. Index your list to print only your name.
+1. Index your list to print only your name.
 
 ---
 class: solution
@@ -992,15 +992,15 @@ class: inverse
 countdown(minutes = 3)
 ```
 
-### 1. Make a data frame, called `df_2`, that has 3 columns. After you create it, check the structure.
+1. Make a data frame, called `df_2`, that has 3 columns as shown below. After you create it, check the structure.
 
-`c1` = 1, 2, 3 <br>
-`c2` = 2, 4, 6, <br>
-`c3` = "a", "b", "c"
+    `c1` = c(1, 2, 3) <br>
+    `c2` = c(2, 4, 6) <br>
+    `c3` = c("a", "b", "c")
 
-### 2. Add a fourth column, `c4`, which is the first and second columns multiplied together.
+1. Add a fourth column, `c4`, which is the first and second columns multiplied together.
 
-### 3. Try to add the first and second rows together. what happens? Why?
+1. Try to add the first and second rows together. What happens? Why?
 
 ---
 class: solution
