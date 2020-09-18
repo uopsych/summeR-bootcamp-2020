@@ -262,9 +262,9 @@ countdown(minutes = 1, seconds = 30)
 
 Open the file `your_turn.Rmd` inside the project `01_rstudio_basics` on RStudio Cloud.
 
-1. Inside the code chunk provided under `"Your Turn 1"`, create a variable called `var_1` that is equal to 4.
+1. Create a variable called `var_1` that is equal to 4.
 
-2. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
+1. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
 
 
 ---

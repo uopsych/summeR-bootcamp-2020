@@ -510,7 +510,6 @@ countdown(minutes = 2)
 
 1. Create a vector called `named` that includes the numbers 1 to 5. Name the values "a", "b", "c", "d", and "e" (in order). Print the first element using numerical indexing and the last element using name indexing.
 
-
 1. Change the  third element of `named` to the value 21 and then show your results.
 
 ---
