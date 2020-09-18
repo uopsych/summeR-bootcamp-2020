@@ -127,7 +127,7 @@ We can create a vector of any numbers we want using `c()`, which is a **function
 --
 ***
 
-You use `c()` by putting numbers seperated by a comma (`,`) within the parentheses.
+You use `c()` by putting numbers separated by a comma (`,`) within the parentheses.
 
 ```{r}
 x <- c(2, 8.5, 1, 9)
@@ -243,7 +243,7 @@ typeof(mixed_vec)
 --
 ***
 
-This is called **coercion**. R coerces a vector into whichever type will accomodate all of the values. We can coerce `mixed_vec` to be numeric using `as.numeric()`
+This is called **coercion**. R coerces a vector into whichever type will accommodate all of the values. We can coerce `mixed_vec` to be numeric using `as.numeric()`
 
 ```{r}
 as.numeric(mixed_vec)
@@ -733,7 +733,7 @@ class: inverse
 countdown(minutes = 3)
 ```
 
-1. Create a list like mine that is made up of `year`, `name`, `enrollment`, `fave_data`, but corresponds to you (year in ungrad, year in grad school, years since PhD, etc.). Make sure you enter two types of favorite data (bc who could choose?!). 
+1. Create a list like mine that is made up of `year`, `name`, `enrollment`, `fave_data`, but corresponds to you (year in undergrad, year in grad school, years since PhD, etc.). Make sure you enter two types of favorite data (bc who could choose?!). 
 
 1. Index your list to print only your name.
 
@@ -807,7 +807,7 @@ brendan$fave_data[2]
 ---
 # Data frames
 
-A `data.frame` is a common way of representing rectanuglar data -- collections of values that are each associated with a variable (column) and an observation (row). In other words, it has 2 dimensions.
+A `data.frame` is a common way of representing rectangular data -- collections of values that are each associated with a variable (column) and an observation (row). In other words, it has 2 dimensions.
 
 --
 
@@ -919,7 +919,7 @@ df_1
 
 ***
 
-Just like lists and vectors, you can modify a data frame and add new elements or change exising elements by referencing indexes.
+Just like lists and vectors, you can modify a data frame and add new elements or change existing elements by referencing indexes.
 
 --
 ***
@@ -1051,7 +1051,7 @@ Here's a quick table that summarizes data structures.
 
 <br>
 
-| | Homogenous data | Heterogenous data |
+| | Homogeneous data | Heterogeneous data |
 |------------|----------------| ------------------|
 | 1-Dimensional | Atomic Vector | List |
 | 2-Dimensional | Matrix `*` | Data frame |
