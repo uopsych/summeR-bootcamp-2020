@@ -291,6 +291,16 @@ R Markdown documents end with the extension `.Rmd`. Let's take a look at how the
 knitr::include_graphics("images/rmarkdown_wizards.png")
 ```
 ]
+
+---
+# R Markdown
+
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("images/rmd_annotated.png")
+```
+
+.footnote[Image from [Kieran Healy](https://socviz.co/gettingstarted.html)]
+
 ---
 class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
