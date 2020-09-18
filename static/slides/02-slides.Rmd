@@ -120,7 +120,9 @@ Since `x` is a vector, it tells us what type of vector it is and it's length in 
 ---
 # Vectors
 
-We can create a vector of any numbers we want using the `c()` function. You do this by putting numbers seperated by a comma (`,`) within the parentheses.
+We can create a vector of any numbers we want using `c()`, which is a **function**. You can think of `c()` as short for "combine".
+
+You use `c()` by putting numbers seperated by a comma (`,`) within the parentheses.
 
 ```{r}
 x <- c(2, 8.5, 1, 9)
@@ -131,11 +133,347 @@ x
 --
 ***
 
-We can also create a vector of numbers `seq()`. `seq()` is a function that creates a sequence of numbers. To learn how any R function works, you can access the help documentation by typing `?+function_name`. 
+We can also create a vector of numbers using `seq()`. 
 
-Let's take a look at how `seq()` works... `r icon::fa("cloud")` 
+`seq()` is a function that creates a sequence of numbers. To learn how any R function works, you can access the help documentation by typing <br> `?+function_name`. 
 
 --
 ***
 
-+ What happens if we run `seq()` with no arguments?
+Let's take a look at how `seq()` works... `r icon::fa("cloud")` 
+
+```{r eval=FALSE}
+?seq
+```
+
+
+---
+# Vectors 
+
+What happens if we run `seq()` with no arguments?
+
+```{r}
+seq()
+```
+
+--
+***
+
+.panelset[
+
+.panel[.panel-name[Question]
+Why did this happen?
+]
+
+.panel[.panel-name[Answer]
+
+The `seq()` function has **arguments** with default values. 
+
+The first two arguments are `from = ` and `to = `, which specify the starting and end values of the sequence. By *default* `from = 1` and `to = 1`. 
+
+This means that typing `seq()` is equivalent to typing `seq(from = 1, to = 1)`, which generates a sequence with just one value: `1`.
+
+We will talk more about how functions work in the next slide deck!
+]
+]
+
+--
+***
+
+To make a sequence from 1 to 5 with this function, we have to set the `from =` and `to =` to those boundaries:
+
+```{r}
+seq(from = 1, to = 5)
+```
+
+---
+# Vectors
+
+We can also set one or more of the other arguments. The `by = ` argument allows us to change the increment of the sequence. Let's say we wanted every other number between 1 and 5. We can do this by setting `by = 2`
+
+```{r}
+seq(from = 1, to = 5, by = 2)
+```
+
+---
+# Vectors
+
+Vectors are just 1-dimensional sequences **of a single type of data**.
+
+Note that vectors can also include strings or character values.
+
+```{r}
+letters <- c("a", "b", "c", "d")
+letters
+```
+
+--
+***
+
+The general rule R uses is to set the vector to be the most "permissive" type necessary. 
+
+For example, what happens if we put the vectors `x` and `letters` together?
+
+```{r}
+mixed_vec <- c(x, letters)
+mixed_vec
+```
+
+---
+# Vectors
+
+```{r}
+mixed_vec
+```
+
+Notice the quotes? R turned all of our numbers into strings, since strings are more "permissive" than numbers. 
+
+--
+
+
+```{r}
+typeof(mixed_vec)
+```
+
+--
+***
+
+This is called **coercion**. R coerces a vector into whichever type will accomodate all of the values. We can coerce `mixed_vec` to be numeric using `as.numeric()`
+
+```{r}
+as.numeric(mixed_vec)
+```
+
+---
+class: inverse
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 1, seconds = 30)
+```
+
+Create an object called `x` that is assigned the number 8. 
+
+Create an object called `y` that is a sequence of numbers from 2 to 16, by 2. 
+
+Add `x` and `y`. What happens? 
+
+---
+class: solution
+
+# Solution
+
+```{r}
+x <- 8
+
+y <- seq(from = 2, to = 16, by = 2)
+
+x + y
+```
+
+---
+class: inverse
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 1, seconds = 30)
+```
+
+
+1. Create an object called `a` that is just the letter "a" and an object `x` that is assigned the number 8. Add `a` to `x`. What happens?
+
+2. Create a vector called `b` that is just the number 8 in quotes. Add `b` to `x` (from above). What happens?
+
+3. Find some way to add `b` to `x`. (*Hint*: Don't forget about coercion.)
+
+---
+class: solution 
+# Solution
+
+
+```{r error=TRUE}
+# 1.
+a <- "a"
+x <- 8
+
+a + x 
+```
+
+```{r error=TRUE}
+# 2.
+b <- "8"
+
+b + x
+```
+
+```{r}
+# 3.
+as.numeric(b) + x
+```
+
+---
+# Indexing vectors
+
+### Indexing by position
+
+The last thing to mention about vectors is that they are all indexed numerically in R, starting with 1. Since vectors are only 1 dimension, we index them with a single number in `[]`. 
+
+--
+***
+
+Let's take a new vector `z` as an example:
+
+```{r}
+z <- 6:10
+```
+
+--
+***
+
+.panelset[
+.panel[.panel-name[Example 1]
+
+Let's get just the first element of `z`:
+
+```{r}
+z[1]
+```
+
+]
+
+.panel[.panel-name[Example 2]
+
+Get the first and third element by passing those indexes as a vector using `c()`.
+
+```{r}
+z[c(1, 3)]
+```
+]
+]
+
+---
+# Indexing Vectors
+
+### Negative indexing
+
+We could also say which elements *not* to give us using the minus sign (`-`). 
+
+--
+***
+
+```{r}
+z <- 6:10
+```
+
+.panelset[
+.panel[.panel-name[Example 1]
+
+Let's get rid of the first element:
+
+```{r}
+z[-1]
+```
+]
+
+.panel[.panel-name[Example 2]
+
+Get rid of the first and third elements
+
+```{r}
+z[-c(1, 3)]
+```
+]
+]
+
+---
+# Indexing Vectors 
+
+### Indexing by name
+
+Finally, if the elements in the vector have names, we can refer to them by name instead of their numerical index. You can see the names of a vector using `names()`.
+
+```{r}
+names(z)
+```
+
+--
+***
+
+Looks like the elements in `z` have no names.  We can change that by assigning them names using a vector of character strings.
+
+```{r}
+names(z) <- c("first", "second", "third", "fourth", "fifth")
+z
+```
+
+---
+# Indexing Vectors 
+
+### Indexing by name
+
+```{r}
+z
+```
+
+--
+***
+
+Now we can use the names of the elements in `z` for subsetting. 
+
+```{r}
+z["first"]
+```
+
+---
+# Indexing Vectors 
+
+### Manipulating elements in vectors
+
+One thing that you can do with indexing is change elements within the vector. 
+
+--
+***
+
+.panelset[
+.panel[.panel-name[Example 1]
+
+We could change the first element of `z` to missing, or `NA`.
+
+```{r}
+z[1] <- NA
+z
+```
+]
+
+.panel[.panel-name[Example 2]
+
+You can also use indexing to transform a single element in a vector. Let's raise the second element of `z` to the power of 2.
+
+```{r}
+z[2] <- z[2]^2
+z
+```
+]
+
+.panel[.panel-name[Example 3]
+
+Or use it to add to a vector. Let's add the number 11 as the sixth element of the vector `z`.
+
+```{r}
+z[6] <- 11
+z
+```
+]
+
+.panel[.panel-name[Example 4]
+And you can add a name for that element by referencing the index for the `names` attribute of `z`.
+
+```{r}
+names(z)[6] <- "sixth"
+z
+```
+]
+]
+
+---
+
