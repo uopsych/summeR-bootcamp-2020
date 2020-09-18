@@ -41,9 +41,24 @@ links:
   url: https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf
 ---
 
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/05-slides.html",
   ratio = "16:9"
 )
 ```
+
+<br>
+
+### Further Reading
+
+:::book
+
+1. R for Data Science [Ch 8: Project-oriented workflow](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
+
+2. Why Jenny Bryan will come [set your computer on fire `r emo::ji("fire")`](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) if you use `setwd()`.
+:::
