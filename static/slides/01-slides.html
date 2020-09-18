@@ -13,6 +13,7 @@
     <script src="libs/shareon/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
     <link href="libs/countdown/countdown.css" rel="stylesheet" />
     <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -65,15 +66,11 @@ background-size: 900px
 
 # RStudio IDE
 
----
-class: inverse
-# RStudio IDE
+--
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-.center[
-### ~Launch RStudio Cloud~
-# [&lt;svg style="height:150px;" viewBox="0 0 581 512"&gt;&lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/&gt;&lt;/svg&gt;](https://bit.ly/3caJRCN)
-]
+***
+Let's take a look at the IDE in RStudio Cloud... <i class="fas  fa-cloud "></i>
 
 ---
 # Basic computing
@@ -139,8 +136,9 @@ class: inverse
 ```
 
 --
+***
 
-+ Thankfully, R follows the order of operations (PEMDAS).
+Thankfully, R follows the order of operations (PEMDAS).
 
 
 ```r
@@ -153,16 +151,14 @@ class: inverse
 
 --
 
-+ These values aren’t stored anywhere though...
+These values aren’t stored anywhere though...
 
 ---
 # Storing values in objects
 
-+ To keep a value in memory, we need to assign it to an **object**. 
+To keep a value in memory, we need to assign it to an **object**. 
 
---
-
-+ To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
+To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
 
 .center[
 
@@ -172,8 +168,9 @@ class: inverse
 ]
 
 --
+***
 
-+ Let's use `&lt;-` to create an object called x, that is assigned the number 8. 
+Let's use `&lt;-` to create an object called x, that is assigned the number 8. 
 
 
 ```r
@@ -181,8 +178,9 @@ x &lt;- 8
 ```
 
 --
+***
 
-+ Now we can call `x` by name; if we do this, it will print the value.
+Now we can call `x` by name; if we do this, it will print the value.
 
 
 ```r
@@ -202,18 +200,19 @@ x
 
 + *Style is important!* You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
 
-  + I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
-
 --
 
-+ Hint: You will type `&lt;-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`-` can be used to insert a `&lt;-`.
++ I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
+
+--
+***
+
+Hint: You will type `&lt;-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`-` can be used to insert a `&lt;-`.
 
 ---
 # Storing values in objects
 
-+ Now, let's take a look at the variable `y`
-
---
+Now, let's take a look at the variable `y`
 
 
 ```r
@@ -222,14 +221,18 @@ y
 ```
 
 ```
-## [1] 2
+## Error in eval(expr, envir, enclos): object 'y' not found
 ```
+
+--
+***
 
 + Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
 
-+ You'll see a LOT of error messages when using R. This is *100% normal*. Don't worry when this happens. 
++ You'll see a LOT of error messages when using R. Don't worry when this happens. This is *100% normal*, and it happens to *everyone all the time*. 
 
 --
+***
 
 
 ```r
@@ -258,6 +261,7 @@ x * y
 ```
 
 --
+***
 
 But remember, if we want to save the output of that calculation, we need to assign them to an object! 
 
@@ -279,6 +283,8 @@ z
 
 You may be wondering how to name variables in R. Well, there are just a few rules:
 
+--
+
 1. object names must start with a letter
 
 2. can contain alphanumeric characters, "_", and "."
@@ -288,7 +294,7 @@ You may be wondering how to name variables in R. Well, there are just a few rule
 ---
 # Naming variables 
 
-This is another element of *style*. Using a consistent style when naming variables makes your life easier. 
+This is another element of *style*. Using a consistent style when naming variables makes your life easier. There are several to choose from.
 
 .pull-left[
 
@@ -307,7 +313,7 @@ I'll be using snake_case from here on, but you can change to another option if y
 class: inverse
 # Your turn 1
 
-<div class="countdown" id="timer_5f63d1e5" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f641ada" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -346,19 +352,24 @@ var_2
 ---
 # R Markdown
 
-&lt;img src="images/rmarkdown_wizards.png" width="5303" /&gt;
+R Markdown is a magical thing. It allows you to combine R code and plain text together in the same document. 
 
+R Markdown documents end with the extension `.Rmd`. Let's take a look at how they work... <i class="fas  fa-cloud "></i>
+
+.center[
+&lt;img src="images/rmarkdown_wizards.png" width="85%" /&gt;
+]
 ---
 class: inverse
 # Your turn 2
 
-<div class="countdown" id="timer_5f63d121" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f64194d" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 1. Open the file `rmarkdown_example.Rmd` and click `knit`. Take a look at the resulting file called `rmarkdown_example.html`. 
 
-2. Go back to `rmarkdown_example.Rmd`. Change the title to `"[Your name]'s example R Markdown Document"`
+2. Go back to `rmarkdown_example.Rmd`. Change the title to `"[Your name]'s example R Markdown Document"` and re-knit.
 
 ---
 class: solution
@@ -381,7 +392,7 @@ class: solution
 class: inverse, center, middle
 # Q &amp; A
 
-<div class="countdown" id="timer_5f63d063" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6419e1" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -395,7 +406,7 @@ class: inverse, center, middle
 class: inverse, center, middle
 # Break! 
 
-<div class="countdown" id="timer_5f63d332" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f641a4b" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
     </textarea>

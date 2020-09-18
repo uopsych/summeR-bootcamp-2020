@@ -73,15 +73,11 @@ background-size: 900px
 
 # RStudio IDE
 
----
-class: inverse
-# RStudio IDE
+--
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<br><br><br>
-.center[
-### ~Launch RStudio Cloud~
-# [`r fontawesome::fa("r-project", height = "150px")`](https://bit.ly/3caJRCN)
-]
+***
+Let's take a look at the IDE in RStudio Cloud... `r icon::fa("cloud")`
 
 ---
 # Basic computing
@@ -113,8 +109,9 @@ class: inverse
 ```
 
 --
+***
 
-+ Thankfully, R follows the order of operations (PEMDAS).
+Thankfully, R follows the order of operations (PEMDAS).
 
 ```{r}
 2^3 + 4 * 1/2
@@ -122,16 +119,14 @@ class: inverse
 
 --
 
-+ These values aren’t stored anywhere though...
+These values aren’t stored anywhere though...
 
 ---
 # Storing values in objects
 
-+ To keep a value in memory, we need to assign it to an **object**. 
+To keep a value in memory, we need to assign it to an **object**. 
 
---
-
-+ To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
+To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
 
 .center[
 ```{r eval=FALSE}
@@ -140,16 +135,18 @@ class: inverse
 ]
 
 --
+***
 
-+ Let's use `<-` to create an object called x, that is assigned the number 8. 
+Let's use `<-` to create an object called x, that is assigned the number 8. 
 
 ```{r}
 x <- 8 
 ```
 
 --
+***
 
-+ Now we can call `x` by name; if we do this, it will print the value.
+Now we can call `x` by name; if we do this, it will print the value.
 
 ```{r}
 x
@@ -164,29 +161,34 @@ x
 
 + *Style is important!* You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
 
-  + I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
-
 --
 
-+ Hint: You will type `<-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`-` can be used to insert a `<-`.
++ I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
+
+--
+***
+
+Hint: You will type `<-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`-` can be used to insert a `<-`.
 
 ---
 # Storing values in objects
 
-+ Now, let's take a look at the variable `y`
-
---
+Now, let's take a look at the variable `y`
 
 ```{r error=TRUE}
 # call y
 y 
 ```
 
+--
+***
+
 + Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
 
-+ You'll see a LOT of error messages when using R. This is *100% normal*. Don't worry when this happens. 
++ You'll see a LOT of error messages when using R. Don't worry when this happens. This is *100% normal*, and it happens to *everyone all the time*. 
 
 --
+***
 
 ```{r}
 # Need to assign something to y!
@@ -205,6 +207,7 @@ x * y
 ```
 
 --
+***
 
 But remember, if we want to save the output of that calculation, we need to assign them to an object! 
 
@@ -221,6 +224,8 @@ z
 
 You may be wondering how to name variables in R. Well, there are just a few rules:
 
+--
+
 1. object names must start with a letter
 
 2. can contain alphanumeric characters, "_", and "."
@@ -230,7 +235,7 @@ You may be wondering how to name variables in R. Well, there are just a few rule
 ---
 # Naming variables 
 
-This is another element of *style*. Using a consistent style when naming variables makes your life easier. 
+This is another element of *style*. Using a consistent style when naming variables makes your life easier. There are several to choose from.
 
 .pull-left[
 
@@ -277,10 +282,15 @@ var_2
 ---
 # R Markdown
 
-```{r echo=FALSE}
+R Markdown is a magical thing. It allows you to combine R code and plain text together in the same document. 
+
+R Markdown documents end with the extension `.Rmd`. Let's take a look at how they work... `r icon::fa("cloud")`
+
+.center[
+```{r echo=FALSE, out.width="85%"}
 knitr::include_graphics("images/rmarkdown_wizards.png")
 ```
-
+]
 ---
 class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
@@ -291,7 +301,7 @@ countdown(minutes = 2)
 
 1. Open the file `rmarkdown_example.Rmd` and click `knit`. Take a look at the resulting file called `rmarkdown_example.html`. 
 
-2. Go back to `rmarkdown_example.Rmd`. Change the title to `"[Your name]'s example R Markdown Document"`
+2. Go back to `rmarkdown_example.Rmd`. Change the title to `"[Your name]'s example R Markdown Document"` and re-knit.
 
 ---
 class: solution

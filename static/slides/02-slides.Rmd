@@ -102,6 +102,7 @@ class: inverse, center, middle
 + Often, we’re not working with individual values, but with multiple related values or a **vector** of values.
 
 --
+***
 
 + We can create a vector of ordered numbers using `starting_number`:`ending_number`. For example, we could make `x` a vector with the numbers between 1 and 5.
 
@@ -111,11 +112,30 @@ x
 ```
 
 --
-+ Let's look at the Environment pane in RStudio. Since `x` is a vector, it tells us what type of vector it is and it's length in addition to its contents (which can be abbreviated if the object is larger).
+***
++ Let's look at the Environment pane in RStudio... `r icon::fa("cloud")` 
 
-```{r echo=FALSE}
-knitr::include_graphics("images/vector_example.png")
-```
+Since `x` is a vector, it tells us what type of vector it is and it's length in addition to its contents (which can be abbreviated if the object is larger).
 
 ---
+# Vectors
 
+We can create a vector of any numbers we want using the `c()` function. You do this by putting numbers seperated by a comma (`,`) within the parentheses.
+
+```{r}
+x <- c(2, 8.5, 1, 9)
+x
+```
+
+
+--
+***
+
+We can also create a vector of numbers `seq()`. `seq()` is a function that creates a sequence of numbers. To learn how any R function works, you can access the help documentation by typing `?+function_name`. 
+
+Let's take a look at how `seq()` works... `r icon::fa("cloud")` 
+
+--
+***
+
++ What happens if we run `seq()` with no arguments?
