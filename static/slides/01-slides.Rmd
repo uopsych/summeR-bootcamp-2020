@@ -260,24 +260,33 @@ class: inverse
 countdown(minutes = 1, seconds = 30)
 ```
 
-Open the file `your_turn.Rmd` inside the project `01_rstudio_basics`.
+Open the file `your_turn.Rmd` inside the project `01_rstudio_basics` on RStudio Cloud.
 
-Inside the code chunk provided under `"Your Turn 1"`, create a variable called `var_1` that is equal to 4. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
+1. Inside the code chunk provided under `"Your Turn 1"`, create a variable called `var_1` that is equal to 4.
+
+2. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
 
 
 ---
 class: solution
 # Solution
 
+.panelset[
+.panel[.panel-name[Q1]
 ```{r}
+# Q1.
 var_1 <- 4
-var_2 <- var_1^6
 ```
+]
 
+.panel[.panel-name[Q2]
 ```{r}
-var_1
+# Q2.
+var_2 <- var_1^6
 var_2
 ```
+]
+]
 
 ---
 # R Markdown
@@ -318,23 +327,24 @@ class: solution
 
 # Solution
 
-```{r echo=FALSE, out.width="50%"}
+.panelset[
+.panel[.panel-name[Q1]
+```{r echo=FALSE, out.width="40%"}
 knitr::include_graphics("images/rmarkdown_example.png")
 ```
+]
 
----
-class: solution
+.panel[.panel-name[Q2]
 
-# Solution
-
-
-```{r echo=FALSE, out.width="50%"}
+```{r echo=FALSE, out.width="40%"}
 knitr::include_graphics("images/rmarkdown_example_title_yaml.png")
 ```
 
-```{r echo=FALSE, out.width="50%"}
+```{r echo=FALSE, out.width="40%"}
 knitr::include_graphics("images/rmarkdown_example_title.png")
 ```
+]
+]
 
 ---
 class: inverse, center, middle
