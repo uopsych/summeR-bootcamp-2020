@@ -58,6 +58,9 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
-<br>
-1. [How to read an R help page](https://socviz.co/appendix.html#a-little-more-about-r)
+1. [How to read an R help page](https://socviz.co/appendix.html#a-little-more-about-r) by Kieran Healy
+
+2. ["Object of type 'closure' is not subsettable"](https://rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/), keynote talk by Jenny Bryan at rstudio::conf(2020)
+
+3. Deep dive into [debugging](https://rstudio-conf-2020.github.io/what-they-forgot/materials/debugging.pdf) by Jim Hester
 :::
