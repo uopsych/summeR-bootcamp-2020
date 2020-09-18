@@ -34,7 +34,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://bit.ly/3caJRCN
+  url: https://rstudio.cloud/spaces/89074/project/1645258
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
@@ -63,5 +63,8 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
-<br>
+
+1. R for Data Science [Ch 20: Vectors](https://r4ds.had.co.nz/vectors.html)
+
+2. [This tutorial](https://jennybc.github.io/purrr-tutorial/bk00_vectors-and-lists.html) from the legendary Jenny Bryan
 :::
