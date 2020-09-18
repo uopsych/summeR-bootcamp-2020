@@ -21,9 +21,11 @@ links:
   url: /slides/00-slides.html
 ---
 
-Welcome, everyone! I hope you find this R bootcamp useful for your learning. There's a LOT going on in the world right now, and if learning R (let alone learning *anything* new) feels next to impossible at the moment -- I totally get it. But rest assured that there is an abundance of resources at your disposal and a community (of humans and monsters) that are here to support your learning! 
+Welcome, everyone! I hope you find this R bootcamp useful for your learning. There's a LOT going on in the world right now, and if learning R (let alone learning *anything* new) feels next to impossible at the moment -- I totally get it. But rest assured that there is an abundance of resources at your disposal and a community here to support you! 
 
 ***
+
+## Slides 
 
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
