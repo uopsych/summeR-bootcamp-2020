@@ -508,7 +508,9 @@ class: inverse
 countdown(minutes = 2)
 ```
 
-1. Create a vector called `named` that includes the numbers 1 to 5. Name the values "a", "b", "c", "d", and "e" (in order). Print the first element using numerical indexing and the last element using name indexing.
+1. Create a vector called `named` that includes the numbers 1 to 5. Name the values "a", "b", "c", "d", and "e" (in order). 
+
+1. Print the first element using numerical indexing and the last element using name indexing.
 
 1. Change the  third element of `named` to the value 21 and then show your results.
 
@@ -523,23 +525,40 @@ class: solution
 # Q1. 
 named <- c(a = 1, b = 2, c = 3, d = 4, e = 5)
 named 
+```
 
+```{r}
+# this works too
+named <- c(1, 2, 3, 4, 5)
+names(named) <- c("a", "b", "c", "d", "e")
+named
+```
+
+]
+
+.panel[.panel-name[Q2]
+
+```{r}
 named[1]
 
 named["e"]
 ```
+
 ]
 
-.panel[.panel-name[Q2]
+
+.panel[.panel-name[Q3]
 ```{r}
 # Q2.
 named[3] <- named[3]*7
-
-# this works too...
-# named[3] <- 21
-
 named
 ```
+
+```{r eval=FALSE}
+# this works too
+named[3] <- 21
+```
+
 ]
 ]
 
