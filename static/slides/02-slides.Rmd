@@ -1038,3 +1038,47 @@ df_2[1,] + df_2[2, ]
 ```
 ]
 ]
+
+---
+# Recap
+
+We just learned about different types of data (numeric, character, logical, factor, etc.) and some different ways they can be structured -- including vectors, lists and data frames. 
+
+--
+***
+
+Here's a quick table that summarizes data structures. 
+
+<br>
+
+| | Homogenous data | Heterogenous data |
+|------------|----------------| ------------------|
+| 1-Dimensional | Atomic Vector | List |
+| 2-Dimensional | Matrix `*` | Data frame |
+
+<br>
+
+***
+`*` We didn't talk about matrices today, but if you take PSY611, you will learn more about them.
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Functions & Debugging
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```
