@@ -353,7 +353,7 @@ as.numeric(mixed_vec)
 class: inverse
 # Your turn 1
 
-<div class="countdown" id="timer_5f646061" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f650a76" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -368,27 +368,43 @@ class: solution
 
 # Solution
 
+.panelset[
+.panel[.panel-name[Q1]
+
 
 ```r
+# Q1.
 x &lt;- 8
+```
+]
 
+.panel[.panel-name[Q2]
+
+```r
+# Q2.
 y &lt;- seq(from = 2, to = 16, by = 2)
+```
+]
 
+.panel[.panel-name[Q3]
+
+```r
+# Q3
 x + y
 ```
 
 ```
 ## [1] 10 12 14 16 18 20 22 24
 ```
-
+]
+]
 ---
 class: inverse
 # Your turn 2
 
-<div class="countdown" id="timer_5f645e6e" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6509ea" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
-
 
 ### 1. Create an object called `a` that is just the letter "a" and an object `x` that is assigned the number 8. Add `a` to `x`. What happens?
 
@@ -400,10 +416,12 @@ class: inverse
 class: solution 
 # Solution
 
+.panelset[
+.panel[.panel-name[Q1]
 
 
 ```r
-# 1.
+# Q1.
 a &lt;- "a"
 x &lt;- 8
 
@@ -413,10 +431,12 @@ a + x
 ```
 ## Error in a + x: non-numeric argument to binary operator
 ```
+]
 
+.panel[.panel-name[Q2]
 
 ```r
-# 2.
+# Q2.
 b &lt;- "8"
 
 b + x
@@ -425,16 +445,20 @@ b + x
 ```
 ## Error in b + x: non-numeric argument to binary operator
 ```
+]
 
+.panel[.panel-name[Q3]
 
 ```r
-# 3.
+# Q3.
 as.numeric(b) + x
 ```
 
 ```
 ## [1] 16
 ```
+]
+]
 
 ---
 # Indexing vectors
@@ -595,9 +619,7 @@ z["first"]
 ```
 
 ---
-# Indexing Vectors 
-
-### Manipulating vector elements
+# Modifying Vectors 
 
 One thing that you can do with indexing is change elements within the vector. 
 
@@ -673,7 +695,7 @@ z
 class: inverse
 # Your turn 3
 
-<div class="countdown" id="timer_5f6460ae" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f650817" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -686,9 +708,12 @@ class: inverse
 class: solution
 # Solution
 
+.panelset[
+.panel[.panel-name[Q1]
+
 
 ```r
-# 1. 
+# Q1. 
 named &lt;- c(a = 1, b = 2, c = 3, d = 4, e = 5)
 named 
 ```
@@ -715,14 +740,12 @@ named["e"]
 ## e 
 ## 5
 ```
+]
 
----
-class: solution
-# Solution
-
+.panel[.panel-name[Q2]
 
 ```r
-# 2.
+# Q2.
 named[3] &lt;- named[3]*7
 
 # this works too...
@@ -735,6 +758,8 @@ named
 ##  a  b  c  d  e 
 ##  1  2 21  4  5
 ```
+]
+]
 
 ---
 # Lists
@@ -982,21 +1007,21 @@ brendan$year
 ]
 
 ---
-# Indexing Lists
+# Modifying Lists
 
-### Manipulating list elements
+Just like vectors, we can change or add elements to our list using indexing. 
 
-Just like vectors, we can change or add elements to our list using indexing. Let's save the dog years transformation of the `year` element as `dog_years`
+--
+***
 
-.pull-left[
+Let's save the dog years transformation of the `year` element as `dog_years`
+
+
 
 ```r
 brendan$dog_years &lt;- brendan$year*7
 brendan
 ```
-]
-
-.pull-right[
 
 ```
 ## $year
@@ -1014,13 +1039,13 @@ brendan
 ## $dog_years
 ## [1] 28
 ```
-]
+
 
 ---
 class: inverse
 # Your turn 4
 
-<div class="countdown" id="timer_5f646215" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6508f4" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1032,14 +1057,15 @@ class: inverse
 class: solution
 # Solution
 
+.panelset[
+.panel[.panel-name[Q1]
 
 ```r
-# something that looks like this...
-
+# Q1. (Answers will vary)
 brendan &lt;- list(year = 6L,
              name = "Brendan Cullen",
              enrollment = TRUE, 
-             fave_data = c("strings", "numbers")) # note c() to create a vector
+             fave_data = c("strings", "numbers"))
 brendan
 ```
 
@@ -1056,6 +1082,30 @@ brendan
 ## $fave_data
 ## [1] "strings" "numbers"
 ```
+]
+
+.panel[.panel-name[Q2]
+
+
+```r
+# Q2. 
+brendan$name
+```
+
+```
+## [1] "Brendan Cullen"
+```
+
+```r
+brendan[["name"]]
+```
+
+```
+## [1] "Brendan Cullen"
+```
+
+]
+]
 
 ---
 # Indexing Lists
@@ -1071,7 +1121,7 @@ We can use indexing on the `fave_data` vector stored within the `brendan` list b
 .panelset[
 .panel[.panel-name[Example 1]
 
-We could do that with numbers...
+We could do that with numerical indexing...
 
 
 ```r
@@ -1102,7 +1152,7 @@ brendan[["fave_data"]][2]
 
 
 ```r
-brendan[["fave_data"]][2]
+brendan$fave_data[2]
 ```
 
 ```
@@ -1113,6 +1163,341 @@ brendan[["fave_data"]][2]
 
 ---
 # Data frames
+
+A `data.frame` is a common way of representing rectanuglar data -- collections of values that are each associated with a variable (column) and an observation (row). In other words, it has 2 dimensions.
+
+--
+
+A `data.frame` is technically a special kind of list -- it can contain different kinds of data in different vectors (columns), but each vector must be the same length. 
+
+--
+***
+
+We can create a `data.frame` very similarly to how we made a list, but replacing `list()` with `data.frame()`.
+
+
+```r
+df_1 &lt;- data.frame(c1 = c(1, 3),
+                   c2 = c(2, 4), 
+                   c3 = c("a", "b"))
+
+df_1
+```
+
+```
+##   c1 c2 c3
+## 1  1  2  a
+## 2  3  4  b
+```
+
+---
+# Indexing data frames
+
+
+```
+##   c1 c2 c3
+## 1  1  2  a
+## 2  3  4  b
+```
+
+***
+
+Indexing data frames is similar to how we index vectors, except we have two dimensions, which we use like so:
+
+.center[`[row, column]`]
+
+--
+***
+
+.panelset[
+.panel[.panel-name[Example 1]
+
+
+Let's get the first row and third column of `df_1` using numerical indexing
+
+
+```r
+df_1[1, 3]
+```
+
+```
+## [1] a
+## Levels: a b
+```
+
+]
+.panel[.panel-name[Example 2]
+
+You can also get an entire row or column by leaving an index blank. Let's get all rows but only column 2:
+
+
+```r
+df_1[, 2]
+```
+
+```
+## [1] 2 4
+```
+
+]
+
+.panel[.panel-name[Example 3]
+
+We can also index by name
+
+
+```r
+df_1[, "c2"]
+```
+
+```
+## [1] 2 4
+```
+]
+]
+
+---
+# Indexing data frames
+
+
+```
+##   c1 c2 c3
+## 1  1  2  a
+## 2  3  4  b
+```
+
+***
+
+As with lists, we can use the `$` in the form `data$column_name` (similar to `list$object`). 
+
+--
+***
+
+.panelset[
+.panel[.panel-name[Example 1]
+
+Let's get the first column
+
+
+```r
+df_1$c1
+```
+
+```
+## [1] 1 3
+```
+]
+
+.panel[.panel-name[Example 2]
+
+We can also index a column using vector indexing, since a single column is just a 1-dimensional vector. 
+
+Let's get the first value in column 1.
+
+
+```r
+df_1$c1[1]
+```
+
+```
+## [1] 1
+```
+]
+]
+
+---
+# Modifying data frames 
+
+
+
+```
+##   c1 c2 c3
+## 1  1  2  a
+## 2  3  4  b
+```
+
+***
+
+Just like lists and vectors, you can modify a data frame and add new elements or change exising elements by referencing indexes.
+
+--
+***
+
+.panelset[
+.panel[.panel-name[Example 1]
+
+We could create `c4` as the sum of `c1` and `c2`:
+
+
+```r
+df_1$c4 &lt;- df_1$c1 + df_1$c2
+
+df_1
+```
+
+```
+##   c1 c2 c3 c4
+## 1  1  2  a  3
+## 2  3  4  b  7
+```
+]
+
+.panel[.panel-name[Example 2]
+Or we could replace an element using indexing too. Let's replace `c1` with `c1^2`:
+
+
+```r
+df_1$c1 &lt;-  df_1$c1^2
+
+df_1
+```
+
+```
+##   c1 c2 c3 c4
+## 1  1  2  a  3
+## 2  9  4  b  7
+```
+
+]
+]
+
+---
+# Data types &amp; Coercion
+
+
+```
+##   c1 c2 c3 c4
+## 1  1  2  a  3
+## 2  9  4  b  7
+```
+
+***
+
+How can we tell what type of data each column in our `data.frame` stores? 
+
+--
+
+We can use the `str()` function to get the structure of the data.
+
+
+```r
+str(df_1)
+```
+
+```
+## 'data.frame':	2 obs. of  4 variables:
+##  $ c1: num  1 9
+##  $ c2: num  2 4
+##  $ c3: Factor w/ 2 levels "a","b": 1 2
+##  $ c4: num  3 7
+```
+
+---
+# Data types &amp; Coercion
+
+We can also coerce individual columns into other types. 
+
+--
+***
+
+For example, we could convert column `c1` into an integer (from a numeric/double)
+
+
+```r
+df_1$c1 &lt;- as.integer(df_1$c1)
+
+str(df_1)
+```
+
+```
+## 'data.frame':	2 obs. of  4 variables:
+##  $ c1: int  1 9
+##  $ c2: num  2 4
+##  $ c3: Factor w/ 2 levels "a","b": 1 2
+##  $ c4: num  3 7
+```
+
+---
+class: inverse
+
+# Your turn 5
+
+<div class="countdown" id="timer_5f6508f9" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+### 1. Make a data frame, called `df_2`, that has 3 columns. After you create it, check the structure.
+
+`c1` = 1, 2, 3 &lt;br&gt;
+`c2` = 2, 4, 6, &lt;br&gt;
+`c3` = "a", "b", "c"
+
+### 2. Add a fourth column, `c4`, which is the first and second columns multiplied together.
+
+### 3. Try to add the first and second rows together. what happens? Why?
+
+---
+class: solution
+
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+
+```r
+# Q1.
+df_2 &lt;- data.frame(c1 = c(1, 2, 3),
+                   c2 = c(2, 4, 6),
+                   c3 = c("a", "b", "c"))
+
+str(df_2)
+```
+
+```
+## 'data.frame':	3 obs. of  3 variables:
+##  $ c1: num  1 2 3
+##  $ c2: num  2 4 6
+##  $ c3: Factor w/ 3 levels "a","b","c": 1 2 3
+```
+]
+
+.panel[.panel-name[Q2]
+
+
+```r
+# Q2.
+df_2$c4 &lt;- df_2$c1 * df_2$c2
+
+df_2
+```
+
+```
+##   c1 c2 c3 c4
+## 1  1  2  a  2
+## 2  2  4  b  8
+## 3  3  6  c 18
+```
+]
+
+.panel[.panel-name[Q3]
+
+
+```r
+# Q3.
+df_2[1,] + df_2[2, ]
+```
+
+```
+## Warning in Ops.factor(left, right): '+' not meaningful for factors
+```
+
+```
+##   c1 c2 c3 c4
+## 1  3  6 NA 10
+```
+]
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
