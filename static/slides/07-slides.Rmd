@@ -1,5 +1,5 @@
 ---
-title: "Data Reshaping with {tidyr}"
+title: "Data Wrangling with {dplyr}"
 author: 
 date: 
 output:
@@ -36,5 +36,5 @@ style_mono_accent(base_color = "#23395b",
 
 class: title-slide, center, middle
 
-# Data Reshaping with {tidyr}
+# Data Wrangling with {dplyr}
 

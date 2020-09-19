@@ -30,7 +30,7 @@ links:
 - icon: film
   icon_pack: fas
   name: Slides
-  url: /slides/07-slides.html
+  url: /slides/08-slides.html
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
@@ -51,7 +51,7 @@ links:
 
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
-  url = "/slides/07-slides.html",
+  url = "/slides/08-slides.html",
   ratio = "16:9"
 )
 ```

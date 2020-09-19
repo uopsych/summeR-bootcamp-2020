@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling with {dplyr}"
+title: "Data visualization with {ggplot2}"
 author: 
 date: 
 output:
@@ -34,7 +34,8 @@ style_mono_accent(base_color = "#23395b",
                 code_inline_color = "#BA8800")
 ```
 
+
 class: title-slide, center, middle
 
-# Data Wrangling with {dplyr}
+# Data visualization with {ggplot2}
 

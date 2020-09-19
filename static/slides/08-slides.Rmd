@@ -1,5 +1,5 @@
 ---
-title: "Data visualization with {ggplot2}"
+title: "Data Reshaping with {tidyr}"
 author: 
 date: 
 output:
@@ -34,8 +34,7 @@ style_mono_accent(base_color = "#23395b",
                 code_inline_color = "#BA8800")
 ```
 
-
 class: title-slide, center, middle
 
-# Data visualization with {ggplot2}
+# Data Reshaping with {tidyr}
 
