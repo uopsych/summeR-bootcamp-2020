@@ -460,14 +460,20 @@ knitr::include_graphics("images/tidyverse_package_load.png")
 
 Conflicts occur when the same name is used for different things. 
 
+--
+
 For example, the `dplyr` package and the `stats` package (preloaded) both have a function called `filter()`. 
+
+--
 
 When we call `filter()`, R will only call one of those functions and it might not be the one we want. 
 
 --
 ***
 
-Which one will R choose? R has an order in which it searches. 
+Which one will R choose? R has an order in which it searches...
+
+--
 
 It starts with the Global Environment, then searches packages in the order that they were loaded, searching more recently loaded packages first.
 
