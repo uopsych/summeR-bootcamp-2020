@@ -503,6 +503,42 @@ class: solution
 ]
 
 ---
+# Debugging
+
+Before we wrap up, let's talk about error messages.
+
+You will run into them constantly, even when using functions you've used many times before -- and especially when using functions/packages that are new to you.
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/error.jpg")
+```
+
+---
+# Debugging
+
+We're not going to go into details of debugging, because that could (and should) be a whole course on its own. 
+
+But there are a few general things to be aware of...
+
+--
+***
+
+.pull-left[
++ Google is your best friend -- it is *very* likely someone else has had your exact same problem/question before
+
++ Some helpful forums are [StackOverflow](https://stackoverflow.com/), [RStudio Community](https://community.rstudio.com/), [CrossValidated](https://stats.stackexchange.com/)
+
++ When asking for help, it's best to provide as much context as possible -- best case scenario is to provide a [reproducible example](https://www.tidyverse.org/help/)
+]
+
+.pull-right[
+
+```{r echo=FALSE}
+knitr::include_graphics("images/debugging.jpg")
+```
+
+]
+---
 class: inverse, center, middle
 # Q & A
 
