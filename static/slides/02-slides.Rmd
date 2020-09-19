@@ -51,8 +51,8 @@ So far, we’ve just been working with integers. R has several other types of da
 
 Type | Definition | Example
 -----|------------|--------
-Integer | whole numbers from -Inf to +Inf | 1, 2, -1, -10928
-Numeric / Double | fractions & decimals from -Inf to +Inf | 1.3, .293764, -.1239217, `Inf`, `-Inf`
+Integer | whole numbers from -Inf to +Inf | 1L, -2L
+Numeric / Double | numbers, fractions & decimals from -Inf to +Inf | 7, 0.2, -5/2, `Inf`, `-Inf`
 Character / String | quoted strings of letters, numbers, and allowed symbols| "1", "one", "o_n_e", "o-n-e", "o.n.e"
 Logical / Boolean | logical constants of True or False | `TRUE`, `FALSE`, `T`, `F`
 factor | ordered, labelled variable | variable for year in college labelled "Freshman", "Sophomore", etc.
@@ -140,7 +140,7 @@ x
 
 We can also create a vector of numbers using `seq()`. 
 
-`seq()` is a function that creates a sequence of numbers. To learn how any R function works, you can access the help documentation by typing <br> `?+function_name`. 
+`seq()` is a function that creates a sequence of numbers. To learn how any R function works, you can access the help documentation by typing <br> `?function_name`. 
 
 ---
 # Vectors
@@ -505,7 +505,7 @@ class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
 
 ```{r echo=FALSE}
-countdown(minutes = 2)
+countdown(minutes = 3)
 ```
 
 1. Create a vector called `named` that includes the numbers 1 to 5. Name the values "a", "b", "c", "d", and "e" (in order). 

@@ -155,7 +155,7 @@ x
 ---
 # Style
 
-+ Technically, both `<-` and `=` both work as assignment operators. But we'll strictly use `<-` from here on out. This brings up a general coding principle of the day...
++ Technically, both `<-` and `=` work as assignment operators. But we'll strictly use `<-` from here on out. This brings up a general coding principle of the day...
 
 --
 
@@ -264,7 +264,7 @@ Open the file `your_turn.Rmd` inside the project `01_rstudio_basics` on RStudio 
 
 1. Create a variable called `var_1` that is equal to 4.
 
-1. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results.
+1. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results (i.e. check what value is assigned to `var_2`).
 
 
 ---
