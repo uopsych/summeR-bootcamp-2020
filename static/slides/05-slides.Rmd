@@ -38,3 +38,104 @@ class: title-slide, center, middle
 
 # Importing Data & Workflows
 
+---
+
+# Importing data
+
+Importing data in R generally has 2 commonly challenging aspects...
+
+--
+
+1. You need to call a function that works with a particular data format (`.csv`, `.txt`, `.sav`, etc.)
+
+--
+
+2. You need to tell R where to look for the data
+
+---
+# Importing data
+
+### Challenge # 1: File types
+
+--
+
+.pull-left[
+
+.center[
+### `readr`
+
+```{r echo=FALSE, out.width="55%"}
+knitr::include_graphics("images/hex/readr.png")
+```
+
+`read_csv()`, `read_tsv()`, `read_delim()`, `read_fwf()`, etc...
+]
+]
+
+--
+
+.pull-right[
+
+.center[
+### `rio`
+
+```{r echo=FALSE, out.width="55%"}
+knitr::include_graphics("images/hex/rio.png")
+```
+
+`import()`
+]
+]
+
+---
+
+# Importing data
+
+### Challenge # 1: File types
+
+
+.pull-left[
+
+.center[
+### `readr`
+
+```{r echo=FALSE, out.width="55%"}
+knitr::include_graphics("images/hex/readr.png")
+```
+
+`read_csv()`, `read_tsv()`, `read_delim()`, `read_fwf()`, etc...
+]
+]
+
+
+.pull-right[
+
+.center[
+### `rio`
+
+```{r echo=FALSE, out.width="55%"}
+knitr::include_graphics("images/hex/rio.png")
+```
+
+`import()`
+
+`r emo::ji("check")`
+]
+]
+
+---
+# Importing data
+
+### `rio::import()`
+
+We just call `import()` and under the hood it calls the right read function given the file's extension (`.csv`, `.txt`, `.sav`, `.xlsx`, etc.)
+
+--
+
+We'll get some practice with this in a few minutes
+
+---
+# Importing data 
+
+### Challenge # 2 : File paths
+

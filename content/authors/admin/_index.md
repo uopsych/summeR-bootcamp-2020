@@ -29,21 +29,26 @@ user_groups:
 Welcome! This website contains all of the details and materials for the bootcamp, along with resources for further learning and practice.
 
 
-#### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
+### **Day 1: Getting started with R**
+
+  <i class="fa fa-calendar"></i> Monday, 9/21, 9 AM - 1 PM PST
 + Basics of R & RStudio
 + Data Types & Structures
 + Functions & Debugging
 
 ***
 
-#### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
+
+### Day 2: Importing and visualizing data
+  <i class="fa fa-calendar"></i> Wednesday, 9/23, 9 AM - 12 PM PST
 + Introduction to the tidyverse
-+ Importing data & Project workflows
++ Importing data & Project-oriented workflows
 + Data visualization with `ggplot2`
 
 ***
 
-#### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
+### Day 3: Data wrangling and tidying
+  <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
 + Data wrangling with `dplyr`
 + Data tidying with `tidyr`
 + Reproducible reporting with R Markdown
