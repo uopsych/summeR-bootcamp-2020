@@ -6,7 +6,6 @@ email: ""
 name: null
 organizations:
 - name: "University of Oregon"
-  url: https://psychology.uoregon.edu/
 role: "Department of Psychology"
 social:
 - icon: r-project
@@ -26,29 +25,11 @@ user_groups:
 
 # UO Psych R Bootcamp 2020
 
-Welcome! This website contains all of the details and materials for the bootcamp, along with resources for further learning and practice.
+<br>
 
+Welcome to the 3rd annual R Bootcamp hosted by the [Department of Psychology](https://psychology.uoregon.edu/) at the University of Oregon. 
 
-### **Day 1: Getting started with R**
+This website contains all of the details and materials for the bootcamp, along with resources for further learning and practice. The materials have been designed such that you should be able to work through the slides and exercises at your own pace if you're not able to attend the bootcamp sessions. Happy learning! 
 
-  <i class="fa fa-calendar"></i> Monday, 9/21, 9 AM - 1 PM PST
-+ Basics of R & RStudio
-+ Data Types & Structures
-+ Functions & Debugging
+If you have questions, please contact Brendan Cullen at [bcullen@uoregon.edu](mailto:bcullen@uoregon.edu).
 
-***
-
-
-### Day 2: Importing and visualizing data
-  <i class="fa fa-calendar"></i> Wednesday, 9/23, 9 AM - 12 PM PST
-+ Introduction to the tidyverse
-+ Importing data & Project-oriented workflows
-+ Data visualization with `ggplot2`
-
-***
-
-### Day 3: Data wrangling and tidying
-  <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
-+ Data wrangling with `dplyr`
-+ Data tidying with `tidyr`
-+ Reproducible reporting with R Markdown
