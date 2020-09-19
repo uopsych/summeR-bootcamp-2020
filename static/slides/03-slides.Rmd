@@ -109,9 +109,13 @@ mean()
 
 We get an error telling us that the argument `"x"` is missing and has no default. 
 
+--
+
 Whenever you see this error, it means you are missing a required argument (i.e., an argument without a default). 
 
-If we look at the help documention, you can see `x` is the data from which to calculate a mean.
+--
+
+If we look at the help documentation, you can see `x` is the data from which to calculate a mean.
 
 ---
 # Functions
@@ -163,7 +167,7 @@ It returns `NA`. NAs are contagious! A single `NA` in a vector will cause many f
 
 --
 
-This sort of makes sense - the mean of `vec_na` in its entirity is unknown, since we don't know what the `NA` value is. That's why you have to remove `NA`'s before running calculations by setting `na.rm = TRUE`
+This sort of makes sense - the mean of `vec_na` in its entirety is unknown, since we don't know what the `NA` value is. That's why you have to remove `NA`'s before running calculations by setting `na.rm = TRUE`
 
 --
 
@@ -286,6 +290,8 @@ sd(vec_na, TRUE)
 # Functions
 
 When using arguments positionally (without their names), **make sure the arguments are in the right order.** 
+
+--
 
 Otherwise you can end up with weird errors or warnings. 
 
