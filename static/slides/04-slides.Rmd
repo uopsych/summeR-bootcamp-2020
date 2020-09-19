@@ -20,20 +20,42 @@ library(tidyverse)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
-```
 
+# your turn counter
+yt_counter <- 0
+```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
-style_mono_light(base_color = "#23395b",
+style_mono_accent(base_color = "#23395b",
                 text_font_google = google_font("Montserrat", "300", "300i"),
                 code_font_google = google_font("Source Code Pro"),
-                link_color = "#5e8c61")
+                link_color = "#BA8800",
+                code_inline_color = "#BA8800")
 ```
 
 class: title-slide, center, middle
 
 # Introduction to the Tidyverse
+
+---
+# Tidyverse
+
+The `tidyverse` is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+--
+***
+
+These packages are designed to support the natural workflow of any data analysis project, as depicted below
+
+
+.center[
+```{r echo=FALSE}
+knitr::include_graphics("images/data_science_workflow.png")
+```
+]
+
+.footnote[Image from [R for Data Science](https://r4ds.had.co.nz/introduction.html)]
 
 ---
 
@@ -59,7 +81,7 @@ knitr::include_graphics("images/tidyverse_packages_purpose.png")
 ---
 background-image: url(images/hex/readr.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
   
@@ -116,7 +138,7 @@ knitr::include_url("https://readr.tidyverse.org/")
 ---
 background-image: url(images/hex/tibble.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -164,7 +186,7 @@ knitr::include_url("https://tibble.tidyverse.org/")
 ---
 background-image: url(images/hex/ggplot2.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -209,7 +231,7 @@ knitr::include_url("https://ggplot2.tidyverse.org/")
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -253,7 +275,7 @@ knitr::include_graphics("images/r4ds-cover.png")
 ]
 
 .right-column[
-## [Ch 11: Data transformation](https://r4ds.had.co.nz/transform.html)
+## [Ch 5: Data transformation](https://r4ds.had.co.nz/transform.html)
 ]
 ]
 
@@ -268,7 +290,7 @@ knitr::include_url("https://dplyr.tidyverse.org/")
 ---
 background-image: url(images/hex/forcats.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -328,7 +350,7 @@ knitr::include_url("https://forcats.tidyverse.org/")
 ---
 background-image: url(images/hex/stringr.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -388,7 +410,7 @@ knitr::include_url("https://stringr.tidyverse.org/")
 ---
 background-image: url(images/hex/tidyr.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -449,7 +471,7 @@ knitr::include_url("https://tidyr.tidyverse.org/")
 ---
 background-image: url(images/hex/purrr.png)
 background-position: 90% 5%
-background-size: 15%
+background-size: 12%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -496,3 +518,50 @@ knitr::include_url("https://purrr.tidyverse.org/")
 ```
 ]
 ]
+
+---
+background-image: url(images/hex/magrittr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# Pipe operator
+
+Pipes are a way to write code in a way that is easier to read and understand. They allow you to string a series of functions together into a pipeline.
+
+--
+***
+
+### .center[`%>%`]
+
+Strictly speaking, a pipe passes an object on the left-hand side as the first argument of whatever function is on the right-hand side.
+
+
+
+You can enter a pipe with the shortcut `CTRL+Shift+M` for PC or `CMD+Shift+M` for Mac.
+
+--
+***
+
+Strictly speaking, a pipe passes an object on the left-hand side as the first argument (or . argument) of whatever function is on the right-hand side.
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Importing data & Workflows
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```
