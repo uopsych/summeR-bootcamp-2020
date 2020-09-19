@@ -37,7 +37,7 @@ links:
   url: https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Tidyverse+Cheat+Sheet.pdf
 ---
 
-So far we have covered the basics of using R and RStudio 
+So far we have been using functions in base R. Now we're going to take a first look at the tidyverse -- a widely used framework for doing the full spectrum of data analysis, from importing data to cleaning, visualizing, and modelling. 
 
 ***
 
