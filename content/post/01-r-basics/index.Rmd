@@ -23,7 +23,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://bit.ly/3caJRCN
+  url: https://rstudio.cloud/spaces/89074/project/1624095
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
@@ -34,7 +34,7 @@ links:
   url: https://rstudio.cloud/learn/primers/1.2
 ---
 
-Learning R can be feel very intimidating, and getting started can be the hardest part. Don't fret! If you're completely new to R or programming in general, it is normal to feel frustrated and/or hopeless. But learning a few basics can go a long way and empower you to take the next step! 
+Learning R can feel very intimidating, and getting started is often the hardest part. Don't fret! If you're completely new to R or programming in general, it is normal to feel frustrated and/or hopeless at first. But learning a few basics can go a long way and empower you to take the next step. And even if you've been using R for a while, I always find that I learn something new and useful when going back over the fundamentals. 
 
 ***
 

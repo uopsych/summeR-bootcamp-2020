@@ -34,13 +34,14 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://bit.ly/3caJRCN
+  url: https://rstudio.cloud/spaces/89074/project/1646344
 - icon: laptop-code
   icon_pack: fas
   name: Primer
   url: https://rstudio.cloud/learn/primers/6.1
 ---
 
+Functions are the "verbs" of R -- they allow you to actually do interesting things with your data. We will cover the basics of how to use functions in R, how to get access to different functions by downloading packages and some general principles for what to do when you run into problems.
 
 ***
 
@@ -58,6 +59,9 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
-<br>
-1. [How to read an R help page](https://socviz.co/appendix.html#a-little-more-about-r)
+1. [How to read an R help page](https://socviz.co/appendix.html#a-little-more-about-r) by Kieran Healy
+
+2. ["Object of type 'closure' is not subsettable"](https://rstudio.com/resources/rstudioconf-2020/object-of-type-closure-is-not-subsettable/), keynote talk by Jenny Bryan at rstudio::conf(2020)
+
+3. Deep dive into [debugging](https://rstudio-conf-2020.github.io/what-they-forgot/materials/debugging.pdf) by Jim Hester
 :::

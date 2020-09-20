@@ -6,7 +6,6 @@ email: ""
 name: null
 organizations:
 - name: "University of Oregon"
-  url: https://psychology.uoregon.edu/
 role: "Department of Psychology"
 social:
 - icon: r-project
@@ -26,24 +25,13 @@ user_groups:
 
 # UO Psych R Bootcamp 2020
 
-Welcome! This website contains all of the details and materials for the bootcamp, along with resources for further learning and practice.
+<br>
+
+Welcome to the 3rd annual R Bootcamp hosted by the [Department of Psychology](https://psychology.uoregon.edu/) at the University of Oregon. If you have any questions or concerns, please contact [Brendan Cullen](https://bcullen.rbind.io/) at [bcullen@uoregon.edu](mailto:bcullen@uoregon.edu).
+
+This website contains all of the details and materials for the bootcamp, along with resources for further learning and practice. The materials shared here are free and open source and may be shared and adpated under the [Creative Commons License](https://creativecommons.org/licenses/by/4.0/). 
+
+The materials have been designed such that you should be able to work through the slides and exercises at your own pace if you're not able to attend the bootcamp sessions. Happy learning! 
 
 
-#### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
-+ Basics of R & RStudio
-+ Data Types & Structures
-+ Functions & Debugging
 
-***
-
-#### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
-+ Introduction to the tidyverse
-+ Importing data & Project workflows
-+ Data visualization with `ggplot2`
-
-***
-
-#### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
-+ Data wrangling with `dplyr`
-+ Data tidying with `tidyr`
-+ Reproducible reporting with R Markdown

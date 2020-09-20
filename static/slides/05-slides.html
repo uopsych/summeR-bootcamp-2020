@@ -4,6 +4,10 @@
     <title>Importing Data &amp; Workflows</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
     <script src="libs/shareon/shareon.min.js"></script>
@@ -20,11 +24,106 @@
 
 
 
-
-
 class: title-slide, center, middle
 
 # Importing Data &amp; Workflows
+
+---
+
+# Importing data
+
+Importing data in R generally has 2 commonly challenging aspects...
+
+--
+
+1. You need to call a function that works with a particular data format (`.csv`, `.txt`, `.sav`, etc.)
+
+--
+
+2. You need to tell R where to look for the data
+
+---
+# Importing data
+
+### Challenge # 1: File types
+
+--
+
+.pull-left[
+
+.center[
+### `readr`
+
+&lt;img src="images/hex/readr.png" width="55%" /&gt;
+
+`read_csv()`, `read_tsv()`, `read_delim()`, `read_fwf()`, etc...
+]
+]
+
+--
+
+.pull-right[
+
+.center[
+### `rio`
+
+&lt;img src="images/hex/rio.png" width="55%" /&gt;
+
+`import()`
+]
+]
+
+---
+
+# Importing data
+
+### Challenge # 1: File types
+
+
+.pull-left[
+
+.center[
+### `readr`
+
+&lt;img src="images/hex/readr.png" width="55%" /&gt;
+
+`read_csv()`, `read_tsv()`, `read_delim()`, `read_fwf()`, etc...
+]
+]
+
+
+.pull-right[
+
+.center[
+### `rio`
+
+&lt;img src="images/hex/rio.png" width="55%" /&gt;
+
+`import()`
+
+✅
+]
+]
+
+---
+# Importing data
+
+### `rio::import()`
+
+We just call `import()` and under the hood it calls the right read function given the file's extension (`.csv`, `.txt`, `.sav`, `.xlsx`, etc.)
+
+--
+
+We'll get some practice with this in a few minutes
+
+---
+# Project-oriented workflows
+
+### Challenge # 2 : File paths
+
+When R looks for a file, it has a starting point. This is called the **working directory**. 
+
+The working directory that you're currently in is displayed in the console window and the files tab. You can also get it with the `getwd()` function
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

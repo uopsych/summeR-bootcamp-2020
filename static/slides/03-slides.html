@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Functions</title>
+    <title>Functions &amp; Debugging</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
     <script src="libs/shareon/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
   </head>
@@ -20,11 +27,597 @@
 
 
 
-
-
 class: title-slide, center, middle
 
+# Functions &amp; Debugging
+
+---
 # Functions
+
+Data (and objects more generally) are one of the building blocks of R. The other is **functions**. 
+
+--
+
+We've already used a handful of functions, including `seq()`, arithmetic functions (`+`, `*`, etc.), `c()`, `list()`, `data.frame()`, `str()`, etc.
+
+--
+***
+
+Functions take some form of an input, perform some operation, and then return some object(s) as output.
+
+--
+
+Functions are made up of **arguments**.
+
+---
+# Functions
+
+Let's take another look at the help documentation for `seq()`... <i class="fas  fa-cloud "></i>
+ 
+
+```r
+?seq
+```
+
+--
+***
+
+You can see it has the arguments `from`, `to`, `by`, `length.out`, and `along.with`.
+
+--
+
+You might also notice that each of the arguments have a value after the `=` in the documentation. These values are the *defaults*; they are what the arguments will be set to if you don't specify them. 
+
+--
+***
+
+In fact, since all of the arguments have defaults, we don't have to specify any to run `seq()` as we saw earlier.
+
+
+```r
+seq()
+```
+
+```
+## [1] 1
+```
+
+---
+# Functions
+
+Let's take a look at a new function, `mean()`... <i class="fas  fa-cloud "></i>
+
+---
+# Functions
+
+&lt;img src="images/help_page_annotated.png" width="65%" /&gt;
+
+.footnote[Image from [Kieran Healy](https://socviz.co/appendix.html#a-little-more-about-r)]
+---
+# Functions
+
+What happens if we run `mean()` without any arguments?
+
+
+```r
+mean()
+```
+
+```
+## Error in mean.default(): argument "x" is missing, with no default
+```
+
+--
+***
+
+We get an error telling us that the argument `"x"` is missing and has no default. 
+
+--
+
+Whenever you see this error, it means you are missing a required argument (i.e., an argument without a default). 
+
+--
+
+If we look at the help documentation, you can see `x` is the data from which to calculate a mean.
+
+---
+# Functions
+
+Let's create some data to calculate the mean of. 
+
+
+```r
+vec &lt;- c(1, 2, 3, 4, 5, 6, 2, 4)
+```
+
+--
+
+Now let's take the mean of `vec`.
+
+
+```r
+mean(x = vec)
+```
+
+```
+## [1] 3.375
+```
+
+--
+***
+
+Note that `mean()` has two more optional arguments listed: 
+
++ `trim`, which returns a trimmed mean
+
++ `na.rm`, which takes a logical value indicating if it should remove missing values or not before it calculates the mean (`FALSE` by default). 
+
+---
+# Functions
+
+What happens if we don't remove `NA`s before calculating the mean? Let's check it out...
+
+--
+
+
+```r
+vec_na &lt;- c(1, 2, 3, 4, 5, 6, NA, 2, 4)
+```
+
+--
+
+
+```r
+mean(vec_na)
+```
+
+```
+## [1] NA
+```
+
+--
+***
+
+It returns `NA`. NAs are contagious! A single `NA` in a vector will cause many functions to return `NA` (unless they remove them by default). 
+
+--
+
+This sort of makes sense - the mean of `vec_na` in its entirety is unknown, since we don't know what the `NA` value is. That's why you have to remove `NA`'s before running calculations by setting `na.rm = TRUE`
+
+--
+
+
+```r
+mean(vec_na, na.rm = TRUE)
+```
+
+```
+## [1] 3.375
+```
+
+---
+class: inverse
+# Your turn 1
+
+<div class="countdown" id="timer_5f65b7b1" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+</div>
+
+1. Look up the help documentation for the function `sd()` (type directly in the RStudio console)
+
+1. Calculate the standard deviation of `vec_na`. Be sure to remove missing values first. 
+
+
+```r
+vec_na &lt;- c(1, 2, 3, 4, 5, 6, NA, 2, 4)
+```
+
+---
+class: solution
+
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+
+```r
+?sd
+```
+]
+.panel[.panel-name[Q1]
+
+
+```r
+sd(vec_na, na.rm = TRUE)
+```
+
+```
+## [1] 1.685018
+```
+
+]
+]
+
+---
+# Functions
+
+You can get the length of many objects with `length()`
+
+
+```r
+length(vec_na)
+```
+
+```
+## [1] 9
+```
+
+--
+***
+
+`nrow()` and `ncol()` can be used to get the number of rows or columns in a matrix or data frame. Let's look at the data frame `df` below
+
+
+```
+##   a b c d
+## 1 1 3 5 7
+## 2 2 4 6 8
+```
+
+.panelset[
+.panel[.panel-name[nrow]
+
+
+```r
+nrow(df)
+```
+
+```
+## [1] 2
+```
+]
+
+.panel[.panel-name[ncol]
+
+
+```r
+ncol(df)
+```
+
+```
+## [1] 4
+```
+]
+
+.panel[.panel-name[length]
+
+The length of a data frame is the same as the number of columns. 
+
+
+```r
+length(df)
+```
+
+```
+## [1] 4
+```
+
+]
+]
+
+---
+# Functions
+
+Take another look at the help documentation for `sd()` 👀. 
+
+Notice that there are two arguments and they are in order, `x` followed by `na.rm = FALSE`. 
+
+--
+***
+
+You can set arguments explicitly by *name*
+
+
+```r
+sd(x = vec_na, na.rm = TRUE)
+```
+
+```
+## [1] 1.685018
+```
+
+--
+***
+
+You can also set them *positionally* and drop the argument names
+
+
+```r
+sd(vec_na, TRUE)
+```
+
+```
+## [1] 1.685018
+```
+
+---
+# Functions
+
+When using arguments positionally (without their names), **make sure the arguments are in the right order.** 
+
+--
+
+Otherwise you can end up with weird errors or warnings. 
+
+
+```r
+sd(TRUE, vec_na)
+```
+
+```
+## Warning in if (na.rm) "na.or.complete" else "everything": the condition has
+## length &gt; 1 and only the first element will be used
+```
+
+```
+## [1] NA
+```
+
+--
+***
+
+However, if you explicitly name the arguments, you can actually put them in a different order. This isn't recommended unless there is a good reason though...
+
+
+```r
+sd(na.rm = TRUE, x = vec_na)
+```
+
+```
+## [1] 1.685018
+```
+
+---
+# Packages
+
+So far, we've been working with functions that are already installed and loaded when we open R.
+
+--
+
+However, many of the functions we want access to to use are not part of the basic R install. They come in **packages** that other R users create and share.
+
+--
+
+Most packages can be accessed from [**CRAN**](https://cran.r-project.org/) - the Comprehensive R Archive Network. 
+
+---
+# Packages
+
+The most common way to get a package is to download it from CRAN using `install.packages("package_name")` -- notice the quotes.
+
+--
+***
+
+For example, one package we're going to use tomorrow is `rio`, which has really easy functions for importing and exporting data. 
+
+If we wanted to install the `rio` package, we would use 
+
+
+```r
+install.packages("rio")
+```
+
+--
+***
+
+A couple notes here. 
+
+1) You will sometimes see package names written inside `{}`, e.g. `{rio}`. 
+
+--
+
+2) To make things easier in our online format, I have pre-installed all the packages we will be needing on RStudio Cloud. 
+
+--
+
+However, in order to access the functions from these packages, we still need to *load* them...
+
+---
+# Packages 
+
+Installing a package puts a copy of it into our personal library that R has access to. In general, we only need to install a package once.
+
+--
+***
+
+However, whenever we want to to use a package, we need to load the package in our working session in RStudio. 
+
+We load packages with the `library()` function, we do this once *per session*.
+
+--
+***
+
+Loading a package basically makes the contents of that package searchable by R. 
+
+In other words, after loading a package, R is able to find the functions included in that packages. 
+
+You can see what functions are available in your workspace by running the `search()` function
+
+---
+class: inverse
+# Your turn 2
+
+<div class="countdown" id="timer_5f65b7f4" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+1. In your RStudio console, look up the help documentation for the `import()` function. What do you see?
+
+1. Run `search()` in the console. Is the `rio` package included in this list?
+ 
+1. Again in the console, load the `rio` package using the `library()` function. 
+
+1. Now look again at the help documentation for `import()`. What do you see this time?
+
+1. Run `search()` again. What is different this time?
+
+---
+class: solution
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+&lt;img src="images/package_yt_1.png" width="1955" /&gt;
+]
+
+.panel[.panel-name[Q2]
+
+&lt;img src="images/package_yt_2.png" width="1771" /&gt;
+]
+
+.panel[.panel-name[Q3]
+
+&lt;img src="images/package_yt_3.png" width="60%" /&gt;
+]
+
+.panel[.panel-name[Q4]
+
+&lt;img src="images/package_yt_4_1.png" width="60%" /&gt;
+
+
+&lt;img src="images/package_yt_4_2.png" width="60%" /&gt;
+
+]
+
+.panel[.panel-name[Q5]
+
+&lt;img src="images/package_yt_5.png" width="1885" /&gt;
+]
+]
+
+---
+# Packages
+
+Another package we're going to use a lot going forward is `tidyverse`. 
+
+`tidyverse` is actually a "meta-package", meaning it contains many individual packages inside of it that are all bundled together. 
+
+--
+***
+
+When we load `tidyverse` we get quite a bit of info. 
+
+&lt;br&gt;
+&lt;img src="images/tidyverse_package_load.png" width="2509" /&gt;
+
+---
+# Packages
+
+Conflicts occur when the same name is used for different things. 
+
+--
+
+For example, the `dplyr` package and the `stats` package (preloaded) both have a function called `filter()`. 
+
+--
+
+When we call `filter()`, R will only call one of those functions and it might not be the one we want. 
+
+--
+***
+
+Which one will R choose? R has an order in which it searches...
+
+--
+
+It starts with the Global Environment, then searches packages in the order that they were loaded, searching more recently loaded packages first.
+
+--
+***
+
+You can tell R explicitly that you want a function from a particular package using the notation `package::function_name`. When in doubt, it's better to use the double colon operator to be specific about which function you want.
+
+---
+class: inverse
+# Your turn 3
+
+<div class="countdown" id="timer_5f65b766" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+1. Look up for the help documentation for `filter()` from the `stats` package.
+
+1. Now look up the help documentation for `filter()` from the `dplyr` package.
+
+---
+class: solution
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+
+```r
+?stats::filter
+```
+]
+
+.panel[.panel-name[Q2]
+
+
+```r
+?dplyr::filter
+```
+]
+]
+
+---
+# Debugging
+
+Before we wrap up, let's talk about error messages.
+
+You will run into them constantly, even when using functions you've used many times before -- and especially when using functions/packages that are new to you.
+
+&lt;img src="images/error.jpg" width="80%" /&gt;
+
+---
+# Debugging
+
+We're not going to go into details of debugging, because that could (and should) be a whole course on its own. 
+
+But there are a few general things to be aware of...
+
+--
+***
+
+.pull-left[
++ Google is your best friend -- it is *very* likely someone else has had your exact same problem/question before
+
++ Some helpful forums are [StackOverflow](https://stackoverflow.com/), [RStudio Community](https://community.rstudio.com/), [CrossValidated](https://stats.stackexchange.com/)
+
++ When asking for help, it's best to provide as much context as possible -- best case scenario is to provide a [reproducible example](https://www.tidyverse.org/help/)
+]
+
+.pull-right[
+
+&lt;img src="images/debugging.jpg" width="2731" /&gt;
+
+]
+---
+class: inverse, center, middle
+# Q &amp; A
+
+<div class="countdown" id="timer_5f65b62b" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Introduction to the Tidyverse
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

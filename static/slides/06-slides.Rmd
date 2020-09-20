@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling with {dplyr}"
+title: "Data visualization with {ggplot2}"
 author: 
 date: 
 output:
@@ -17,21 +17,25 @@ output:
 options(htmltools.dir.version = FALSE)
 library(countdown)
 library(tidyverse)
-```
 
-```{r xaringanExtra-share-again, echo=FALSE}
-xaringanExtra::use_share_again()
+xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+
+# your turn counter
+yt_counter <- 0
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
-style_mono_light(base_color = "#23395b",
-                text_font_google   = google_font("Montserrat", "300", "300i"),
-                code_font_google   = google_font("Source Code Pro")
-                )
+style_mono_accent(base_color = "#23395b",
+                text_font_google = google_font("Montserrat", "300", "300i"),
+                code_font_google = google_font("Source Code Pro"),
+                link_color = "#BA8800",
+                code_inline_color = "#BA8800")
 ```
+
 
 class: title-slide, center, middle
 
-# Data Wrangling with {dplyr}
+# Data visualization with {ggplot2}
 
