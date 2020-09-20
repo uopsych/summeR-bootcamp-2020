@@ -135,7 +135,10 @@ We just call `import()` and under the hood it calls the right read function give
 We'll get some practice with this in a few minutes
 
 ---
-# Importing data 
+# Project-oriented workflows
 
 ### Challenge # 2 : File paths
 
+When R looks for a file, it has a starting point. This is called the **working directory**. 
+
+The working directory that you're currently in is displayed in the console window and the files tab. You can also get it with the `getwd()` function
