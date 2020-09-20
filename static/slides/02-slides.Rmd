@@ -1079,6 +1079,16 @@ Here's a quick table that summarizes data structures.
 ***
 `*` We didn't talk about matrices today, but if you take PSY611, you will learn more about them.
 
+
+---
+# Concept map
+
+```{r echo=FALSE}
+knitr::include_graphics("images/data-types.png")
+```
+
+.foonote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
 ---
 class: inverse, center, middle
 # Q & A
