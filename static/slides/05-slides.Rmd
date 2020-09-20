@@ -150,9 +150,107 @@ The working directory that you're currently in is displayed in the console windo
 --
 ***
 
-If you ever get lost, you can print your working directory with the `getwd()` function
+If you ever get lost, you can print your working directory with `getwd()`
+
+--
+
+If you are working in a `.Rmd` document, R by default will set whatever folder on your computer where that `.Rmd` file lives as your working directory 
+
+--
+
+```{r}
+getwd()
+```
+
+For example, I created these slides in a `.Rmd` document that lives in this folder on my computer `r emo::ji("point_up")`
+
+---
+class: split-three
+# Project-oriented workflows
+
+### RStudio Projects
+
+The best way to simplify issues with working directories is to use **RStudio Projects**. 
+
+--
+***
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### Step 1
+```{r echo = FALSE, out.width="90%"}
+knitr::include_graphics("images/create_project1.png")
+```
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### Step 2
+```{r echo = FALSE, out.width="90%"}
+knitr::include_graphics("images/create_project2.png")
+```
+
+
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### Step 3
+```{r echo = FALSE, out.width="90%"}
+knitr::include_graphics("images/create_project3.png")
+```
+
+]]]
 
 ---
 # Project-oriented workflows
+
+### RStudio Projects
+
+When you create a Project in RStudio, it is associated with a folder somewhere on your computer. 
+
+It will automatically create a `.Rproj` file in that folder, which will keep track of the "top level" of your project. 
+
+--
+***
+
+For example, we've been using RStudio Projects for "Your Turn" exercises
+
+```{r echo=FALSE}
+knitr::include_graphics("images/example_rproj.png")
+```
+
+---
+# Project-oriented workflows
+
+### `here::here()`
+
+--
+
+.pull-left[
+In combination with RStudio Projects, use the `here` package
+
+`here::here()` will build a file path to the top level of your project directory. 
+
+This makes it easy to tell R where files live relative to the top-level folder of your project
+
+]
+
+.pull-right[
+```{r echo=FALSE}
+knitr::include_graphics("images/here.png")
+```
+]
+
+---
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 2, seconds = 30)
+```
+
 
 
