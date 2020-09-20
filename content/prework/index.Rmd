@@ -28,7 +28,11 @@ image:
 projects: []
 ---
 
-Hello! Welcome to the 3rd Annual UO Psych R Bootcamp. As we are forced to run the bootcamp online this year due to COVID-19, there are a few things we'd like you to do before we get started to make things run as smoothly as possible. If possible, please try to complete this checklist *before* the first session.
+Hello! Welcome to the 3rd Annual UO Psych R Bootcamp. As we are forced to run the bootcamp online this year due to COVID-19, there are a few things we'd like you to do before we get started to make things run as smoothly as possible. 
+
+:::alert
+If possible, please try to complete this checklist *before* the first session on Monday 9/21. Thank you!
+:::
 
 1) Make sure you have a [Zoom account](https://service.uoregon.edu/TDClient/2030/Portal/KB/ArticleDet?ID=101392) set up through University of Oregon. We will use the same Zoom link for each day of the bootcamp, and you will receive the link via email and slack.
 
