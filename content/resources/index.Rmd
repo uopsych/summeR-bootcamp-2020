@@ -95,9 +95,9 @@ Below is a curated list of resources I've generally found to be particularly use
 
 :::uo
 
-1. 5-course [Data Science Specialization](https://github.com/uo-datasci-specialization) offered by UO College of Education, led by [Daniel Anderson](https://education.uoregon.edu/people/faculty/daniela). Cannot recommend highly enough! `r emo::ji("star")` `r emo::ji("star")` `r emo::ji("star")` `r emo::ji("star")` `r emo::ji("star")`
+1. 5-course [Data Science Specialization](https://education.uoregon.edu/data-science-specialization-educational-leadership) offered by UO College of Education, led by [Daniel Anderson](https://education.uoregon.edu/people/faculty/daniela). See course websites [here](https://github.com/uo-datasci-specialization). Cannot recommend highly enough! `r emo::ji("star")` `r emo::ji("star")` `r emo::ji("star")` `r emo::ji("star")` `r emo::ji("star")`
 
-2. UO Psych Data Analysis Sequence (PSY611, PSY612, PSY613), led by [Sara Weston](https://psychology.uoregon.edu/profile/sweston2/) and [Elliot Berkman](https://psychology.uoregon.edu/profile/berkman/). See example course websites [here](https://github.com/uopsych) -- you will learn a TON.
+2. UO Psych Data Analysis Sequence (PSY611, PSY612, PSY613), led by [Sara Weston](https://psychology.uoregon.edu/profile/sweston2/) and [Elliot Berkman](https://psychology.uoregon.edu/profile/berkman/). See course websites [here](https://github.com/uopsych) -- you will learn a TON.
 
 3. Free R workshops offered by [Data Services](https://library.uoregon.edu/data-services), a branch of UO Libraries. Includes a ["Master the Tidyverse"](https://researchguides.uoregon.edu/library_workshops/tidyverse) series.
 
