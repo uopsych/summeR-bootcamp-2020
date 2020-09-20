@@ -1,6 +1,6 @@
 /* -----------div tips------------- */
 
-  div.puzzle, div.fyi, div.demo, div.note, div.book, div.github, div.profile, div.bookmark, div.link, div.code, div.alert, div.download, div.people, div.uo{
+  div.puzzle, div.fyi, div.demo, div.note, div.book, div.github, div.profile, div.bookmark, div.link, div.code, div.alert, div.download, div.people, div.uo, div.clock{
     padding: 1em;
     margin: 1em 0;
     padding-left: 100px;
@@ -70,3 +70,6 @@ div.uo {
   background-image: url("../note_box_icons/uo_logo.png");
 }
 
+div.clock {
+  background-image: url("../note_box_icons/clock.png");
+}
