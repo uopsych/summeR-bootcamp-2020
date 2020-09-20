@@ -51,7 +51,7 @@ Below is a curated list of resources I've generally found to be particularly use
 
 ## Websites -- add to your bookmarks! 
 
-:::bookmark
+:::link
 1. RStudio Education's [learning resources](https://education.rstudio.com/learn/) and [blog](https://education.rstudio.com/blog/) -- a veritable treasure trove!
 
 2. [RStudio cheatsheets](https://rstudio.com/resources/cheatsheets/) -- worth printing ones you commonly use if you are able to
