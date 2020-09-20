@@ -46,7 +46,7 @@ class: split-three
 
 # Hello `r emo::ji("wave")`
 
-Welcome to the 3rd annual UO Psych R Bootcamp!
+###  Welcome to the 3rd annual UO Psych R Bootcamp!
 
 --
 
@@ -198,7 +198,7 @@ knitr::include_graphics("images/r_logo.png")
 ```
 ]
 <br><br>
-R is a programming language designed for statistics and data science
+**R** is a programming language designed for statistics and data science
 ]
 
 
@@ -211,7 +211,7 @@ knitr::include_graphics("images/rstudio_logo.png")
 ```
 ]
 
-RStudio is an integrated development environment (IDE) that provides an interface to R.
+**RStudio** is an integrated development environment (IDE) that provides an interface to R.
 
 RStudio also refers to the [company](https://rstudio.com/about/) that develops this software.
 ]

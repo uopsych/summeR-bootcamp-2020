@@ -139,6 +139,20 @@ We'll get some practice with this in a few minutes
 
 ### Challenge # 2 : File paths
 
+--
+
 When R looks for a file, it has a starting point. This is called the **working directory**. 
 
-The working directory that you're currently in is displayed in the console window and the files tab. You can also get it with the `getwd()` function
+--
+
+The working directory that you're currently in is displayed in the console window and the files tab. Let's take a look in RStudio... `r icon::fa("cloud")` 
+
+--
+***
+
+If you ever get lost, you can print your working directory with the `getwd()` function
+
+---
+# Project-oriented workflows
+
+
