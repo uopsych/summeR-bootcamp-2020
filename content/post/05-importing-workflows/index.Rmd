@@ -34,7 +34,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://bit.ly/3caJRCN
+  url: https://rstudio.cloud/spaces/89074/project/1649812
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
@@ -61,4 +61,6 @@ xaringanExtra::embed_xaringan(
 1. R for Data Science [Ch 8: Project-oriented workflow](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects)
 
 2. Why Jenny Bryan will come [set your computer on fire `r emo::ji("fire")`](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) if you use `setwd()`.
+
+3. [How to use the `here` package](http://jenrichmond.rbind.io/post/how-to-use-the-here-package/) by Jenny Richmond
 :::
