@@ -1,6 +1,6 @@
 /* -----------div tips------------- */
 
-  div.puzzle, div.fyi, div.demo, div.note, div.book, div.github, div.profile, div.bookmark, div.link, div.code, div.alert, div.download, div.people{
+  div.puzzle, div.fyi, div.demo, div.note, div.book, div.github, div.profile, div.bookmark, div.link, div.code, div.alert, div.download, div.people, div.uo{
     padding: 1em;
     margin: 1em 0;
     padding-left: 100px;
@@ -65,3 +65,8 @@ div.download {
 div.people {
   background-image: url("../note_box_icons/people.png");
 }
+
+div.uo {
+  background-image: url("../note_box_icons/uo_logo.png");
+}
+

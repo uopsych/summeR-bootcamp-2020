@@ -34,10 +34,15 @@
   weight = 60
   
 [[main]]
+  name = "Resources"
+  url = "resources"
+  weight = 70
+  
+[[main]]
   pre = "<i class=\"fab fa-github fa-lg\"></i>"
   name = ""
   url = "https://github.com/uopsych/summeR-bootcamp-2020"
-  weight = 70
+  weight = 80
   
 
 
