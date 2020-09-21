@@ -71,7 +71,11 @@ You can see it has the arguments `from`, `to`, `by`, `length.out`, and `along.wi
 
 --
 
-You might also notice that each of the arguments have a value after the `=` in the documentation. These values are the *defaults*; they are what the arguments will be set to if you don't specify them. 
+You might also notice that each of the arguments have a value after the `=` in the documentation. 
+
+--
+
+These values are the **defaults**; they are what the arguments will be set to if you don't specify them. 
 
 --
 ***
@@ -180,7 +184,7 @@ class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
 
 ```{r echo=FALSE}
-countdown(minutes = 1, seconds = 30)
+countdown(minutes = 2)
 ```
 
 1. Look up the help documentation for the function `sd()` (type directly in the RStudio console)
@@ -381,7 +385,7 @@ class: inverse
 countdown(minutes = 3)
 ```
 
-1. In your RStudio console, look up the help documentation for the `import()` function. What do you see?
+1. In your RStudio console, look up the help documentation for`import()` by typing `?import`. What do you see?
 
 1. Run `search()` in the console. Is the `rio` package included in this list?
  
@@ -519,11 +523,15 @@ class: solution
 
 Before we wrap up, let's talk about error messages.
 
+--
+
 You will run into them constantly, even when using functions you've used many times before -- and especially when using functions/packages that are new to you.
 
 ```{r echo=FALSE, out.width="80%"}
 knitr::include_graphics("images/error.jpg")
 ```
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
 
 ---
 # Debugging
@@ -548,8 +556,10 @@ But there are a few general things to be aware of...
 ```{r echo=FALSE}
 knitr::include_graphics("images/debugging.jpg")
 ```
-
 ]
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
 ---
 class: inverse, center, middle
 # Q & A

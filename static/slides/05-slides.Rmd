@@ -139,6 +139,356 @@ We'll get some practice with this in a few minutes
 
 ### Challenge # 2 : File paths
 
+--
+
 When R looks for a file, it has a starting point. This is called the **working directory**. 
 
-The working directory that you're currently in is displayed in the console window and the files tab. You can also get it with the `getwd()` function
+--
+
+The working directory that you're currently in is displayed in the console window and the files tab. Let's take a look in RStudio... `r icon::fa("cloud")` 
+
+--
+***
+
+If you ever get lost, you can print your working directory with `getwd()`
+
+--
+
+If you are working in a `.Rmd` document, R by default will set whatever folder on your computer where that `.Rmd` file lives as your working directory 
+
+--
+
+```{r}
+getwd()
+```
+
+For example, I created these slides in a `.Rmd` document that lives in this folder on my computer `r emo::ji("point_up")`
+
+---
+class: split-three
+# Project-oriented workflows
+
+### RStudio Projects
+
+The best way to simplify issues with working directories is to use **RStudio Projects**. 
+
+--
+***
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### Step 1
+```{r echo = FALSE, out.width="90%"}
+knitr::include_graphics("images/create_project1.png")
+```
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### Step 2
+```{r echo = FALSE, out.width="90%"}
+knitr::include_graphics("images/create_project2.png")
+```
+
+
+]]]
+
+.column[.content[.center[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### Step 3
+```{r echo = FALSE, out.width="90%"}
+knitr::include_graphics("images/create_project3.png")
+```
+
+]]]
+
+---
+# Project-oriented workflows
+
+### RStudio Projects
+
+When you create a Project in RStudio, it is associated with a folder somewhere on your computer. 
+
+It will automatically create a `.Rproj` file in that folder, which will keep track of the "top level" of your project. 
+
+--
+***
+
+For example, we've been using RStudio Projects for "Your Turn" exercises
+
+```{r echo=FALSE}
+knitr::include_graphics("images/example_rproj.png")
+```
+
+---
+# Project-oriented workflows
+
+### `here::here()`
+
+--
+
+.pull-left[
+In combination with RStudio Projects, use the `here` package
+
+`here::here()` will build a file path to the top level of your project directory. 
+
+This makes it easy to tell R where files live relative to the top-level folder of your project
+
+]
+
+.pull-right[
+```{r echo=FALSE}
+knitr::include_graphics("images/here.png")
+```
+]
+
+---
+class: inverse 
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 3, seconds = 30)
+```
+
+
+#### 1. Load the `rio` and `here` packages.
+
+#### 2.  Run the following code to import the data called `pragmatic_scales.csv`). Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
+
+```{r eval=FALSE}
+ps_data <- import("pragmatic_scales.csv")
+```
+
+#### 3. Fix the error in the code above to import the data. *Hint*: use the `here()` function    
+
+#### 4. Remember that `rio` is flexible with file types -- `rio::import()` will call the right function under the hood to read in the file based on the file extension. Use `rio` to import `pragmatic_scales_data.sav` (an SPSS file type) and save it to a new object named `ps_data_2`.
+
+---
+class: solution
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+```{r message=FALSE, warning=FALSE}
+# Q1.
+library(rio)
+library(here)
+```
+]
+
+.panel[.panel-name[Q2]
+
+```{r error=TRUE}
+# Q2. 
+ps_data <- import("pragmatic_scales.csv")
+```
+
+***
+
+The file **pragmatic_scales.csv** is saved in the **data** folder, so we need to tell R to look in that folder.
+]
+
+.panel[.panel-name[Q3]
+
+```{r eval=FALSE}
+# Q3.
+ps_data <- import(here("data/pragmatic_scales.csv"))
+```
+]
+
+.panel[.panel-name[Q4]
+```{r eval=FALSE}
+# Q4.
+ps_data_2 <- import(here("data/pragmatic_scales_data.sav"))
+```
+]
+]
+
+---
+# Exporting data
+
+You can also use `rio` to export your data using `export()`, saving it in any of the formats that it works with. 
+
+--
+
+Here are the arguments you will need to use for `export()`
+
+```{r eval=FALSE}
+export(x, file)
+```
+
+`x` is the `data.frame` object in your RStudio Environment you want to export 
+
+`file` is the path/filename for the resulting file 
+
+--
+***
+
+For example, let's say I want to export `ps_data` as an `.xlsx` file and put it into the `/data` subdirectory.
+
+```{r eval=FALSE}
+export(ps_data, here::here("data/ps_data.xlsx"))
+```
+
+---
+class: inverse 
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 3)
+```
+
+1. Look through the Files pane and find the file `another_dataset.csv`. Make note of what subdirectory it is saved in. Import the data and save to an object called `another_df`.
+
+1. Now export the data you just imported and save it into the `data/` directory. Make sure the name of the resulting file is `another_dataset`, and export it as a `.xlsx` file.
+
+1. One of your colleagues insists you send them a `.sav` file so that they can run the analyses in SPSS. Make another copy of `another_dataset` in the `data/` subdirectory that is in the `.sav` format. 
+
+1. Finally, let's read one of these datasets to make sure everything worked as expected. Import `another_dataset.sav` , which you just created, and import it, saving it to a new object named `another_df_2`.
+
+---
+class: solution
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+```{r eval=FALSE}
+# Q1.
+another_df <- import(here("data/more_data/another_dataset.csv"))
+```
+
+]
+
+.panel[.panel-name[Q2]
+
+```{r eval=FALSE}
+# Q2.
+export(another_df, here("data/another_dataset.xlsx"))
+```
+]
+
+.panel[.panel-name[Q3]
+
+
+```{r eval=FALSE}
+# Q3.
+export(another_df, here("data/another_dataset.sav"))
+```
+
+]
+
+.panel[.panel-name[Q4]
+
+
+```{r eval=FALSE}
+# Q4.
+another_df_2 <- import(here("data/another_dataset.sav"))
+```
+]
+]
+
+---
+# Viewing data
+
+Now that your data is loaded in R, you'll want to take a look at it. There are a few different ways to do that, which each offer different information.
+
+--
+***
+
+### `View()`
+
+```{r echo=FALSE, message=FALSE}
+ps_data <- rio::import(here::here("static/slides/data/pragmatic_scales_data.csv"))
+```
+
+
+One way is to click on the `View` button in the environment pane... `r icon::fa("cloud")`
+
+--
+
+You should see `ps_data` in the environment pane with a little data table icon at the far right. Click on that icon. 
+
+You'll notice that this ran `View(ps_data)` in the console. We could have instead just typed this directly ourselves (notice the capital `V`)
+
+---
+# Viewing data 
+
+### `head()` and `tail()`
+
+--
+
+.panelset[
+.panel[.panel-name[`head()`]
+
+You can also see just the first few rows of a dataframe with `head()`, which is especially helpful for large data sets
+
+```{r}
+head(ps_data)
+```
+]
+
+.panel[.panel-name[`tail()`]
+
+`tail()` is the complement to `head()`, displaying just the final rows from a dataframe
+
+```{r}
+tail(ps_data)
+```
+]
+]
+
+---
+# Viewing data
+
+### `str()` and `glimpse()`
+
+.panelset[
+.panel[.panel-name[`str()`]
+
+We saw `str()` when we first introduced data frames. It's worth mentioning it again because it can be so useful when you import data to see how your variables were read in (i.e. their types)
+
+```{r}
+str(ps_data)
+```
+
+]
+
+
+.panel[.panel-name[`glimpse()`]
+
+`glimpse()` is very similar to `str()` but is a tidyverse function, and it shows you a little more raw data 
+
+```{r}
+glimpse(ps_data)
+```
+
+]
+]
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Data visualization with `ggplot2`
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```
+

@@ -150,21 +150,21 @@ Thankfully, R follows the order of operations (PEMDAS).
 ```
 
 --
+***
 
-These values aren’t stored anywhere though...
+These values haven't been stored anywhere though...
 
 ---
 # Storing values in objects
 
 To keep a value in memory, we need to assign it to an **object**. 
 
+--
+
 To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
 
 .center[
-
-```r
-&lt;-
-```
+### `&lt;-`
 ]
 
 --
@@ -180,7 +180,7 @@ x &lt;- 8
 --
 ***
 
-Now we can call `x` by name; if we do this, it will print the value.
+Now we can call `x` by name, and it will print the value.
 
 
 ```r
@@ -194,15 +194,23 @@ x
 ---
 # Style
 
-+ Technically, both `&lt;-` and `=` work as assignment operators. But we'll strictly use `&lt;-` from here on out. This brings up a general coding principle of the day...
+Technically, both `&lt;-` and `=` work as assignment operators. But we'll strictly use `&lt;-` from here on out. 
+
+--
+***
+
+This brings up a general coding principle of the day...
 
 --
 
-+ *Style is important!* You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
+
+**Style is important!**
+
+You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
 
 --
 
-+ I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
+I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). We'll talk more about the tidyverse tomorrow
 
 --
 ***
@@ -212,7 +220,9 @@ Hint: You will type `&lt;-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`
 ---
 # Storing values in objects
 
-Now, let's take a look at the variable `y`
+Now, let's take a look at the variable `y`...
+
+--
 
 
 ```r
@@ -227,9 +237,11 @@ y
 --
 ***
 
-+ Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
+Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
 
-+ You'll see a LOT of error messages when using R. Don't worry when this happens. This is *100% normal*, and it happens to *everyone all the time*. 
+--
+
+You'll see a LOT of error messages when using R. Don't worry when this happens. This is *100% normal*, and it happens to *everyone all the time*. 
 
 --
 ***
@@ -249,7 +261,12 @@ y
 ---
 # Storing values in objects
 
-Now, we can use these variables in calculations
+Now, we can use these variables in calculations 
+
+--
+
+Remember, `x &lt;- 8` and `y &lt;- 2`
+
 
 ```r
 # multiply them
@@ -263,14 +280,14 @@ x * y
 --
 ***
 
-But remember, if we want to save the output of that calculation, we need to assign them to an object! 
+But remember, if we want to save the output of that calculation, we need to assign it to an object! 
 
 
 ```r
 # define the product as z
 z &lt;- x * y
 
-# view z
+# print z
 z
 ```
 
@@ -281,7 +298,7 @@ z
 ---
 # Naming variables 
 
-You may be wondering how to name variables in R. Well, there are just a few rules:
+You may be wondering how to name variables in R. There are just a few rules...
 
 --
 
@@ -291,12 +308,19 @@ You may be wondering how to name variables in R. Well, there are just a few rule
 
 3. R is case sensitive, so `A` and `a` would be different variables
 
----
-# Naming variables 
+--
+***
 
 This is another element of *style*. Using a consistent style when naming variables makes your life easier. There are several to choose from.
 
+---
+# Naming variables 
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
 .pull-left[
+
+### Some examples
 
 + this_is_snake_case
 + thisIsCamelCase
@@ -313,7 +337,7 @@ I'll be using snake_case from here on, but you can change to another option if y
 class: inverse
 # Your turn 1
 
-<div class="countdown" id="timer_5f665af6" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6832a9" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -354,12 +378,14 @@ var_2
 ---
 # R Markdown
 
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
 R Markdown is a magical thing. It allows you to combine R code and plain text together in the same document. 
 
 R Markdown documents end with the extension `.Rmd`. Let's take a look at how they work... <i class="fas  fa-cloud "></i>
 
 .center[
-&lt;img src="images/rmarkdown_wizards.png" width="85%" /&gt;
+&lt;img src="images/rmarkdown_wizards.png" width="70%" /&gt;
 ]
 
 ---
@@ -373,7 +399,7 @@ R Markdown documents end with the extension `.Rmd`. Let's take a look at how the
 class: inverse
 # Your turn 2
 
-<div class="countdown" id="timer_5f665c7a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6832cb" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -403,7 +429,7 @@ class: solution
 class: inverse, center, middle
 # Q &amp; A
 
-<div class="countdown" id="timer_5f665c61" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6834e7" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -417,7 +443,7 @@ class: inverse, center, middle
 class: inverse, center, middle
 # Break! 
 
-<div class="countdown" id="timer_5f665c4e" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f683352" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
     </textarea>
