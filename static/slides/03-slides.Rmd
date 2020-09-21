@@ -519,11 +519,15 @@ class: solution
 
 Before we wrap up, let's talk about error messages.
 
+--
+
 You will run into them constantly, even when using functions you've used many times before -- and especially when using functions/packages that are new to you.
 
 ```{r echo=FALSE, out.width="80%"}
 knitr::include_graphics("images/error.jpg")
 ```
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
 
 ---
 # Debugging
@@ -548,8 +552,10 @@ But there are a few general things to be aware of...
 ```{r echo=FALSE}
 knitr::include_graphics("images/debugging.jpg")
 ```
-
 ]
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
 ---
 class: inverse, center, middle
 # Q & A

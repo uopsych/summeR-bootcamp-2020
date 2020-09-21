@@ -235,7 +235,12 @@ You may be wondering how to name variables in R. Well, there are just a few rule
 ---
 # Naming variables 
 
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
 This is another element of *style*. Using a consistent style when naming variables makes your life easier. There are several to choose from.
+
+--
+***
 
 .pull-left[
 
@@ -291,12 +296,14 @@ var_2
 ---
 # R Markdown
 
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
 R Markdown is a magical thing. It allows you to combine R code and plain text together in the same document. 
 
 R Markdown documents end with the extension `.Rmd`. Let's take a look at how they work... `r icon::fa("cloud")`
 
 .center[
-```{r echo=FALSE, out.width="85%"}
+```{r echo=FALSE, out.width="70%"}
 knitr::include_graphics("images/rmarkdown_wizards.png")
 ```
 ]
