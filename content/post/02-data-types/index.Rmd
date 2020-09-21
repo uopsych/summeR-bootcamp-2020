@@ -66,5 +66,5 @@ xaringanExtra::embed_xaringan(
 
 1. R for Data Science [Ch 20: Vectors](https://r4ds.had.co.nz/vectors.html)
 
-2. [This tutorial](https://jennybc.github.io/purrr-tutorial/bk00_vectors-and-lists.html) from the legendary Jenny Bryan
+2. [This tutorial](https://jennybc.github.io/purrr-tutorial/bk00_vectors-and-lists.html) by Jenny Bryan
 :::

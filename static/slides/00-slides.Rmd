@@ -80,6 +80,28 @@ knitr::include_graphics("images/cam.png")
 ]]]
 
 ---
+# Schedule
+
+#### `r icon::fa("calendar")`  **Day 1: Monday, 9/21, 9 AM - 1 PM PST**
++ Basics of R & RStudio
++ Data Types & Structures
++ Functions & Debugging
+
+***
+
+#### `r icon::fa("calendar")`  **Day 2: Wednesday, 9/23, 9 AM - 12 PM PST**
++ Introduction to the tidyverse
++ Importing data & Project-oriented workflows
++ Data visualization with `ggplot2`
+
+***
+
+#### `r icon::fa("calendar")`  **Day 3: Friday, 9/25, 9 AM - 1 PM PST**
++ Data wrangling with `dplyr`
++ Data tidying with `tidyr`
++ Reproducible reporting with R Markdown
+
+---
 class: split-three
 # Logistics
 
@@ -103,27 +125,6 @@ class: split-three
 
 ### Github
 ]]]
-
----
-
-### <i class="fa fa-calendar"></i> Day 1: Monday, 9/21, 9 AM - 1 PM PST
-+ Basics of R & RStudio
-+ Data Types & Structures
-+ Functions & Debugging
-
-***
-
-### <i class="fa fa-calendar"></i> Day 2: Wednesday, 9/23, 9 AM - 12 PM PST
-+ Introduction to the tidyverse
-+ Importing data & Project workflows
-+ Data visualization with `ggplot2`
-
-***
-
-### <i class="fa fa-calendar"></i> Day 3: Friday, 9/25, 9 AM - 1 PM PST
-+ Data wrangling with `dplyr`
-+ Data tidying with `tidyr`
-+ Reproducible reporting with R Markdown
 
 ---
 # A word of encouragement
@@ -154,14 +155,16 @@ knitr::include_graphics("images/hadley.jpg")
 
 ---
 
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
 .pull-left[.center[
-```{r echo=FALSE, out.width="70%"}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/breakr.gif")
 ```
 ]]
 
 .pull-right[.center[
-```{r echo=FALSE, out.width="70%"}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/stormyr.gif")
 ```
 ]]
@@ -175,20 +178,23 @@ knitr::include_graphics("images/stormyr.gif")
 --
 
 .pull-left[.center[
-```{r echo=FALSE, out.width="70%"}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/heartyr.gif")
 ```
 ]]
 
 
 .pull-right[.center[
-```{r echo=FALSE, out.width="70%"}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/rainbowr.gif")
 ```
 ]]
 
+
 ---
 # What are R & RStudio?
+
+--
 
 .pull-left[
 <br>
@@ -226,7 +232,7 @@ knitr::include_graphics("images/engine_dashboard.png")
 ---
 
 # Why Use R?
-## It's Open Source
+## It's open source
 
 --
 
@@ -254,7 +260,7 @@ knitr::include_graphics("images/engine_dashboard.png")
 
 + You can use R for more than data analysis, including:
 
-  + creating websites
+  + creating websites (including this one!)
   
   + creating documents that reproduce your analyses
   
@@ -280,7 +286,7 @@ knitr::include_graphics("images/engine_dashboard.png")
 ---
 # Why Use R?
 
-## Reduce Errors, Enhance Reproducibility & Transparency
+## Reduce errors, enhance reproducibility & transparency
 
 --
 
@@ -297,7 +303,7 @@ knitr::include_graphics("images/engine_dashboard.png")
 ---
 # Why Use R?
 
-## It's Efficient
+## It's efficient
 
 --
 
@@ -317,7 +323,7 @@ knitr::include_graphics("images/engine_dashboard.png")
 
 --
 
-## It's Fun `r emo::ji("partying_face")`
+## It's fun `r emo::ji("partying_face")`
 
 No, seriously!
 
