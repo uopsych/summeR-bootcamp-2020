@@ -395,4 +395,100 @@ another_df_2 <- import(here("data/another_dataset.sav"))
 ---
 # Viewing data
 
+Now that your data is loaded in R, you'll want to take a look at it. There are a few different ways to do that, which each offer different information.
+
+--
+***
+
+### `View()`
+
+```{r echo=FALSE, message=FALSE}
+ps_data <- rio::import(here::here("static/slides/data/pragmatic_scales_data.csv"))
+```
+
+
+One way is to click on the `View` button in the environment pane... `r icon::fa("cloud")`
+
+--
+
+You should see `ps_data` in the environment pane with a little data table icon at the far right. Click on that icon. 
+
+You'll notice that this ran `View(ps_data)` in the console. We could have instead just typed this directly ourselves (notice the capital `V`)
+
+---
+# Viewing data 
+
+### `head()` and `tail()`
+
+--
+
+.panelset[
+.panel[.panel-name[`head()`]
+
+You can also see just the first few rows of a dataframe with `head()`, which is especially helpful for large data sets
+
+```{r}
+head(ps_data)
+```
+]
+
+.panel[.panel-name[`tail()`]
+
+`tail()` is the complement to `head()`, displaying just the final rows from a dataframe
+
+```{r}
+tail(ps_data)
+```
+]
+]
+
+---
+# Viewing data
+
+### `str()` and `glimpse()`
+
+.panelset[
+.panel[.panel-name[`str()`]
+
+We saw `str()` when we first introduced data frames. It's worth mentioning it again because it can be so useful when you import data to see how your variables were read in (i.e. their types)
+
+```{r}
+str(ps_data)
+```
+
+]
+
+
+.panel[.panel-name[`glimpse()`]
+
+`glimpse()` is very similar to `str()` but is a tidyverse function, and it shows you a little more raw data 
+
+```{r}
+glimpse(ps_data)
+```
+
+]
+]
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Data visualization with `ggplot2`
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```
 
