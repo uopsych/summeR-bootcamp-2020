@@ -226,11 +226,169 @@ This makes it easy to tell R where files live relative to the top-level folder o
 ]
 
 ---
+class: inverse 
 # Your turn 1
 
-<div class="countdown" id="timer_5f67bbd9" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+<div class="countdown" id="timer_5f67f6c0" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
+
+
+#### 1. Load the `rio` and `here` packages.
+
+#### 2.  Run the following code to import the data called `pragmatic_scales.csv`). Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
+
+
+```r
+ps_data &lt;- import("pragmatic_scales.csv")
+```
+
+#### 3. Fix the error in the code above to import the data. *Hint*: use the `here()` function    
+
+#### 4. Remember that `rio` is flexible with file types -- `rio::import()` will call the right function under the hood to read in the file based on the file extension. Use `rio` to import `pragmatic_scales_data.sav` (an SPSS file type) and save it to a new object named `ps_data_2`.
+
+---
+class: solution
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+
+```r
+# Q1.
+library(rio)
+library(here)
+```
+]
+
+.panel[.panel-name[Q2]
+
+
+```r
+# Q2. 
+ps_data &lt;- import("pragmatic_scales.csv")
+```
+
+```
+## Error in import("pragmatic_scales.csv"): No such file
+```
+
+***
+
+The file **pragmatic_scales.csv** is saved in the **data** folder, so we need to tell R to look in that folder.
+]
+
+.panel[.panel-name[Q3]
+
+
+```r
+# Q3.
+ps_data &lt;- import(here("data/pragmatic_scales.csv"))
+```
+]
+
+.panel[.panel-name[Q4]
+
+```r
+# Q4.
+ps_data_2 &lt;- import(here("data/pragmatic_scales_data.sav"))
+```
+]
+]
+
+---
+# Exporting data
+
+You can also use `rio` to export your data using `export()`, saving it in any of the formats that it works with. 
+
+--
+
+Here are the arguments you will need to use for `export()`
+
+
+```r
+export(x, file)
+```
+
+`x` is the `data.frame` object in your RStudio Environment you want to export 
+
+`file` is the path/filename for the resulting file 
+
+--
+***
+
+For example, let's say I want to export `ps_data` as an `.xlsx` file and put it into the `/data` subdirectory.
+
+
+```r
+export(ps_data, here::here("data/ps_data.xlsx"))
+```
+
+---
+class: inverse 
+# Your turn 2
+
+<div class="countdown" id="timer_5f67f752" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+1. Look through the Files pane and find the file `another_dataset.csv`. Make note of what subdirectory it is saved in. Import the data and save to an object called `another_df`.
+
+1. Now export the data you just imported and save it into the `data/` directory. Make sure the name of the resulting file is `another_dataset`, and export it as a `.xlsx` file.
+
+1. One of your colleagues insists you send them a `.sav` file so that they can run the analyses in SPSS. Make another copy of `another_dataset` in the `data/` subdirectory that is in the `.sav` format. 
+
+1. Finally, let's read one of these datasets to make sure everything worked as expected. Import `another_dataset.sav` , which you just created, and import it, saving it to a new object named `another_df_2`.
+
+---
+class: solution
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+
+```r
+# Q1.
+another_df &lt;- import(here("data/more_data/another_dataset.csv"))
+```
+
+]
+
+.panel[.panel-name[Q2]
+
+
+```r
+# Q2.
+export(another_df, here("data/another_dataset.xlsx"))
+```
+]
+
+.panel[.panel-name[Q3]
+
+
+
+```r
+# Q3.
+export(another_df, here("data/another_dataset.sav"))
+```
+
+]
+
+.panel[.panel-name[Q4]
+
+
+
+```r
+# Q4.
+another_df_2 &lt;- import(here("data/another_dataset.sav"))
+```
+]
+]
+
+---
+# Viewing data
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
