@@ -45,7 +45,7 @@ R has different types of data, and an object’s type affects how it interacts w
 
 --
 
-So far, we’ve just been working with integers. R has several other types of data
+So far, we’ve just been working with numeric data, but there are several other types to be aware of...
 
 --
 
@@ -79,18 +79,49 @@ You can use `typeof()` to find out the type of a value or object
 
 ```{r}
 typeof(1)
+```
+
+--
+
+```{r}
 typeof(TRUE)
+```
+
+--
+
+```{r}
 typeof(1L)
+```
+
+--
+
+```{r}
 typeof("one")
 ```
+
 
 ---
 # Types of data 
 
 ```{r}
 typeof(NA)
+```
+
+--
+
+```{r}
 typeof(NA_character_)
+```
+
+--
+
+```{r}
 typeof(NULL)
+```
+
+--
+
+```{r}
 typeof(Inf)
 ```
 
@@ -101,12 +132,16 @@ class: inverse, center, middle
 ---
 # Vectors 
 
-Often, we’re not working with individual values, but with multiple related values or a **vector** of values.
+Often, we’re not working with individual values, but with multiple related values -- or a **vector** of values.
 
 --
 ***
 
-We can create a vector of ordered numbers using `starting_number`:`ending_number`. For example, we could make `x` a vector with the numbers between 1 and 5.
+We can create a vector of ordered numbers using the form <br> `starting_number` **:** `ending_number`. 
+
+--
+
+For example, we could make `x` a vector with the numbers between 1 and 5.
 
 ```{r}
 x <- 1:5
@@ -117,7 +152,7 @@ x
 ***
 Let's look at the Environment pane in RStudio... `r icon::fa("cloud")` 
 
-Since `x` is a vector, it tells us what type of vector it is and it's length in addition to its contents (which can be abbreviated if the object is larger).
+Since `x` is a vector, it tells us what type of vector it is and its length in addition to its contents (which can be abbreviated if the object is larger).
 
 ---
 # Vectors
@@ -127,10 +162,13 @@ We can create a vector of any numbers we want using `c()`, which is a **function
 --
 ***
 
-You use `c()` by putting numbers separated by a comma (`,`) within the parentheses.
+You use `c()` by putting numbers separated by a comma within the parentheses.
 
 ```{r}
+# combine values into a vector and assign to an object names 'x'
 x <- c(2, 8.5, 1, 9)
+
+# print x
 x
 ```
 
@@ -140,10 +178,15 @@ x
 
 We can also create a vector of numbers using `seq()`. 
 
-`seq()` is a function that creates a sequence of numbers. To learn how any R function works, you can access the help documentation by typing <br> `?function_name`. 
+`seq()` is a function that creates a sequence of numbers. 
 
 ---
 # Vectors
+
+To learn how any R function works, you can access the help documentation by typing `?function_name`. 
+
+--
+***
 
 Let's take a look at how `seq()` works... `r icon::fa("cloud")` 
 
@@ -174,7 +217,7 @@ Why did this happen?
 
 The `seq()` function has **arguments** with default values. 
 
-The first two arguments are `from = ` and `to = `, which specify the starting and end values of the sequence. By *default* `from = 1` and `to = 1`. 
+The first two arguments are `from` and `to`, which specify the starting and end values of the sequence. By *default* `from = 1` and `to = 1`. 
 
 This means that typing `seq()` is equivalent to typing `seq(from = 1, to = 1)`, which generates a sequence with just one value: `1`.
 
@@ -185,7 +228,7 @@ We will talk more about how functions work in the next slide deck!
 ---
 # Vectors
 
-To make a sequence from 1 to 5 with this function, we have to set the `from =` and `to =` to those boundaries:
+To make a sequence from 1 to 5 with this function, we have to set the arguments accordingly: `from = 1` and `to = 5`
 
 ```{r}
 seq(from = 1, to = 5)
@@ -194,7 +237,11 @@ seq(from = 1, to = 5)
 --
 ***
 
-We can also set one or more of the other arguments. The `by = ` argument allows us to change the increment of the sequence. Let's say we wanted every other number between 1 and 5. We can do this by setting `by = 2`
+We can also set one or more of the other arguments...
+
+--
+
+The `by` argument allows us to change the increment of the sequence. For example, to get every *other* number between 1 and 5, we would set `by = 2`
 
 ```{r}
 seq(from = 1, to = 5, by = 2)
@@ -204,6 +251,8 @@ seq(from = 1, to = 5, by = 2)
 # Vectors
 
 Vectors are just 1-dimensional sequences **of a single type of data**.
+
+--
 
 Note that vectors can also include strings or character values.
 
@@ -217,7 +266,9 @@ letters
 
 The general rule R uses is to set the vector to be the most "permissive" type necessary. 
 
-For example, what happens if we put the vectors `x` and `letters` together?
+--
+
+For example, what happens if we combine the vectors `x` (from earlier) and `letters` together?
 
 ```{r}
 mixed_vec <- c(x, letters)
@@ -243,7 +294,7 @@ typeof(mixed_vec)
 --
 ***
 
-This is called **coercion**. R coerces a vector into whichever type will accommodate all of the values. We can coerce `mixed_vec` to be numeric using `as.numeric()`
+This is called **coercion**. R coerces a vector into whichever type will accommodate all of the values. We can coerce `mixed_vec` to be numeric using `as.numeric()`, but notice  what happens to the character values `r emo::ji("eyes")`
 
 ```{r}
 as.numeric(mixed_vec)
@@ -289,6 +340,12 @@ y <- seq(from = 2, to = 16, by = 2)
 # Q3
 x + y
 ```
+
+***
+
+This is an example of **vector recycling**.
+
+When applying an operation to two vectors that requires them to be the same length, R automatically recycles, or repeats, the shorter one, until it is long enough to match the longer one.
 ]
 ]
 ---
@@ -341,9 +398,22 @@ as.numeric(b) + x
 ---
 # Indexing vectors
 
+How do we extract elements out of vectors? 
+
+--
+
+This is called **indexing**, and it is frequently quite useful
+
+--
+
+There are a number of methods for indexing that are good to be familiar with
+
+---
+# Indexing vectors
+
 ### Indexing by position
 
-The last thing to mention about vectors is that they are all indexed numerically in R, starting with 1. Since vectors are only 1 dimension, we index them with a single number in `[]`. 
+Vectors can be indexed numerically, starting with 1 (not 0). We can extract certain elemnts by from a vector by putting the index of their position inside brackets `[]`. 
 
 --
 ***
@@ -426,7 +496,7 @@ names(z)
 --
 ***
 
-Looks like the elements in `z` have no names.  We can change that by assigning them names using a vector of character strings.
+Looks like the elements in `z` have no names.  We can change that by assigning them names using a vector of character values.
 
 ```{r}
 names(z) <- c("first", "second", "third", "fourth", "fifth")
@@ -445,7 +515,7 @@ z
 --
 ***
 
-Now we can use the names of the elements in `z` for subsetting. 
+Now we can use the names of the elements in `z` for subsetting, using quotes
 
 ```{r}
 z["first"]
@@ -454,7 +524,7 @@ z["first"]
 ---
 # Modifying Vectors 
 
-One thing that you can do with indexing is change elements within the vector. 
+One thing that you can do with indexing is change elements within a vector. 
 
 --
 ***
@@ -472,7 +542,9 @@ z
 
 .panel[.panel-name[Example 2]
 
-You can also use indexing to transform a single element in a vector. Let's raise the second element of `z` to the power of 2.
+You can also use indexing to transform a single element in a vector. 
+
+Let's raise the second element of `z` to the power of 2.
 
 ```{r}
 z[2] <- z[2]^2
@@ -482,7 +554,9 @@ z
 
 .panel[.panel-name[Example 3]
 
-Or use it to add to a vector. Let's add the number 11 as the sixth element of the vector `z`.
+Or use it to add elements to a vector. 
+
+Let's add the number 11 as the sixth element of the vector `z`.
 
 ```{r}
 z[6] <- 11
@@ -570,7 +644,7 @@ Vectors are great for storing a single type of data, but what if we have a varie
 --
 ***
 
-For example, let's say I want to store the year I am in the PhD program (a number), my name ( a string), and my enrollment status (a logical) in a single object that preserved these different types?
+For example, let's say I want to store the year I am in the PhD program (a number), my name ( a string), and my enrollment status (a logical) in a single object that preserves these different types... `r emo::ji("thinking")`
 
 --
 
@@ -585,6 +659,8 @@ Lists are like vectors in that they are a 1-dimensional object, but they can con
 
 We can create a list with the `list()` function
 
+--
+
 ```{r}
 brendan <- list(4L, "Brendan Cullen", TRUE)
 
@@ -594,12 +670,12 @@ brendan
 ---
 # Creating Lists 
 
-And, we can give each of these entries names to make things a little easier to keep track of.
+And, we can give each element of the list a name to make it easier to keep track of them.
 
 ```{r}
 brendan <- list(year = 4L,
-             name = "Brendan Cullen",
-             enrollment = TRUE)
+                name = "Brendan Cullen",
+                enrollment = TRUE)
 
 brendan
 ```
@@ -607,12 +683,14 @@ brendan
 --
 ***
 
-Notice that `[[1]]`, `[[2]]`, and `[[3]]`, the element indices, have been replaced by the names `year`, `name`, and `enrollment`
+Notice that `[[1]]`, `[[2]]`, and `[[3]]`, the element indices, have been replaced by the names `year`, `name`, and `enrollment` `r emo::ji("eyes")`
 
 ---
 # Creating Lists
 
 You can see also see the names of a list by running `names()` on it
+
+--
 
 ```{r}
 names(brendan)
@@ -628,11 +706,13 @@ Lists are even more flexible than we've seen so far. In addition to being of het
 
 Let's add another element to the list about me that contains my favorite types of data, which will be a vector of length 2.
 
+Notice use of `c()` to create the element `fave_data` `r emo::ji("eyes")`
+
 ```{r}
 brendan <- list(year = 4L,
-             name = "Brendan Cullen",
-             enrollment = TRUE, 
-             fave_data = c("strings", "numbers")) # note c() to create a vector
+                name = "Brendan Cullen",
+                enrollment = TRUE, 
+                fave_data = c("strings", "numbers"))
 brendan
 ```
 
@@ -642,6 +722,8 @@ brendan
 ### Indexing by position
 
 Like vectors, lists can be indexed by their name or their position (numerically). 
+
+--
 
 .panelset[
 .panel[.panel-name[Example 1]
@@ -664,12 +746,12 @@ brendan[1] * 7
 ***
 R is telling us that we supplied a non-numeric argument, i.e. `brendan[1]`. 
 
-This happened because single bracket indexing on a list returns a list and lists can't be multiplied by a number.
+This happened because single bracket indexing on a list returns a list -- but what we need is the *content* of the list.
 ]
 
 .panel[.panel-name[Example 3]
 
-If we want the actual object stored at the first position instead of a list with that object, we have to use double-bracket indexing `list[[i]]`:
+If we want the actual object stored at the first position instead of a list containing that object, we have to use double-bracket indexing `list[[i]]`:
 
 ```{r}
 brendan[[1]] 
@@ -678,7 +760,7 @@ brendan[[1]]
 ***
 Notice it no longer has the `$year`. 
 
-In general, a `$label` is a hint that you're looking at a list and not the object stored at that position. 
+In general, a `$label` is a hint that you're looking at a list (the container) and not just the object stored at that position (the contents). 
 
 ]
 
@@ -688,7 +770,6 @@ Now let's see my PhD year in dog years.
 ```{r}
 brendan[[1]] * 7
 ```
-
 ]
 ]
 
@@ -700,7 +781,7 @@ brendan[[1]] * 7
 .panelset[
 .panel[.panel-name[Example 1]
 
-The same applies to name indexing. With lists, you can get a list containing the indexed object with `[]`.
+The same applies to name indexing. With lists, you can get a list containing the indexed object with single brackets `[]`.
 
 ```{r}
 brendan["year"]
@@ -709,7 +790,7 @@ brendan["year"]
 
 .panel[.panel-name[Example 2]
 
-And double brackets `[[]]` can be used to get the object stored with that name.
+And double brackets `[[]]` can be used to get the *contents* -- the  object stored with that name.
 
 ```{r}
 brendan[["year"]]
@@ -718,7 +799,7 @@ brendan[["year"]]
 
 .panel[.panel-name[Example 3]
 
-You can also use `list$name` to get the object stored with a particular name too.
+You can also use `list$name` to get the object stored with a particular name too. It is equivalent to double brackets, but you don't need quotes
 
 ```{r}
 brendan$year
@@ -790,9 +871,15 @@ brendan[["name"]]
 
 As we saw with the object `fave_data` stored in the list `brendan`, objects within lists can have different dimensions and length. 
 
+--
+
 What if we wanted just one element of an object in a list, such as just the second element of `fave_data`? 
 
+--
+
 We can use indexing on the `fave_data` vector stored within the `brendan` list by chaining indexes.
+
+--
 
 .panelset[
 .panel[.panel-name[Example 1]
@@ -825,16 +912,16 @@ brendan$fave_data[2]
 ---
 # Data frames
 
-A `data.frame` is a common way of representing rectangular data -- collections of values that are each associated with a variable (column) and an observation (row). In other words, it has 2 dimensions.
+A **data frame** is a common way of representing rectangular data -- collections of values that are each associated with a variable (column) and an observation (row). In other words, it has 2 dimensions.
 
 --
 
-A `data.frame` is technically a special kind of list -- it can contain different kinds of data in different vectors (columns), but each vector must be the same length. 
+A data frame is technically a special kind of list -- it can contain different kinds of data in different columns, but each column must be the same length. 
 
 --
 ***
 
-We can create a `data.frame` very similarly to how we made a list, but replacing `list()` with `data.frame()`.
+We can create a data frame very similarly to how we made a list, but replacing `list()` with `data.frame()`.
 
 ```{r}
 df_1 <- data.frame(c1 = c(1, 3),
@@ -900,7 +987,7 @@ df_1
 
 ***
 
-As with lists, we can use the `$` in the form `data$column_name` (similar to `list$object`). 
+As with lists, we can use the `$` operator in the form `dataframe$column_name` (similar to `list$object`). 
 
 --
 ***
@@ -975,7 +1062,7 @@ df_1
 
 ***
 
-How can we tell what type of data each column in our `data.frame` stores? 
+How can we tell what type of data each column in our data frame stores? 
 
 --
 
@@ -1077,7 +1164,7 @@ Here's a quick table that summarizes data structures.
 <br>
 
 ***
-`*` We didn't talk about matrices today, but if you take PSY611, you will learn more about them.
+`*` We didn't talk about matrices today, but if you take PSY611, you will learn more about them in the context of the General Linear Model
 
 
 ---
