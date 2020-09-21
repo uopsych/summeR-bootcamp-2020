@@ -118,20 +118,21 @@ Thankfully, R follows the order of operations (PEMDAS).
 ```
 
 --
+***
 
-These values aren’t stored anywhere though...
+These values haven't been stored anywhere though...
 
 ---
 # Storing values in objects
 
 To keep a value in memory, we need to assign it to an **object**. 
 
+--
+
 To assign a value to an object, use the **assignment operator**. It looks like a left-pointing arrow: 
 
 .center[
-```{r eval=FALSE}
-<-
-```
+### `<-`
 ]
 
 --
@@ -146,7 +147,7 @@ x <- 8
 --
 ***
 
-Now we can call `x` by name; if we do this, it will print the value.
+Now we can call `x` by name, and it will print the value.
 
 ```{r}
 x
@@ -155,15 +156,23 @@ x
 ---
 # Style
 
-+ Technically, both `<-` and `=` work as assignment operators. But we'll strictly use `<-` from here on out. This brings up a general coding principle of the day...
+Technically, both `<-` and `=` work as assignment operators. But we'll strictly use `<-` from here on out. 
+
+--
+***
+
+This brings up a general coding principle of the day...
 
 --
 
-+ *Style is important!* You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
+
+**Style is important!**
+
+You want to use a consistent style so that others (including your future self) can easily and quickly read your code. 
 
 --
 
-+ I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). 
+I highly recommend following the [tidyverse style guide](https://style.tidyverse.org/). We'll talk more about the tidyverse tomorrow
 
 --
 ***
@@ -173,7 +182,9 @@ Hint: You will type `<-` a LOT. The keyboard shortcut `Alt`+`-` or `Option`+`-` 
 ---
 # Storing values in objects
 
-Now, let's take a look at the variable `y`
+Now, let's take a look at the variable `y`...
+
+--
 
 ```{r error=TRUE}
 # call y
@@ -183,9 +194,11 @@ y
 --
 ***
 
-+ Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
+Whoops! We didn't assign anything to `y`. Calling a variable that doesn't exist leads to an **error message**. 
 
-+ You'll see a LOT of error messages when using R. Don't worry when this happens. This is *100% normal*, and it happens to *everyone all the time*. 
+--
+
+You'll see a LOT of error messages when using R. Don't worry when this happens. This is *100% normal*, and it happens to *everyone all the time*. 
 
 --
 ***
@@ -200,7 +213,12 @@ y
 ---
 # Storing values in objects
 
-Now, we can use these variables in calculations
+Now, we can use these variables in calculations 
+
+--
+
+Remember, `x <- 8` and `y <- 2`
+
 ```{r}
 # multiply them
 x * y
@@ -209,20 +227,20 @@ x * y
 --
 ***
 
-But remember, if we want to save the output of that calculation, we need to assign them to an object! 
+But remember, if we want to save the output of that calculation, we need to assign it to an object! 
 
 ```{r}
 # define the product as z
 z <- x * y
 
-# view z
+# print z
 z
 ```
 
 ---
 # Naming variables 
 
-You may be wondering how to name variables in R. Well, there are just a few rules:
+You may be wondering how to name variables in R. There are just a few rules...
 
 --
 
@@ -232,17 +250,19 @@ You may be wondering how to name variables in R. Well, there are just a few rule
 
 3. R is case sensitive, so `A` and `a` would be different variables
 
+--
+***
+
+This is another element of *style*. Using a consistent style when naming variables makes your life easier. There are several to choose from.
+
 ---
 # Naming variables 
 
 .footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
 
-This is another element of *style*. Using a consistent style when naming variables makes your life easier. There are several to choose from.
-
---
-***
-
 .pull-left[
+
+### Some examples
 
 + this_is_snake_case
 + thisIsCamelCase
