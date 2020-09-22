@@ -45,6 +45,11 @@ links:
   url: https://rstudio.cloud/learn/primers/3
 ---
 
+
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/06-slides.html",
@@ -52,3 +57,19 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
+<br>
+
+### Further Reading
+
+:::book
+
+1. R for Data Science chapter on [data visualization](https://r4ds.had.co.nz/data-visualisation.html)
+
+2. Modern Dive chapter on [data visualization](https://moderndive.com/2-viz.html)
+
+4. Cookbook for R chapter on [data visualization](http://www.cookbook-r.com/Graphs/)
+
+4. [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)
+
+5. [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1) by Gina Reynolds -- shows how to create plots line-by-line
+:::
