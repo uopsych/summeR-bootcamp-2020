@@ -17,6 +17,7 @@ output:
 options(htmltools.dir.version = FALSE)
 library(countdown)
 library(tidyverse)
+library(flipbookr)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
@@ -60,7 +61,18 @@ background-size: 10%
 
 ```{r warning=FALSE, message=FALSE}
 library(palmerpenguins)
+```
 
+```{r}
 glimpse(penguins)
+```
+
+---
+# Flipbook
+
+Click on the "full screen" icon below and use the naviagtion arrows to flip through the creation of a ggplot in real time!
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan("06-ggplot_flipbook.html", max_width = 1500)
 ```
 
