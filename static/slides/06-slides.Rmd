@@ -41,6 +41,12 @@ class: title-slide, center, middle
 # Data visualization with {ggplot2}
 
 ---
+# ggplot
+
+ggplot2 is the *grammar of graphics*, and is the tidyverse package for creating plots. Even with just a few of its commands, it can make beautiful, publication-ready plots. Its more advanced features add even more versatility. And, people make companion packages for it to do even more (e.g., `ggpubr` to  add statistics to your plot).
+
+
+---
 background-image: url(images/hex/palmerpenguins.png)
 background-position: 90% 5%
 background-size: 10%
@@ -61,18 +67,81 @@ background-size: 10%
 
 ```{r warning=FALSE, message=FALSE}
 library(palmerpenguins)
-```
-
-```{r}
 glimpse(penguins)
 ```
+
+
+---
+# ggplot2
+
+We're going to create this plot together, step-by-step, using `ggplot2`!
+
+```{r echo=FALSE}
+knitr::include_graphics("images/penguins_hist.png")
+```
+
+---
+
+# ggplot2
+
+When creating a plot in ggplot2, the first thing you have to do is call the `ggplot()` function. It takes data as its first argument. Let's start there:
+
+--
+***
+
+.left-code[
+```{r plot-1, eval=FALSE}
+ggplot(data = penguins)
+```
+]
+
+.right-plot[
+```{r plot-1-out, ref.label="plot-1", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%"}
+```
+]
+
+---
+# ggplot2
+
+Ok, all we got was a blank square!? 
+
+--
+
+To understand why, let's back up to the philosophy of `ggplot`...
+
+---
+# ggplot2
+
+### What is a statistical graphic? 
+
+--
+
+According to  [Hadley Wickham](http://www.tandfonline.com/doi/abs/10.1198/jcgs.2009.07098), we can think of statistical graphics as:
+
+--
+* **Mappings** from data to aesthetic attributes (color, shape, size) 
+* Of **geometric objects** (points, lines, bars)
+* On a particular **coordinate system** (or scale)
+* Sometimes after a statistical **transformation**
+
+--
+***
+
+In `ggplot`, that combination of things forms a *layer*. The `ggplot` terminology is:
+
+--
+
+* **aes** - aesthetic mappings
+* **geom** - geometric objects
+* **scale** - scales
+* **stat** - statistical transformations
 
 ---
 # Flipbook
 
-Click on the "full screen" icon below and use the naviagtion arrows to flip through the creation of a ggplot in real time!
+Click on the "full screen" icon below and use the naviagtion arrows to flip through the creation of a scatterplot in real time!
 
 ```{r echo=FALSE}
-xaringanExtra::embed_xaringan("06-ggplot_flipbook.html", max_width = 1500)
+xaringanExtra::embed_xaringan("06-ggplot_flipbook.html", max_width = 900)
 ```
 

@@ -31,6 +31,12 @@ class: title-slide, center, middle
 # Data visualization with {ggplot2}
 
 ---
+# ggplot
+
+ggplot2 is the *grammar of graphics*, and is the tidyverse package for creating plots. Even with just a few of its commands, it can make beautiful, publication-ready plots. Its more advanced features add even more versatility. And, people make companion packages for it to do even more (e.g., `ggpubr` to  add statistics to your plot).
+
+
+---
 background-image: url(images/hex/palmerpenguins.png)
 background-position: 90% 5%
 background-size: 10%
@@ -50,32 +56,92 @@ background-size: 10%
 
 ```r
 library(palmerpenguins)
-```
-
-
-```r
 glimpse(penguins)
 ```
 
 ```
 ## Rows: 344
 ## Columns: 8
-## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
-## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
-## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,…
-## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,…
-## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18…
-## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
-## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
-## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie,…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, To…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, …
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 380…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, m…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2…
 ```
+
+
+---
+# ggplot2
+
+We're going to create this plot together, step-by-step, using `ggplot2`!
+
+&lt;img src="images/penguins_hist.png" width="1867" /&gt;
+
+---
+
+# ggplot2
+
+When creating a plot in ggplot2, the first thing you have to do is call the `ggplot()` function. It takes data as its first argument. Let's start there:
+
+--
+***
+
+.left-code[
+
+```r
+ggplot(data = penguins)
+```
+]
+
+.right-plot[
+&lt;img src="06-slides_files/figure-html/plot-1-out-1.png" width="100%" /&gt;
+]
+
+---
+# ggplot2
+
+Ok, all we got was a blank square!? 
+
+--
+
+To understand why, let's back up to the philosophy of `ggplot`...
+
+---
+# ggplot2
+
+### What is a statistical graphic? 
+
+--
+
+According to  [Hadley Wickham](http://www.tandfonline.com/doi/abs/10.1198/jcgs.2009.07098), we can think of statistical graphics as:
+
+--
+* **Mappings** from data to aesthetic attributes (color, shape, size) 
+* Of **geometric objects** (points, lines, bars)
+* On a particular **coordinate system** (or scale)
+* Sometimes after a statistical **transformation**
+
+--
+***
+
+In `ggplot`, that combination of things forms a *layer*. The `ggplot` terminology is:
+
+--
+
+* **aes** - aesthetic mappings
+* **geom** - geometric objects
+* **scale** - scales
+* **stat** - statistical transformations
 
 ---
 # Flipbook
 
-Click on the "full screen" icon below and use the naviagtion arrows to flip through the creation of a ggplot in real time!
+Click on the "full screen" icon below and use the naviagtion arrows to flip through the creation of a scatterplot in real time!
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;max-width:1500px;">
+<div class="shareagain" style="min-width:300px;margin:1em auto;max-width:900px;">
 <iframe src="06-ggplot_flipbook.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>

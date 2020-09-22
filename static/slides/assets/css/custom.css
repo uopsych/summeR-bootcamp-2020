@@ -65,3 +65,32 @@ https://github.com/emitanaka/ninja-theme ***/
 .solution { 
   background-color: #1AB385;
 }
+
+/* for separating code and plots */
+/* credit: Garrick Aden-Buie: https://www.garrickadenbuie.com/blog/decouple-code-and-output-in-xaringan-slides/ */
+
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+
+.plot-callout {
+  height: 225px;
+  width: 450px;
+  bottom: 5%;
+  right: 5%;
+  position: absolute;
+  padding: 0px;
+  z-index: 100;
+}
+.plot-callout img {
+  width: 100%;
+  border: 4px solid #23373B;
+}
