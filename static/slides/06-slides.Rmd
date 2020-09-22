@@ -39,3 +39,28 @@ class: title-slide, center, middle
 
 # Data visualization with {ggplot2}
 
+---
+background-image: url(images/hex/palmerpenguins.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Palmer penguins
+
+```{r echo=FALSE}
+knitr::include_graphics("images/penguins.png")
+```
+
+---
+
+background-image: url(images/hex/palmerpenguins.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Palmer penguins
+
+```{r warning=FALSE, message=FALSE}
+library(palmerpenguins)
+
+glimpse(penguins)
+```
+
