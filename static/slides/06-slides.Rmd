@@ -44,11 +44,11 @@ class: title-slide, center, middle
 ---
 # ggplot
 
-ggplot2 is the *grammar of graphics*, and is the tidyverse package for creating plots. 
+`ggplot2` is a `tidyverse` package for data visualization. It follows the **"grammar of graphics"**
 
 --
 
-Even with just a few of its commands, it can make beautiful, publication-ready plots. 
+Even with just a few of its functions, it can make beautiful, publication-ready plots. 
 
 --
 
@@ -56,7 +56,7 @@ Its more advanced features add even more versatility.
 
 --
 
-And, people make companion packages for it to do even more (e.g., `ggpubr` to  add statistics to your plot).
+People make companion packages that allow you to do even more, e.g., `ggpubr` to  add statistics to your plot -- you'll use this in gradstats. 
 
 
 ---
@@ -70,11 +70,11 @@ We're going to use the **Palmer Penguins** dataset as an example throughout our 
 
 --
 
-This data comes from the `palmerpenuins` package, which you can download from CRAN using `install.packages("palmerpenguins")`. 
+This data comes from the `palmerpenugins` package, which you can download from CRAN using `install.packages("palmerpenguins")`. 
 
 --
 
-And remember, to load the package in order to get access to the dataset included (which is named `penguins`), use `library(penguins)`. 
+And remember, to load the package, use `library(penguins)`, which will give you access to the built-in dataset, called `penguins`
 
 --
 
@@ -101,7 +101,11 @@ glimpse(penguins)
 
 # ggplot2
 
-When creating a plot in ggplot2, the first thing you have to do is call the `ggplot()` function. It takes data as its first argument. Let's start there:
+When creating a plot in ggplot2, the first thing you have to do is call the `ggplot()` function. 
+
+--
+
+It takes data as its first argument. Let's start there...
 
 --
 
@@ -124,7 +128,7 @@ ggplot(data = penguins)
 ---
 # ggplot2
 
-Ok, all we got was a blank square...
+All we got was a blank square! 
 
 --
 
@@ -141,9 +145,9 @@ According to  [Hadley Wickham](http://www.tandfonline.com/doi/abs/10.1198/jcgs.2
 
 --
 * **Mappings** from data to aesthetic attributes (color, shape, size) 
-* Of **geometric objects** (points, lines, bars)
+* Consisting of **geometric objects** (points, lines, bars)
 * On a particular **coordinate system** (or scale)
-* Sometimes after a statistical **transformation**
+* Sometimes derived from a statistical **transformation**
 
 --
 ***
@@ -160,11 +164,11 @@ In `ggplot`, that combination of things forms a *layer*. The `ggplot` terminolog
 ---
 # ggplot
 
-Putting all that together, the flow of information in ggplot2 is...
+Putting all that together, the flow of information in `ggplot` is...
 
 --
 
-1. `data` is attached to the ggplot call...
+1. `data` is attached to the `ggplot()` call...
 
 --
 
@@ -185,7 +189,11 @@ Putting all that together, the flow of information in ggplot2 is...
 --
 ***
 
-We already did step 1 above, by providing our `penguins` dataset to `ggplot()`. Let's move onto aesthetic mapping.
+We already did step 1 above, by providing our `penguins` dataset to `ggplot()`. 
+
+--
+
+Now let's move onto aesthetic mapping.
 
 ---
 class: inverse, center, middle
@@ -238,7 +246,7 @@ ggplot(data = penguins)
 --
 ***
 
-We can re-write this code by "piping" the first argument, `data = penguins` to the function, `ggplot()` 
+We can re-write this code by "piping" the first argument, `data` to the function, `ggplot()` 
 
 ```{r eval=FALSE}
 penguins %>% 
@@ -252,7 +260,7 @@ You can think of the pipe as representing the phrase "and then..."
 
 --
 
-Verbally, we might describe the code we just wrote as "Start with the `penguins` data, and then start a plot"
+Verbally, we might describe the code we just wrote as "Start with the `penguins` data, **and then** create the foundation of a plot"
 
 --
 ***
@@ -313,11 +321,11 @@ The basic idea with aesthetic mapping is that we want to take our data and map i
 
 --
 
-For `ggplot` to place a `geom`, it needs to know how the data map onto the aesthetics of the graph.
+For `ggplot` to place a `geom`, it needs to know how to map aspects of the data onto the **aesthetics** (or visual features) of the graph.
 
 --
 
-Each `geom()` function in `ggplot` takes a mapping argument. 
+Each `geom()` function in `ggplot` takes a **mapping** argument. 
 
 --
 
@@ -326,7 +334,9 @@ Let’s start with a basic geom, `geom_histogram()`...
 ---
 # Mapping with geoms
 
-We're going to call `ggplot()` again, and this time add the `geom_histogram()` *layer*, telling it to map the variable `flipper_length_mm` to the x-axis aesthetic
+We're going to call `ggplot()` again, and this time add the `geom_histogram()` **layer**, telling it to map the variable `flipper_length_mm` to the x-axis aesthetic
+
+--
 
 .panelset[
 .panel[.panel-name[Code]
@@ -350,6 +360,8 @@ penguins %>%
 # Mapping with geoms 
 
 You can add additional arguments to the `geom()`. For example, we could change the number of bins
+
+--
 
 .panelset[
 .panel[.panel-name[Code]
@@ -375,6 +387,8 @@ penguins %>%
 # Mapping with geoms
 
 Or make them a different color. We can change the color of 2-d objects with the `fill` aesthetic
+
+--
 
 .panelset[
 .panel[.panel-name[Code]
@@ -414,7 +428,11 @@ penguins %>%
 ---
 # Mapping with geoms
 
-We get an error, telling us that `geom_point()` requires the y-aesthetic to be defined. Let's add `bill_length_mm` as the y-axis
+We get an error, telling us that `geom_point()` requires the y-aesthetic.
+
+This makes sense -- we need an x and y axis to define where points belong on a scatter plot. Let's add `bill_length_mm` as the y-axis
+
+--
 
 .panelset[
 .panel[.panel-name[Code]
@@ -422,9 +440,8 @@ We get an error, telling us that `geom_point()` requires the y-aesthetic to be d
 ```{r penguins-point-fixed, eval=FALSE}
 penguins %>% 
   ggplot() + 
-  geom_point(
-    mapping = aes(x = flipper_length_mm,
-                  y = bill_length_mm))
+  geom_point(mapping = aes(x = flipper_length_mm,
+                           y = bill_length_mm))
 ```
 ]
 
@@ -436,13 +453,14 @@ penguins %>%
 ]
 ]
 
-
-
-
 ---
 # Mapping with geoms
 
-Let's find out if the relationship between `flipper_length_mm` & `bill_length_mm` relates to the `species` of penguin. We'll map `species` to the `color` aesthetic (similar to `fill`, but for 1-d objects).
+Let's find out if the relationship between `flipper_length_mm` and `bill_length_mm` relates to the species of penguin. 
+
+We'll map `species` to the `color` aesthetic (similar to `fill`, but for 1-d objects).
+
+--
 
 .panelset[
 .panel[.panel-name[Code]
@@ -467,20 +485,22 @@ penguins %>%
 ---
 # Mapping with geoms 
 
-Notice that we included `color` *INSIDE* our aesthetic mapping call (`mapping = aes()`) here, but not when we filled our histogram with the color red earlier
+Notice that we included `color` **inside** our aesthetic mapping call (`mapping = aes()`) here, but not when we filled our histogram with the color red earlier
 
 --
 
-This is the difference between mapping an aesthetic to ***data*** and just setting an aesthetic to some ***value*** (e.g., "red").
+This is the difference between mapping an aesthetic to **data** and just setting an aesthetic to some **value** (e.g., "red").
 
 --
 
-This is a fairly common mistake, so let's take a look at what happens if we tell it to make our points red but accidentally include that inside the `aes()` call...
+This is a fairly common mistake, so let's take a look at an example
 
 ---
 # Mapping with geoms
 
-`r emo::ji("warning")`  WARNING `r emo::ji("warning")` This is not what we want! `ggplot` is treating the value "red" as if it were part of our data, which it isn't
+What happens if we tell `ggplot` to make our points red but accidentally include that **inside** the `aes()` call?
+
+--
 
 .panelset[
 .panel[.panel-name[Code]
@@ -497,8 +517,15 @@ penguins %>%
 
 .panel[.panel-name[Plot]
 
+.pull-left[
+
 ```{r penguins-point-red-out, ref.label="penguins-point-red", echo=FALSE, fig.dim=c(4.8, 4.5), warning = FALSE, message = FALSE}
 ```
+]
+
+.pull-right[
+This is not what we want! `ggplot` is treating the value "red" as if it were part of our data, which it isn't
+]
 
 ]
 ]
@@ -517,7 +544,7 @@ countdown(minutes = 3, seconds = 30)
 
 1. Build on your plot above by adding an aesthetic to visualize the effect of `species`. Choose any aesthetic you’d like or play around with a few. What do they do? How might you use more than one aesthetic? 
 
-Options for aesthetics include `color`, `shape`, `size`, and `alpha` (transparency, 0-1 scale). 
+*Note:* Options for aesthetics include `color`, `shape`, `size`, and `alpha` (transparency, 0-1 scale). 
 
 ---
 class: solution
@@ -579,6 +606,8 @@ penguins %>%
 
 We could also make separate graphs for each `species` using `facet_wrap`. We do this by passing a one-sided formula to `facet_wrap()`
 
+--
+
 .panelset[
 .panel[.panel-name[Code]
 
@@ -602,6 +631,8 @@ penguins %>%
 # Mapping with geoms
 
 Another thing we often want to do is to add a line over our scatterplot to describe the linear relationship between variables. We can do this by adding a `geom_smooth()` layer to our plot.
+
+--
 
 .panelset[
 .panel[.panel-name[Code 1]
@@ -686,6 +717,8 @@ Global mappings are inherited by each layer unless they're overwritten.
 
 Let's re-make our previous plot using global aesthetic mapping
 
+--
+
 .panelset[
 .panel[.panel-name[Code]
 
@@ -722,6 +755,8 @@ However, I *don't* define the`color` aesthetic globally, because `color` is geom
 # Global aesthetic mapping 
 
 Let's take a look at the previous example again, but this time with `color` in the global aesthetic...
+
+--
 
 .panelset[
 .panel[.panel-name[Code 1]
@@ -856,9 +891,14 @@ https://ggplot2.tidyverse.org/reference/theme.html
 http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html
 
 ---
+class: inverse, center, middle
+
+Let's recap with a flipbook!
+
+---
 # Flipbook
 
-Click on the "full screen" icon below and use the navigation arrows to flip through the creation of a scatterplot in real time!
+Click on the "full screen" icon in the bottom right and use the navigation arrows to flip through the creation of a scatterplot in real time!
 
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan("06-ggplot_flipbook.html", max_width = 900)
