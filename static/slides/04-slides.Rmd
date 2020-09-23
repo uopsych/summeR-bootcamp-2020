@@ -498,7 +498,7 @@ background-size: 12%
 .pull-left[
 `purrr` provides tools for working with functions and vectors -- in particular, repeating the same operations many times concisely and efficiently
 
-The `map()` family of functions helps us replace for loops, <br/> making our code easier to read and more succint.
+The `map()` family of functions helps us replace for loops, <br/> making our code easier to read and more succinct.
 ]
 ]
 
