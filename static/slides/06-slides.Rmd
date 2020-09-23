@@ -481,4 +481,116 @@ penguins %>%
 
 ---
 class: inverse
+# Your Turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 3, seconds = 30)
+```
+
+Options for aesthetics include `color`, `shape`, `size`, and `alpha` (transparency, 0-1 scale). 
+
+1. Create a scatter plot to visualize the relationship between `flipper_length_mm` and `bill_length_mm`. 
+
+1. Add an aesthetic to visualize the effect of `species`. Choose any aesthetic you’d like or play around with a few. What do they do? How might you use more than one aesthetic?
+
+---
+class: solution
+
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+.left-code[
+```{r penguins-yt-q1, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_point(aes(x = flipper_length_mm, 
+                 y = bill_length_mm))
+```
+]
+
+.right-plot[
+```{r penguins-yt-q1-out, ref.label="penguins-yt-q1", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning = FALSE, message = FALSE}
+```
+]
+]
+
+.panel[.panel-name[Q2]
+
+.left-code[
+```{r penguins-yt-q2, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_point(aes(x = flipper_length_mm, 
+                 y = bill_length_mm,
+                 color = species, 
+                 shape = species),
+             alpha = 0.5,
+             size = 3)
+```
+]
+
+.right-plot[
+```{r penguins-yt-q2-out, ref.label="penguins-yt-q2", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning = FALSE, message = FALSE}
+```
+]
+
+]
+]
+
+---
+### Mapping with geoms
+
+We could also make separate graphs for each `species` using `facet_wrap`. We do this by passing a one-sided formula to `facet_wrap()`
+
+.left-code[
+```{r penguins-point-facet, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_point(aes(x = flipper_length_mm, 
+                 y = bill_length_mm)) + 
+  facet_wrap(~species)
+```
+]
+
+.right-plot[
+```{r penguins-point-facet-out, ref.label="penguins-point-facet", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning = FALSE, message = FALSE}
+```
+]
+
+---
+# Mapping with geoms
+
+Another thing we often want to do is to add a line over our scatterplot to describe the linear relationship between variables. We can do this by adding a `geom_smooth()` layer to our plot.
+
+.panelset[
+.panel[.panel-name[Code]
+
+
+```{r penguins-smooth, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_point(aes(x = flipper_length_mm, 
+                 y = bill_length_mm)) + 
+  geom_smooth(aes(x = flipper_length_mm, 
+                 y = bill_length_mm))
+```
+
+
+]
+
+.panel[.panel-name[Plot]
+
+```{r penguins-smooth-out, ref.label="penguins-smooth", echo=FALSE, fig.dim=c(4.8, 4.5), warning = FALSE, message = FALSE}
+```
+
+]
+]
+
+
+
+
+---
+# Mapping with geoms
 
