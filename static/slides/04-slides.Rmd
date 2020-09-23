@@ -546,7 +546,7 @@ countdown(minutes = 5)
 class: inverse, center, middle
 # Next up...
 
-## Importing data & Workflows
+## Importing data & Project-oriented workflows
 
 ---
 class: inverse, center, middle
