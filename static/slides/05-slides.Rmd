@@ -42,7 +42,7 @@ class: title-slide, center, middle
 
 # Importing data
 
-Importing data in R generally has 2 commonly challenging aspects...
+### Importing data in R generally has 2 commonly challenging aspects...
 
 --
 
@@ -212,6 +212,8 @@ knitr::include_graphics("images/create_project3.png")
 
 When you create a Project in RStudio, it is associated with a folder somewhere on your computer. 
 
+--
+
 It will automatically create a `.Rproj` file in that folder, which will keep track of the "top level" of your project. 
 
 --
@@ -314,6 +316,7 @@ ps_data_2 <- import(here("data/pragmatic_scales_data.sav"))
 You can also use `rio` to export your data using `export()`, saving it in any of the formats that it works with. 
 
 --
+***
 
 Here are the arguments you will need to use for `export()`
 
@@ -321,14 +324,18 @@ Here are the arguments you will need to use for `export()`
 export(x, file)
 ```
 
+--
+
 `x` is the `data.frame` object in your RStudio Environment you want to export 
+
+--
 
 `file` is the path/filename for the resulting file 
 
 --
 ***
 
-For example, let's say I want to export `ps_data` as an `.xlsx` file and put it into the `/data` subdirectory.
+For example, let's say I want to export `ps_data` as an `.xlsx` file and put it into the `data/` subdirectory.
 
 ```{r eval=FALSE}
 export(ps_data, here::here("data/ps_data.xlsx"))
@@ -413,7 +420,9 @@ One way is to click on the `View` button in the environment pane... `r icon::fa(
 
 You should see `ps_data` in the environment pane with a little data table icon at the far right. Click on that icon. 
 
-You'll notice that this ran `View(ps_data)` in the console. We could have instead just typed this directly ourselves (notice the capital `V`)
+--
+
+You'll notice that this ran `View(ps_data)` in the console. We could have instead just typed this directly ourselves -- notice the capital `V` in `View()` `r emo::ji("eyes")`
 
 ---
 # Viewing data 
