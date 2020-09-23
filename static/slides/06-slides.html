@@ -90,14 +90,14 @@ glimpse(penguins)
 ```
 ## Rows: 344
 ## Columns: 8
-## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ad…
-## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen,…
-## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.6, 34.6, 36.6, 38.7…
-## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.2, 21.1, 17.8, 19.0…
-## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, 195, 197, 184, 194,…
-## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3800, 4400, 3700, 3450…
-## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, male, male, female, …
-## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 20…
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen,…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.6, 34.6, 36.6, 38.7, 42.5, 34.4, 46.0, 37.8, 37.7, 3…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.2, 21.1, 17.8, 19.0, 20.7, 18.4, 21.5, 18.3, 18.7, 1…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, 195, 197, 184, 194, 174, 180, 189, 185, 180, 187, 18…
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3800, 4400, 3700, 3450, 4500, 3325, 4200, 3400, 3600, 3…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, male, male, female, female, male, female, male, femal…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007,…
 ```
 
 
@@ -116,15 +116,20 @@ When creating a plot in ggplot2, the first thing you have to do is call the `ggp
 
 --
 
-.left-code[
+.panelset[
+.panel[.panel-name[Code]
+
 
 ```r
 ggplot(data = penguins)
 ```
+
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/plot-1-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/plot-1-out-1.png)&lt;!-- --&gt;
+]
 ]
 
 ---
@@ -194,11 +199,17 @@ Putting all that together, the flow of information in ggplot2 is...
 We already did step 1 above, by providing our `penguins` dataset to `ggplot()`. Let's move onto aesthetic mapping.
 
 ---
+class: inverse, center, middle
+
+# But first... pipes!
+# %&gt;%
+
+---
 background-image: url(images/hex/magrittr.png)
 background-position: 90% 5%
 background-size: 12%
 
-# But first...pipes!
+# Pipe operator
 
 --
 
@@ -227,7 +238,7 @@ The first argument of many tidyverse functions is `data`. This is the case for `
 tidyverse functions are designed this way to make it easier to use pipes! 
 
 ---
-# Pipe operator `%&gt;%`
+# Pipe operator
 
 Let's take another look at the code we just wrote:
 
@@ -265,7 +276,7 @@ Verbally, we might describe the code we just wrote as "Start with the `penguins`
 class: inverse
 # Your Turn 1
 
-<div class="countdown" id="timer_5f6ab9e9" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6ac1f1" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -315,18 +326,18 @@ penguins$flipper_length_mm %&gt;%
 ]
 
 ---
+class: inverse, center, middle
+
+# Now back to ggplot...
+
+---
 # Aesthetic mapping
 
-Ok, now back to `ggplot`. We'll be using the pipe operator from here on out. 
-
---
-***
-
-The basic idea is that we want to take our data and map it onto physical space using geometric objects or geoms. 
+The basic idea with aesthetic mapping is that we want to take our data and map it onto physical space using geometric objects, or `geoms`. 
 
 --
 
-For `ggplot` to place a geom, it needs to know how the data map onto the aesthetics of the graph.
+For `ggplot` to place a `geom`, it needs to know how the data map onto the aesthetics of the graph.
 
 --
 
@@ -337,12 +348,13 @@ Each `geom()` function in `ggplot` takes a mapping argument.
 Let’s start with a basic geom, `geom_histogram()`...
 
 ---
-### Mapping with geoms
+# Mapping with geoms
 
 We're going to call `ggplot()` again, and this time add the `geom_histogram()` *layer*, telling it to map the variable `flipper_length_mm` to the x-axis aesthetic
 
+.panelset[
+.panel[.panel-name[Code]
 
-.left-code[
 
 ```r
 penguins %&gt;% 
@@ -353,17 +365,21 @@ penguins %&gt;%
 ```
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-hist-basic-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/penguins-hist-basic-out-1.png)&lt;!-- --&gt;
+
+]
 ]
 
 ---
-### Mapping with geoms 
+# Mapping with geoms 
 
 You can add additional arguments to the `geom()`. For example, we could change the number of bins
 
+.panelset[
+.panel[.panel-name[Code]
 
-.left-code[
 
 ```r
 penguins %&gt;% 
@@ -373,20 +389,24 @@ penguins %&gt;%
     bins = 10 
     )
 ```
+
 ]
 
+.panel[.panel-name[Plot]
 
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-hist-bins-out-1.png" width="100%" /&gt;
+![](06-slides_files/figure-html/penguins-hist-bins-out-1.png)&lt;!-- --&gt;
+]
 ]
 
 ---
-### Mapping with geoms
+# Mapping with geoms
 
 Or make them a different color. We can change the color of 2-d objects with the `fill` aesthetic
 
-.left-code[
+.panelset[
+.panel[.panel-name[Code]
+
 
 ```r
 penguins %&gt;% 
@@ -396,14 +416,17 @@ penguins %&gt;%
     fill = "red" 
     )
 ```
+
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-hist-fill-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/penguins-hist-fill-out-1.png)&lt;!-- --&gt;
+]
 ]
 
 ---
-### Mapping with geoms
+# Mapping with geoms
 
 Now we'll ue a different `geom` -- we'll add a layer of points to our plot using `geom_point()`
 
@@ -420,14 +443,32 @@ penguins %&gt;%
 ## Error: geom_point requires the following missing aesthetics: y
 ```
 
-![](06-slides_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+![](06-slides_files/figure-html/penguins-point-error-1.png)&lt;!-- --&gt;
+
+
+
+```r
+penguins %&gt;% 
+  ggplot() + 
+  geom_point(
+    mapping = aes(x = flipper_length_mm)
+  )
+```
+
+```
+## Error: geom_point requires the following missing aesthetics: y
+```
+
+![](06-slides_files/figure-html/penguins-point-error-out-1.png)&lt;!-- --&gt;
 
 ---
-### Mapping with geoms
+# Mapping with geoms
 
 We get an error, telling us that `geom_point()` requires the y-aesthetic to be defined. Let's add `bill_length_mm` as the y-axis
 
-.left-code[
+.panelset[
+.panel[.panel-name[Code]
+
 
 ```r
 penguins %&gt;% 
@@ -439,16 +480,24 @@ penguins %&gt;%
 ```
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-point-fixed-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/penguins-point-fixed-out-1.png)&lt;!-- --&gt;
+
+]
 ]
 
+
+
+
 ---
-### Mapping with geoms
+# Mapping with geoms
 
 Let's find out if the relationship between `flipper_length_mm` &amp; `bill_length_mm` relates to the `species` of penguin. We'll map `species` to the `color` aesthetic (similar to `fill`, but for 1-d objects).
 
-.left-code[
+.panelset[
+.panel[.panel-name[Code]
+
 
 ```r
 penguins %&gt;% 
@@ -461,12 +510,14 @@ penguins %&gt;%
 ```
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-point-color-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/penguins-point-color-out-1.png)&lt;!-- --&gt;
+]
 ]
 
 ---
-### Mapping with geoms 
+# Mapping with geoms 
 
 Notice that we included `color` *INSIDE* our aesthetic mapping call (`mapping = aes()`) here, but not when we filled our histogram with the color red earlier
 
@@ -479,11 +530,13 @@ This is the difference between mapping an aesthetic to ***data*** and just setti
 This is a fairly common mistake, so let's take a look at what happens if we tell it to make our points red but accidentally include that inside the `aes()` call...
 
 ---
-### Mapping with geoms
+# Mapping with geoms
 
 ⚠️  WARNING ⚠️ This is not what we want! `ggplot` is treating the value "red" as if it were part of our data, which it isn't
 
-.left-code[
+.panelset[
+.panel[.panel-name[Code]
+
 
 ```r
 penguins %&gt;% 
@@ -494,17 +547,23 @@ penguins %&gt;%
                   color = "red")
   )
 ```
+
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-point-red-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/penguins-point-red-out-1.png)&lt;!-- --&gt;
+
 ]
+]
+
+
 
 ---
 class: inverse
 # Your Turn 2
 
-<div class="countdown" id="timer_5f6abc44" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6ac06a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -519,10 +578,11 @@ class: solution
 
 # Solution
 
-.panelset[
-.panel[.panel-name[Q1]
+## Q1
 
-.left-code[
+.panelset[
+.panel[.panel-name[Code]
+
 
 ```r
 penguins %&gt;% 
@@ -532,14 +592,23 @@ penguins %&gt;%
 ```
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-yt-q1-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/penguins-yt-q1-out-1.png)&lt;!-- --&gt;
+
 ]
 ]
 
-.panel[.panel-name[Q2]
 
-.left-code[
+---
+class: solution
+# Solution
+## Q2 (answers will vary...)
+
+.panelset[
+.panel[.panel-name[Code]
+
+
 
 ```r
 penguins %&gt;% 
@@ -553,19 +622,20 @@ penguins %&gt;%
 ```
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-yt-q2-out-1.png" width="100%" /&gt;
-]
+.panel[.panel-name[Plot]
 
+![](06-slides_files/figure-html/penguins-yt-q2-out-1.png)&lt;!-- --&gt;
 ]
 ]
 
 ---
-### Mapping with geoms
+# Mapping with geoms
 
 We could also make separate graphs for each `species` using `facet_wrap`. We do this by passing a one-sided formula to `facet_wrap()`
 
-.left-code[
+.panelset[
+.panel[.panel-name[Code]
+
 
 ```r
 penguins %&gt;% 
@@ -576,8 +646,10 @@ penguins %&gt;%
 ```
 ]
 
-.right-plot[
-&lt;img src="06-slides_files/figure-html/penguins-point-facet-out-1.png" width="100%" /&gt;
+.panel[.panel-name[Plot]
+
+![](06-slides_files/figure-html/penguins-point-facet-out-1.png)&lt;!-- --&gt;
+]
 ]
 
 ---
@@ -586,7 +658,7 @@ penguins %&gt;%
 Another thing we often want to do is to add a line over our scatterplot to describe the linear relationship between variables. We can do this by adding a `geom_smooth()` layer to our plot.
 
 .panelset[
-.panel[.panel-name[Code]
+.panel[.panel-name[Code 1]
 
 
 
@@ -602,18 +674,53 @@ penguins %&gt;%
 
 ]
 
-.panel[.panel-name[Plot]
+.panel[.panel-name[Plot 1]
 
+.pull-left[
 ![](06-slides_files/figure-html/penguins-smooth-out-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+Note that "loess" is the default function for geom_smooth(). 
+
+Learn more on that [here](http://www.statisticshowto.com/lowess-smoothing/).
+]
+
+]
+
+.panelset[
+.panel[.panel-name[Code 2]
+
+You can change that by setting the `method` argument in `geom_smooth()`. Let's change it to our old friend linear regression or "lm"
+
+
+```r
+penguins %&gt;% 
+  ggplot() + 
+  geom_point(aes(x = flipper_length_mm, 
+                 y = bill_length_mm)) + 
+  geom_smooth(aes(x = flipper_length_mm, 
+                 y = bill_length_mm),
+              method = "lm")
+```
+
+]
+
+.panel[.panel-name[Plot 2]
+
+
+![](06-slides_files/figure-html/point-smooth-lm-out-1.png)&lt;!-- --&gt;
 
 ]
 ]
 
-
-
+]
 
 ---
-# Mapping with geoms
+# Global aesthetic mapping
+
+
+That looks pretty good, but this code is getting inefficient, because we're specifying the x and y axis for each `geom_*` call. Instead, we can use *global* aesthetic mappings, which are specified in the `ggplot()` call. Global mappings are inherited by each layer unless they're overwritten.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
