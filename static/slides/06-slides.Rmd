@@ -39,7 +39,7 @@ style_mono_accent(base_color = "#23395b",
 
 class: title-slide, center, middle
 
-# Data visualization with {ggplot2}
+# Data visualization with `ggplot2`
 
 ---
 # ggplot

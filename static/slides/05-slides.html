@@ -229,14 +229,14 @@ This makes it easy to tell R where files live relative to the top-level folder o
 class: inverse 
 # Your turn 1
 
-<div class="countdown" id="timer_5f67fc62" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
+<div class="countdown" id="timer_5f6ae477" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 
 #### 1. Load the `rio` and `here` packages.
 
-#### 2.  Run the following code to import the data called `pragmatic_scales.csv`). Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
+#### 2.  Run the following code to import the data called `pragmatic_scales.csv`. Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
 
 
 ```r
@@ -329,17 +329,17 @@ export(ps_data, here::here("data/ps_data.xlsx"))
 class: inverse 
 # Your turn 2
 
-<div class="countdown" id="timer_5f67fc61" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_5f6ae34b" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
-1. Look through the Files pane and find the file `another_dataset.csv`. Make note of what subdirectory it is saved in. Import the data and save to an object called `another_df`.
+1. Look through the Files pane and find the file `another_data_set.csv`. Make note of what subdirectory it is saved in. Import the data and save to an object called `another_df`.
 
-1. Now export the data you just imported and save it into the `data/` directory. Make sure the name of the resulting file is `another_dataset`, and export it as a `.xlsx` file.
+1. Now export the data you just imported and save it into the `data/` directory. Make sure the name of the resulting file is `another_data_set`, and export it as a `.xlsx` file.
 
-1. One of your colleagues insists you send them a `.sav` file so that they can run the analyses in SPSS. Make another copy of `another_dataset` in the `data/` subdirectory that is in the `.sav` format. 
+1. One of your colleagues insists you send them a `.sav` file so that they can run the analyses in SPSS. Make another copy of `another_data_set` in the `data/` subdirectory that is in the `.sav` format. 
 
-1. Finally, let's read one of these datasets to make sure everything worked as expected. Import `another_dataset.sav` , which you just created, and import it, saving it to a new object named `another_df_2`.
+1. Finally, let's read one of these datasets to make sure everything worked as expected. Import `another_data_set.sav` , which you just created, and import it, saving it to a new object named `another_df_2`.
 
 ---
 class: solution
@@ -351,7 +351,7 @@ class: solution
 
 ```r
 # Q1.
-another_df &lt;- import(here("data/more_data/another_dataset.csv"))
+another_df &lt;- import(here("data/more_data/another_data_set.csv"))
 ```
 
 ]
@@ -361,7 +361,7 @@ another_df &lt;- import(here("data/more_data/another_dataset.csv"))
 
 ```r
 # Q2.
-export(another_df, here("data/another_dataset.xlsx"))
+export(another_df, here("data/another_data_set.xlsx"))
 ```
 ]
 
@@ -371,7 +371,7 @@ export(another_df, here("data/another_dataset.xlsx"))
 
 ```r
 # Q3.
-export(another_df, here("data/another_dataset.sav"))
+export(another_df, here("data/another_data_set.sav"))
 ```
 
 ]
@@ -382,7 +382,7 @@ export(another_df, here("data/another_dataset.sav"))
 
 ```r
 # Q4.
-another_df_2 &lt;- import(here("data/another_dataset.sav"))
+another_df_2 &lt;- import(here("data/another_data_set.sav"))
 ```
 ]
 ]
@@ -496,21 +496,106 @@ glimpse(ps_data)
 ```
 ## Rows: 588
 ## Columns: 5
-## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T17", "T17", "T17", "T17", "M3", "M3", "M…
-## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "houses", "pasta", "pasta", "faces", "houses"…
-## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1,…
-## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32, 2.32, 2.32, 2.38, 2.38, 2.38, 2.38, 2.…
-## $ condition &lt;chr&gt; "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label",…
+## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T17", "T17", "T17", "T17", "M3", "M3", "M3", "M3", "T19", "T19", "T1…
+## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "houses", "pasta", "pasta", "faces", "houses", "beds", "faces", "houses"…
+## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0,…
+## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32, 2.32, 2.32, 2.38, 2.38, 2.38, 2.38, 2.47, 2.47, 2.47, 2.47, 2.50,…
+## $ condition &lt;chr&gt; "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label",…
 ```
 
 ]
 ]
 
 ---
+class: inverse 
+
+# Your turn 3
+
+<div class="countdown" id="timer_5f6ae3c6" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+1. Take a look at `another_df`, which should be saved in your Global Environment. Click the "View" button in the Environment pane, and also use `View()` in your Console. 
+
+1. Now look at some summary information about `another_df` using `str()` and `glimpse()`. *Hint*. You will need to load the `tidyverse` package first in order to use `glimpse()`.
+
+1. Lastly find the number of rows and columns in `another_df` using `nrow()` and `ncol()`, respectively. Make sure your answers match the summary information given to you above. 
+
+---
+class: solution
+
+# Solution
+
+
+
+
+.panelset[
+.panel[.panel-name[Q1]
+
+
+```r
+View(another_df)
+```
+]
+
+.panel[.panel-name[Q2]
+
+
+```r
+library(tidyverse)
+
+str(another_df)
+```
+
+```
+## 'data.frame':	32 obs. of  4 variables:
+##  $ subid  : chr  "A001" "A001" "A001" "A001" ...
+##  $ stimuli: chr  "A" "B" "C" "D" ...
+##  $ correct: int  0 0 1 0 1 1 1 1 0 0 ...
+##  $ age    : num  2.5 2.5 2.5 2.5 2.75 2.75 2.75 2.75 3.6 3.6 ...
+```
+
+```r
+glimpse(another_df)
+```
+
+```
+## Rows: 32
+## Columns: 4
+## $ subid   &lt;chr&gt; "A001", "A001", "A001", "A001", "B002", "B002", "B002", "B002", "C003", "C003", "C003", "C003", "D004", "D004", "D004", "D004",…
+## $ stimuli &lt;chr&gt; "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B…
+## $ correct &lt;int&gt; 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1
+## $ age     &lt;dbl&gt; 2.50, 2.50, 2.50, 2.50, 2.75, 2.75, 2.75, 2.75, 3.60, 3.60, 3.60, 3.60, 4.00, 4.00, 4.00, 4.00, 2.20, 2.20, 2.20, 2.20, 4.40, 4…
+```
+]
+
+.panel[.panel-name[Q3]
+
+
+```r
+nrow(another_df)
+```
+
+```
+## [1] 32
+```
+
+```r
+ncol(another_df)
+```
+
+```
+## [1] 4
+```
+
+]
+]
+ 
+---
 class: inverse, center, middle
 # Q &amp; A
 
-<div class="countdown" id="timer_5f67fc24" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6ae302" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -524,7 +609,7 @@ class: inverse, center, middle
 class: inverse, center, middle
 # Break! 
 
-<div class="countdown" id="timer_5f67fb69" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6ae2d5" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
     </textarea>
