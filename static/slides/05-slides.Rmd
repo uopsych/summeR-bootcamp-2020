@@ -1,5 +1,5 @@
 ---
-title: "Importing Data & Workflows"
+title: "Importing Data & Project-oriented Workflows"
 author: 
 date: 
 output:
@@ -36,7 +36,7 @@ style_mono_accent(base_color = "#23395b",
 
 class: title-slide, center, middle
 
-# Importing Data & Workflows
+# Importing Data & Project-oriented Workflows
 
 ---
 
