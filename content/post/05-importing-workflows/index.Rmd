@@ -41,6 +41,8 @@ links:
   url: https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf
 ---
 
+The first step of any data analysis workflow is to get data into R. This isn't always as straightforward as you might think, but fortunately there are some core functions that make this easy and efficient. Since we are starting at the beginning, we will also discuss the idea of a project-oriented workflow, which is a way to keep an organized and consistent process whenever you work with data in R that will also make your work reproducible and shareable. And the decisions you make right at the start of a data analysis project -- even before importing your data -- will have a lot of down-stream consequences. 
+
 ***
 
 ### Slides

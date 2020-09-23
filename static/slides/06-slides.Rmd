@@ -893,7 +893,7 @@ http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-
 ---
 class: inverse, center, middle
 
-Let's recap with a flipbook!
+# Let's recap with a flipbook!
 
 ---
 # Flipbook

@@ -45,6 +45,7 @@ links:
   url: https://rstudio.cloud/learn/primers/3
 ---
 
+Data visualization is at the very core of science. In order to understand and glean insights from our data, we need different ways of representing it visually. R has an incredible capacity for creating all sorts of plots, charts, and tables, and today we will only scratch the surface. We will discuss the fundamentals of the powerful `ggplot2` package and the "grammar of graphics" that underlies it. 
 
 ***
 
