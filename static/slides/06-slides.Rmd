@@ -97,16 +97,6 @@ library(palmerpenguins)
 glimpse(penguins)
 ```
 
-
----
-# ggplot2
-
-We're going to create this plot together, step-by-step, using `ggplot2`!
-
-```{r echo=FALSE}
-knitr::include_graphics("images/penguins_hist.png")
-```
-
 ---
 
 # ggplot2
@@ -408,7 +398,7 @@ penguins %>%
 ---
 # Mapping with geoms
 
-Now we'll ue a different `geom` -- we'll add a layer of points to our plot using `geom_point()`
+Now we'll use a different `geom` -- we'll add a layer of points to our plot using `geom_point()`
 
 ```{r penguins-point-error, error=TRUE, message=FALSE, warning=FALSE}
 penguins %>% 
@@ -523,11 +513,11 @@ class: inverse
 countdown(minutes = 3, seconds = 30)
 ```
 
-Options for aesthetics include `color`, `shape`, `size`, and `alpha` (transparency, 0-1 scale). 
-
 1. Create a scatter plot to visualize the relationship between `flipper_length_mm` and `bill_length_mm`. 
 
-1. Add an aesthetic to visualize the effect of `species`. Choose any aesthetic you’d like or play around with a few. What do they do? How might you use more than one aesthetic?
+1. Build on your plot above by adding an aesthetic to visualize the effect of `species`. Choose any aesthetic you’d like or play around with a few. What do they do? How might you use more than one aesthetic? 
+
+Options for aesthetics include `color`, `shape`, `size`, and `alpha` (transparency, 0-1 scale). 
 
 ---
 class: solution
@@ -729,7 +719,7 @@ However, I *don't* define the`color` aesthetic globally, because `color` is geom
 ]
 
 ---
-# Global asethetic mapping 
+# Global aesthetic mapping 
 
 Let's take a look at the previous example again, but this time with `color` in the global aesthetic...
 
@@ -781,6 +771,110 @@ penguins %>%
 ]
 
 ---
-# Other geoms
+class: inverse
+# Your Turn `r (yt_counter <- yt_counter + 1)`
 
+```{r echo=FALSE}
+countdown(minutes = 4)
+```
+
+1. Use `rio::import` to read in the dataset `pragmatic_scales_data.csv`, which is saved inside the `data` folder. Save it to an object called `ps_data`. 
+
+1. Take a glimpse at the data using `glimpse()` or `str()` to get a sense of the variables. You can also `View()` the data. 
+
+1. Fill in the blanks in the code to re-create the plot below. *Note*: This plot uses a new geom called `geom_col()`, which I've filled in for you. 
+
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("images/ps_data_plot.png")
+```
+
+
+---
+class: solution
+# Solution
+
+```{r echo=FALSE}
+ps_data <- rio::import(here::here("static/slides/data/pragmatic_scales_data.csv"))
+```
+
+
+.panelset[
+.panel[.panel-name[Q1]
+
+```{r eval=FALSE}
+ps_data <- rio::import(here::here("data/pragmatic_scales_data.csv"))
+```
+
+]
+
+.panel[.panel-name[Q2]
+
+```{r}
+glimpse(ps_data)
+```
+]
+
+.panel[.panel-name[Q3]
+
+.pull-left[
+```{r eval=FALSE}
+ps_data %>% 
+  ggplot(aes(x = item, y = correct, fill = item)) + 
+  geom_col() + 
+  facet_wrap(~condition)
+```
+]
+
+.pull-right[
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+ps_data %>% 
+  ggplot(aes(x = item, y = correct, fill = item)) + 
+  geom_col() + 
+  facet_wrap(~condition)
+```
+]
+]
+]
+
+---
+# Labels and themes
+
+You can do a TON more customization of your plots than what we've covered so far. The possibilities with `ggplot` really are endless!
+
+--
+
+For example, you can change your axis labels, tweak the theme of the plot, etc...
+
+--
+***
+
+Good resources: 
+
+https://ggplot2.tidyverse.org/reference/theme.html
+
+http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html
+
+---
+# Flipbook
+
+Click on the "full screen" icon below and use the navigation arrows to flip through the creation of a scatterplot in real time!
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan("06-ggplot_flipbook.html", max_width = 900)
+```
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Data wrangling with `dplyr`
 

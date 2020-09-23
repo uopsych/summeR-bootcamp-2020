@@ -553,5 +553,5 @@ class: inverse, center, middle
 # Break! 
 
 ```{r echo=FALSE}
-countdown(minutes = 10)
+countdown(minutes = 5)
 ```
