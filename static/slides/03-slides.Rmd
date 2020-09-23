@@ -207,7 +207,7 @@ class: solution
 ?sd
 ```
 ]
-.panel[.panel-name[Q1]
+.panel[.panel-name[Q2]
 
 ```{r}
 sd(vec_na, na.rm = TRUE)

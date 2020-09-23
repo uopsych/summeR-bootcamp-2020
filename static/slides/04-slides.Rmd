@@ -58,6 +58,13 @@ knitr::include_graphics("images/data_science_workflow.png")
 .footnote[Image from [R for Data Science](https://r4ds.had.co.nz/introduction.html)]
 
 ---
+# Core tidyverse packages
+
+```{r echo=FALSE}
+knitr::include_graphics("images/tidyverse_package_load.png")
+```
+
+---
 
 # Core tidyverse packages
 
@@ -68,6 +75,7 @@ knitr::include_graphics("images/tidyverse_packages.png")
 ]
 
 .footnote[Image from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
+
 ---
 # Core tidyverse packages
 
@@ -149,7 +157,9 @@ background-size: 12%
 .panel[.panel-name[Overview]
 
 .pull-left[
-A `tibble` is much like the `data.frame` in base R, but optimized for use in the tidyverse.  
+A `tibble` is much like the data frame in base R, but optimized for use in the tidyverse.  
+
+Among other features, it has nicer printing methods. 
 ]
 ]
 
@@ -194,9 +204,14 @@ background-size: 12%
 
 .panelset[
 .panel[.panel-name[Overview]
-.pull-left[
-`ggplot2` uses the "Grammar of Graphics" and layers graphical components together to create a plot.]
+
+`ggplot2` uses the "Grammar of Graphics" to create a plot. Check out some examples of what's possible from the [ggplot2 extensions gallery](https://exts.ggplot2.tidyverse.org/gallery/).
+
+```{r echo=FALSE}
+knitr::include_url("https://exts.ggplot2.tidyverse.org/gallery/", height = "325px")
+```
 ]
+
 
 .panel[.panel-name[Cheatsheet]
 
@@ -483,7 +498,7 @@ background-size: 12%
 .pull-left[
 `purrr` provides tools for working with functions and vectors -- in particular, repeating the same operations many times concisely and efficiently
 
-The `map()` family of functions helps us replace for loops, <br/> making our code easier to read and more succint.
+The `map()` family of functions helps us replace for loops, <br/> making our code easier to read and more succinct.
 ]
 ]
 
@@ -531,12 +546,12 @@ countdown(minutes = 5)
 class: inverse, center, middle
 # Next up...
 
-## Importing data & Workflows
+## Importing data & Project-oriented workflows
 
 ---
 class: inverse, center, middle
 # Break! 
 
 ```{r echo=FALSE}
-countdown(minutes = 10)
+countdown(minutes = 5)
 ```

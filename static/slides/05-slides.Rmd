@@ -1,5 +1,5 @@
 ---
-title: "Importing Data & Workflows"
+title: "Importing Data & Project-oriented Workflows"
 author: 
 date: 
 output:
@@ -36,13 +36,13 @@ style_mono_accent(base_color = "#23395b",
 
 class: title-slide, center, middle
 
-# Importing Data & Workflows
+# Importing Data & Project-oriented Workflows
 
 ---
 
 # Importing data
 
-Importing data in R generally has 2 commonly challenging aspects...
+### Importing data in R generally has 2 commonly challenging aspects...
 
 --
 
@@ -212,6 +212,8 @@ knitr::include_graphics("images/create_project3.png")
 
 When you create a Project in RStudio, it is associated with a folder somewhere on your computer. 
 
+--
+
 It will automatically create a `.Rproj` file in that folder, which will keep track of the "top level" of your project. 
 
 --
@@ -250,13 +252,13 @@ class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
 
 ```{r echo=FALSE}
-countdown(minutes = 3, seconds = 30)
+countdown(minutes = 4)
 ```
 
 
 #### 1. Load the `rio` and `here` packages.
 
-#### 2.  Run the following code to import the data called `pragmatic_scales.csv`). Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
+#### 2.  Run the following code to import the data called `pragmatic_scales.csv`. Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
 
 ```{r eval=FALSE}
 ps_data <- import("pragmatic_scales.csv")
@@ -314,6 +316,7 @@ ps_data_2 <- import(here("data/pragmatic_scales_data.sav"))
 You can also use `rio` to export your data using `export()`, saving it in any of the formats that it works with. 
 
 --
+***
 
 Here are the arguments you will need to use for `export()`
 
@@ -321,14 +324,18 @@ Here are the arguments you will need to use for `export()`
 export(x, file)
 ```
 
+--
+
 `x` is the `data.frame` object in your RStudio Environment you want to export 
+
+--
 
 `file` is the path/filename for the resulting file 
 
 --
 ***
 
-For example, let's say I want to export `ps_data` as an `.xlsx` file and put it into the `/data` subdirectory.
+For example, let's say I want to export `ps_data` as an `.xlsx` file and put it into the `data/` subdirectory.
 
 ```{r eval=FALSE}
 export(ps_data, here::here("data/ps_data.xlsx"))
@@ -339,16 +346,16 @@ class: inverse
 # Your turn `r (yt_counter <- yt_counter + 1)`
 
 ```{r echo=FALSE}
-countdown(minutes = 3)
+countdown(minutes = 4)
 ```
 
-1. Look through the Files pane and find the file `another_dataset.csv`. Make note of what subdirectory it is saved in. Import the data and save to an object called `another_df`.
+1. Look through the Files pane and find the file `another_data_set.csv`. Make note of what subdirectory it is saved in. Import the data and save to an object called `another_df`.
 
-1. Now export the data you just imported and save it into the `data/` directory. Make sure the name of the resulting file is `another_dataset`, and export it as a `.xlsx` file.
+1. Now export the data you just imported and save it into the `data/` directory. Make sure the name of the resulting file is `another_data_set`, and export it as a `.xlsx` file.
 
-1. One of your colleagues insists you send them a `.sav` file so that they can run the analyses in SPSS. Make another copy of `another_dataset` in the `data/` subdirectory that is in the `.sav` format. 
+1. One of your colleagues insists you send them a `.sav` file so that they can run the analyses in SPSS. Make another copy of `another_data_set` in the `data/` subdirectory that is in the `.sav` format. 
 
-1. Finally, let's read one of these datasets to make sure everything worked as expected. Import `another_dataset.sav` , which you just created, and import it, saving it to a new object named `another_df_2`.
+1. Finally, let's read one of these datasets to make sure everything worked as expected. Import `another_data_set.sav` , which you just created, and import it, saving it to a new object named `another_df_2`.
 
 ---
 class: solution
@@ -359,7 +366,7 @@ class: solution
 
 ```{r eval=FALSE}
 # Q1.
-another_df <- import(here("data/more_data/another_dataset.csv"))
+another_df <- import(here("data/more_data/another_data_set.csv"))
 ```
 
 ]
@@ -368,7 +375,7 @@ another_df <- import(here("data/more_data/another_dataset.csv"))
 
 ```{r eval=FALSE}
 # Q2.
-export(another_df, here("data/another_dataset.xlsx"))
+export(another_df, here("data/another_data_set.xlsx"))
 ```
 ]
 
@@ -377,7 +384,7 @@ export(another_df, here("data/another_dataset.xlsx"))
 
 ```{r eval=FALSE}
 # Q3.
-export(another_df, here("data/another_dataset.sav"))
+export(another_df, here("data/another_data_set.sav"))
 ```
 
 ]
@@ -387,7 +394,7 @@ export(another_df, here("data/another_dataset.sav"))
 
 ```{r eval=FALSE}
 # Q4.
-another_df_2 <- import(here("data/another_dataset.sav"))
+another_df_2 <- import(here("data/another_data_set.sav"))
 ```
 ]
 ]
@@ -413,7 +420,9 @@ One way is to click on the `View` button in the environment pane... `r icon::fa(
 
 You should see `ps_data` in the environment pane with a little data table icon at the far right. Click on that icon. 
 
-You'll notice that this ran `View(ps_data)` in the console. We could have instead just typed this directly ourselves (notice the capital `V`)
+--
+
+You'll notice that this ran `View(ps_data)` in the console. We could have instead just typed this directly ourselves -- notice the capital `V` in `View()` `r emo::ji("eyes")`
 
 ---
 # Viewing data 
@@ -470,6 +479,60 @@ glimpse(ps_data)
 ]
 ]
 
+---
+class: inverse 
+
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 2)
+```
+
+1. Take a look at `another_df`, which should be saved in your Global Environment. Click the "View" button in the Environment pane, and also use `View()` in your Console. 
+
+1. Now look at some summary information about `another_df` using `str()` and `glimpse()`. *Hint*. You will need to load the `tidyverse` package first in order to use `glimpse()`.
+
+1. Lastly find the number of rows and columns in `another_df` using `nrow()` and `ncol()`, respectively. Make sure your answers match the summary information given to you above. 
+
+---
+class: solution
+
+# Solution
+
+```{r echo=FALSE, message=FALSE}
+another_df <- rio::import(here::here("static/slides/data/another_data_set.csv"))
+```
+
+
+.panelset[
+.panel[.panel-name[Q1]
+
+```{r eval=FALSE}
+View(another_df)
+```
+]
+
+.panel[.panel-name[Q2]
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+
+str(another_df)
+
+glimpse(another_df)
+```
+]
+
+.panel[.panel-name[Q3]
+
+```{r}
+nrow(another_df)
+ncol(another_df)
+```
+
+]
+]
+ 
 ---
 class: inverse, center, middle
 # Q & A

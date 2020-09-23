@@ -413,7 +413,7 @@ There are a number of methods for indexing that are good to be familiar with
 
 ### Indexing by position
 
-Vectors can be indexed numerically, starting with 1 (not 0). We can extract certain elemnts by from a vector by putting the index of their position inside brackets `[]`. 
+Vectors can be indexed numerically, starting with 1 (not 0). We can extract specific elements from a vector by putting the index of their position inside brackets `[]`. 
 
 --
 ***
@@ -1174,7 +1174,7 @@ Here's a quick table that summarizes data structures.
 knitr::include_graphics("images/data-types.png")
 ```
 
-.foonote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
 
 ---
 class: inverse, center, middle
