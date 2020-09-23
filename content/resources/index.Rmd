@@ -44,7 +44,9 @@ Below is a curated list of resources I've generally found to be particularly use
 
 2. [Modern Dive](https://moderndive.netlify.app/) -- great for complete beginners, more focused on stats and modelling
 
-3. [Big Book of R](https://www.bigbookofr.com/) -- one stop shopping for pretty much any R-related book that's out there (categorized by topic and searchable)
+3. [The Tidyverse Style Guide](https://style.tidyverse.org/) -- for getting into the habit of using best practices early on
+
+4. [Big Book of R](https://www.bigbookofr.com/) -- one stop shopping for pretty much any R-related book that's out there (categorized by topic and searchable)
 :::
 
 <br>
