@@ -21,6 +21,7 @@ library(flipbookr)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
 
 # your turn counter
 yt_counter <- 0
@@ -43,7 +44,19 @@ class: title-slide, center, middle
 ---
 # ggplot
 
-ggplot2 is the *grammar of graphics*, and is the tidyverse package for creating plots. Even with just a few of its commands, it can make beautiful, publication-ready plots. Its more advanced features add even more versatility. And, people make companion packages for it to do even more (e.g., `ggpubr` to  add statistics to your plot).
+ggplot2 is the *grammar of graphics*, and is the tidyverse package for creating plots. 
+
+--
+
+Even with just a few of its commands, it can make beautiful, publication-ready plots. 
+
+--
+
+Its more advanced features add even more versatility. 
+
+--
+
+And, people make companion packages for it to do even more (e.g., `ggpubr` to  add statistics to your plot).
 
 
 ---
@@ -53,9 +66,23 @@ background-size: 10%
 
 # Palmer penguins
 
-```{r echo=FALSE}
+We're going to use the **Palmer Penguins** dataset as an example throughout our discussion of `ggplot`.
+
+--
+
+This data comes from the `palmerpenuins` package, which you can download from CRAN using `install.packages("palmerpenguins")`. 
+
+--
+
+And remember, to load the package in order to get access to the dataset included (which is named `penguins`), use `library(penguins)`. 
+
+--
+
+.center[
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("images/penguins.png")
 ```
+]
 
 ---
 
@@ -87,7 +114,6 @@ knitr::include_graphics("images/penguins_hist.png")
 When creating a plot in ggplot2, the first thing you have to do is call the `ggplot()` function. It takes data as its first argument. Let's start there:
 
 --
-***
 
 .left-code[
 ```{r plot-1, eval=FALSE}
@@ -103,7 +129,7 @@ ggplot(data = penguins)
 ---
 # ggplot2
 
-Ok, all we got was a blank square!? 
+Ok, all we got was a blank square...
 
 --
 
@@ -137,11 +163,322 @@ In `ggplot`, that combination of things forms a *layer*. The `ggplot` terminolog
 * **stat** - statistical transformations
 
 ---
-# Flipbook
+# ggplot
 
-Click on the "full screen" icon below and use the naviagtion arrows to flip through the creation of a scatterplot in real time!
+Putting all that together, the flow of information in ggplot2 is...
+
+--
+
+1. `data` is attached to the ggplot call...
+
+--
+
+2. mapped by `aes()`...
+
+--
+
+3. transformed by `stat` before being passed to a `geom()`...
+
+--
+
+4. which is placed, sized, and colored according to its relevant `scale`...
+
+--
+
+5. then ta-da! rendered plot.
+
+--
+***
+
+We already did step 1 above, by providing our `penguins` dataset to `ggplot()`. Let's move onto aesthetic mapping.
+
+---
+background-image: url(images/hex/magrittr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# But first...pipes!
+
+--
+
+Pipes are a way to write code in a way that is easier to read and understand. They allow you to string a series of functions together into a pipeline.
+
+--
+***
+
+### .center[`%>%`]
+
+Strictly speaking, a pipe passes an object on the **left-hand side** as the first argument of whatever function is on the **right-hand side**. 
+
+--
+
+In general form, this means that...
+
+`x %>% f(y)` is the same as `f(x, y)`
+
+--
+***
+
+The first argument of many tidyverse functions is `data`. This is the case for `ggplot()`, as we just saw. 
+
+--
+
+tidyverse functions are designed this way to make it easier to use pipes! 
+
+---
+# Pipe operator `%>%`
+
+Let's take another look at the code we just wrote:
+
+```{r eval=FALSE}
+ggplot(data = penguins)
+```
+
+--
+***
+
+We can re-write this code by "piping" the first argument, `data = penguins` to the function, `ggplot()` 
+
+```{r eval=FALSE}
+penguins %>% 
+  ggplot()
+```
+
+--
+***
+
+You can think of the pipe as representing the phrase "and then..."
+
+--
+
+Verbally, we might describe the code we just wrote as "Start with the `penguins` data, and then start a plot"
+
+--
+***
+
+`r emo::ji("keyboard")` You can enter a pipe with the shortcut `CTRL+Shift+M` for PC or `CMD+Shift+M` for Mac.
+
+---
+class: inverse
+# Your Turn `r (yt_counter <- yt_counter + 1)`
 
 ```{r echo=FALSE}
-xaringanExtra::embed_xaringan("06-ggplot_flipbook.html", max_width = 900)
+countdown(minutes = 2)
 ```
+
+The code below calculates the mean of the variable `flipper_length_mm` in the `penguins` dataset. 
+
+```{r eval=FALSE}
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+1. Run the code chunk provided to calculate the mean of `flipper_length_mm`.
+
+1. Re-write the code above using the pipe operator, `%>%`. Check that the answer you get matches the original code you ran above. 
+
+---
+class: solution
+
+# Solution
+
+.panelset[
+.panel[.panel-name[Q1]
+
+```{r}
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+]
+
+.panel[.panel-name[Q2]
+
+```{r}
+penguins$flipper_length_mm %>% 
+  mean(na.rm = TRUE)
+```
+
+]
+]
+
+---
+# Aesthetic mapping
+
+Ok, now back to `ggplot`. We'll be using the pipe operator from here on out. 
+
+--
+***
+
+The basic idea is that we want to take our data and map it onto physical space using geometric objects or geoms. 
+
+--
+
+For `ggplot` to place a geom, it needs to know how the data map onto the aesthetics of the graph.
+
+--
+
+Each `geom()` function in `ggplot` takes a mapping argument. 
+
+--
+
+Let’s start with a basic geom, `geom_histogram()`...
+
+---
+### Mapping with geoms
+
+We're going to call `ggplot()` again, and this time add the `geom_histogram()` *layer*, telling it to map the variable `flipper_length_mm` to the x-axis aesthetic
+
+
+.left-code[
+```{r penguins-hist-basic, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_histogram(
+    mapping = aes(x = flipper_length_mm)
+    ) 
+```
+]
+
+.right-plot[
+```{r penguins-hist-basic-out, ref.label="penguins-hist-basic", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning=FALSE, message=FALSE}
+```
+]
+
+---
+### Mapping with geoms 
+
+You can add additional arguments to the `geom()`. For example, we could change the number of bins
+
+
+.left-code[
+```{r penguins-hist-bins, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_histogram( 
+    mapping = aes(x = flipper_length_mm),
+    bins = 10 
+    )
+```
+]
+
+
+
+.right-plot[
+```{r penguins-hist-bins-out, ref.label="penguins-hist-bins", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning=FALSE, message=FALSE}
+```
+]
+
+---
+### Mapping with geoms
+
+Or make them a different color. We can change the color of 2-d objects with the `fill` aesthetic
+
+.left-code[
+```{r penguins-hist-fill, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_histogram( 
+    mapping = aes(x = flipper_length_mm),
+    fill = "red" 
+    )
+```
+]
+
+.right-plot[
+```{r penguins-hist-fill-out, ref.label="penguins-hist-fill", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning=FALSE, message=FALSE}
+```
+]
+
+---
+### Mapping with geoms
+
+Now we'll ue a different `geom` -- we'll add a layer of points to our plot using `geom_point()`
+
+```{r error=TRUE}
+penguins %>% 
+  ggplot() + 
+  geom_point(
+    mapping = aes(x = flipper_length_mm)
+  )
+```
+
+---
+### Mapping with geoms
+
+We get an error, telling us that `geom_point()` requires the y-aesthetic to be defined. Let's add `bill_length_mm` as the y-axis
+
+.left-code[
+```{r penguins-point-fixed, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_point(
+    mapping = aes(x = flipper_length_mm,
+                  y = bill_length_mm)
+  )
+```
+]
+
+.right-plot[
+```{r penguins-point-fixed-out, ref.label="penguins-point-fixed", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning = FALSE, message = FALSE}
+```
+]
+
+---
+### Mapping with geoms
+
+Let's find out if the relationship between `flipper_length_mm` & `bill_length_mm` relates to the `species` of penguin. We'll map `species` to the `color` aesthetic (similar to `fill`, but for 1-d objects).
+
+.left-code[
+```{r penguins-point-color, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_point(
+    mapping = aes(x = flipper_length_mm,
+                  y = bill_length_mm,
+                  color = species)
+  )
+```
+]
+
+.right-plot[
+```{r penguins-point-color-out, ref.label="penguins-point-color", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning = FALSE, message = FALSE}
+```
+]
+
+---
+### Mapping with geoms 
+
+Notice that we included `color` *INSIDE* our aesthetic mapping call (`mapping = aes()`) here, but not when we filled our histogram with the color red earlier
+
+--
+
+This is the difference between mapping an aesthetic to ***data*** and just setting an aesthetic to some ***value*** (e.g., "red").
+
+--
+
+This is a fairly common mistake, so let's take a look at what happens if we tell it to make our points red but accidentally include that inside the `aes()` call...
+
+---
+### Mapping with geoms
+
+`r emo::ji("warning")`  WARNING `r emo::ji("warning")` This is not what we want! `ggplot` is treating the value "red" as if it were part of our data, which it isn't
+
+.left-code[
+```{r penguins-point-red, eval=FALSE}
+penguins %>% 
+  ggplot() + 
+  geom_point(
+    mapping = aes(x = flipper_length_mm,
+                  y = bill_length_mm,
+                  color = "red")
+  )
+```
+]
+
+.right-plot[
+```{r penguins-point-red-out, ref.label="penguins-point-red", echo=FALSE, fig.dim=c(4.8, 4.5), out.width="100%", warning = FALSE, message = FALSE}
+```
+]
+
+---
+class: inverse
 
