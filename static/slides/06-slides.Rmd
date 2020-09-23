@@ -891,6 +891,42 @@ https://ggplot2.tidyverse.org/reference/theme.html
 http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html
 
 ---
+# Example `r emo::ji("exploding_head")`
+
+.footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/ggplot_ex_1.png")
+```
+
+---
+# Example `r emo::ji("exploding_head")`
+
+.footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
+
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/ggplot_ex_2.jpg")
+```
+
+---
+# Example `r emo::ji("exploding_head")`
+
+.footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
+
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/ggplot_ex_3.png")
+```
+
+---
+# Example `r emo::ji("exploding_head")`
+
+.footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
+
+```{r echo=FALSE, out.width="40%"}
+knitr::include_graphics("images/ggplot_ex_4.png")
+```
+
+
+---
 class: inverse, center, middle
 
 # Let's recap with a flipbook!

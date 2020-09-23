@@ -91,14 +91,14 @@ glimpse(penguins)
 ```
 ## Rows: 344
 ## Columns: 8
-## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
-## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
-## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,…
-## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,…
-## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18…
-## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
-## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
-## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torger…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.6, 34.6, 36.6, …
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.2, 21.1, 17.8, …
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, 195, 197, 184, …
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3800, 4400, 3700, …
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, male, male, fema…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…
 ```
 
 ---
@@ -277,7 +277,7 @@ Verbally, we might describe the code we just wrote as "Start with the `penguins`
 class: inverse
 # Your Turn 1
 
-<div class="countdown" id="timer_5f6aec69" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6b67bd" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -571,7 +571,7 @@ This is not what we want! `ggplot` is treating the value "red" as if it were par
 class: inverse
 # Your Turn 2
 
-<div class="countdown" id="timer_5f6aede0" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6b6a7a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -844,7 +844,7 @@ penguins %&gt;%
 class: inverse
 # Your Turn 3
 
-<div class="countdown" id="timer_5f6aedf0" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6b6b0d" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -884,11 +884,11 @@ glimpse(ps_data)
 ```
 ## Rows: 588
 ## Columns: 5
-## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T1…
-## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "house…
-## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1,…
-## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32,…
-## $ condition &lt;chr&gt; "Label", "Label", "Label", "Label", "Label", "Label", "Labe…
+## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T17", "T17", "T17", "T17", "M3", "M3", "M3", …
+## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "houses", "pasta", "pasta", "faces", "houses", "b…
+## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, …
+## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32, 2.32, 2.32, 2.38, 2.38, 2.38, 2.38, 2.47, …
+## $ condition &lt;chr&gt; "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "La…
 ```
 ]
 
@@ -930,6 +930,34 @@ https://ggplot2.tidyverse.org/reference/theme.html
 http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html
 
 ---
+# Example 🤯
+
+.footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
+&lt;img src="images/ggplot_ex_1.png" width="60%" /&gt;
+
+---
+# Example 🤯
+
+.footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
+
+&lt;img src="images/ggplot_ex_2.jpg" width="60%" /&gt;
+
+---
+# Example 🤯
+
+.footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
+
+&lt;img src="images/ggplot_ex_3.png" width="60%" /&gt;
+
+---
+# Example 🤯
+
+.footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
+
+&lt;img src="images/ggplot_ex_4.png" width="40%" /&gt;
+
+
+---
 class: inverse, center, middle
 
 # Let's recap with a flipbook!
@@ -948,7 +976,7 @@ Click on the "full screen" icon in the bottom right and use the navigation arrow
 class: inverse, center, middle
 # Q &amp; A
 
-<div class="countdown" id="timer_5f6aefbc" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6b69ba" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
