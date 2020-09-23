@@ -258,10 +258,10 @@ countdown(minutes = 4)
 
 #### 1. Load the `rio` and `here` packages.
 
-#### 2.  Run the following code to import the data called `pragmatic_scales.csv`. Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
+#### 2.  Run the following code to import the data called `pragmatic_scales_data.csv`. Why do you get an error? Where is this file saved? *Hint*: Look through the folder(s) in the Files pane
 
 ```{r eval=FALSE}
-ps_data <- import("pragmatic_scales.csv")
+ps_data <- import("pragmatic_scales_data.csv")
 ```
 
 #### 3. Fix the error in the code above to import the data. *Hint*: use the `here()` function    
@@ -286,19 +286,19 @@ library(here)
 
 ```{r error=TRUE}
 # Q2. 
-ps_data <- import("pragmatic_scales.csv")
+ps_data <- import("pragmatic_scales_data.csv")
 ```
 
 ***
 
-The file **pragmatic_scales.csv** is saved in the **data** folder, so we need to tell R to look in that folder.
+The file **pragmatic_scales_data.csv** is saved in the **data** folder, so we need to tell R to look in that folder.
 ]
 
 .panel[.panel-name[Q3]
 
 ```{r eval=FALSE}
 # Q3.
-ps_data <- import(here("data/pragmatic_scales.csv"))
+ps_data <- import(here("data/pragmatic_scales_data.csv"))
 ```
 ]
 
