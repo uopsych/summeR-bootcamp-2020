@@ -344,9 +344,7 @@ We're going to call `ggplot()` again, and this time add the `geom_histogram()` *
 ```{r penguins-hist-basic, eval=FALSE}
 penguins %>% 
   ggplot() + 
-  geom_histogram(
-    mapping = aes(x = flipper_length_mm)
-    ) 
+  geom_histogram(mapping = aes(x = flipper_length_mm)) 
 ```
 ]
 
@@ -369,10 +367,8 @@ You can add additional arguments to the `geom()`. For example, we could change t
 ```{r penguins-hist-bins, eval=FALSE}
 penguins %>% 
   ggplot() + 
-  geom_histogram( 
-    mapping = aes(x = flipper_length_mm),
-    bins = 10 
-    )
+  geom_histogram(mapping = aes(x = flipper_length_mm),
+                 bins = 10)
 ```
 
 ]
@@ -396,10 +392,8 @@ Or make them a different color. We can change the color of 2-d objects with the 
 ```{r penguins-hist-fill, eval=FALSE}
 penguins %>% 
   ggplot() + 
-  geom_histogram( 
-    mapping = aes(x = flipper_length_mm),
-    fill = "red" 
-    )
+  geom_histogram(mapping = aes(x = flipper_length_mm), 
+                 fill = "red")
 ```
 
 ]
@@ -420,8 +414,7 @@ Now we'll ue a different `geom` -- we'll add a layer of points to our plot using
 penguins %>% 
   ggplot() + 
   geom_point(
-    mapping = aes(x = flipper_length_mm)
-  )
+    mapping = aes(x = flipper_length_mm))
 ```
 
 
@@ -441,8 +434,7 @@ penguins %>%
   ggplot() + 
   geom_point(
     mapping = aes(x = flipper_length_mm,
-                  y = bill_length_mm)
-  )
+                  y = bill_length_mm))
 ```
 ]
 
@@ -471,8 +463,7 @@ penguins %>%
   geom_point(
     mapping = aes(x = flipper_length_mm,
                   y = bill_length_mm,
-                  color = species)
-  )
+                  color = species))
 ```
 ]
 
@@ -507,11 +498,9 @@ This is a fairly common mistake, so let's take a look at what happens if we tell
 ```{r penguins-point-red, eval=FALSE}
 penguins %>% 
   ggplot() + 
-  geom_point(
-    mapping = aes(x = flipper_length_mm,
-                  y = bill_length_mm,
-                  color = "red")
-  )
+  geom_point(mapping = aes(x = flipper_length_mm, 
+                           y = bill_length_mm,
+                           color = "red"))
 ```
 
 ]
@@ -632,9 +621,11 @@ Another thing we often want to do is to add a line over our scatterplot to descr
 penguins %>% 
   ggplot() + 
   geom_point(aes(x = flipper_length_mm, 
-                 y = bill_length_mm)) + 
+                 y = bill_length_mm,
+                 color = species)) + 
   geom_smooth(aes(x = flipper_length_mm, 
-                 y = bill_length_mm))
+                  y = bill_length_mm),
+              color = "black")
 ```
 
 
@@ -664,9 +655,11 @@ You can change that by setting the `method` argument in `geom_smooth()`. Let's c
 penguins %>% 
   ggplot() + 
   geom_point(aes(x = flipper_length_mm, 
-                 y = bill_length_mm)) + 
+                 y = bill_length_mm,
+                 color = species)) + 
   geom_smooth(aes(x = flipper_length_mm, 
-                 y = bill_length_mm),
+                  y = bill_length_mm),
+              color = "black",
               method = "lm")
 ```
 
@@ -687,5 +680,107 @@ penguins %>%
 # Global aesthetic mapping
 
 
-That looks pretty good, but this code is getting inefficient, because we're specifying the x and y axis for each `geom_*` call. Instead, we can use *global* aesthetic mappings, which are specified in the `ggplot()` call. Global mappings are inherited by each layer unless they're overwritten. 
+Our code so far has been getting rather inefficient. We're specifying the x and y axis for each `geom_*` call.
+
+--
+***
+
+Instead, we can use **global** aesthetic mappings, which are specified in the `ggplot()` call. 
+
+--
+
+Global mappings are inherited by each layer unless they're overwritten. 
+
+---
+# Global aesthetic mapping
+
+Let's re-make our previous plot using global aesthetic mapping
+
+.panelset[
+.panel[.panel-name[Code]
+
+```{r point-smooth-global, eval=FALSE}
+penguins %>% 
+  ggplot(aes(x = flipper_length_mm, 
+             y = bill_length_mm))+ 
+  geom_point(aes(color = species)) + 
+  geom_smooth(color = "black",
+              method = "lm")
+```
+]
+
+.panel[.panel-name[Plot]
+
+
+```{r point-smooth-global-out, ref.label="point-smooth-global", echo=FALSE, fig.dim=c(4.8, 4.5), warning = FALSE, message = FALSE}
+```
+]
+
+.panel[.panel-name[Explanation]
+
+So...what do we put in global aesthetic mapping and what do we put in the aesthetic mapping of specific geoms? 
+
+You want to put anything in the global mapping that you want *every layer to inherit* (or at least the majority of them). 
+
+In the code above, I defined the `x` and `y` aesthetics globally, because I want those the same in every `geom`.
+
+However, I *don't* define the`color` aesthetic globally, because `color` is geom-specific in this case.
+]
+]
+
+---
+# Global asethetic mapping 
+
+Let's take a look at the previous example again, but this time with `color` in the global aesthetic...
+
+.panelset[
+.panel[.panel-name[Code 1]
+
+```{r smooth-color-global, eval=FALSE}
+penguins %>% 
+  ggplot(aes(x = flipper_length_mm, 
+             y = bill_length_mm,
+             color = species))+ 
+  geom_point() +  # inherit global
+  geom_smooth(method = "lm") #inherit global
+```
+]
+
+.panel[.panel-name[Plot 1]
+
+.pull-left[
+```{r smooth-color-global-out, ref.label="smooth-color-global", echo=FALSE, fig.dim=c(4.8, 4.5), warning = FALSE, message = FALSE}
+```
+]
+
+
+.pull-right[
+As you can see, global aesthetic mapping gets inherited by every layer. We can override this by providing a different aesthetic mapping in individual `geom()` calls...
+]
+]
+
+.panel[.panel-name[Code 2]
+
+```{r smooth-color-global-override, eval=FALSE}
+penguins %>% 
+  ggplot(aes(x = flipper_length_mm, 
+             y = bill_length_mm,
+             color = species))+ 
+  geom_point() +  #inherit global 
+  geom_smooth(method = "lm",
+              color = "black") #override global `color`
+```
+]
+
+.panel[.panel-name[Plot 2]
+
+
+```{r smooth-color-global-override-out, ref.label="smooth-color-global-override", echo=FALSE, fig.dim=c(4.8, 4.5), warning = FALSE, message = FALSE}
+```
+]
+]
+
+---
+# Other geoms
+
 

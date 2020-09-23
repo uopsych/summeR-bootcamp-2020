@@ -90,14 +90,14 @@ glimpse(penguins)
 ```
 ## Rows: 344
 ## Columns: 8
-## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
-## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen,…
-## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.6, 34.6, 36.6, 38.7, 42.5, 34.4, 46.0, 37.8, 37.7, 3…
-## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.2, 21.1, 17.8, 19.0, 20.7, 18.4, 21.5, 18.3, 18.7, 1…
-## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, 195, 197, 184, 194, 174, 180, 189, 185, 180, 187, 18…
-## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3800, 4400, 3700, 3450, 4500, 3325, 4200, 3400, 3600, 3…
-## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, male, male, female, female, male, female, male, femal…
-## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007,…
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie,…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.6, 34.6, 36.6, 38.7, 42.5, 34.4, 46.0, 3…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.2, 21.1, 17.8, 19.0, 20.7, 18.4, 21.5, 1…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, 195, 197, 184, 194, 174, 180, 189, 185, …
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3800, 4400, 3700, 3450, 4500, 3325, 4200, 3…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, male, male, female, female, male, female,…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007,…
 ```
 
 
@@ -276,7 +276,7 @@ Verbally, we might describe the code we just wrote as "Start with the `penguins`
 class: inverse
 # Your Turn 1
 
-<div class="countdown" id="timer_5f6ac1f1" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6acb2a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -359,9 +359,7 @@ We're going to call `ggplot()` again, and this time add the `geom_histogram()` *
 ```r
 penguins %&gt;% 
   ggplot() + 
-  geom_histogram(
-    mapping = aes(x = flipper_length_mm)
-    ) 
+  geom_histogram(mapping = aes(x = flipper_length_mm)) 
 ```
 ]
 
@@ -384,10 +382,8 @@ You can add additional arguments to the `geom()`. For example, we could change t
 ```r
 penguins %&gt;% 
   ggplot() + 
-  geom_histogram( 
-    mapping = aes(x = flipper_length_mm),
-    bins = 10 
-    )
+  geom_histogram(mapping = aes(x = flipper_length_mm),
+                 bins = 10)
 ```
 
 ]
@@ -411,10 +407,8 @@ Or make them a different color. We can change the color of 2-d objects with the 
 ```r
 penguins %&gt;% 
   ggplot() + 
-  geom_histogram( 
-    mapping = aes(x = flipper_length_mm),
-    fill = "red" 
-    )
+  geom_histogram(mapping = aes(x = flipper_length_mm), 
+                 fill = "red")
 ```
 
 ]
@@ -435,8 +429,7 @@ Now we'll ue a different `geom` -- we'll add a layer of points to our plot using
 penguins %&gt;% 
   ggplot() + 
   geom_point(
-    mapping = aes(x = flipper_length_mm)
-  )
+    mapping = aes(x = flipper_length_mm))
 ```
 
 ```
@@ -451,8 +444,7 @@ penguins %&gt;%
 penguins %&gt;% 
   ggplot() + 
   geom_point(
-    mapping = aes(x = flipper_length_mm)
-  )
+    mapping = aes(x = flipper_length_mm))
 ```
 
 ```
@@ -475,8 +467,7 @@ penguins %&gt;%
   ggplot() + 
   geom_point(
     mapping = aes(x = flipper_length_mm,
-                  y = bill_length_mm)
-  )
+                  y = bill_length_mm))
 ```
 ]
 
@@ -505,8 +496,7 @@ penguins %&gt;%
   geom_point(
     mapping = aes(x = flipper_length_mm,
                   y = bill_length_mm,
-                  color = species)
-  )
+                  color = species))
 ```
 ]
 
@@ -541,11 +531,9 @@ This is a fairly common mistake, so let's take a look at what happens if we tell
 ```r
 penguins %&gt;% 
   ggplot() + 
-  geom_point(
-    mapping = aes(x = flipper_length_mm,
-                  y = bill_length_mm,
-                  color = "red")
-  )
+  geom_point(mapping = aes(x = flipper_length_mm, 
+                           y = bill_length_mm,
+                           color = "red"))
 ```
 
 ]
@@ -563,7 +551,7 @@ penguins %&gt;%
 class: inverse
 # Your Turn 2
 
-<div class="countdown" id="timer_5f6ac06a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6acc5c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -666,9 +654,11 @@ Another thing we often want to do is to add a line over our scatterplot to descr
 penguins %&gt;% 
   ggplot() + 
   geom_point(aes(x = flipper_length_mm, 
-                 y = bill_length_mm)) + 
+                 y = bill_length_mm,
+                 color = species)) + 
   geom_smooth(aes(x = flipper_length_mm, 
-                 y = bill_length_mm))
+                  y = bill_length_mm),
+              color = "black")
 ```
 
 
@@ -698,9 +688,11 @@ You can change that by setting the `method` argument in `geom_smooth()`. Let's c
 penguins %&gt;% 
   ggplot() + 
   geom_point(aes(x = flipper_length_mm, 
-                 y = bill_length_mm)) + 
+                 y = bill_length_mm,
+                 color = species)) + 
   geom_smooth(aes(x = flipper_length_mm, 
-                 y = bill_length_mm),
+                  y = bill_length_mm),
+              color = "black",
               method = "lm")
 ```
 
@@ -720,7 +712,108 @@ penguins %&gt;%
 # Global aesthetic mapping
 
 
-That looks pretty good, but this code is getting inefficient, because we're specifying the x and y axis for each `geom_*` call. Instead, we can use *global* aesthetic mappings, which are specified in the `ggplot()` call. Global mappings are inherited by each layer unless they're overwritten.
+Our code so far has been getting rather inefficient. We're specifying the x and y axis for each `geom_*` call.
+
+--
+***
+
+Instead, we can use **global** aesthetic mappings, which are specified in the `ggplot()` call. 
+
+--
+
+Global mappings are inherited by each layer unless they're overwritten. 
+
+---
+# Global aesthetic mapping
+
+Let's re-make our previous plot using global aesthetic mapping
+
+.panelset[
+.panel[.panel-name[Code]
+
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = flipper_length_mm, 
+             y = bill_length_mm))+ 
+  geom_point(aes(color = species)) + 
+  geom_smooth(color = "black",
+              method = "lm")
+```
+]
+
+.panel[.panel-name[Plot]
+
+
+![](06-slides_files/figure-html/point-smooth-global-out-1.png)&lt;!-- --&gt;
+]
+
+.panel[.panel-name[Explanation]
+
+So...what do we put in global aesthetic mapping and what do we put in the aesthetic mapping of specific geoms? 
+
+You want to put anything in the global mapping that you want *every layer to inherit* (or at least the majority of them). 
+
+In the code above, I defined the `x` and `y` aesthetics globally, because I want those the same in every `geom`.
+
+However, I *don't* define the`color` aesthetic globally, because `color` is geom-specific in this case.
+]
+]
+
+---
+# Global asethetic mapping 
+
+Let's take a look at the previous example again, but this time with `color` in the global aesthetic...
+
+.panelset[
+.panel[.panel-name[Code 1]
+
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = flipper_length_mm, 
+             y = bill_length_mm,
+             color = species))+ 
+  geom_point() +  # inherit global
+  geom_smooth(method = "lm") #inherit global
+```
+]
+
+.panel[.panel-name[Plot 1]
+
+.pull-left[
+![](06-slides_files/figure-html/smooth-color-global-out-1.png)&lt;!-- --&gt;
+]
+
+
+.pull-right[
+As you can see, global aesthetic mapping gets inherited by every layer. We can override this by providing a different aesthetic mapping in individual `geom()` calls...
+]
+]
+
+.panel[.panel-name[Code 2]
+
+
+```r
+penguins %&gt;% 
+  ggplot(aes(x = flipper_length_mm, 
+             y = bill_length_mm,
+             color = species))+ 
+  geom_point() +  #inherit global 
+  geom_smooth(method = "lm",
+              color = "black") #override global `color`
+```
+]
+
+.panel[.panel-name[Plot 2]
+
+
+![](06-slides_files/figure-html/smooth-color-global-override-out-1.png)&lt;!-- --&gt;
+]
+]
+
+---
+# Other geoms
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
