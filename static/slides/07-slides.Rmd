@@ -183,6 +183,19 @@ background-size: 10%
 
 # `filter()`
 
+```{r echo=FALSE}
+knitr::include_graphics("images/dplyr_filter.jpg")
+```
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
@@ -294,6 +307,21 @@ background-size: 10%
 ```{r echo=FALSE}
 knitr::include_graphics("images/dplyr/mutate.png")
 ```
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `mutate()`
+
+.center[
+```{r echo=FALSE, out.width="75%"}
+knitr::include_graphics("images/dplyr_mutate.png")
+```
+]
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
 
 ---
 background-image: url(images/hex/dplyr.png)

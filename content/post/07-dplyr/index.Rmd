@@ -49,7 +49,6 @@ links:
   url: https://rstudio.cloud/learn/primers/2.3
 ---
 
-Data visualization is at the very core of science. In order to understand and glean insights from our data, we need different ways of representing it visually. R has an incredible capacity for creating all sorts of plots, charts, and tables, and today we will only scratch the surface. We will discuss the fundamentals of the powerful `ggplot2` package and the "grammar of graphics" that underlies it. 
 
 ***
 
@@ -67,4 +66,9 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
+
+1. [Tutorial on `tidyselect`](https://tladeras.shinyapps.io/learning_tidyselect/) by Ted Laderas
+
+2. Flipbooks on [data wrangling](https://evamaerey.github.io/data_manipulation/one_stream_wrangle.html#1) and [summarizing](https://evamaerey.github.io/data_manipulation/summarize.html#3) by Gina Reynolds
+
 :::
