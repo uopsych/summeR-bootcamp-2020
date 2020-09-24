@@ -37,6 +37,10 @@ links:
   url: https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf
 ---
 
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/09-slides.html",
@@ -44,3 +48,9 @@ xaringanExtra::embed_xaringan(
 )
 ```
 
+<br>
+
+### Further Reading
+
+:::book
+:::

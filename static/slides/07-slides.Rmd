@@ -17,6 +17,7 @@ output:
 options(htmltools.dir.version = FALSE)
 library(countdown)
 library(tidyverse)
+library(palmerpenguins)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
@@ -37,4 +38,96 @@ style_mono_accent(base_color = "#23395b",
 class: title-slide, center, middle
 
 # Data Wrangling with {dplyr}
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# dplyr
+
+---
+background-image: url(images/hex/magrittr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# A review of pipes
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo") %>% 
+  select(bill_length_mm, bill_depth_mm) %>% 
+  arrange(desc(bill_length_mm))
+```
+
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# Column-wise operations
+
+What if we want to apply `dplyr` verbs across multiple columns **simultaenously**? Check out these slides for more `r emo::ji("point_down")`
+
+```{r echo=FALSE}
+knitr::include_url("https://columnwise-operations-dplyr.netlify.app/")
+```
+
+.footnote[`r emo::ji("link")` [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/#1)]
+---
+
+# Concept Map: `dplyr`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/dplyr.png")
+```
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `filter()`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/filter.png")
+```
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `select()`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/select.png")
+```
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `mutate()`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/mutate.png")
+```
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+
+# Concept Map: `summarize()`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/group_by-summarize.png")
+```
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `%>%`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/pipe-operator.png")
+```
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
 

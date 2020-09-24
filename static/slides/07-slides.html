@@ -27,6 +27,102 @@
 class: title-slide, center, middle
 
 # Data Wrangling with {dplyr}
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# dplyr
+
+---
+background-image: url(images/hex/magrittr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# A review of pipes
+
+
+```r
+penguins %&gt;% 
+  filter(species == "Gentoo") %&gt;% 
+  select(bill_length_mm, bill_depth_mm) %&gt;% 
+  arrange(desc(bill_length_mm))
+```
+
+```
+## # A tibble: 124 x 2
+##    bill_length_mm bill_depth_mm
+##             &lt;dbl&gt;         &lt;dbl&gt;
+##  1           59.6          17  
+##  2           55.9          17  
+##  3           55.1          16  
+##  4           54.3          15.7
+##  5           53.4          15.8
+##  6           52.5          15.6
+##  7           52.2          17.1
+##  8           52.1          17  
+##  9           51.5          16.3
+## 10           51.3          14.2
+## # … with 114 more rows
+```
+
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 12%
+
+# Column-wise operations
+
+What if we want to apply `dplyr` verbs across multiple columns **simultaenously**? Check out these slides for more 👇
+
+&lt;iframe src="https://columnwise-operations-dplyr.netlify.app/" width="100%" height="400px"&gt;&lt;/iframe&gt;
+
+.footnote[🔗 [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/#1)]
+---
+
+# Concept Map: `dplyr`
+
+&lt;img src="images/dplyr.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `filter()`
+
+&lt;img src="images/filter.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `select()`
+
+&lt;img src="images/select.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `mutate()`
+
+&lt;img src="images/mutate.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+
+# Concept Map: `summarize()`
+
+&lt;img src="images/group_by-summarize.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+# Concept Map: `%&gt;%`
+
+&lt;img src="images/pipe-operator.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

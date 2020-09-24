@@ -49,9 +49,22 @@ links:
   url: https://rstudio.cloud/learn/primers/4.2
 ---
 
+
+
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/08-slides.html",
   ratio = "16:9"
 )
 ```
+
+<br>
+
+### Further Reading
+
+:::book
+:::
