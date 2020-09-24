@@ -55,6 +55,10 @@ background-size: 10%
 
 # Tidyverse 
 
+There are a few key ideas to be aware of about how the tidyverse works in general before we dive into `dplyr`
+
+--
+
 1. Packages are designed to be like **grammars** for their task. You can string these grammatical elements together to form more complex statements, just like with language.
 
 --
@@ -204,6 +208,38 @@ knitr::include_graphics("images/dplyr/logical_operators.png")
 ```
 
 .footnote[Source: [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+### Comparisons
+
+```{r include = FALSE}
+comp_table <- tibble::tribble(
+  ~Operator, ~Description, ~Usage,
+  "<", "less than", "x < y",
+  "<=", "less than or equal to", "x <= y",
+  ">", "greater than", "x > y",
+  ">=", "greater than or equal to", "x >= y",
+  "==", "exactly equal to", "x == y",
+  "!=", "not equal to", "x != y",
+  "%in%", "group membership", "x %in% y",
+  "is.na", "is missing", "is.na(x)",
+  "!is.na", "is not missing", "!is.na(x)"
+)
+```
+
+
+```{r echo = FALSE, results = 'asis'}
+knitr::kable(comp_table, format = "html")
+```
+
+.footnote[Source: [Alison Hill](https://share-blogdown.netlify.app/slides/02-slides.html#15)]
+
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
@@ -226,13 +262,22 @@ decorate('filter(.data, ...)', eval=FALSE) %>%
 **.red[. . .]**  .red[= Expressions that return a logical value, and are defined in terms of the variables in .blue[.data]. <br><br> If multiple expressions are included, they are combined with the & operator. Only rows for which all conditions evaluate to TRUE are kept. ]
 ]
 
-.panel[.panel-name[Example]
+.panel[.panel-name[Example 1]
 
 ```{r}
 penguins %>% 
   filter(species == "Gentoo" & bill_length_mm > 55)
 ```
 
+]
+
+.panel[.panel-name[Example 2]
+
+```{r}
+penguins %>% 
+  filter(species %in% c("Adelie", "Gentoo"),
+         island %in% c("Dream", "Torgersen"))
+```
 ]
 ]
 
@@ -399,7 +444,7 @@ background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
 background-size: 10%
 
-# selection helpers
+# Selection helpers
 
 Selection helpers work in concert with `select()` to make it easier to select specific groups of variables.
 
@@ -469,7 +514,46 @@ background-size: 10%
 
 # `mutate()`
 
-### Example
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+```{r mutate-spec-color-coded, echo = FALSE, warning=FALSE}
+decorate('mutate(.data, ...)', eval=FALSE) %>% 
+  flair(".data", color = "cornflowerblue") %>% 
+  flair("...", color = "red")
+```
+
+**.blue[.data]** .blue[= a data frame or tibble]
+
+**.red[. . .]**  .red[=  Name-value pairs. The name gives the name of the column in the output.]
+
+]
+
+.panel[.panel-name[Example 1]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55) %>% 
+  arrange(body_mass_g) %>% 
+  select(starts_with("bill_")) %>% 
+  mutate(bill_length_m = bill_length_mm/1000)
+```
+
+]
+
+.panel[.panel-name[Example 2]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55) %>% 
+  arrange(body_mass_g) %>% 
+  select(starts_with("bill_")) %>% 
+  mutate(bill_length_mm = as.character(bill_length_mm))
+```
+]
+
+]
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -537,7 +621,33 @@ background-size: 10%
 
 # `summarize()`
 
-### Example
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+```{r summarize-spec-color-coded, echo = FALSE, warning=FALSE}
+decorate('summarize(.data, ...)', eval=FALSE) %>% 
+  flair(".data", color = "cornflowerblue") %>% 
+  flair("...", color = "red")
+```
+
+**.blue[.data]** .blue[= a data frame or tibble]
+
+**.red[. . .]**  .red[=  Name-value pairs of summary functions. The name will be the name of the variable in the result.]
+
+]
+
+.panel[.panel-name[Example]
+
+```{r}
+penguins %>% 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE),
+            max_flipper_length = max(flipper_length_mm, na.rm = TRUE))
+```
+
+]
+
+]
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -548,7 +658,7 @@ background-size: 10%
 
 `group_by()` creates groups based on one or more variables in the data, and this affects any downstream operations -- most commonly, `summarize()`
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="50%"}
 knitr::include_graphics("images/dplyr/group_by.png")
 ```
 
@@ -561,9 +671,43 @@ background-size: 10%
 
 What happens if we combine `group_by()` and `summarize()`? 
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="75%"}
 knitr::include_graphics("images/dplyr/group_by_summarize.png")
 ```
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `summarize()`
+
+Let's see a couple examples of how we can combine `group_by()` and `summarize()`
+
+.panelset[
+
+.panel[.panel-name[Example 1]
+
+```{r}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
+```
+
+]
+
+.panel[.panel-name[Example 2]
+
+```{r}
+penguins %>% 
+  group_by(species, island) %>% 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
+```
+
+]
+
+
+]
 
 
 ---

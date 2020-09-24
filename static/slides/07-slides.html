@@ -38,6 +38,10 @@ background-size: 10%
 
 # Tidyverse 
 
+There are a few key ideas to be aware of about how the tidyverse works in general before we dive into `dplyr`
+
+--
+
 1. Packages are designed to be like **grammars** for their task. You can string these grammatical elements together to form more complex statements, just like with language.
 
 --
@@ -179,6 +183,78 @@ background-size: 10%
 &lt;img src="images/dplyr/logical_operators.png" width="2472" /&gt;
 
 .footnote[Source: [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+### Comparisons
+
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Operator &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Description &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Usage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;lt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; less than &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;lt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;lt;= &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; less than or equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;lt;= y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; greater than &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;gt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; &amp;gt;= &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; greater than or equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x &amp;gt;= y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; == &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; exactly equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x == y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; != &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; not equal to &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x != y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; %in% &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; group membership &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; x %in% y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; is.na &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; is missing &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; is.na(x) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; !is.na &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; is not missing &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; !is.na(x) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+.footnote[Source: [Alison Hill](https://share-blogdown.netlify.app/slides/02-slides.html#15)]
+
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
@@ -198,7 +274,7 @@ background-size: 10%
 **.red[. . .]**  .red[= Expressions that return a logical value, and are defined in terms of the variables in .blue[.data]. &lt;br&gt;&lt;br&gt; If multiple expressions are included, they are combined with the &amp; operator. Only rows for which all conditions evaluate to TRUE are kept. ]
 ]
 
-.panel[.panel-name[Example]
+.panel[.panel-name[Example 1]
 
 
 ```r
@@ -215,6 +291,33 @@ penguins %&gt;%
 ## 3 Gentoo  Biscoe           55.1            16               230        5850 male   2009
 ```
 
+]
+
+.panel[.panel-name[Example 2]
+
+
+```r
+penguins %&gt;% 
+  filter(species %in% c("Adelie", "Gentoo"),
+         island %in% c("Dream", "Torgersen"))
+```
+
+```
+## # A tibble: 108 x 8
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
+##  1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007
+##  2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007
+##  3 Adelie  Torgersen           40.3          18                 195        3250 female  2007
+##  4 Adelie  Torgersen           NA            NA                  NA          NA &lt;NA&gt;    2007
+##  5 Adelie  Torgersen           36.7          19.3               193        3450 female  2007
+##  6 Adelie  Torgersen           39.3          20.6               190        3650 male    2007
+##  7 Adelie  Torgersen           38.9          17.8               181        3625 female  2007
+##  8 Adelie  Torgersen           39.2          19.6               195        4675 male    2007
+##  9 Adelie  Torgersen           34.1          18.1               193        3475 &lt;NA&gt;    2007
+## 10 Adelie  Torgersen           42            20.2               190        4250 &lt;NA&gt;    2007
+## # … with 98 more rows
+```
 ]
 ]
 
@@ -304,7 +407,7 @@ class: inverse
 
 # Your turn 1
 
-<div class="countdown" id="timer_5f6d1deb" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d2ba5" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -419,7 +522,7 @@ background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
 background-size: 10%
 
-# selection helpers
+# Selection helpers
 
 Selection helpers work in concert with `select()` to make it easier to select specific groups of variables.
 
@@ -483,7 +586,63 @@ background-size: 10%
 
 # `mutate()`
 
-### Example
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+
+&lt;code class ='r hljs remark-code'&gt;mutate(&lt;span style="color:cornflowerblue"&gt;.data&lt;/span&gt;, &lt;span style="color:red"&gt;...&lt;/span&gt;)&lt;/code&gt;
+
+**.blue[.data]** .blue[= a data frame or tibble]
+
+**.red[. . .]**  .red[=  Name-value pairs. The name gives the name of the column in the output.]
+
+]
+
+.panel[.panel-name[Example 1]
+
+
+```r
+penguins %&gt;% 
+  filter(species == "Gentoo" &amp; bill_length_mm &gt; 55) %&gt;% 
+  arrange(body_mass_g) %&gt;% 
+  select(starts_with("bill_")) %&gt;% 
+  mutate(bill_length_m = bill_length_mm/1000)
+```
+
+```
+## # A tibble: 3 x 3
+##   bill_length_mm bill_depth_mm bill_length_m
+##            &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+## 1           55.9            17        0.0559
+## 2           55.1            16        0.0551
+## 3           59.6            17        0.0596
+```
+
+]
+
+.panel[.panel-name[Example 2]
+
+
+```r
+penguins %&gt;% 
+  filter(species == "Gentoo" &amp; bill_length_mm &gt; 55) %&gt;% 
+  arrange(body_mass_g) %&gt;% 
+  select(starts_with("bill_")) %&gt;% 
+  mutate(bill_length_mm = as.character(bill_length_mm))
+```
+
+```
+## # A tibble: 3 x 2
+##   bill_length_mm bill_depth_mm
+##   &lt;chr&gt;                  &lt;dbl&gt;
+## 1 55.9                      17
+## 2 55.1                      16
+## 3 59.6                      17
+```
+]
+
+]
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -502,7 +661,7 @@ class: inverse
 
 # Your turn 2
 
-<div class="countdown" id="timer_5f6d1da7" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d2be5" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -545,7 +704,38 @@ background-size: 10%
 
 # `summarize()`
 
-### Example
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+
+&lt;code class ='r hljs remark-code'&gt;summarize(&lt;span style="color:cornflowerblue"&gt;.data&lt;/span&gt;, &lt;span style="color:red"&gt;...&lt;/span&gt;)&lt;/code&gt;
+
+**.blue[.data]** .blue[= a data frame or tibble]
+
+**.red[. . .]**  .red[=  Name-value pairs of summary functions. The name will be the name of the variable in the result.]
+
+]
+
+.panel[.panel-name[Example]
+
+
+```r
+penguins %&gt;% 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE),
+            max_flipper_length = max(flipper_length_mm, na.rm = TRUE))
+```
+
+```
+## # A tibble: 1 x 2
+##   mean_bill_length max_flipper_length
+##              &lt;dbl&gt;              &lt;int&gt;
+## 1             43.9                231
+```
+
+]
+
+]
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -556,7 +746,7 @@ background-size: 10%
 
 `group_by()` creates groups based on one or more variables in the data, and this affects any downstream operations -- most commonly, `summarize()`
 
-&lt;img src="images/dplyr/group_by.png" width="400" /&gt;
+&lt;img src="images/dplyr/group_by.png" width="50%" /&gt;
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -567,7 +757,72 @@ background-size: 10%
 
 What happens if we combine `group_by()` and `summarize()`? 
 
-&lt;img src="images/dplyr/group_by_summarize.png" width="667" /&gt;
+&lt;img src="images/dplyr/group_by_summarize.png" width="75%" /&gt;
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `summarize()`
+
+Let's see a couple examples of how we can combine `group_by()` and `summarize()`
+
+.panelset[
+
+.panel[.panel-name[Example 1]
+
+
+```r
+penguins %&gt;% 
+  group_by(species) %&gt;% 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
+## # A tibble: 3 x 2
+##   species   mean_bill_length
+##   &lt;fct&gt;                &lt;dbl&gt;
+## 1 Adelie                38.8
+## 2 Chinstrap             48.8
+## 3 Gentoo                47.5
+```
+
+]
+
+.panel[.panel-name[Example 2]
+
+
+```r
+penguins %&gt;% 
+  group_by(species, island) %&gt;% 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
+```
+
+```
+## `summarise()` regrouping output by 'species' (override with `.groups` argument)
+```
+
+```
+## # A tibble: 5 x 3
+## # Groups:   species [3]
+##   species   island    mean_bill_length
+##   &lt;fct&gt;     &lt;fct&gt;                &lt;dbl&gt;
+## 1 Adelie    Biscoe                39.0
+## 2 Adelie    Dream                 38.5
+## 3 Adelie    Torgersen             39.0
+## 4 Chinstrap Dream                 48.8
+## 5 Gentoo    Biscoe                47.5
+```
+
+]
+
+
+]
 
 
 ---
@@ -587,7 +842,7 @@ class: inverse
 
 # Your turn 3
 
-<div class="countdown" id="timer_5f6d1b86" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d2a53" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -614,7 +869,7 @@ What if we want to apply `dplyr` verbs across multiple columns **simultaneously*
 class: inverse, center, middle
 # Q &amp; A
 
-<div class="countdown" id="timer_5f6d1bb4" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d29f0" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -628,7 +883,7 @@ class: inverse, center, middle
 class: inverse, center, middle
 # Break! 
 
-<div class="countdown" id="timer_5f6d1c87" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d2b08" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
     </textarea>
