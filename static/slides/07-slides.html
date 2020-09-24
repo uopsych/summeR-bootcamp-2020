@@ -13,6 +13,8 @@
     <script src="libs/shareon/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
   </head>
@@ -33,13 +35,17 @@ background-image: url(images/hex/tidyverse.png)
 background-position: 90% 5%
 background-size: 10%
 
-# tidyverse 
+# Tidyverse 
 
-packages are designed to be like grammars for their task, so we’ll be using terms like verbs to discuss the tidyverse. The idea is that you can string these grammatical elements together to form more complex statements, just like with language.
+1. Packages are designed to be like **grammars** for their task. You can string these grammatical elements together to form more complex statements, just like with language.
 
-The first argument of (basically) every function is data. This is very handy, especially when it comes to piping (discussed below).
+--
 
-Variable names are usually not quoted.
+1. The first argument of (basically) every function is data. This is very handy, especially when it comes to piping.
+
+--
+
+1. Variable names are usually not quoted.
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -76,6 +82,13 @@ background-size: 10%
 
 
 .footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
+
+---
+# Concept Map: `dplyr`
+
+&lt;img src="images/dplyr.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
 
 ---
 background-image: url(images/hex/magrittr.png)
@@ -117,6 +130,10 @@ Read more: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr
 
 
 ---
+background-image: url(images/hex/magrittr.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Concept Map: `%&gt;%`
 
 &lt;img src="images/pipe-operator.png" width="90%" /&gt;
@@ -133,7 +150,7 @@ background-size: 10%
 ---
 class: inverse, center, middle
 
-# Manipulating observations (rows)
+# Manipulating observations &lt;br&gt; (rows)
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -154,9 +171,217 @@ background-size: 10%
 # `filter()`
 
 ---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Concept Map: `filter()`
+
+&lt;img src="images/filter.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `arrange()`
+
+### Sort rows with `arrange()`
+
+&lt;img src="images/dplyr/arrange.png" width="400" /&gt;
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `arrange()`
+
+---
 class: inverse, center, middle
 
-# Manipulating variables (columns)
+# Manipulating variables &lt;br&gt; (columns)
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `select()`
+
+### Extract columns with `select()`
+
+&lt;img src="images/dplyr/select.png" width="400" /&gt;
+
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `select()`
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# selection helpers
+
+Selection helpers work in concert with `select()` to make it easier to select specific groups of variables.
+
+--
+
+Here are some commonly useful ones
+
+***
+
+`everything()`: Matches all variables.
+
+`last_col()`: Select last variable, possibly with an offset.
+
+`starts_with()`: Starts with a prefix.
+
+`ends_with()`: Ends with a suffix.
+
+`contains()`: Contains a literal string.
+
+.footnote[🔗 https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html#overview-of-selection-features]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Concept Map: `select()`
+
+&lt;img src="images/select.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `mutate()`
+
+### Create (or overwrite) variables with `mutate()`
+
+&lt;img src="images/dplyr/mutate.png" width="400" /&gt;
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `mutate()`
+
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Concept Map: `mutate()`
+
+&lt;img src="images/mutate.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+
+
+---
+class: inverse
+
+# Your turn 1
+
+<div class="countdown" id="timer_5f6c56ce" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: solution
+
+# Solution
+
+
+---
+class: inverse, center, middle
+
+# Summarizing data
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `summarize()`
+
+`summarize()` reduces your raw data frame into to a smaller summary data frame that only contains the variables resulting from the **summary functions** that you specify within `summarize()`
+
+&lt;img src="images/dplyr/summarize.png" width="40%" /&gt;
+
+--
+***
+
+Summary functions take vectors as inputs and return single values as outputs
+
+&lt;img src="images/dplyr/summary_function.png" width="533" /&gt;
+
+Common examples are `mean()`, `sd()`, `max()`, `min()`, `sum()`, etc...
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `group_by()`
+
+`group_by()` creates groups based on one or more variables in the data, and this affects any downstream operations -- most commonly, `summarize()`
+
+&lt;img src="images/dplyr/group_by.png" width="400" /&gt;
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `group_by()`
+
+What happens if we combine `group_by()` and `summarize()`? 
+
+&lt;img src="images/dplyr/group_by_summarize.png" width="667" /&gt;
+
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Concept Map: `summarize()`
+
+&lt;img src="images/group_by-summarize.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+
+---
+class: inverse
+
+# Your turn 2
+
+<div class="countdown" id="timer_5f6c58f4" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: solution
+
+# Solution
+
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -165,56 +390,25 @@ background-size: 10%
 
 # Column-wise operations
 
-What if we want to apply `dplyr` verbs across multiple columns **simultaenously**? Check out these slides for more 👇
+What if we want to apply `dplyr` verbs across multiple columns **simultaneously**? Check out these slides for more 👇
 
 &lt;iframe src="https://columnwise-operations-dplyr.netlify.app/" width="100%" height="400px"&gt;&lt;/iframe&gt;
 
 .footnote[🔗 [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/#1)]
 
----
-class: inverse, center, middle
-
-# Summarizing data
-
 
 ---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
 
-# Concept Map: `dplyr`
+# Other dplyr verbs
 
-&lt;img src="images/dplyr.png" width="90%" /&gt;
+`rename()`
 
-.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+`count()`
 
----
-# Concept Map: `filter()`
-
-&lt;img src="images/filter.png" width="90%" /&gt;
-
-.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
-
----
-# Concept Map: `select()`
-
-&lt;img src="images/select.png" width="90%" /&gt;
-
-.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
-
----
-# Concept Map: `mutate()`
-
-&lt;img src="images/mutate.png" width="90%" /&gt;
-
-.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
-
----
-
-# Concept Map: `summarize()`
-
-&lt;img src="images/group_by-summarize.png" width="90%" /&gt;
-
-.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
-
----
+`distinct()`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
