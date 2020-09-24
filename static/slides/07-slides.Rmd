@@ -18,9 +18,11 @@ options(htmltools.dir.version = FALSE)
 library(countdown)
 library(tidyverse)
 library(palmerpenguins)
+library(flair)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = TRUE)
 
 # your turn counter
 yt_counter <- 0
@@ -32,7 +34,14 @@ style_mono_accent(base_color = "#23395b",
                 text_font_google = google_font("Montserrat", "300", "300i"),
                 code_font_google = google_font("Source Code Pro"),
                 link_color = "#BA8800",
-                code_inline_color = "#BA8800")
+                code_inline_color = "#BA8800",
+                colors = c(
+                  blue = "#6495ed",
+                  red = "#f34213",
+                  purple = "#3e2f5b",
+                  orange = "#ff8811",
+                  green = "#136f63",
+                  white = "#FFFFFF"))
 ```
 
 class: title-slide, center, middle
@@ -202,7 +211,30 @@ background-size: 10%
 
 # `filter()`
 
-### Example
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+```{r filter-spec-color-coded, echo = FALSE, warning=FALSE}
+decorate('filter(.data, ...)', eval=FALSE) %>% 
+  flair(".data", color = "cornflowerblue") %>% 
+  flair("...", color = "red")
+```
+
+**.blue[.data]** .blue[= a data frame or tibble]
+
+**.red[. . .]**  .red[= Expressions that return a logical value, and are defined in terms of the variables in .blue[.data]. <br><br> If multiple expressions are included, they are combined with the & operator. Only rows for which all conditions evaluate to TRUE are kept. ]
+]
+
+.panel[.panel-name[Example]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55)
+```
+
+]
+]
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -224,7 +256,7 @@ background-size: 10%
 
 # `arrange()`
 
-### Sort rows with `arrange()`
+### Arrange rows by column values with `arrange()`
 
 ```{r echo=FALSE}
 knitr::include_graphics("images/dplyr/arrange.png")
@@ -237,7 +269,56 @@ background-size: 10%
 
 # `arrange()`
 
-### Example
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+```{r arrange-spec-color-coded, echo = FALSE, warning=FALSE}
+decorate('arrange(.data, ...)', eval=FALSE) %>% 
+  flair(".data", color = "cornflowerblue") %>% 
+  flair("...", color = "red")
+```
+
+**.blue[.data]** .blue[= a data frame or tibble]
+
+**.red[. . .]**  .red[= Variables, or functions or variables. Use `desc()` to sort a variable in descending order.]
+]
+
+.panel[.panel-name[Example 1]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55) %>% 
+  arrange(body_mass_g)
+```
+
+]
+
+.panel[.panel-name[Example 2]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55) %>% 
+  arrange(desc(body_mass_g))
+```
+]
+]
+
+---
+class: inverse
+
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 3)
+```
+
+
+---
+class: solution
+
+# Solution
+
 
 ---
 class: inverse, center, middle
@@ -265,7 +346,53 @@ background-size: 10%
 
 # `select()`
 
-### Example
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+```{r select-spec-color-coded, echo = FALSE, warning=FALSE}
+decorate('select(.data, ...)', eval=FALSE) %>% 
+  flair(".data", color = "cornflowerblue") %>% 
+  flair("...", color = "red")
+```
+
+**.blue[.data]** .blue[= a data frame or tibble]
+
+**.red[. . .]**  .red[= One or more unquoted expressions separated by commas. <br><br> Variable names can be used as if they were positions in the data frame, so expressions like `x:y` can be used to select a range of variables.]
+]
+
+.panel[.panel-name[Example 1]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55) %>% 
+  arrange(body_mass_g) %>% 
+  select(species:bill_depth_mm)
+```
+
+]
+
+.panel[.panel-name[Example 2]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55) %>% 
+  arrange(body_mass_g) %>% 
+  select(species, starts_with("bill_"))
+```
+]
+
+.panel[.panel-name[Example 3]
+
+```{r}
+penguins %>% 
+  filter(species == "Gentoo" & bill_length_mm > 55) %>% 
+  arrange(body_mass_g) %>% 
+  select(ends_with("_mm"))
+```
+]
+
+]
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -482,20 +609,6 @@ knitr::include_url("https://columnwise-operations-dplyr.netlify.app/")
 ```
 
 .footnote[`r emo::ji("link")` [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/#1)]
-
-
----
-background-image: url(images/hex/dplyr.png)
-background-position: 90% 5%
-background-size: 10%
-
-# Other dplyr verbs
-
-`rename()`
-
-`count()`
-
-`distinct()`
 
 ---
 class: inverse, center, middle
