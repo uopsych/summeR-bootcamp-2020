@@ -40,31 +40,85 @@ class: title-slide, center, middle
 # Data Wrangling with {dplyr}
 
 ---
+background-image: url(images/hex/tidyverse.png)
+background-position: 90% 5%
+background-size: 10%
+
+# tidyverse 
+
+packages are designed to be like grammars for their task, so we’ll be using terms like verbs to discuss the tidyverse. The idea is that you can string these grammatical elements together to form more complex statements, just like with language.
+
+The first argument of (basically) every function is data. This is very handy, especially when it comes to piping (discussed below).
+
+Variable names are usually not quoted.
+
+---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 # dplyr
+
+`dplyr` is a grammar of data manipulation, providing a consistent set of core verbs that help you solve the most common data manipulation challenges
+
+--
+
++ `mutate()` adds new variables that are functions of existing variables
+
++ `select()` picks variables based on their names.
+
++ `filter()` picks cases based on their values.
+
++ `summarise()` reduces multiple values down to a single summary.
+
++ `arrange()` changes the ordering of the rows.
+
+.footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
+
+---
+# mutate()
 
 ---
 background-image: url(images/hex/magrittr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 # A review of pipes
 
-```{r}
+`x %>% f(y)` is equivalent to `f(x, y)`
+
+--
+***
+
+R Code 
+
+```{r eval=FALSE}
 penguins %>% 
   filter(species == "Gentoo") %>% 
   select(bill_length_mm, bill_depth_mm) %>% 
   arrange(desc(bill_length_mm))
 ```
 
+--
+
+Translated into English
+
+```{r eval = FALSE}
+start with penguins data AND THEN
+  filter for only Gentoo penguins AND THEN
+  select only the columns `bill_length_mm` and `bill_depth_mm` AND THEN
+  arrange observations by descending order of `bill_length_mm`
+```
+
+--
+***
+Read more: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr.tidyverse.org/reference/pipe.html)
+
 
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 # Column-wise operations
 

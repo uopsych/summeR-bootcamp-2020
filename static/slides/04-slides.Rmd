@@ -89,7 +89,7 @@ knitr::include_graphics("images/tidyverse_packages_purpose.png")
 ---
 background-image: url(images/hex/readr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
   
@@ -146,7 +146,7 @@ knitr::include_url("https://readr.tidyverse.org/")
 ---
 background-image: url(images/hex/tibble.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -196,7 +196,7 @@ knitr::include_url("https://tibble.tidyverse.org/")
 ---
 background-image: url(images/hex/ggplot2.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -246,7 +246,7 @@ knitr::include_url("https://ggplot2.tidyverse.org/")
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -305,7 +305,7 @@ knitr::include_url("https://dplyr.tidyverse.org/")
 ---
 background-image: url(images/hex/forcats.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -365,7 +365,7 @@ knitr::include_url("https://forcats.tidyverse.org/")
 ---
 background-image: url(images/hex/stringr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -425,7 +425,7 @@ knitr::include_url("https://stringr.tidyverse.org/")
 ---
 background-image: url(images/hex/tidyr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
@@ -486,7 +486,7 @@ knitr::include_url("https://tidyr.tidyverse.org/")
 ---
 background-image: url(images/hex/purrr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 .footnote[Slide adapted from [Sylvia Canelón](https://github.com/spcanelon/2020-rladies-chi-tidyverse)]
 
