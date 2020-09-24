@@ -17,6 +17,7 @@ output:
 options(htmltools.dir.version = FALSE)
 library(countdown)
 library(tidyverse)
+library(palmerpenguins)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
@@ -38,3 +39,12 @@ class: title-slide, center, middle
 
 # Data Reshaping with {tidyr}
 
+
+---
+# Pivoting
+
+```{r echo=FALSE}
+knitr::include_graphics("images/pivot_wider_longer.gif")
+```
+
+.footnote[Source: [Mara Averick](https://twitter.com/dataandme/status/1175913657907253254?s=20)]

@@ -103,7 +103,7 @@ penguins %>%
 
 Translated into English
 
-```{r eval = FALSE}
+```{r eval = FALSE, results='asis'}
 start with penguins data AND THEN
   filter for only Gentoo penguins AND THEN
   select only the columns `bill_length_mm` and `bill_depth_mm` AND THEN
