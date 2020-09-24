@@ -66,9 +66,10 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
+1. R for Data Science chapter on [data transformation](https://r4ds.had.co.nz/transform.html)
 
-1. [Tutorial on `tidyselect`](https://tladeras.shinyapps.io/learning_tidyselect/) by Ted Laderas
+2. [Tutorial on `tidyselect`](https://tladeras.shinyapps.io/learning_tidyselect/) by Ted Laderas
 
-2. Flipbooks on [data wrangling](https://evamaerey.github.io/data_manipulation/one_stream_wrangle.html#1) and [summarizing](https://evamaerey.github.io/data_manipulation/summarize.html#3) by Gina Reynolds
+3. Flipbooks on [data wrangling](https://evamaerey.github.io/data_manipulation/one_stream_wrangle.html#1) and [summarizing](https://evamaerey.github.io/data_manipulation/summarize.html#3) by Gina Reynolds
 
 :::

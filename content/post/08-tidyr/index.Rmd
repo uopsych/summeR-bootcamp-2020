@@ -67,4 +67,5 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
+1. R for Data Science chapter on [tidy data](https://r4ds.had.co.nz/tidy-data.html#pivoting)
 :::
