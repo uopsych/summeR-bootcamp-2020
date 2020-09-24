@@ -37,7 +37,7 @@ style_mono_accent(base_color = "#23395b",
 
 class: title-slide, center, middle
 
-# Data Wrangling with {dplyr}
+# Data Wrangling with `dplyr`
 
 ---
 background-image: url(images/hex/tidyverse.png)
@@ -50,11 +50,11 @@ background-size: 10%
 
 --
 
-1. The first argument of (basically) every function is data. This is very handy, especially when it comes to piping.
+1. The first argument of (basically) every function is `data`. This is very handy, especially when it comes to piping.
 
 --
 
-1. Variable names are usually not quoted.
+1. Variable names are usually not quoted (read more [here](https://tidyselect.r-lib.org/reference/language.html))
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -66,6 +66,7 @@ background-size: 10%
 `dplyr` is a grammar of data manipulation, providing a consistent set of core verbs that help you solve the most common data manipulation challenges
 
 --
+***
 
 **Manipulating observations**
 
@@ -89,8 +90,6 @@ background-size: 10%
 
 + `summarise()` reduces multiple values down to a single summary.
 
-
-.footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
 
 ---
 # Concept Map: `dplyr`
@@ -126,16 +125,16 @@ penguins %>%
 
 Translated into English
 
-```{r eval = FALSE, results='asis'}
-start with penguins data AND THEN
-  filter for only Gentoo penguins AND THEN
-  select only the columns `bill_length_mm` and `bill_depth_mm` AND THEN
+```{r eval = FALSE}
+start with penguins data *AND THEN*
+  filter to include only observations from Gentoo penguins *AND THEN*
+  select only the columns `bill_length_mm` and `bill_depth_mm` *AND THEN*
   arrange observations by descending order of `bill_length_mm`
 ```
 
 --
 ***
-Read more: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr.tidyverse.org/reference/pipe.html)
+Read more on piping: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr.tidyverse.org/reference/pipe.html)
 
 
 ---
@@ -150,13 +149,6 @@ knitr::include_graphics("images/pipe-operator.png")
 ```
 
 .footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
-
----
-background-image: url(images/hex/dplyr.png)
-background-position: 90% 5%
-background-size: 10%
-
-# dplyr
 
 ---
 class: inverse, center, middle
@@ -196,6 +188,22 @@ background-size: 10%
 
 # `filter()`
 
+### Logical operators
+
+```{r echo=FALSE}
+knitr::include_graphics("images/dplyr/logical_operators.png")
+```
+
+.footnote[Source: [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)]
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+### Example
+
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
@@ -229,6 +237,8 @@ background-size: 10%
 
 # `arrange()`
 
+### Example
+
 ---
 class: inverse, center, middle
 
@@ -241,7 +251,7 @@ background-size: 10%
 
 # `select()`
 
-### Extract columns with `select()`
+### Select columns with `select()`
 
 ```{r echo=FALSE}
 knitr::include_graphics("images/dplyr/select.png")
@@ -254,6 +264,8 @@ background-position: 90% 5%
 background-size: 10%
 
 # `select()`
+
+### Example
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -330,6 +342,7 @@ background-size: 10%
 
 # `mutate()`
 
+### Example
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -343,7 +356,6 @@ knitr::include_graphics("images/mutate.png")
 ```
 
 .footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
-
 
 
 ---
@@ -389,6 +401,16 @@ knitr::include_graphics("images/dplyr/summary_function.png")
 ```
 
 Common examples are `mean()`, `sd()`, `max()`, `min()`, `sum()`, etc...
+
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `summarize()`
+
+### Example
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -474,4 +496,26 @@ background-size: 10%
 `count()`
 
 `distinct()`
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Data tidying with `tidyr`
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```
 

@@ -35,6 +35,10 @@ links:
   icon_pack: fab
   name: Cheat Sheet
   url: https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf
+- icon: readme
+  icon_pack: fab
+  name: Reference Guide
+  url: https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 ---
 
 ***
@@ -53,4 +57,15 @@ xaringanExtra::embed_xaringan(
 ### Further Reading
 
 :::book
+1. [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+2. [R Markdown for Scientists](https://rmd4sci.njtierney.com/)
+
+3. Workshops on [introductory](https://rmd4medicine.netlify.app/) and [advanced](https://arm.rbind.io/) R Markdown by Alison Hill Yihuie Xie (two R Markdown legends `r emo::ji("star-struck")`)
+
+4. [Tips for working with images and figures](http://zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents/) in R Markdown by Zev Ross
+
+5. [blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/)
+
+6. [Overview of R Markdown](https://rmarkdown.rstudio.com/lesson-1.html) from RStudio
 :::

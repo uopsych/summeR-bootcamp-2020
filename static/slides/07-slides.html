@@ -28,7 +28,7 @@
 
 class: title-slide, center, middle
 
-# Data Wrangling with {dplyr}
+# Data Wrangling with `dplyr`
 
 ---
 background-image: url(images/hex/tidyverse.png)
@@ -41,11 +41,11 @@ background-size: 10%
 
 --
 
-1. The first argument of (basically) every function is data. This is very handy, especially when it comes to piping.
+1. The first argument of (basically) every function is `data`. This is very handy, especially when it comes to piping.
 
 --
 
-1. Variable names are usually not quoted.
+1. Variable names are usually not quoted (read more [here](https://tidyselect.r-lib.org/reference/language.html))
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -57,6 +57,7 @@ background-size: 10%
 `dplyr` is a grammar of data manipulation, providing a consistent set of core verbs that help you solve the most common data manipulation challenges
 
 --
+***
 
 **Manipulating observations**
 
@@ -80,8 +81,6 @@ background-size: 10%
 
 + `summarise()` reduces multiple values down to a single summary.
 
-
-.footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
 
 ---
 # Concept Map: `dplyr`
@@ -118,15 +117,15 @@ Translated into English
 
 
 ```r
-start with penguins data AND THEN
-  filter for only Gentoo penguins AND THEN
-  select only the columns `bill_length_mm` and `bill_depth_mm` AND THEN
+start with penguins data *AND THEN*
+  filter to include only observations from Gentoo penguins *AND THEN*
+  select only the columns `bill_length_mm` and `bill_depth_mm` *AND THEN*
   arrange observations by descending order of `bill_length_mm`
 ```
 
 --
 ***
-Read more: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr.tidyverse.org/reference/pipe.html)
+Read more on piping: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr.tidyverse.org/reference/pipe.html)
 
 
 ---
@@ -139,13 +138,6 @@ background-size: 10%
 &lt;img src="images/pipe-operator.png" width="90%" /&gt;
 
 .footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
-
----
-background-image: url(images/hex/dplyr.png)
-background-position: 90% 5%
-background-size: 10%
-
-# dplyr
 
 ---
 class: inverse, center, middle
@@ -181,6 +173,20 @@ background-size: 10%
 
 # `filter()`
 
+### Logical operators
+
+&lt;img src="images/dplyr/logical_operators.png" width="2472" /&gt;
+
+.footnote[Source: [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)]
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+### Example
+
 ---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
@@ -210,6 +216,8 @@ background-size: 10%
 
 # `arrange()`
 
+### Example
+
 ---
 class: inverse, center, middle
 
@@ -222,7 +230,7 @@ background-size: 10%
 
 # `select()`
 
-### Extract columns with `select()`
+### Select columns with `select()`
 
 &lt;img src="images/dplyr/select.png" width="400" /&gt;
 
@@ -233,6 +241,8 @@ background-position: 90% 5%
 background-size: 10%
 
 # `select()`
+
+### Example
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -303,6 +313,7 @@ background-size: 10%
 
 # `mutate()`
 
+### Example
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -316,13 +327,12 @@ background-size: 10%
 .footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
 
 
-
 ---
 class: inverse
 
 # Your turn 1
 
-<div class="countdown" id="timer_5f6c5be2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6ce61b" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -356,6 +366,16 @@ Summary functions take vectors as inputs and return single values as outputs
 &lt;img src="images/dplyr/summary_function.png" width="533" /&gt;
 
 Common examples are `mean()`, `sd()`, `max()`, `min()`, `sum()`, etc...
+
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `summarize()`
+
+### Example
 
 ---
 background-image: url(images/hex/dplyr.png)
@@ -397,7 +417,7 @@ class: inverse
 
 # Your turn 2
 
-<div class="countdown" id="timer_5f6c5c51" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6ce2f8" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 

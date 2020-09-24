@@ -37,10 +37,18 @@ style_mono_accent(base_color = "#23395b",
 
 class: title-slide, center, middle
 
-# Data Reshaping with {tidyr}
-
+# Data Reshaping with `tidyr`
 
 ---
+class: inverse, center, middle
+
+# Pivoting
+
+---
+background-image: url(images/hex/tidyr.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Pivoting
 
 ```{r echo=FALSE}
@@ -48,3 +56,49 @@ knitr::include_graphics("images/tidyr-longer-wider-modified.gif")
 ```
 
 .footnote[Source: [Mara Averick](https://twitter.com/dataandme/status/1175913657907253254?s=20) and [Garrick Aden-Buie](https://github.com/gadenbuie/tidyexplain)]
+
+---
+background-image: url(images/hex/tidyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `pivot_wider()`
+
+
+---
+background-image: url(images/hex/tidyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `pivot_longer()`
+
+---
+class: inverse, center, middle
+
+# Separating and uniting
+
+---
+
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+---
+class: inverse, center, middle
+# Next up...
+
+## Reproducible reporting with R Markdown
+
+---
+class: inverse, center, middle
+# Break! 
+
+```{r echo=FALSE}
+countdown(minutes = 10)
+```
+

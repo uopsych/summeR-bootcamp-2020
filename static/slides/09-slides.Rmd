@@ -38,3 +38,18 @@ class: title-slide, center, middle
 
 # Reproducible Reporting with R Markdown
 
+
+---
+# R Markdown
+
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
+
+
+---
+class: inverse, center, middle
+# That's a wrap!
+
+## Don't forget to check out [resources](https://uopsych-r-bootcamp-2020.netlify.app/resources/) `r emo::ji("light_bulb")`
+
+![](https://media.giphy.com/media/OZbGrdp7FiDiE/giphy.gif)
+
