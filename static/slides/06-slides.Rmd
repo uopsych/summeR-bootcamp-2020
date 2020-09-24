@@ -42,6 +42,10 @@ class: title-slide, center, middle
 # Data visualization with `ggplot2`
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot
 
 `ggplot2` is a `tidyverse` package for data visualization. It follows the **"grammar of graphics"**
@@ -98,6 +102,9 @@ glimpse(penguins)
 ```
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
 
 # ggplot2
 
@@ -126,6 +133,10 @@ ggplot(data = penguins)
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot2
 
 All we got was a blank square! 
@@ -135,6 +146,10 @@ All we got was a blank square!
 To understand why, let's back up to the philosophy of `ggplot`...
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot2
 
 ### What is a statistical graphic? 
@@ -162,6 +177,10 @@ In `ggplot`, that combination of things forms a *layer*. The `ggplot` terminolog
 * **stat** - statistical transformations
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot
 
 Putting all that together, the flow of information in `ggplot` is...
@@ -204,7 +223,7 @@ class: inverse, center, middle
 ---
 background-image: url(images/hex/magrittr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 # Pipe operator
 
@@ -235,6 +254,10 @@ The first argument of many tidyverse functions is `data`. This is the case for `
 tidyverse functions are designed this way to make it easier to use pipes! 
 
 ---
+background-image: url(images/hex/magrittr.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Pipe operator
 
 Let's take another look at the code we just wrote:
@@ -315,6 +338,10 @@ class: inverse, center, middle
 # Now back to ggplot...
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Aesthetic mapping
 
 The basic idea with aesthetic mapping is that we want to take our data and map it onto physical space using geometric objects, or `geoms`. 
@@ -332,6 +359,10 @@ Each `geom()` function in `ggplot` takes a **mapping** argument.
 Let’s start with a basic geom, `geom_histogram()`...
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 We're going to call `ggplot()` again, and this time add the `geom_histogram()` **layer**, telling it to map the variable `flipper_length_mm` to the x-axis aesthetic
@@ -357,6 +388,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms 
 
 You can add additional arguments to the `geom()`. For example, we could change the number of bins
@@ -384,6 +419,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Or make them a different color. We can change the color of 2-d objects with the `fill` aesthetic
@@ -410,6 +449,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Now we'll use a different `geom` -- we'll add a layer of points to our plot using `geom_point()`
@@ -417,15 +460,15 @@ Now we'll use a different `geom` -- we'll add a layer of points to our plot usin
 ```{r penguins-point-error, error=TRUE, message=FALSE, warning=FALSE}
 penguins %>% 
   ggplot() + 
-  geom_point(
-    mapping = aes(x = flipper_length_mm))
+  geom_point(mapping = aes(x = flipper_length_mm))
 ```
 
-
-```{r penguins-point-error-out, ref.label="penguins-point-error", error=TRUE}
-```
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 We get an error, telling us that `geom_point()` requires the y-aesthetic.
@@ -454,6 +497,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Let's find out if the relationship between `flipper_length_mm` and `bill_length_mm` relates to the species of penguin. 
@@ -483,6 +530,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms 
 
 Notice that we included `color` **inside** our aesthetic mapping call (`mapping = aes()`) here, but not when we filled our histogram with the color red earlier
@@ -496,6 +547,10 @@ This is the difference between mapping an aesthetic to **data** and just setting
 This is a fairly common mistake, so let's take a look at an example
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 What happens if we tell `ggplot` to make our points red but accidentally include that **inside** the `aes()` call?
@@ -602,6 +657,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 We could also make separate graphs for each `species` using `facet_wrap`. We do this by passing a one-sided formula to `facet_wrap()`
@@ -628,6 +687,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Another thing we often want to do is to add a line over our scatterplot to describe the linear relationship between variables. We can do this by adding a `geom_smooth()` layer to our plot.
@@ -698,6 +761,10 @@ penguins %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Global aesthetic mapping
 
 
@@ -713,6 +780,10 @@ Instead, we can use **global** aesthetic mappings, which are specified in the `g
 Global mappings are inherited by each layer unless they're overwritten. 
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Global aesthetic mapping
 
 Let's re-make our previous plot using global aesthetic mapping
@@ -752,6 +823,10 @@ However, I *don't* define the`color` aesthetic globally, because `color` is geom
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Global aesthetic mapping 
 
 Let's take a look at the previous example again, but this time with `color` in the global aesthetic...
@@ -873,6 +948,10 @@ ps_data %>%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Labels and themes
 
 You can do a TON more customization of your plots than what we've covered so far. The possibilities with `ggplot` really are endless!
@@ -891,6 +970,10 @@ https://ggplot2.tidyverse.org/reference/theme.html
 http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example `r emo::ji("exploding_head")`
 
 .footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
@@ -899,6 +982,10 @@ knitr::include_graphics("images/ggplot_ex_1.png")
 ```
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example `r emo::ji("exploding_head")`
 
 .footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
@@ -908,6 +995,10 @@ knitr::include_graphics("images/ggplot_ex_2.jpg")
 ```
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example `r emo::ji("exploding_head")`
 
 .footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
@@ -917,6 +1008,10 @@ knitr::include_graphics("images/ggplot_ex_3.png")
 ```
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example `r emo::ji("exploding_head")`
 
 .footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
@@ -932,6 +1027,10 @@ class: inverse, center, middle
 # Let's recap with a flipbook!
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Flipbook
 
 Click on the "full screen" icon in the bottom right and use the navigation arrows to flip through the creation of a scatterplot in real time!

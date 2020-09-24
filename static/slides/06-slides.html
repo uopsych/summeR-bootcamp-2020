@@ -34,6 +34,10 @@ class: title-slide, center, middle
 # Data visualization with `ggplot2`
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot
 
 `ggplot2` is a `tidyverse` package for data visualization. It follows the **"grammar of graphics"**
@@ -91,17 +95,20 @@ glimpse(penguins)
 ```
 ## Rows: 344
 ## Columns: 8
-## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie…
-## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torger…
-## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.6, 34.6, 36.6, …
-## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.2, 21.1, 17.8, …
-## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, 195, 197, 184, …
-## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3800, 4400, 3700, …
-## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, male, male, fema…
-## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adeli…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, …
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 3…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 2…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185…
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female,…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007,…
 ```
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
 
 # ggplot2
 
@@ -130,6 +137,10 @@ ggplot(data = penguins)
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot2
 
 All we got was a blank square! 
@@ -139,6 +150,10 @@ All we got was a blank square!
 To understand why, let's back up to the philosophy of `ggplot`...
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot2
 
 ### What is a statistical graphic? 
@@ -166,6 +181,10 @@ In `ggplot`, that combination of things forms a *layer*. The `ggplot` terminolog
 * **stat** - statistical transformations
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # ggplot
 
 Putting all that together, the flow of information in `ggplot` is...
@@ -208,7 +227,7 @@ class: inverse, center, middle
 ---
 background-image: url(images/hex/magrittr.png)
 background-position: 90% 5%
-background-size: 12%
+background-size: 10%
 
 # Pipe operator
 
@@ -239,6 +258,10 @@ The first argument of many tidyverse functions is `data`. This is the case for `
 tidyverse functions are designed this way to make it easier to use pipes! 
 
 ---
+background-image: url(images/hex/magrittr.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Pipe operator
 
 Let's take another look at the code we just wrote:
@@ -277,7 +300,7 @@ Verbally, we might describe the code we just wrote as "Start with the `penguins`
 class: inverse
 # Your Turn 1
 
-<div class="countdown" id="timer_5f6b67bd" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6c43a5" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -332,6 +355,10 @@ class: inverse, center, middle
 # Now back to ggplot...
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Aesthetic mapping
 
 The basic idea with aesthetic mapping is that we want to take our data and map it onto physical space using geometric objects, or `geoms`. 
@@ -349,6 +376,10 @@ Each `geom()` function in `ggplot` takes a **mapping** argument.
 Let’s start with a basic geom, `geom_histogram()`...
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 We're going to call `ggplot()` again, and this time add the `geom_histogram()` **layer**, telling it to map the variable `flipper_length_mm` to the x-axis aesthetic
@@ -374,6 +405,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms 
 
 You can add additional arguments to the `geom()`. For example, we could change the number of bins
@@ -401,6 +436,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Or make them a different color. We can change the color of 2-d objects with the `fill` aesthetic
@@ -427,6 +466,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Now we'll use a different `geom` -- we'll add a layer of points to our plot using `geom_point()`
@@ -435,8 +478,7 @@ Now we'll use a different `geom` -- we'll add a layer of points to our plot usin
 ```r
 penguins %&gt;% 
   ggplot() + 
-  geom_point(
-    mapping = aes(x = flipper_length_mm))
+  geom_point(mapping = aes(x = flipper_length_mm))
 ```
 
 ```
@@ -446,21 +488,11 @@ penguins %&gt;%
 ![](06-slides_files/figure-html/penguins-point-error-1.png)&lt;!-- --&gt;
 
 
-
-```r
-penguins %&gt;% 
-  ggplot() + 
-  geom_point(
-    mapping = aes(x = flipper_length_mm))
-```
-
-```
-## Error: geom_point requires the following missing aesthetics: y
-```
-
-![](06-slides_files/figure-html/penguins-point-error-out-1.png)&lt;!-- --&gt;
-
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 We get an error, telling us that `geom_point()` requires the y-aesthetic.
@@ -489,6 +521,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Let's find out if the relationship between `flipper_length_mm` and `bill_length_mm` relates to the species of penguin. 
@@ -518,6 +554,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms 
 
 Notice that we included `color` **inside** our aesthetic mapping call (`mapping = aes()`) here, but not when we filled our histogram with the color red earlier
@@ -531,6 +571,10 @@ This is the difference between mapping an aesthetic to **data** and just setting
 This is a fairly common mistake, so let's take a look at an example
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 What happens if we tell `ggplot` to make our points red but accidentally include that **inside** the `aes()` call?
@@ -571,7 +615,7 @@ This is not what we want! `ggplot` is treating the value "red" as if it were par
 class: inverse
 # Your Turn 2
 
-<div class="countdown" id="timer_5f6b6a7a" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6c4487" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -637,6 +681,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 We could also make separate graphs for each `species` using `facet_wrap`. We do this by passing a one-sided formula to `facet_wrap()`
@@ -663,6 +711,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Mapping with geoms
 
 Another thing we often want to do is to add a line over our scatterplot to describe the linear relationship between variables. We can do this by adding a `geom_smooth()` layer to our plot.
@@ -733,6 +785,10 @@ penguins %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Global aesthetic mapping
 
 
@@ -748,6 +804,10 @@ Instead, we can use **global** aesthetic mappings, which are specified in the `g
 Global mappings are inherited by each layer unless they're overwritten. 
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Global aesthetic mapping
 
 Let's re-make our previous plot using global aesthetic mapping
@@ -787,6 +847,10 @@ However, I *don't* define the`color` aesthetic globally, because `color` is geom
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Global aesthetic mapping 
 
 Let's take a look at the previous example again, but this time with `color` in the global aesthetic...
@@ -844,7 +908,7 @@ penguins %&gt;%
 class: inverse
 # Your Turn 3
 
-<div class="countdown" id="timer_5f6b6b0d" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6c4444" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -884,11 +948,11 @@ glimpse(ps_data)
 ```
 ## Rows: 588
 ## Columns: 5
-## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T17", "T17", "T17", "T17", "M3", "M3", "M3", …
-## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "houses", "pasta", "pasta", "faces", "houses", "b…
-## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, …
-## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32, 2.32, 2.32, 2.38, 2.38, 2.38, 2.38, 2.47, …
-## $ condition &lt;chr&gt; "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "La…
+## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T17", "T17", "T17", "T17", "…
+## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "houses", "pasta", "pasta", "fac…
+## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1…
+## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32, 2.32, 2.32, 2.38, 2.38, 2…
+## $ condition &lt;chr&gt; "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Label", "Lab…
 ```
 ]
 
@@ -912,6 +976,10 @@ ps_data %&gt;%
 ]
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Labels and themes
 
 You can do a TON more customization of your plots than what we've covered so far. The possibilities with `ggplot` really are endless!
@@ -930,12 +998,20 @@ https://ggplot2.tidyverse.org/reference/theme.html
 http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example 🤯
 
 .footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
 &lt;img src="images/ggplot_ex_1.png" width="60%" /&gt;
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example 🤯
 
 .footnote[Image from [Eric Ekholm](https://github.com/ekholme/tidytuesday#most-recent-finished-contribution)]
@@ -943,6 +1019,10 @@ http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-
 &lt;img src="images/ggplot_ex_2.jpg" width="60%" /&gt;
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example 🤯
 
 .footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
@@ -950,6 +1030,10 @@ http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-
 &lt;img src="images/ggplot_ex_3.png" width="60%" /&gt;
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Example 🤯
 
 .footnote[Image from [Georgios Karamanis](https://github.com/gkaramanis/tidytuesday#highlights-click-on-image-to-go-to-code-)]
@@ -963,6 +1047,10 @@ class: inverse, center, middle
 # Let's recap with a flipbook!
 
 ---
+background-image: url(images/hex/ggplot2.png)
+background-position: 90% 5%
+background-size: 10%
+
 # Flipbook
 
 Click on the "full screen" icon in the bottom right and use the navigation arrows to flip through the creation of a scatterplot in real time!
@@ -976,7 +1064,7 @@ Click on the "full screen" icon in the bottom right and use the navigation arrow
 class: inverse, center, middle
 # Q &amp; A
 
-<div class="countdown" id="timer_5f6b69ba" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6c4561" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 

@@ -52,20 +52,30 @@ background-size: 10%
 
 --
 
-+ `mutate()` adds new variables that are functions of existing variables
-
-+ `select()` picks variables based on their names.
+**Manipulating observations**
 
 + `filter()` picks cases based on their values.
 
-+ `summarise()` reduces multiple values down to a single summary.
-
 + `arrange()` changes the ordering of the rows.
 
-.footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
+--
+***
 
----
-# mutate()
+**Manipulating variables**
+
++ `select()` picks variables based on their names.
+
++ `mutate()` adds new variables that are functions of existing variables
+
+--
+***
+
+**Summarizing data**
+
++ `summarise()` reduces multiple values down to a single summary.
+
+
+.footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
 
 ---
 background-image: url(images/hex/magrittr.png)
@@ -107,6 +117,48 @@ Read more: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr
 
 
 ---
+# Concept Map: `%&gt;%`
+
+&lt;img src="images/pipe-operator.png" width="90%" /&gt;
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# dplyr
+
+---
+class: inverse, center, middle
+
+# Manipulating observations (rows)
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+### Subset observations (rows) with `filter()`
+
+&lt;img src="images/dplyr/filter.png" width="400" /&gt;
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+---
+class: inverse, center, middle
+
+# Manipulating variables (columns)
+
+---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
 background-size: 10%
@@ -118,6 +170,13 @@ What if we want to apply `dplyr` verbs across multiple columns **simultaenously*
 &lt;iframe src="https://columnwise-operations-dplyr.netlify.app/" width="100%" height="400px"&gt;&lt;/iframe&gt;
 
 .footnote[🔗 [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/#1)]
+
+---
+class: inverse, center, middle
+
+# Summarizing data
+
+
 ---
 
 # Concept Map: `dplyr`
@@ -156,11 +215,6 @@ What if we want to apply `dplyr` verbs across multiple columns **simultaenously*
 .footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
 
 ---
-# Concept Map: `%&gt;%`
-
-&lt;img src="images/pipe-operator.png" width="90%" /&gt;
-
-.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

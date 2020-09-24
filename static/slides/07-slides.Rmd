@@ -63,20 +63,30 @@ background-size: 10%
 
 --
 
-+ `mutate()` adds new variables that are functions of existing variables
-
-+ `select()` picks variables based on their names.
+**Manipulating observations**
 
 + `filter()` picks cases based on their values.
 
-+ `summarise()` reduces multiple values down to a single summary.
-
 + `arrange()` changes the ordering of the rows.
 
-.footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
+--
+***
 
----
-# mutate()
+**Manipulating variables**
+
++ `select()` picks variables based on their names.
+
++ `mutate()` adds new variables that are functions of existing variables
+
+--
+***
+
+**Summarizing data**
+
++ `summarise()` reduces multiple values down to a single summary.
+
+
+.footnote[Source: [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)]
 
 ---
 background-image: url(images/hex/magrittr.png)
@@ -116,6 +126,52 @@ Read more: [https://magrittr.tidyverse.org/reference/pipe.html](https://magrittr
 
 
 ---
+# Concept Map: `%>%`
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("images/pipe-operator.png")
+```
+
+.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# dplyr
+
+---
+class: inverse, center, middle
+
+# Manipulating observations (rows)
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+### Subset observations (rows) with `filter()`
+
+```{r echo=FALSE}
+knitr::include_graphics("images/dplyr/filter.png")
+```
+
+---
+background-image: url(images/hex/dplyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `filter()`
+
+---
+class: inverse, center, middle
+
+# Manipulating variables (columns)
+
+---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
 background-size: 10%
@@ -129,6 +185,13 @@ knitr::include_url("https://columnwise-operations-dplyr.netlify.app/")
 ```
 
 .footnote[`r emo::ji("link")` [columnwise-operations-dplyr.netlify.app](https://columnwise-operations-dplyr.netlify.app/#1)]
+
+---
+class: inverse, center, middle
+
+# Summarizing data
+
+
 ---
 
 # Concept Map: `dplyr`
@@ -177,11 +240,5 @@ knitr::include_graphics("images/group_by-summarize.png")
 .footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
 
 ---
-# Concept Map: `%>%`
 
-```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("images/pipe-operator.png")
-```
-
-.footnote[Source: [rstudio/concept-maps](https://github.com/rstudio/concept-maps)]
 

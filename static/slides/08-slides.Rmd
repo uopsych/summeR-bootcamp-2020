@@ -44,7 +44,7 @@ class: title-slide, center, middle
 # Pivoting
 
 ```{r echo=FALSE}
-knitr::include_graphics("images/pivot_wider_longer.gif")
+knitr::include_graphics("images/tidyr-longer-wider-modified.gif")
 ```
 
-.footnote[Source: [Mara Averick](https://twitter.com/dataandme/status/1175913657907253254?s=20)]
+.footnote[Source: [Mara Averick](https://twitter.com/dataandme/status/1175913657907253254?s=20) and [Garrick Aden-Buie](https://github.com/gadenbuie/tidyexplain)]
