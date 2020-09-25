@@ -45,6 +45,9 @@ class: title-slide, center, middle
 .footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
 
 
+
+
+
 ---
 class: inverse, center, middle
 # That's a wrap!
