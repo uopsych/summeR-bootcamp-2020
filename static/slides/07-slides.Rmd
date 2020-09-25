@@ -338,7 +338,7 @@ decorate('arrange(.data, ...)', eval=FALSE) %>%
 
 **.blue[.data]** .blue[= a data frame or tibble]
 
-**.red[. . .]**  .red[= Variables, or functions or variables. Use `desc()` to sort a variable in descending order.]
+**.red[. . .]**  .red[= Variables to sort by. Use `desc()` to sort a variable in descending order.]
 ]
 
 .panel[.panel-name[Example 1]
