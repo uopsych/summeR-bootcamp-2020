@@ -426,16 +426,20 @@ ps_data %>%
 .pull-left[
 ```{r}
 # Q4. 
-ps_data %>% 
+ps_filtered <- ps_data %>% 
   filter(age >= 3 & age <= 4)
+
+ps_filtered
 ```
 ]
 
 .pull-right[
 ```{r}
 # Q4.
-ps_data %>% 
+ps_filtered <- ps_data %>% 
   filter(between(age, 3, 4))
+
+ps_filtered
 ```
 ]
 ]
