@@ -45,13 +45,8 @@ class: title-slide, center, middle
 .footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
 
 
----
 ```{r child="09-what-is-rmd.Rmd"}
 ```
-
-
-.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
-
 
 ---
 # What is R Markdown?
