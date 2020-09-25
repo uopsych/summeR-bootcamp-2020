@@ -34,7 +34,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://bit.ly/3caJRCN
+  url: https://rstudio.cloud/spaces/89074/project/1668344
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
@@ -49,9 +49,28 @@ links:
   url: https://rstudio.cloud/learn/primers/4.2
 ---
 
+
+
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/08-slides.html",
   ratio = "16:9"
 )
 ```
+
+<br>
+
+### Further Reading
+
+:::book
+1. R for Data Science chapter on [tidy data](https://r4ds.had.co.nz/tidy-data.html#pivoting)
+
+2. Tutorial on [reshaping data](https://rladiessydney.org/courses/ryouwithme/02-cleanitup-5/) from R-Ladies
+Sydney
+
+3. The [best scene](https://www.youtube.com/watch?v=n67RYI_0sc0) from all 10 seasons of FRIENDS
+:::

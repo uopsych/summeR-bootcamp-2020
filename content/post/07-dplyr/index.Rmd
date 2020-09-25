@@ -34,7 +34,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://bit.ly/3caJRCN
+  url: https://rstudio.cloud/spaces/89074/project/1668339
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
@@ -49,9 +49,27 @@ links:
   url: https://rstudio.cloud/learn/primers/2.3
 ---
 
+
+***
+
+### Slides
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(
   url = "/slides/07-slides.html",
   ratio = "16:9"
 )
 ```
+
+<br>
+
+### Further Reading
+
+:::book
+1. R for Data Science chapter on [data transformation](https://r4ds.had.co.nz/transform.html)
+
+2. [Tutorial on `tidyselect`](https://tladeras.shinyapps.io/learning_tidyselect/) by Ted Laderas
+
+3. Flipbooks on [data wrangling](https://evamaerey.github.io/data_manipulation/one_stream_wrangle.html#1) and [summarizing](https://evamaerey.github.io/data_manipulation/summarize.html#3) by Gina Reynolds
+
+:::
