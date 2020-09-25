@@ -68,14 +68,14 @@ glimpse(penguins)
 ```
 ## Rows: 344
 ## Columns: 8
-## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adeli…
-## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Tor…
-## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8,…
-## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3,…
-## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, …
-## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700,…
-## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA,…
-## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18…
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…
 ```
 
 ---
@@ -310,11 +310,12 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 3 x 8
-##   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-## 1 Gentoo  Biscoe           59.6            17               230        6050 male   2007
-## 2 Gentoo  Biscoe           55.9            17               228        5600 male   2009
-## 3 Gentoo  Biscoe           55.1            16               230        5850 male   2009
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Gentoo  Biscoe           59.6            17              230        6050 male 
+## 2 Gentoo  Biscoe           55.9            17              228        5600 male 
+## 3 Gentoo  Biscoe           55.1            16              230        5850 male 
+## # … with 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -330,19 +331,19 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 108 x 8
-##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
-##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;
-##  1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007
-##  2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007
-##  3 Adelie  Torgersen           40.3          18                 195        3250 female  2007
-##  4 Adelie  Torgersen           NA            NA                  NA          NA &lt;NA&gt;    2007
-##  5 Adelie  Torgersen           36.7          19.3               193        3450 female  2007
-##  6 Adelie  Torgersen           39.3          20.6               190        3650 male    2007
-##  7 Adelie  Torgersen           38.9          17.8               181        3625 female  2007
-##  8 Adelie  Torgersen           39.2          19.6               195        4675 male    2007
-##  9 Adelie  Torgersen           34.1          18.1               193        3475 &lt;NA&gt;    2007
-## 10 Adelie  Torgersen           42            20.2               190        4250 &lt;NA&gt;    2007
-## # … with 98 more rows
+##    species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Torge…           39.1          18.7              181        3750
+##  2 Adelie  Torge…           39.5          17.4              186        3800
+##  3 Adelie  Torge…           40.3          18                195        3250
+##  4 Adelie  Torge…           NA            NA                 NA          NA
+##  5 Adelie  Torge…           36.7          19.3              193        3450
+##  6 Adelie  Torge…           39.3          20.6              190        3650
+##  7 Adelie  Torge…           38.9          17.8              181        3625
+##  8 Adelie  Torge…           39.2          19.6              195        4675
+##  9 Adelie  Torge…           34.1          18.1              193        3475
+## 10 Adelie  Torge…           42            20.2              190        4250
+## # … with 98 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
 ```
 ]
 ]
@@ -399,11 +400,12 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 3 x 8
-##   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-## 1 Gentoo  Biscoe           55.9            17               228        5600 male   2009
-## 2 Gentoo  Biscoe           55.1            16               230        5850 male   2009
-## 3 Gentoo  Biscoe           59.6            17               230        6050 male   2007
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Gentoo  Biscoe           55.9            17              228        5600 male 
+## 2 Gentoo  Biscoe           55.1            16              230        5850 male 
+## 3 Gentoo  Biscoe           59.6            17              230        6050 male 
+## # … with 1 more variable: year &lt;int&gt;
 ```
 
 ]
@@ -419,11 +421,12 @@ penguins %&gt;%
 
 ```
 ## # A tibble: 3 x 8
-##   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year
-##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;
-## 1 Gentoo  Biscoe           59.6            17               230        6050 male   2007
-## 2 Gentoo  Biscoe           55.1            16               230        5850 male   2009
-## 3 Gentoo  Biscoe           55.9            17               228        5600 male   2009
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Gentoo  Biscoe           59.6            17              230        6050 male 
+## 2 Gentoo  Biscoe           55.1            16              230        5850 male 
+## 3 Gentoo  Biscoe           55.9            17              228        5600 male 
+## # … with 1 more variable: year &lt;int&gt;
 ```
 ]
 ]
@@ -433,7 +436,7 @@ class: inverse
 
 # Your turn 1
 
-<div class="countdown" id="timer_5f6d87b1" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d91bf" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -821,7 +824,7 @@ class: inverse
 
 # Your turn 2
 
-<div class="countdown" id="timer_5f6d86f7" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d8f9c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -935,11 +938,11 @@ ps_data %&gt;%
 ```
 ## Rows: 588
 ## Columns: 5
-## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T17", "T17", "T17", …
-## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "houses", "pasta", "past…
-## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1,…
-## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32, 2.32, 2.32, 2.38,…
-## $ condition &lt;fct&gt; Label, Label, Label, Label, Label, Label, Label, Label, Label, Label, Label, …
+## $ subid     &lt;chr&gt; "M22", "M22", "M22", "M22", "T22", "T22", "T22", "T22", "T1…
+## $ item      &lt;chr&gt; "faces", "houses", "pasta", "beds", "beds", "faces", "house…
+## $ correct   &lt;int&gt; 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1,…
+## $ age       &lt;dbl&gt; 2.00, 2.00, 2.00, 2.00, 2.13, 2.13, 2.13, 2.13, 2.32, 2.32,…
+## $ condition &lt;fct&gt; Label, Label, Label, Label, Label, Label, Label, Label, Lab…
 ```
 
 ]
@@ -1116,7 +1119,7 @@ class: inverse
 
 # Your turn 3
 
-<div class="countdown" id="timer_5f6d8660" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d9140" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1137,6 +1140,7 @@ class: solution
 
 
 ```r
+# Q1. 
 ps_data %&gt;% 
   group_by(subid) %&gt;% 
   summarize(num_correct = sum(correct))
@@ -1170,6 +1174,7 @@ ps_data %&gt;%
 
 
 ```r
+# Q2. 
 ps_data %&gt;% 
   group_by(condition, item) %&gt;% 
   summarize(num_correct = sum(correct)) %&gt;% 
@@ -1201,6 +1206,7 @@ ps_data %&gt;%
 
 
 ```r
+Q3. 
 ps_data %&gt;% 
   group_by(condition) %&gt;% 
   summarize(prop_correct = mean(correct)) %&gt;% 
@@ -1235,7 +1241,7 @@ What if we want to apply `dplyr` verbs across multiple columns **simultaneously*
 class: inverse, center, middle
 # Q &amp; A
 
-<div class="countdown" id="timer_5f6d89a8" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d8fd6" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1249,7 +1255,7 @@ class: inverse, center, middle
 class: inverse, center, middle
 # Break! 
 
-<div class="countdown" id="timer_5f6d897c" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f6d91d9" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
     </textarea>
