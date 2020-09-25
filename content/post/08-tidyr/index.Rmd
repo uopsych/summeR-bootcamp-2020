@@ -49,7 +49,7 @@ links:
   url: https://rstudio.cloud/learn/primers/4.2
 ---
 
-The concept of data is obviously of primary importance in the tidyverse. This lesson will introduce you to the criteria of tidy data, why it's important, and how to reshape your raw data into a tidy format using the functions `pivot_wider()` and `pivot_longer()`, which are the successors to the widely despised `spread()` and `gather()`. 
+The concept of tidy data is, as the name suggests, of primary importance in the tidyverse. This lesson will introduce you to the criteria of tidy data, why it's important, and how to reshape your raw data into a tidy format using the functions `pivot_wider()` and `pivot_longer()`, which are the more user-friendly and intuitive successors to the widely despised `spread()` and `gather()`. 
 
 ***
 
