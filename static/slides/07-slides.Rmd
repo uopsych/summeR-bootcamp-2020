@@ -874,6 +874,7 @@ class: solution
 .panel[.panel-name[Q1]
 
 ```{r}
+# Q1. 
 ps_data %>% 
   group_by(subid) %>% 
   summarize(num_correct = sum(correct))
@@ -885,6 +886,7 @@ ps_data %>%
 .panel[.panel-name[Q2]
 
 ```{r}
+# Q2. 
 ps_data %>% 
   group_by(condition, item) %>% 
   summarize(num_correct = sum(correct)) %>% 
@@ -896,6 +898,7 @@ ps_data %>%
 .panel[.panel-name[Q3]
 
 ```{r eval=FALSE}
+Q3. 
 ps_data %>% 
   group_by(condition) %>% 
   summarize(prop_correct = mean(correct)) %>% 

@@ -334,7 +334,72 @@ knitr::include_graphics("images/pivot_wider_example.png")
 ```
 
 ]
+]
 
+
+---
+class: inverse
+
+# Your turn `r (yt_counter <- yt_counter + 1)`
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
+
+1. Import the file `pragmatic_scales_data.csv` (use best practices of a project-oriented workflow). Save it to an object called `ps_data` and convert to a tibble. View the data to remind yourself how it's structured. 
+
+1. Use `pivot_wider()` to reformat the data so that there is a unique column for each `item`. The values in each of the four item columns should indicate whether or not the subject got that particular item right or wrong (i.e., what variable represents this?). Save this to a new object called `ps_data_wide`.
+
+
+1. Take `ps_data_wide`, which you just created, and reshape it back to the original longer format using `pivot_longer()`. 
+
+---
+class: solution
+
+# Solution
+
+```{r echo=FALSE, message=FALSE}
+ps_data <- rio::import(here::here("static/slides/data/pragmatic_scales_data.csv")) %>% 
+  as_tibble()
+```
+
+.panelset[
+.panel[.panel-name[Q1]
+
+```{r eval=FALSE}
+# Q1.
+ps_data <- rio::import(here::here("data", "pragmatic_scales_data.csv")) %>% 
+  as_tibble()
+```
+
+]
+
+.panel[.panel-name[Q2]
+
+
+```{r}
+# Q2. 
+
+ps_data_wide <- ps_data %>% 
+  pivot_wider(names_from = item, values_from = correct)
+
+ps_data_wide
+```
+]
+
+.panel[.panel-name[Q3]
+
+```{r}
+# Q3. 
+
+ps_data_wide %>% 
+  pivot_longer(c(faces, houses, pasta, beds), 
+               names_to = "item", 
+               values_to = "correct") %>% 
+  select(subid, item, correct, everything()) # reorder columns
+```
+
+]
 ]
 
 ---
