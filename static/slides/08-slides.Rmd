@@ -18,6 +18,7 @@ options(htmltools.dir.version = FALSE)
 library(countdown)
 library(tidyverse)
 library(palmerpenguins)
+library(flair)
 
 xaringanExtra::use_xaringan_extra(include = c("panelset", "tile_view", "share_again"))
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
@@ -33,12 +34,43 @@ style_mono_accent(base_color = "#23395b",
                 text_font_google = google_font("Montserrat", "300", "300i"),
                 code_font_google = google_font("Source Code Pro"),
                 link_color = "#BA8800",
-                code_inline_color = "#BA8800")
+                code_inline_color = "#BA8800",
+                colors = c(
+                  blue = "#6495ed",
+                  red = "#f34213",
+                  purple = "#3e2f5b",
+                  orange = "#ff8811",
+                  green = "#136f63",
+                  white = "#FFFFFF"))
 ```
 
 class: title-slide, center, middle
 
 # Data Reshaping with `tidyr`
+
+
+---
+# What is "tidy" data? 
+
+There are three interrelated rules which make a dataset tidy
+
+--
+
+1. Each variable must have its own column.
+
+1. Each observation must have its own row.
+
+1. Each value must have its own cell.
+
+--
+
+Here's an image that shows these rules visually 
+
+```{r echo=FALSE}
+knitr::include_graphics("images/tidy_data.png")
+```
+
+.footnote[Source: [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1)]
 
 ---
 class: inverse, center, middle
@@ -52,6 +84,38 @@ background-size: 10%
 
 # Pivoting
 
+Most of the data you encounter in the real world will unfortunately most likely not be in tidy format. 
+
+--
+
+This means you will need to reshape your data in order to get in in a tidy format. 
+
+--
+
+This is where the `tidyr` package comes in. It contains two crucial functions that you can use to reshape your data: 
+
+--
+***
+
+.pull-left[
+`pivot_longer()` makes datasets longer by increasing the number of rows and decreasing the number of columns. 
+]
+
+.pull-right[
+`pivot_wider()` "widens" data, increasing the number of columns and decreasing the number of rows. 
+]
+
+***
+***Note:*** The old versions of these functions were called `gather()` and `spread()`, but were very confusing to use, and these newer functions are much more user-friendly. 
+
+---
+background-image: url(images/hex/tidyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Pivoting
+
+
 ```{r echo=FALSE}
 knitr::include_graphics("images/tidyr-longer-wider-modified.gif")
 ```
@@ -59,11 +123,62 @@ knitr::include_graphics("images/tidyr-longer-wider-modified.gif")
 .footnote[Source: [Mara Averick](https://twitter.com/dataandme/status/1175913657907253254?s=20) and [Garrick Aden-Buie](https://github.com/gadenbuie/tidyexplain)]
 
 ---
+# Example data 
+
+Our example data is built into to the `tidyverse` package. 
+
+It represents the number of TB cases documented by the World Health Organization in Afghanistan, Brazil, and China between 1999 and 2000
+
+--
+***
+
+.pull-left[
+
+We need to reshape this data to a longer format
+
+```{r}
+table4a
+```
+]
+
+--
+
+.pull-right[
+
++ The column names `1999` and `2000` are not variables in our data, instead they represent values of the year variable
+
++  the values in the `1999 `and `2000` columns represent values of the `cases` variable
+
++ each row represents two observations, not one
+]
+
+---
 background-image: url(images/hex/tidyr.png)
 background-position: 90% 5%
 background-size: 10%
 
-# `pivot_wider()`
+# `pivot_longer()`
+
+```{r}
+table4a
+```
+
+--
+***
+
+We need 3 pieces of information to reshape (pivot) this data into a tidy format
+
+--
+
++ The set of columns whose names are values, not variables. In this example, those are the columns `1999` and `2000`.
+
+--
+
++ The name of the variable to move the column names to. Here it is `year`.
+
+--
+
++ The name of the variable to move the column values to. Here it’s `cases`
 
 
 ---
@@ -73,13 +188,153 @@ background-size: 10%
 
 # `pivot_longer()`
 
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+```{r pivot-longer-spec-color-coded, echo = FALSE, warning=FALSE}
+decorate('pivot_longer(data, cols, names_to, values_to)', eval=FALSE) %>% 
+  flair("data", color = "cornflowerblue") %>% 
+  flair("cols", color = "red") %>% 
+  flair("names_to", color = "purple") %>% 
+  flair("values_to", color = "green")
+```
+
+**.blue[data]** .blue[= A data frame to pivot]
+
+**.red[cols]**  .red[= Columns to pivot into longer format]
+
+**.purple[names_to]**  .purple[= A string specifying the name of the column to create from the data stored in the column names of .blue[data]]
+
+**.green[values_to]**  .green[= A string specifying the name of the column to create from the data stored in cell values]
+
+]
+
+.panel[.panel-name[Example]
+
+```{r pivot-longer-example, eval=FALSE}
+table4a %>% 
+  pivot_longer(cols = c(`1999`, `2000`),
+               names_to = "year", 
+               values_to = "cases")
+```
+
+
+.pull-left[
+**Output: A longer data frame**
+
+```{r ref.label="pivot-longer-example", echo=FALSE}
+```
+]
+
+
+.pull-right[
+**Notes**
+
++ We had to put the variable names `1999` and `2000` in backticks because column names are normally not allowed to start with numbers
+
++ `year` and `cases` do not exist in `table4a` so we put their names in quotes.
+]
+
+]
+
+.panel[.panel-name[Visualization]
+
+Here's a visual representation of what we just did. 
+
+```{r echo=FALSE}
+knitr::include_graphics("images/pivot_longer_example.png")
+```
+
+]
+
+]
+
 ---
-class: inverse, center, middle
+class: split-60
 
-# Separating and uniting
+background-image: url(images/hex/tidyr.png)
+background-position: 90% 5%
+background-size: 10%
+
+# `pivot_wider()`
+
+Here's a different dataset (`table2`) that needs to be reshaped to a wider format. 
+
+A single observation is a `country` in a `year`, but each observation is spread across two rows.
+
+***
+
+
+.column[
+<br>
+.content[.center[
+<br><br><br><br><br><br><br><br><br><br> 
+```{r echo=FALSE}
+table2
+```
+]]]
+
+--
+
+.column[
+<br><br>
+.content[
+<br><br><br><br><br><br><br><br><br><br>
+To tidy this up, we need to pieces of information
+
++ The column to take variable names from (`type`)
+
++ The column to take values from (`count`)
+]]
 
 ---
+background-image: url(images/hex/tidyr.png)
+background-position: 90% 5%
+background-size: 10%
 
+# `pivot_wider()`
+
+.panelset[
+
+.panel[.panel-name[Arguments]
+
+```{r pivot-wider-spec-color-coded, echo = FALSE, warning=FALSE}
+decorate('pivot_wider(data, names_from, values_from)', eval=FALSE) %>% 
+  flair("data", color = "cornflowerblue") %>% 
+  flair("names_from", color = "red") %>% 
+  flair("values_from", color = "purple")
+```
+
+**.blue[data]** .blue[= A data frame to pivot]
+
+**.red[names_from]**  .red[=  Which column (or columns) to get the name(s) of the output column(s) from]
+
+**.purple[values_from]**  .purple[= Which column (or columns) to get the cell values from]
+
+]
+
+.panel[.panel-name[Example]
+
+```{r pivot-wider-example}
+table2 %>%
+    pivot_wider(names_from = type, 
+                values_from = count)
+```
+
+]
+
+.panel[.panel-name[Visualization]
+
+Here's a visual representation of what we just did. 
+
+```{r echo=FALSE}
+knitr::include_graphics("images/pivot_wider_example.png")
+```
+
+]
+
+]
 
 ---
 class: inverse, center, middle

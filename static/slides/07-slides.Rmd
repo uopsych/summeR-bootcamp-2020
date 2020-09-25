@@ -70,6 +70,18 @@ There are a few key ideas to be aware of about how the tidyverse works in genera
 1. Variable names are usually not quoted (read more [here](https://tidyselect.r-lib.org/reference/language.html))
 
 ---
+background-image: url(images/hex/palmerpenguins.png)
+background-position: 90% 5%
+background-size: 10%
+
+# Palmer penguins
+
+```{r warning=FALSE, message=FALSE}
+library(palmerpenguins)
+glimpse(penguins)
+```
+
+---
 background-image: url(images/hex/dplyr.png)
 background-position: 90% 5%
 background-size: 10%
