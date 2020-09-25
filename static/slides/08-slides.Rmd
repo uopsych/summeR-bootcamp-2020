@@ -91,11 +91,12 @@ Most of the data you encounter in the real world will unfortunately most likely 
 This means you will need to reshape your data in order to get in in a tidy format. 
 
 --
+***
 
 This is where the `tidyr` package comes in. It contains two crucial functions that you can use to reshape your data: 
 
 --
-***
+
 
 .pull-left[
 `pivot_longer()` makes datasets longer by increasing the number of rows and decreasing the number of columns. 
@@ -281,11 +282,11 @@ table2
 <br><br>
 .content[
 <br><br><br><br><br><br><br><br><br><br>
-To tidy this up, we need to pieces of information
+To tidy this up, we need two pieces of information:
 
-+ The column to take variable names from (`type`)
+-The column to take variable names from (`type`)
 
-+ The column to take values from (`count`)
+-The column to take values from (`count`)
 ]]
 
 ---
