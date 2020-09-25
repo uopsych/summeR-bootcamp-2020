@@ -41,6 +41,8 @@ links:
   url: https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 ---
 
+R Markdown is one of the most powerful tools at your disposal as a scientist -- particularly for communicating and sharing your work. For example, this entire website and all of the slides were created using R Markdown! Today we'll take a little deeper of a dive into what R Markdown is than what we covered in our initial introduction to R, and you will hopefully get a sense of the endless possibilities it affords you. 
+
 ***
 
 ### Slides
