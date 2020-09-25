@@ -45,8 +45,144 @@ class: title-slide, center, middle
 .footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
 
 
+---
+```{r child="09-what-is-rmd.Rmd"}
+```
 
 
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
+
+
+---
+# What is R Markdown?
+
+1. ["An authoring framework for data science."](https://rmarkdown.rstudio.com/lesson-1.html) (`r emo::ji("heavy_check_mark")`)
+
+1. [A document format (`.Rmd`).](https://bookdown.org/yihui/rmarkdown/) (`r emo::ji("heavy_check_mark")`)
+
+1. [An R package named `rmarkdown`.](https://rmarkdown.rstudio.com/docs/) (`r emo::ji("heavy_check_mark")`)
+
+1. ["A file format for making dynamic documents with R."](https://rmarkdown.rstudio.com/articles_intro.html) (`r emo::ji("heavy_check_mark")`)
+
+1. ["A tool for integrating text, code, and results."](https://r4ds.had.co.nz/communicate-intro.html) (`r emo::ji("heavy_check_mark")`)
+
+1. ["A computational document."](http://radar.oreilly.com/2011/07/wolframs-computational-documen.html) (`r emo::ji("heavy_check_mark")`)
+
+1. Wizardry. (`r emo::ji("mage")`)
+
+
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
+
+
+---
+# Replication/reproducibility crisis?
+
+<br><br>
+.center[
+![](https://media.giphy.com/media/11fDMHAzihB8D6/source.gif))
+]
+
+
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
+
+---
+# How does R Markdown work?
+
+.center[
+```{r echo=FALSE, out.width="85%"}
+knitr::include_graphics("images/rmarkdown/Knit-to-html.jpg")
+```
+]
+
+
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/) | Artwork by [Desireé De Leon](https://desiree.rbind.io/)]
+
+---
+# How does R Markdown work?
+
+.center[
+```{r echo=FALSE, out.width="85%"}
+knitr::include_graphics("images/rmarkdown/doc-live.jpg")
+```
+]
+
+
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/) | Artwork by [Desireé De Leon](https://desiree.rbind.io/)]
+
+---
+# What is inside?
+
+.center[
+```{r echo=FALSE}
+knitr::include_graphics("images/rmarkdown_wizards.png")
+```
+]
+
+
+.footnote[Artwork by [@allison_horst](https://twitter.com/allison_horst)]
+
+---
+# What is inside?
+
+.center[
+```{r echo=FALSE}
+knitr::include_graphics("images/rmarkdown/doc-make.jpg")
+```
+]
+
+
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/) | Artwork by [Desireé De Leon](https://desiree.rbind.io/)]
+
+---
+# R Markdown Tutorial
+
+```{r echo=FALSE}
+knitr::include_url("09-rmarkdown_handout.html")
+```
+
+`r emo::ji("link")` Click [here](09-rmarkdown_handout.html) to access the tutorial. 
+
+---
+# General advice
+
+.footnote[Slide adapted from [R Markdown for Medicine](https://rmd4medicine.netlify.app/) by [Alison Hill](https://alison.rbind.io/project/rmd4medicine/), [CC BY 4.0](https://rmd4medicine.netlify.app/license/)]
+--
+
+`r emo::ji("heavy_check_mark")` **Document your document:** use YAML to set up meaningful metadata
+
+--
+
+`r emo::ji("heavy_check_mark")` **Style your document:** use YAML to add options to your chosen output format
+
+--
+
+`r emo::ji("heavy_check_mark")` **Organize your text:** use markdown headers with `#`
+
+--
+
+`r emo::ji("heavy_check_mark")` **Organize your code:** use `knitr` chunk labels
+
+--
+
+`r emo::ji("heavy_check_mark")` **Style your text:** use markdown **bold**, _italics_, bullets `r icon::fa("list")` and lists `r icon::fa("list-ol")`
+
+--
+
+`r emo::ji("heavy_check_mark")` **Style your output:** use `knitr` chunk options
+
+--
+
+`r emo::ji("heavy_check_mark")` `r emo::ji("yarn")` early, `r emo::ji("yarn")` often
+
+
+
+---
+class: inverse, center, middle
+# Q & A
+
+```{r echo=FALSE}
+countdown(minutes = 5)
+```
 
 ---
 class: inverse, center, middle
