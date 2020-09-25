@@ -88,12 +88,12 @@ Most of the data you encounter in the real world will unfortunately most likely 
 
 --
 
-This means you will need to reshape your data in order to get in in a tidy format. 
+This means you will need to reshape your data in order to tidy it.  
 
 --
 ***
 
-This is where the `tidyr` package comes in. It contains two crucial functions that you can use to reshape your data: 
+This is where the `tidyr` package comes in. It contains two crucial functions that you can use to reshape your data...
 
 --
 
@@ -126,7 +126,7 @@ knitr::include_graphics("images/tidyr-longer-wider-modified.gif")
 ---
 # Example data 
 
-Our example data is built into to the `tidyverse` package. 
+Our example data is built into to the `tidyr` package. 
 
 It represents the number of TB cases documented by the World Health Organization in Afghanistan, Brazil, and China between 1999 and 2000
 
@@ -148,9 +148,9 @@ table4a
 
 + The column names `1999` and `2000` are not variables in our data, instead they represent values of the year variable
 
-+  the values in the `1999 `and `2000` columns represent values of the `cases` variable
++ The values in the `1999` and `2000` columns represent values of the `cases` variable
 
-+ each row represents two observations, not one
++ Each row represents two observations, not one
 ]
 
 ---
@@ -171,7 +171,7 @@ We need 3 pieces of information to reshape (pivot) this data into a tidy format
 
 --
 
-+ The set of columns whose names are values, not variables. In this example, those are the columns `1999` and `2000`.
++ The set of columns in `table 4a` whose names are actually values, not variables. In this example, those are the columns `1999` and `2000`.
 
 --
 
@@ -179,7 +179,7 @@ We need 3 pieces of information to reshape (pivot) this data into a tidy format
 
 --
 
-+ The name of the variable to move the column values to. Here it’s `cases`
++ The name of the variable to move the column values to. Here it’s `cases`.
 
 
 ---
@@ -260,7 +260,7 @@ background-size: 10%
 
 # `pivot_wider()`
 
-Here's a different dataset (`table2`) that needs to be reshaped to a wider format. 
+Below is a different dataset (`table2`) that needs to be reshaped to a wider format. 
 
 A single observation is a `country` in a `year`, but each observation is spread across two rows.
 
