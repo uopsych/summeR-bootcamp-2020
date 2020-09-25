@@ -198,7 +198,7 @@ decorate('pivot_longer(data, cols, names_to, values_to)', eval=FALSE) %>%
   flair("data", color = "cornflowerblue") %>% 
   flair("cols", color = "red") %>% 
   flair("names_to", color = "purple") %>% 
-  flair("values_to", color = "green")
+  flair("values_to", color = "orange")
 ```
 
 **.blue[data]** .blue[= A data frame to pivot]
@@ -207,7 +207,7 @@ decorate('pivot_longer(data, cols, names_to, values_to)', eval=FALSE) %>%
 
 **.purple[names_to]**  .purple[= A string specifying the name of the column to create from the data stored in the column names of .blue[data]]
 
-**.green[values_to]**  .green[= A string specifying the name of the column to create from the data stored in cell values]
+**.orange[values_to]**  .orange[= A string specifying the name of the column to create from the data stored in cell values]
 
 ]
 
