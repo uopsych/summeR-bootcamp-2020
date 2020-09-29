@@ -34,7 +34,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://rstudio.cloud/spaces/89074/project/1661646
+  url: https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/uopsych/summeR-bootcamp-2020/tree/master/exercises/06_ggplot2
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
