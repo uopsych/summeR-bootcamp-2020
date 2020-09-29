@@ -1,0 +1,113 @@
+---
+title: "Your Turn"
+output: html_document
+---
+
+
+# Your Turn 1
+
+1. Load the `rio` and `here` packages.
+
+```{r}
+# Q1.
+
+library(rio)
+```
+
+
+2.  Run the following code to import the data called `pragmatic_scales_data.csv`). Why do you get an error? Where is this file saved?    
+*Hint*: Look through the folder(s) in the Files pane
+
+```{r error=TRUE}
+# Q2. 
+
+ps_data <- import("pragmatic_scales_data.csv")
+```
+
+
+3. Fix the error in the code above to import the data. 
+*Hint*: use the `here()` function
+
+```{r}
+# Q3.
+
+ps_data <- import(here("___"))
+```
+
+
+
+4. Remember that `rio` is flexible with file types -- `rio::import()` will call the right function under the hood to read in the file based on the file extension. Use `rio` to import `pragmatic_scales_data.sav` (an SPSS file type) and save it to a new object named `ps_data_2`.
+
+
+```{r}
+# Q4. 
+
+ps_data <- ___
+```
+
+
+# Your Turn 2 
+
+1. Look through the Files pane and find the file `another_data_set.csv`. Make note of what subdirectory it is saved in. Import the data and save to an object called `another_df`.
+
+```{r}
+# Q1. 
+
+another_df <- ___
+```
+
+
+2. Now export the data you just imported and save it into the `data/` directory. Make sure the name of the resulting file is `another_data_set`, and export it as a `.csv` file.
+
+
+```{r}
+# Q2. 
+
+___(another_df, here("___"))
+```
+
+
+3. One of your colleagues insists you send them a `.sav` file so that they can run the analyses in SPSS. Make another copy of `another_data_set` in the `data/` subdirectory that is in the `.sav` format. 
+
+
+```{r}
+# Q3.
+
+___(another_df, here("___"))
+```
+
+
+
+4. Finally, let's read one of these datasets to make sure everything worked as expected. Import `another_data_set.sav` , which you just created, and import it, saving it to a new object named `another_df_2`.
+
+```{r}
+# Q4. 
+
+another_df_2 <- ___
+```
+
+
+# Your Turn 3 
+
+1. Take a look at `another_df`, which should be saved in your Global Environment. Click the "View" button in the Environment pane, and also use `View()` in your Console. 
+
+
+2. Now look at some summary information about `another_df` using `str()` and `glimpse()`. 
+
+```{r}
+#Q2. 
+
+# Don't forget to load the `tidyverse` package! 
+
+```
+
+
+3. Lastly find the number of rows and columns in `another_df` using `nrow()` and `ncol()`, respectively. Make sure your answers match the summary information given to you above. 
+
+```{r}
+# Q3. 
+
+```
+
+
+

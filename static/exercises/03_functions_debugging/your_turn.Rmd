@@ -1,0 +1,41 @@
+---
+title: "Your Turn"
+output: html_document
+---
+
+# Your Turn 1 
+
+1. Look up the help documentation for the function `sd()` (type directly in the RStudio console)
+
+
+2. Calculate the standard deviation of `vec_na`. Be sure to remove missing values first. 
+
+```{r}
+#Q2. 
+
+vec_na <- c(1, 2, 3, 4, 5, 6, NA, 2, 4)
+
+```
+
+
+
+# Your Turn 2
+
+1. In your RStudio console, look up the help documentation for`import()` by typing `?import`. What do you see?
+
+2. Run `search()` in the console. Is the `rio` package included in this list?
+ 
+3. Again in the console, load the `rio` package using the `library()` function. 
+
+4. Now look again at the help documentation for `import()`. What do you see this time?
+
+5. Run `search()` again. What is different this time?
+
+
+
+# Your Turn 3
+
+1. Look up for the help documentation for `filter()` from the `stats` package.
+
+2. Now look up the help documentation for `filter()` from the `dplyr` package.
+

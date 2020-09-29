@@ -1,0 +1,142 @@
+---
+title: "Your Turn"
+output: html_document
+---
+
+# Your Turn 1 
+
+1. Create an object called `x` that is assigned the number 8. 
+
+```{r}
+# Q1.
+
+```
+
+
+2. Create an object called `y` that is a sequence of numbers from 2 to 16, by 2. (Replace the `___` with your code.)
+
+```{r}
+#Q2. 
+
+y <- seq(from = ___, to = ___, by = ___)
+```
+
+
+3. Add `x` and `y`. What happens? 
+
+```{r}
+# Q3.
+
+
+```
+
+
+# Your Turn 2
+
+1. Create an object called `a` that is just the letter "a" and an object `x` that is assigned the number 8. Add `a` to `x`. What happens?
+
+```{r}
+# Q1.
+
+```
+
+
+2. Create a vector called `b` that is just the number 8 in quotes. Add `b` to `x` (from above). What happens?
+
+```{r}
+# Q2.
+
+```
+
+
+3. Find some way to add `b` to `x`. (*Hint*: Don't forget about coercion.)
+
+```{r}
+# Q3. 
+
+```
+
+
+# Your Turn 3
+
+1. Create a vector called `named` that includes the numbers 1 to 5. Name the values "a", "b", "c", "d", and "e" (in order). 
+
+```{r}
+# Q1.
+
+named <- c(___)
+```
+
+2. Print the first element using numerical indexing and the last element using name indexing.
+
+```{r}
+# Q2.
+
+```
+
+
+3. Change the  third element of `named` to the value 21 and then show your results.
+
+```{r}
+# Q3. 
+
+```
+
+
+# Your Turn 4
+
+
+1. Create a list like mine that is made up of `year`, `name`, `enrollment`, `fave_data`, but corresponds to you (year in undergrad, year in grad school, years since PhD, etc.). Make sure you enter two types of favorite data (bc who could choose?!). 
+
+```{r}
+# Q1. # name your list as your first name
+
+___ <- list(___)
+```
+
+
+2. Index your list to print only your name.
+
+```{r}
+# Q2. 
+
+```
+
+
+
+# Your Turn 5
+
+1. Make a data frame, called `df_2`, that has 3 columns as shown below. After you create it, check the structure.
+
+    `c1` = c(1, 2, 3) <br>
+    `c2` = c(2, 4, 6) <br>
+    `c3` = c("a", "b", "c")
+
+```{r}
+# Q1. 
+
+df_2 <- data.frame(___)
+
+
+# check structure
+___(df_2)
+```
+
+
+2. Add a fourth column, `c4`, which is the first and second columns multiplied together.
+
+```{r}
+# Q2. 
+
+df_2$c4 <- ___
+```
+
+
+3. Try to add the first and second rows together. What happens? Why?
+
+```{r}
+# Q3. 
+
+___ + ___
+```
+
