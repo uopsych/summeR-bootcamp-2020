@@ -25,6 +25,9 @@ theme = "hugo-academic"
 # Get last modified date for content from Git?
 enableGitInfo = false
 
+# Enable analytics by entering your Google Analytics tracking ID
+googleAnalytics = "UA-179236690-1"
+
 # Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"
 hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.
