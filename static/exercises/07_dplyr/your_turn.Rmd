@@ -1,0 +1,150 @@
+---
+title: "Your Turn"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(rio)
+```
+
+# Your Turn 1
+
+1. Import the file `pragmatic_scales_data.csv` (use best practices of a project-oriented workflow). Save it to an object called `ps_data`. This time we'll save it as a `tibble` (which I've done for you).
+
+```{r}
+# Q1. 
+ 
+ps_data <- import(___) %>% 
+  as_tibble()
+```
+
+
+2. Filter rows for cases in the "No Label" `condition` and arrange the resulting observations by descending order of `age`.
+
+```{r}
+#Q2. 
+
+ps_data %>% 
+  filter(___) %>% 
+  arrange(___)
+```
+
+
+3. Select observations from the “No Label” condition for kids 3 years old or younger. 
+
+```{r}
+# Q3. 
+
+ps_data %>% 
+  filter(___)
+```
+
+
+4. Select observations for kids between the ages of 3 and 4. (Extra challenge: look up the documentation for `between()` and use this function.)
+
+```{r}
+# Q4. 
+
+___ <- ps_data %>% 
+  filter(___)
+```
+
+
+
+# Your Turn 2
+
+
+1. In `ps_data`, select only the variables `age` and `condition`. 
+
+```{r}
+# Q1.
+
+ps_data %>% 
+  select(___)
+```
+
+
+2. As we did with indexing in base R, you can use the minus sign (`-`) to "de-select" columns. Keep everything in `ps_data` except `subid` and `condition`. 
+
+```{r}
+# Q2.
+
+ps_data %>% 
+  select(___)
+```
+
+
+3. Select the columns `correct` and `condition` without naming them, using their positions or de-selecting other variables.
+
+```{r}
+# Q3. 
+
+ps_data %>% 
+  select(___)
+```
+
+
+4. Use `mutate()` to convert `condition` from type "character" to type "factor". Hint: what function could you pipe to directly to check this? 
+
+```{r}
+#Q4. 
+
+ps_data %>% 
+  mutate(___) %>% 
+  ___
+```
+
+
+
+# Your Turn 3
+
+1. From `ps_data`, get the total number of correct trials for each subject and call this variable `num_correct`. Hint: you can use the summary function `sum()`. 
+
+```{r}
+# Q1. 
+
+ps_data %>% 
+  group_by(___) %>% 
+  summarize(___ = sum(___))
+```
+
+
+2. Now get the total number of correct trials (`num_trials`) for each unique combination of `condition` and `item` and arrange the resulting rows by descending order of `num_correct`. Which combination of condition and item had the most/least correct responses? 
+
+```{r}
+# Q2. 
+
+ps_data %>% 
+  group_by(___, ___) %>% 
+  summarize(___ = sum(___)) %>% 
+  arrange(desc(___))
+```
+
+
+3. Lastly, calculate the proportion of correct responses for each `condition` and call this variable `prop_correct` (hint: because `correct` is coded as 0 and 1, you can do this by taking the mean of `correct`). In the same pipeline, create a bar plot that shows the differences between the mean proportion of correct responses between the two conditions, and color the bars by condition.
+
+```{r}
+# Q3. 
+
+ps_data %>% 
+  group_by(___) %>% 
+  summarize(prop_correct = mean()) %>% 
+  ggplot(___(x = ___, y = ___, fill = ___)) + 
+  ___() +
+  coord_flip() # don't need to change this
+```
+
+
+```{r}
+ps_data %>% 
+    group_by(condition) %>% 
+    summarize(prop_correct = mean(correct)) %>% 
+    ggplot(aes(x = prop_correct, y = condition, fill = condition)) + 
+    geom_col() + 
+    coord_flip() + 
+    theme_bw() + 
+  labs(x = "Condition", y = "Proportion Correct")
+```
+

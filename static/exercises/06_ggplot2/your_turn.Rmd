@@ -1,0 +1,103 @@
+---
+title: "Your Turn"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#### RUN THIS CODE CHUNK FIRST TO LOAD NECESSARY PACKAGES ####
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+library(rio)
+library(here)
+```
+
+
+# Your Turn 1 
+
+1. Run the code chunk provided to calculate the mean of `flipper_length_mm`.
+
+```{r}
+# Q1. 
+
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+2. Take a glimpse at the data using `glimpse()` or `str()` to get a sense of the variables. You can also `View()` the data. 
+
+```{r}
+# Q2. 
+
+```
+
+
+3. Re-write the code above using the pipe operator, `%>%`. Check that the answer you get matches the original code you ran above. 
+
+```{r}
+# Q3.
+
+```
+
+
+
+# Your Turn 2
+
+1. Create a scatter plot to visualize the relationship between `flipper_length_mm` and `bill_length_mm`. 
+
+```{r}
+# Q1.
+
+penguins %>% 
+  ggplot() + 
+  ___(aes(x = ___, y = ___))
+```
+
+
+2. Build on your plot above by adding an aesthetic to visualize the effect of `species`. Choose any aesthetic you’d like or play around with a few. What do they do? How might you use more than one aesthetic? 
+
+Options for aesthetics include `color`, `shape`, `size`, and `alpha` (transparency, 0-1 scale). 
+
+```{r}
+# Q2. 
+
+```
+
+
+
+# Your Turn 3
+
+1. Import the dataset `pragmatic_scales_data.csv`, which is saved inside the `data` folder. 
+
+```{r}
+# Q1. 
+ps_data <- rio::import(here::here("___"))
+```
+
+
+2. Take a glimpse at the data using `glimpse()` or `str()` to get a sense of the variables. You can also `View()` the data. 
+
+```{r}
+# Q2. 
+
+```
+
+
+3. Fill in the blanks in the code to re-create the plot below. *Note*: This plot uses a geom we haven't seen yet called `geom_bar()`, which I've filled in for you. 
+
+
+```{r}
+# Q3.
+
+ps_data %>% 
+  ggplot(aes(x = ___, y = ___, fill = ___)) + 
+  geom_bar(stat = "identity") + 
+  facet_wrap(~___)
+```
+
+
+

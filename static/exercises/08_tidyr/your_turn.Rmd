@@ -1,0 +1,38 @@
+---
+title: "Your Turn"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Your Turn 1
+
+1. Import the file `pragmatic_scales_data.csv` (use best practices of a project-oriented workflow). Save it to an object called `ps_data`. View the data to remind yourself how it's structured. 
+
+```{r}
+# Q1. 
+ 
+ps_data <- import(___) %>% 
+  as_tibble()
+```
+
+2. Use `pivot_wider()` to reformat the data so that there is a unique column for each `item`. The values in each of the four item columns should indicate whether or not the subject got that particular item right or wrong (i.e., what variable represents this?). Save this to a new object called `ps_data_wide`.
+
+```{r}
+# Q2. 
+
+___ <- ps_data %>% 
+  pivot_wider(names_from = ___, values_from = ___)
+```
+
+3. Take `ps_data_wide`, which you just created, and reshape it back to the original longer format using `pivot_longer()`. 
+
+```{r}
+# Q3. 
+
+ps_data_wide %>% 
+  pivot_longer(c(___), names_to = "___", values_to = "___")
+```
+

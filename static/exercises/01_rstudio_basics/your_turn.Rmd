@@ -1,0 +1,33 @@
+---
+title: "Your Turn"
+output: html_document
+---
+
+# Your turn 1
+
+1. Create a variable called `var_1` that is equal to 4.
+
+```{r}
+# Q1.
+
+```
+
+
+2. Then create a variable called `var_2` that is `var_1` raised to the power of 6. Print the results (i.e. check what value is assigned to `var_2`).
+
+```{r}
+# Q2.
+
+```
+
+
+
+
+# Your turn 2
+
+1. Open the file `rmarkdown_example.Rmd` and click `knit`. Take a look at the resulting file called `rmarkdown_example.html`. 
+
+
+2. Go back to `rmarkdown_example.Rmd`. Change the title to `"[Your name]'s example R Markdown Document"` and re-knit.
+
+
