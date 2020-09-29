@@ -9,9 +9,7 @@ The full website is available here: https://uopsych-r-bootcamp-2020.netlify.app/
 
 The bootcamp gives a gentle introduction to R and RStudio, transforming and visualizing data with the tidyverse, and the basics of R Markdown. It assumes no prior experience with R or any other programming language and is designed to get learners up and running with the most widely useful tools for reproducible data analysis in R while emphasizing best practices for writing code and organizing project-oriented workflows. 
 
-It also contains a curated list of resources for each topic for those who want more opportunities for further learning and practice. 
-
-The materials have been designed such that you should be able to work through the slides and exercises at your own pace if you were not able to attend the bootcamp sessions.
+It also contains a curated list of resources for each topic for those who want more opportunities for further learning and practice. The materials have been designed such that you should be able to work through the slides and exercises at your own pace if you were not able to attend the bootcamp sessions.
 
 Please contact [Brendan Cullen](https://bcullen.rbind.io/), the bootcamp instructor, with any questions at [bcullen@uoregon.edu](mailto:bcullen@uoregon.edu).
 
@@ -37,7 +35,7 @@ Slides were created using [`{xaringan}`](https://github.com/yihui/xaringan) by [
 
 The code of conduct for this bootcamp was adapted from [Cascadia R Conf](https://cascadiarconf.com/policies/).  
 
-Thanks also to [Mine Çetinkaya-Rundel](http://www2.stat.duke.edu/~mc301/) for her [resources](https://mine-cetinkaya-rundel.github.io/teach-r-online/01-cloud/01-cloud.html#1) on using RStudio Cloud and Greg Wilson for organizing the collection of data science [concept maps](https://github.com/rstudio/concept-maps).
+Thanks also to [Mine Çetinkaya-Rundel](http://www2.stat.duke.edu/~mc301/) for her [resources](https://mine-cetinkaya-rundel.github.io/teach-r-online/01-cloud/01-cloud.html#1) on using RStudio Cloud and [Greg Wilson](https://third-bit.com/) for organizing the collection of data science [concept maps](https://github.com/rstudio/concept-maps).
 
 # License
 
