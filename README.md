@@ -1,11 +1,31 @@
 # summeR-bootcamp-2020
 [![Netlify Status](https://api.netlify.com/api/v1/badges/94262c16-62c1-48d6-9734-48faad39d227/deploy-status)](https://app.netlify.com/sites/uopsych-summer-bootcamp-2020/deploys)
 
-This website contains materials for a 3-day introductory R workshop for the Department of Psychology at the University of Oregon. The full website is available here: https://uopsych-r-bootcamp-2020.netlify.app/
+This website contains materials for a 3-day introductory R workshop for the [Department of Psychology](https://psychology.uoregon.edu/) at the University of Oregon. 
 
-The bootcamp gives a gentle introduction to R and RStudio, transforming and visualizing data with the tidyverse, and the basics of R Markdown. It assumes no prior experience with R or any other programming language and is designed to get learners up and running with the most widely useful tools for reproducible data analysis in R while emphasizing best practices for writing code and organizing project-oriented workflows. It also contains a curated list of resources for each topic for those who want more opportunities for further learning and practice. The materials have been designed such that you should be able to work through the slides and exercises at your own pace if you were not able to attend the bootcamp sessions.
+The full website is available here: https://uopsych-r-bootcamp-2020.netlify.app/
 
-Please contact [Brendan Cullen](https://bcullen.rbind.io/), the bootcamp instructor, with any questions at [bcullen@uoregon.edu](mailto:bcullen@uoregon.edu)
+# Description
+
+The bootcamp gives a gentle introduction to R and RStudio, transforming and visualizing data with the tidyverse, and the basics of R Markdown. It assumes no prior experience with R or any other programming language and is designed to get learners up and running with the most widely useful tools for reproducible data analysis in R while emphasizing best practices for writing code and organizing project-oriented workflows. 
+
+It also contains a curated list of resources for each topic for those who want more opportunities for further learning and practice. 
+
+The materials have been designed such that you should be able to work through the slides and exercises at your own pace if you were not able to attend the bootcamp sessions.
+
+Please contact [Brendan Cullen](https://bcullen.rbind.io/), the bootcamp instructor, with any questions at [bcullen@uoregon.edu](mailto:bcullen@uoregon.edu).
+
+Topics covered include:
+
+1. [Basics of R & RStudio](https://uopsych-r-bootcamp-2020.netlify.app/post/01-r-basics/)
+2. [Data Types & Structures](https://uopsych-r-bootcamp-2020.netlify.app/post/02-data-types)
+3. [Functions & Debugging](https://uopsych-r-bootcamp-2020.netlify.app/post/03-functions/)
+4. [Introduction to the Tidyverse](https://uopsych-r-bootcamp-2020.netlify.app/post/04-intro-tidyverse/)
+5. [Importing Data & Project-oriented Workflows](https://uopsych-r-bootcamp-2020.netlify.app/post/05-importing-workflows/)
+6. [Data Visualization with {ggplot2}](https://uopsych-r-bootcamp-2020.netlify.app/post/06-ggplot2/)
+7. [Data Wrangling with {dplyr}](https://uopsych-r-bootcamp-2020.netlify.app/post/07-dplyr/)
+8. [Data Tidying with {tidyr}](https://uopsych-r-bootcamp-2020.netlify.app/post/08-tidyr/)
+9. [Reproducible Reporting with R Markdown](https://uopsych-r-bootcamp-2020.netlify.app/post/09-rmarkdown/)
 
 # Acknowledgments
 
