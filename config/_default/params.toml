@@ -122,6 +122,16 @@ sharing_image = "https://raw.githubusercontent.com/uopsych/summeR-bootcamp-2020/
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
 twitter = "_bcullen"
 
+# Twitter card
+
+[twitter]
+  card = "summary_large_image"
+  site = "@_bcullen"
+  creator = "@_bcullen"
+  title = "UO Psych R Bootcamp 2020"
+  description = ""
+  image = "https://raw.githubusercontent.com/uopsych/summeR-bootcamp-2020/master/static/img/ducks.jpg"
+
 ############################
 ## Regional Settings
 ############################
