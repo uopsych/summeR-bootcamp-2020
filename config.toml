@@ -73,3 +73,13 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   category = "categories"
   publication_type = "publication_types"
   author = "authors"
+
+# Twitter card
+
+[twitter]
+  card = "summary_large_image"
+  site = "@_bcullen"
+  creator = "@_bcullen"
+  title = "UO Psych R Bootcamp 2020"
+  description = ""
+  image = "https://raw.githubusercontent.com/uopsych/summeR-bootcamp-2020/master/static/img/ducks.jpg"
