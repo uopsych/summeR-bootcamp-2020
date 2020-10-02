@@ -122,7 +122,7 @@ twitter_image = "ducks.jpg"
 default_sharing_image = "ducks.jpg"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter = "_bcullen"
+twitter = ""
 
 ############################
 ## Regional Settings
