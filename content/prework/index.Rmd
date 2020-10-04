@@ -43,7 +43,7 @@ If possible, please try to complete this checklist *before* the first session on
 
 2) Join the [slack workspace](https://uodatascience.slack.com/). This how we will primarily be communicating with each other, and it is the best place to ask questions outside of bootcamp hours. We'll be using the channel `#bootcamp2020`. You should have received an email invitation to join the `SlackRs` workspace on 9/17 (check your Junk/Spam inbox) -- if you haven't received an invitation, send Brendan an email at [bcullen@uoregon.edu](mailto:bcullen@uoregon.edu). 
 
-3) Join the [RStudio Cloud workspace](https://bit.ly/3caJRCN). When you click this link you will be prompted to create a free RStudio Cloud account. Follow the instructions and click "Join space" when prompted. You should find yourself inside a workspace called `UO Psych Bootcamp 2020`. Please don't open any of the materials just yet -- we'll go through these together during the bootcamp. 
+3) Join the [RStudio Cloud workspace](https://rstudio.cloud/spaces/94452/join?access_code=E3V8Vd%2FB%2F5edCEBphs4kuttNb6epLuRbqzab2L8J). When you click this link you will be prompted to create a free RStudio Cloud account. Follow the instructions and click "Join space" when prompted. You should find yourself inside a workspace called `UO Psych Bootcamp 2020`. Please don't open any of the materials just yet -- we'll go through these together during the bootcamp. 
 
 4) Review the [Code of Conduct](/#code_of_conduct).
 
