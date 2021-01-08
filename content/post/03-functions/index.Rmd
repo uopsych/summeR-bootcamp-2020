@@ -34,7 +34,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/uopsych/summeR-bootcamp-2020/tree/master/exercises/03_functions_debugging
+  url: https://rstudio.cloud/project/1714620
 - icon: laptop-code
   icon_pack: fas
   name: Primer

@@ -34,7 +34,7 @@ links:
 - icon: dumbbell
   icon_pack: fas
   name: Exercises
-  url: https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/uopsych/summeR-bootcamp-2020/tree/master/exercises/08_tidyr
+  url: https://rstudio.cloud/project/1714624
 - icon: readme
   icon_pack: fab
   name: Cheat Sheet
