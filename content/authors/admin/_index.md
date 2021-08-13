@@ -23,7 +23,7 @@ user_groups:
 - Visitors
 ---
 
-# UO Psych R Bootcamp
+# UO Psych R Bootcamp 2020
 
 <br>
 
